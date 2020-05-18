@@ -1,5 +1,5 @@
 # candyShop
-    Candy Shop es un sitio de venta mayorista y a gran escala de golosinas y productos en general a kioscos, grugstore, supermercados y shops en general. Apunta a la distribucion de dichos productos a locales que revenden en cantidad o unitarios al consumidor final.
+    Candy Shop es un sitio de venta mayorista y a gran escala de golosinas y productos en general a kioscos, grugstore, supermercados y shops en general. Apunta a la distribución de dichos productos a locales que revenden en cantidad o unitarios al consumidor final.
 
 Webs de referencia:
 https://masmelos.com.ar/
@@ -12,7 +12,7 @@ https://www.distribuidorapop.com.ar/
 	Página en la cual detectamos varios errores que no queremos cometer, como por ej. la poca identidad de la marca en sí. Lo bueno, diversidad de rubros y posibilidad de compra por bulto.
 
 https://santaanagolosinas.com.ar/
-	Producto muy básico y minimalista. Cuenta con headrer fijo al hacer el scroll.
+	Producto muy básico y minimalista. Cuenta con header fijo al hacer el scroll.
 
 https://www.felfort.com.ar/
 	Transiciones del landing y ser una marca líder del mercado.
