@@ -26,6 +26,17 @@ https://tienda.mercadolibre.com.ar/arcor
 https://www.mms.com/es-es/
 	Estética, calidad y personalización de productos, página extranjera....
     
-    
+
+
+
+Colores:
+ Amarillo: #FBE454
+ Rosas: #ED1E79 #F6398B
+ Violeta: #6A00BF
+
+Enlace tablero
+https://trello.com/b/WlSeniwJ
+
+
     
     // © >_cuarentenialCoders </primeTeam>

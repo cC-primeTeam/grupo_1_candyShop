@@ -1,8 +1,114 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+/* =====================
+- IMPORTS
+===================== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
+
+@import url("https://kit.fontawesome.com/36f5743703.js");
+
+/* =====================
+- GENERAL
+===================== */
+*{
+  font: 14px "Poppins", Helvetica, Arial, sans-serif;
 }
 
-a {
-  color: #00B7FF;
+/* =====================
+- BODY
+===================== */
+
+body {  
+  background: rgb(248, 248, 248);
+}
+
+
+
+
+/* =====================
+- HEADER
+===================== */
+header div.container-fluid{
+  background-color: #84d2f1 ;
+}
+
+header div.nav-sec{
+  background-color: #F6398B;
+}
+
+header div li a.nav-link{
+  color: white;
+}
+
+/* =====================
+- CUERPO PRINCIPAL
+===================== */
+section.banner{
+  padding: 0;
+}
+section.banner div.carousel-inner{
+  width: 100%;
+}
+
+section.productosDestacados {
+  padding: 0;
+}/*En el article falta ajustar en cada uno*/
+
+section.productosDestacados div {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+section.productosDestacados div article img{
+  width: 100%;
+}
+
+section.productosDestacados div article div{
+  margin: 0;
+  padding-top: 5px;
+  padding-bottom: 15px;
+}
+section.productosDestacados div article div h6{
+  font-weight: 700;
+}
+
+section.productosDestacados div article div a.carrito { 
+  color: #84d2f1;
+}
+
+
+/* =====================
+- FOOTER
+===================== */
+
+footer{
+  background-color: #F6398B;
+  padding-top: 20px;
+}
+
+footer div section div div div ul li::before {
+  content: "\f786";
+  font-family: 'Font Awesome\ 5 free';
+}
+
+footer div section div div div ul li{
+  color: white;
+}
+
+footer div section div div div ul li a{
+  text-decoration: none;
+  color: white;
+}
+footer div section div.footer2{
+  text-align: center;
+}
+footer div section div.footer2 div a{
+  color: white;
+}
+
+footer div section div.footer2 form{
+  padding-top: 20px;
+  text-align: center;
+}
+
+footer div section div form button {
+  color: white;
 }
