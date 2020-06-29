@@ -1,6 +1,31 @@
 /* *{} */
 
 
-section div.producto-container{
-    
+
+section div article.contenedorFotoDetalleProducto{
+    height: 700px;
+}
+section div article img.fotoDetalleProducto{
+    height: inherit;
+}
+
+section div article.productoDetallado{
+    text-align: center;
+    padding: 80px 10px;
+}
+
+section div article div.precioCantidadTotal{
+    text-align: center;
+}
+
+section div article button.botonAñadirCarrito{
+    padding: 5px 100px;
+    margin-top: 30px;
+}
+
+section div.descripcionDetallada {
+    padding: 15px 40px;
+    margin-bottom: 30px;
+    background-color:#73eafe;
+    color: #5b007f;
 }

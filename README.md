@@ -31,8 +31,9 @@ https://www.mms.com/es-es/
 
 Colores:
  Amarillo: #FBE454
- Rosas: #ED1E79 #F6398B
- Violeta: #6A00BF
+ Rosas: #ED1E79 #F6398B 
+ Violeta: #5b007f
+ Celeste: #73eafe
 
 Enlace tablero
 https://trello.com/b/WlSeniwJ
