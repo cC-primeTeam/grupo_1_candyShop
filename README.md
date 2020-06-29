@@ -34,6 +34,7 @@ Colores:
  Rosas: #ED1E79 #F6398B 
  Violeta: #5b007f
  Celeste: #73eafe
+ probando
 
 Enlace tablero
 https://trello.com/b/WlSeniwJ
