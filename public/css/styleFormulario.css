@@ -1,0 +1,44 @@
+/* =====================
+- BODY FROMULARIO
+===================== */
+
+body {
+
+}
+
+body div.container {
+
+}
+
+body div.container div.tituloForm {
+    background-color: rgb(235, 230, 230);
+    height: 70px;
+    margin: 20px auto;
+    padding-top: 10px;
+    border-radius: 5px;
+}
+
+body div.container div.tituloForm h1 {
+    
+}
+
+body div.container div.tituloForm div.contenidoForm div form div label{
+    margin-top: 10px;
+    align-items: center;
+}
+
+body div.container div form {
+
+}
+
+button.botonForm1 {
+    margin: 20px auto;
+}
+
+button.botonForm2 {
+    margin: 20px auto;
+}
+
+div.card img.imagenForm {
+    width: 370px;
+}

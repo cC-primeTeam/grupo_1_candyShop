@@ -1,15 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
 
-
-
-<title>CandyShop - Carga Producto</title>
+<head>
+    <!-- Include Head -->
+    <%- include('partials/contenidoHead') %>
+    
+    <title>CandyShop - Carga Producto</title>
+    <link rel="stylesheet" href="/css/styleFormulario.css">
+</head>
 
 <body>
+    <!--include HEADER-->
+    <%- include('partials/header') %>
+    <div class="container">
+        <div class= "container tituloForm">
+            <h1>Formulario carga de productos</h1>
+        </div>
+        <div class="container row contenidoForm">
+            <div class="col-8">
+                <form action="">
+                    <div class="form-row" id="contenidoForm">
+                        <label for="nombreProducto">Nombre del Producto:</label>
+                        <input type="text" name="nombreProducto" placeholder="Ej: Alfajor Jorgito" class="form-control">
+                        <label for="categoria">Categoria del Producto:</label>
+                        <input type="text" name="categoria" placeholder="Ej: Alfajor" class="form-control">
+                        <div class="col-md-12 mb-12">
+                            <label for="detalleProdcutos">Detalle del Producto:</label>
+                            <textarea class="form-control" id="detalleProductos" placeholder="Por favor coloque una descricion del producto aqui.."></textarea>
+                        </div>
+                        <div class="col-md-12 mb-12">
+                            <label for="Costo">Costo</label>
+                            <input type="text" class="form-control" id="Costo" required placeholder="Ej: $ 20.50">
+                        </div>
+                        <h5 class="col-12">Precio Minorista</h5>
+                        <div class="col-md-6 mb-6">
+                            <label for="utilidadMinorista">Utilidad</label>
+                            <input type="text" class="form-control" id="utilidadMinorista" required placeholder="Ej: 1.5">
+                        </div>
+                        <div class="col-md-6 mb-6">
+                            <label for="precioMinorista">Precio</label>
+                            <input type="text" class="form-control" id="precioMinorista" required placeholder="Ej: $ 20.50">
+                        </div>
+                        <h5 class="col-12">Precio Mayorista</h5>
+                        <div class="col-md-6 mb-6">
+                            <label for="utilidadMinorista">Utilidad</label>
+                            <input type="text" class="form-control" id="utilidadMayorista" required placeholder="Ej: 1.5">
+                        </div>
+                        <div class="col-md-6 mb-6">
+                            <label for="precioMayorista">Precio</label>
+                            <input type="text" class="form-control" id="precioMayorista" required placeholder="Ej: $ 20.50">
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="card" style="width: 18rem;">
+                    <img src="/images/uploads/no-imagen.jpg" class="card-img-top imagenForm " alt="...">
+                </div>
+                
+                <button type="button" class="btn btn-secondary btn-lg btn-block botonForm1">Cargar Imagen</button>
+            </div>
+            <button type="button" class="btn btn-primary btn-lg btn-block botonForm2">Guardar Producto</button>
+        </div>
+    </div>
     
-    <h2>OK FUNCIONA</h2>
     
- 
     
+    <!--Include footer -->
+    <%- include('partials/footer') %>
 </body>
 </html>
