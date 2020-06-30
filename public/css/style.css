@@ -24,20 +24,25 @@
 /* =====================
 - HEADER
 ===================== */
-
-header div nav img{
-  width: 100px;
-}
+header{}
 
 header div.container-fluid{
-  background-color: #84d2f1 ;
+  background-color: #F6398B ;
+}/*#84d2f1 color mas apagado*/
+/*#73eafe opcion de color mas vivo a ver*/
+
+header div nav img{
+  width: 160px;
+  padding: 5px 0;
 }
 
 header div nav div ul.botonesHeader{
   justify-content: end;
 }
 
-
+header div nav div ul.botonesHeader li ul.nav-pills .nav-link.active, .nav-pills .show > .nav-link{
+  background-color: whitesmoke
+}
 /* =====================
 - SEARCH
 ===================== */
@@ -76,7 +81,7 @@ header div nav form{
 - NAV BAR 2
 ===================== */
 nav.navBar2{
-    background-color: #F6398B;
+  background-color: #84d2f1;
 }
 
 nav div.nav-sec{
@@ -88,15 +93,22 @@ nav div li a.nav-link{
 
 
 /* =====================
-- CUERPO PRINCIPAL
+- BANNER CADROUSEL
+imagenes a 960 x 205 en formato jpg
 ===================== */
 section.banner{
   padding: 0;
+  margin-top: 5px;
 }
 section.banner div.carousel-inner{
   width: 100%;
 }
 
+
+
+/* =====================
+- PRODUCTOS DESTACADOS
+===================== */
 section.productosDestacados {
   padding: 0;
 }/*En el article falta ajustar en cada uno*/
@@ -123,32 +135,67 @@ section.productosDestacados div article div a.carrito {
   color: #84d2f1;
 }
 
-
 /* =====================
 - FOOTER
 ===================== */
 
-footer{
-  background-color: #F6398B;
-  padding-top: 20px;
+a:hover {
+  text-decoration: none;
+  color: grey;
 }
 
-footer div section div div div ul li::before {
-  content: "\f786";
-  font-family: 'Font Awesome\ 5 free';
+footer{
+  overflow: hidden;
+  background-color: #84d2f1;
+  padding: 20px 0;
+  color: white;
+}
+footer div section div div{
+  padding: 3px;
+align-items: center;
+}
+
+div.lalala{padding: 0;}/*corregir clase*/
+
+
+footer div section div div img{
+  width: 100%;
+}
+
+footer div section div div div ul{
+  padding: 0;
 }
 
 footer div section div div div ul li{
-  color: white;
+  list-style-type: none;
+  margin: 10px;
 }
+
+/* footer div section div div div ul li:before {
+  content: "\f786";
+  font-family: 'Font Awesome\ 5 free';
+} *//*No anda a resolver*/
 
 footer div section div div div ul li a{
   text-decoration: none;
   color: white;
 }
+
+footer div section div div div ul li a:hoover{
+  text-decoration: none;
+  color: grey;
+}
+
 footer div section div.footer2{
   text-align: center;
+  align-items: center;
+  padding: 1rem;
 }
+
+footer div section div.footer2 div.redesFooter{
+  justify-content: center;
+}
+
 footer div section div.footer2 div a{
   color: white;
 }
@@ -158,6 +205,19 @@ footer div section div.footer2 form{
   text-align: center;
 }
 
-footer div section div form button {
+footer div section div.footer2 form input.form-control {
+  width: 100%;
   color: white;
+}
+footer div section div.footer2 form button {
+  width: 100%;
+  color: black;
+}
+
+section#copyright p{
+  margin: 0;
+  background-color: #84d2f1;
+  text-align: center;
+  font-weight: 700;
+  color: #c3ebfc;
 }

@@ -1,14 +1,130 @@
 <!DOCTYPE html>
-<html lang="en">
-
-
-
-<title>CandyShop - Carrito de Compras</title>
+<html lang="es">
+<head>
+    <!-- Include Head -->
+    <%- include('partials/contenidoHead') %>
+    <link rel="stylesheet" href="/css/styleCarrito.css">
+    
+    <title>CandyShop - Carrito de Compras</title>
+</head>
 
 <body>
+    <!--include HEADER-->
+    <%- include('partials/header') %> 
+    <!--include Nav Bar 2-->
+    <%- include('partials/navBar2') %>
     
-    <H1>OK FUNCIONA</H1>
     
+    <section class="container carrito">
+        <div class="container-flex row">
+            
+            <!--DETALLE CAMPOS MENU CARRITO-->
+            <article class="col-12 row detailBar">
+                <small class="col-2"></small>
+                <div class="container-fluid row col-10">
+                    <h5 class="col-5">DETALLE</h5>
+                    <p class="col-2 cantidad"> CANTIDAD </p>
+                    <p class="col-3 precio">PRECIO</p>
+                    <small class="col-2"></small>
+                </div>
+            </article>
+            
+            <!--ITEMS MENU CARRITO-->
+            <article class="col-12 row items">
+                <img class="fotoItemCarrito col-2" src="/images/prodDestacados/img-01.jpg" alt="Nombre del producto">
+                <div class="container-fluid row col-10">
+                    <h5 class="col-5">**Titulo Producto**</h5>
+                    <p class="col-2 cantidad"> 0 </p>
+                    <p class="col-3 precio">$ 0.00</p>
+                    <a class="carrito col-2 trash" href="/carrito"><i class="far fa-trash-alt"></i></a>
+                </div>
+            </article>
+            
+            <!--LAS AGREGADAS PARA BORRAR DESDE ACA-->
+            <article class="col-12 row items">
+                <img class="fotoItemCarrito col-2" src="/images/prodDestacados/img-01.jpg" alt="Nombre del producto">
+                <div class="container-fluid row col-10">
+                    <h5 class="col-5">**Titulo Producto**</h5>
+                    <p class="col-2 cantidad"> 0 </p>
+                    <p class="col-3 precio">$ 0.00</p>
+                    <a class="carrito col-2 trash" href="/carrito"><i class="far fa-trash-alt"></i></a>
+                </div>
+            </article>
+            <article class="col-12 row items">
+                <img class="fotoItemCarrito col-2" src="/images/prodDestacados/img-01.jpg" alt="Nombre del producto">
+                <div class="container-fluid row col-10">
+                    <h5 class="col-5">**Titulo Producto**</h5>
+                    <p class="col-2 cantidad"> 0 </p>
+                    <p class="col-3 precio">$ 0.00</p>
+                    <a class="carrito col-2 trash" href="/carrito"><i class="far fa-trash-alt"></i></a>
+                </div>
+            </article>
+            <article class="col-12 row items">
+                <img class="fotoItemCarrito col-2" src="/images/prodDestacados/img-01.jpg" alt="Nombre del producto">
+                <div class="container-fluid row col-10">
+                    <h5 class="col-5">**Titulo Producto**</h5>
+                    <p class="col-2 cantidad"> 0 </p>
+                    <p class="col-3 precio">$ 0.00</p>
+                    <a class="carrito col-2 trash" href="/carrito"><i class="far fa-trash-alt"></i></a>
+                </div>
+            </article>
+            <article class="col-12 row items">
+                <img class="fotoItemCarrito col-2" src="/images/prodDestacados/img-01.jpg" alt="Nombre del producto">
+                <div class="container-fluid row col-10">
+                    <h5 class="col-5">**Titulo Producto**</h5>
+                    <p class="col-2 cantidad"> 0 </p>
+                    <p class="col-3 precio">$ 0.00</p>
+                    <a class="carrito col-2 trash" href="/carrito"><i class="far fa-trash-alt"></i></a>
+                </div>
+            </article>
+            <article class="col-12 row items">
+                <img class="fotoItemCarrito col-2" src="/images/prodDestacados/img-01.jpg" alt="Nombre del producto">
+                <div class="container-fluid row col-10">
+                    <h5 class="col-5">**Titulo Producto**</h5>
+                    <p class="col-2 cantidad"> 0 </p>
+                    <p class="col-3 precio">$ 0.00</p>
+                    <a class="carrito col-2 trash" href="/carrito"><i class="far fa-trash-alt"></i></a>
+                </div>
+            </article>
+            
+            
+            
+            
+            <!--LAS AGREGADAS PARA BORRAR HASTA ACA-->
+        </div>
+    </section>
     
+    <div class="container">
+        
+        <div class="custom-control custom-switch checkDiscount">
+            <input type="checkbox" class="custom-control-input" id="customSwitch1">
+            <label class="custom-control-label" for="customSwitch1">Tengo descuento</label>
+            <div class="cuponDesc">
+                <label for="cuponDesc">Cupon de descuento</label>
+                <input type="text" class="form-control" id="cuponDesc">
+                <br>
+                
+            </div>
+            
+        </div>
+    </div>
+    <div class="container envio">
+
+            <form class="row envio" action='index.html' method='get'>
+                <p class="col-4"><label for=''>Rerito / envio de tu pedido</label></p>
+                <p class="col-4"><input type="radio" name='envio' value='S'checked> Retiro en deposito</p>
+                <p class="col-4"><input type="radio" name='envio' value='N'> Envio a domicilio</p>
+            </form>
+
+    </div>
+    <div>
+        <div class="carritoTotal">
+            <h2>$ 100,00 </h2>
+        </div>
+        <button type="button" class="btn btn-success btn-lg btn-block confirmBuy">Confirmar compra</button>
+    </div>
+    
+    <!--Include footer -->
+    <%- include('partials/footer') %>
 </body>
 </html>
