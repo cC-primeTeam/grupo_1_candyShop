@@ -38,10 +38,15 @@ header div nav img{
 
 header div nav div ul.botonesHeader{
   justify-content: end;
+  color: #5b007f;
+}
+
+header div nav div ul.botonesHeader li ul.nav-pills li div.dropdown-menu a i{
+  color: #5b007f;
 }
 
 header div nav div ul.botonesHeader li ul.nav-pills .nav-link.active, .nav-pills .show > .nav-link{
-  background-color: whitesmoke
+  background-color: whitesmoke;
 }
 /* =====================
 - SEARCH
@@ -88,7 +93,7 @@ nav div.nav-sec{
 }
 
 nav div li a.nav-link{
-  color: white;
+  color: #5b007f;
 }
 
 
@@ -148,7 +153,7 @@ footer{
   overflow: hidden;
   background-color: #84d2f1;
   padding: 20px 0;
-  color: white;
+  color: #5b007f;
 }
 footer div section div div{
   padding: 3px;
@@ -178,7 +183,7 @@ footer div section div div div ul li{
 
 footer div section div div div ul li a{
   text-decoration: none;
-  color: white;
+  color: #5b007f;
 }
 
 footer div section div div div ul li a:hoover{
@@ -197,7 +202,7 @@ footer div section div.footer2 div.redesFooter{
 }
 
 footer div section div.footer2 div a{
-  color: white;
+  color: #5b007f;
 }
 
 footer div section div.footer2 form{
