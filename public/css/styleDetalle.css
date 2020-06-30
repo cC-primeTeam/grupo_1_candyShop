@@ -14,6 +14,12 @@ section div article.productoDetallado{
     padding: 80px 10px;
 }
 
+section div article div h2.tituloDetalleProducto {
+    background-color: rgb(235, 235, 235);
+    padding: 10px 0;
+    margin-bottom: 20px;
+}
+
 section div article div.precioCantidadTotal{
     text-align: center;
 }
@@ -26,6 +32,6 @@ section div article button.botonAñadirCarrito{
 section div.descripcionDetallada {
     padding: 15px 40px;
     margin-bottom: 30px;
-    background-color:#73eafe;
-    color: #5b007f;
+    background-color:rgb(235, 235, 235);
+    
 }
