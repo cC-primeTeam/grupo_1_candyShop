@@ -33,8 +33,7 @@ Colores:
  Amarillo: #FBE454
  Rosas: #ED1E79 #F6398B 
  Violeta: #5b007f
- Celeste: #73eafe
- probando
+ Celeste: #84d2f1
 
 Enlace tablero
 https://trello.com/b/WlSeniwJ

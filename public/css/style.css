@@ -24,13 +24,16 @@
 /* =====================
 - HEADER
 ===================== */
-
-header div nav img{
-  width: 100px;
-}
+header{}
 
 header div.container-fluid{
-  background-color: #84d2f1 ;
+  background-color: #F6398B ;
+}/*#84d2f1 color mas apagado*/
+/*#73eafe opcion de color mas vivo a ver*/
+
+header div nav img{
+  width: 160px;
+  padding: 5px 0;
 }
 
 header div nav div ul.botonesHeader{
@@ -76,7 +79,7 @@ header div nav form{
 - NAV BAR 2
 ===================== */
 nav.navBar2{
-    background-color: #F6398B;
+  background-color: #84d2f1;
 }
 
 nav div.nav-sec{
@@ -88,15 +91,22 @@ nav div li a.nav-link{
 
 
 /* =====================
-- CUERPO PRINCIPAL
+- BANNER CADROUSEL
+imagenes a 960 x 205 en formato jpg
 ===================== */
 section.banner{
   padding: 0;
+  margin-top: 5px;
 }
 section.banner div.carousel-inner{
   width: 100%;
 }
 
+
+
+/* =====================
+- PRODUCTOS DESTACADOS
+===================== */
 section.productosDestacados {
   padding: 0;
 }/*En el article falta ajustar en cada uno*/
@@ -123,29 +133,52 @@ section.productosDestacados div article div a.carrito {
   color: #84d2f1;
 }
 
-
 /* =====================
 - FOOTER
 ===================== */
 
-footer{
-  background-color: #F6398B;
-  padding-top: 20px;
+a:hover {
+  text-decoration: none;
+  color: grey;
 }
 
-footer div section div div div ul li::before {
-  content: "\f786";
-  font-family: 'Font Awesome\ 5 free';
+footer{
+  background-color: #84d2f1;
+  padding: 20px 0;
+  color: white;
+}
+footer div section div div{
+align-items: center;
+}
+
+footer div section div div img{
+  width: 100%;
+}
+
+footer div section div div div ul{
+  padding: 0;
 }
 
 footer div section div div div ul li{
-  color: white;
+  list-style-type: none;
+  margin: 10px;
 }
+
+/* footer div section div div div ul li:before {
+  content: "\f786";
+  font-family: 'Font Awesome\ 5 free';
+} *//*No anda a resolver*/
 
 footer div section div div div ul li a{
   text-decoration: none;
   color: white;
 }
+
+footer div section div div div ul li a:hoover{
+  text-decoration: none;
+  color: grey;
+}
+
 footer div section div.footer2{
   text-align: center;
 }

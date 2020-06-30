@@ -1,0 +1,32 @@
+*{}
+
+body{}
+
+body section.carrito{
+    margin: 15px auto;
+}
+
+body section.carrito div{}
+body section.carrito div article.detailBar{}
+
+body section.carrito div article.items{
+    justify-content: center;
+    align-items: center;
+}
+
+body section.carrito div article img.fotoItemCarrito{
+    width: 77px;
+    padding: 8px;
+}
+body section.carrito div article h5{
+    text-align: left;
+}
+body section.carrito div article p{
+    text-align: center;
+}
+body section.carrito div article p.cantidad{}
+body section.carrito div article p.precio{}
+body section.carrito div article a.trash{
+    text-align: center;
+}
+body section.carrito div article a.trash i.fa-trash-alt{}
