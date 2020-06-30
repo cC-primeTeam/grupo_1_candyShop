@@ -7,26 +7,86 @@ body section.carrito{
 }
 
 body section.carrito div{}
-body section.carrito div article.detailBar{}
 
+
+/*=======================
+   BARRA DETALLE MENU CARRITO
+=======================*/
+
+body section.carrito div article.detailBar{
+    justify-content: space-around;
+    align-items: center;
+}
+body section.carrito div article.detailBar{}
+body section.carrito div article.detailBar div{}
+
+body section.carrito div article.detailBar div h5{
+    text-align: left;
+}
+body section.carrito div article.detailBar div p.cantidad{}
+body section.carrito div article.detailBar div p.precio{}
+
+/*=======================
+   ITEMS CARRITO
+=======================*/
 body section.carrito div article.items{
     justify-content: center;
     align-items: center;
 }
 
-body section.carrito div article img.fotoItemCarrito{
-    width: 77px;
+body section.carrito div article.items img.fotoItemCarrito{
+    max-width: 77px;
     padding: 8px;
 }
-body section.carrito div article h5{
+body section.carrito div article.items div h5{
     text-align: left;
 }
-body section.carrito div article p{
+body section.carrito div article.items div p{
     text-align: center;
 }
-body section.carrito div article p.cantidad{}
-body section.carrito div article p.precio{}
-body section.carrito div article a.trash{
+body section.carrito div article.items div p.cantidad{}
+body section.carrito div article.items div p.precio{}
+body section.carrito div article.items div a.trash{
     text-align: center;
 }
-body section.carrito div article a.trash i.fa-trash-alt{}
+body section.carrito div article.items div a.trash{}
+body section.carrito div article.items div a.trash i.fa-trash-alt{}
+
+div.cuponDesc{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+div.cuponDesc label{
+    padding: 25px 0;
+    margin-right: 15px;
+}
+
+div.checkDiscount{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+div.cuponDesc input#cuponDesc{
+    width: 50%;
+    display: inline-block;
+}
+
+div.envio{
+    display: flex;
+    justify-content: space-around;
+}
+
+div.envio form.envio{
+    width: 80%;
+}
+
+div.carritoTotal{
+    padding: 25px 0;
+    text-align: center;
+}
+button.confirmBuy{
+    margin: 5px;
+}
