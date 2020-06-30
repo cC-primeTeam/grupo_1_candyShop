@@ -1,13 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
 
-\
+<head>
+   <!-- Include Head -->
+   <%- include('partials/contenidoHead') %>
 
 <title>CandyShop - Registro</title>
+<link rel="stylesheet" href="/css/styleRegistro.css">
+</head>
 
 <body>
+     <!--include HEADER-->
+  <%- include('partials/header') %>
+  
+  <!--include Nav Bar 2-->
+  <%- include('partials/navBar2') %>
+
+ <div class="container info-Usuario">
+  <form class="container row">
+    <div class=" container col-6">
+      <label for="exampleFormControlInput1">Email</label>
+      <input type="email" class=" container" id="email" placeholder="name@ejemplo.com">
+    </div>
+    <div class="container col-6">
+      <label for="exampleFormControlSelect1">Contraseña</label>
+      <input type="password" class=" container" id="password" placeholder="Contraseña">
+    </div>
+    </div>
+
+    <div class="container row info-Registro">
+    <div class=" container col-4">
+        <label for="exampleFormControlInput1">Dato 1</label>
+        <input type="text" class=" container" id="text" >
+    </div>
+    <div class=" container col-4">
+        <label for="exampleFormControlInput1">Dato 2</label>
+        <input type="text" class=" container" id="text" >
+    </div>
+    <div class=" container col-4">
+        <label for="exampleFormControlInput1">Dato 3</label>
+        <input type="text" class=" container" id="text" >
+    </div>
+    <div class=" container col-4">
+        <label for="exampleFormControlInput1">Dato 4</label>
+        <input type="text" class=" container" id="text" >
+    </div>
+    <div class=" container col-4">
+        <label for="exampleFormControlInput1">Dato 5</label>
+        <input type="text" class=" container" id="text" >
+    </div>
+    <div class=" container col-4">
+        <label for="exampleFormControlInput1">Dato 6</label>
+        <input type="text" class=" container" id="text" >
+    </div>
+  </form>
+
+  <div class="button">
+    <input class="btn btn-primary" type="submit" value="Crear Cuenta">
+  </div>
+</div>
+
     
-    <h1>ok</h1>
-    
+    <!--Include footer -->
+  <%- include('partials/footer') %>
+
 </body>
 </html>
