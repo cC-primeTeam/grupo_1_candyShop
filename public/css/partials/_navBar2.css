@@ -1,0 +1,14 @@
+/* =====================
+- NAV BAR 2
+===================== */
+
+nav.navBar2{
+    background-color: #84d2f1;
+  }
+  
+  nav div.nav-sec{
+  }
+  
+  nav div li a.nav-link{
+    color: #5b007f;
+  }
