@@ -2,13 +2,13 @@
 - BODY FROMULARIO
 ===================== */
 
-body {
+/* body {
 
-}
+} */
 
-body div.container {
+/* body div.container {
 
-}
+} */
 
 body div.container div.tituloForm {
     background-color: rgb(235, 230, 230);
@@ -18,18 +18,18 @@ body div.container div.tituloForm {
     border-radius: 5px;
 }
 
-body div.container div.tituloForm h1 {
+/* body div.container div.tituloForm h1 {
     
-}
+} */
 
 body div.container div.tituloForm div.contenidoForm div form div label{
     margin-top: 10px;
     align-items: center;
 }
 
-body div.container div form {
+/* body div.container div form {
 
-}
+} */
 
 button.botonForm1 {
     margin: 20px auto;

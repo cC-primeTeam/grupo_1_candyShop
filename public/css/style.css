@@ -17,6 +17,11 @@
 ===================== */
 
 @import 'pages/_formularioProducto.css';
+@import 'pages/_styleRegistro.css';
+@import 'pages/_styleHome.css';
+@import 'pages/_styleDetalle.css';
+@import 'pages/_styleCarrito.css';
+
 
 /* =====================
 - IMPORTS
