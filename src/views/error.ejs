@@ -1,3 +1,31 @@
-<h1><%= message %></h1>
-<h2><%= error.status %></h2>
-<pre><%= error.stack %></pre>
+<!--  -->
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <!-- Include Head -->
+    <%- include('partials/contenidoHead') %>
+    
+    <title>CandyShop - 404</title>
+</head>
+
+
+<body>
+    <!--include HEADER-->
+    <%- include('partials/header') %>
+    
+    <!--include Nav Bar 2-->
+    <%- include('partials/navBar2') %>
+    <div class="container">
+    <h1><%= error.status %> <%= message %></h1>
+    <h2>Hemos buscado en todos los rincones de nuestros depositos y no hemos podido encontrar venus que tanto deseas</h2>
+    <h4>Por favor, revisa la URL o regresa a la página principal.</h4>
+    <!-- <pre><%= error.stack %></pre> -->
+    </div>
+    
+    
+    <!--Include footer -->
+    <%- include('partials/footer') %>
+    
+</body>
+</html>
