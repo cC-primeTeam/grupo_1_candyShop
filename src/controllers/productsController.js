@@ -19,8 +19,9 @@ let productsController = {
     }
   },
   // CREAR - muestra formulario vacio para crear
-  create: function(req, res) {
-    res.render('product-create-form');
+  create: function(req, res, next) {
+    res.render('product-create-form')
+    //res.render('product-create-form')
   },
   // CREAR - muestra formulario guardar producto
   store: function(req, res, next) {
