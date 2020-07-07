@@ -42,3 +42,37 @@ button.botonForm2 {
 div.card img.imagenForm {
     width: 370px;
 }
+
+section.detalleProducto h5 {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+section.oferta {
+    margin-top: 10px;
+    border-top: solid black 1px;
+}
+
+section.oferta h5 {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+/* =====================
+- PRECIOS
+===================== */
+
+section.precios {
+    margin-top: 10px;
+    border-top: solid black 1px;
+}
+
+section.precios h5 {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+div.contenedorImg {
+    align-items: flex-end;
+    border-color: red;
+}
