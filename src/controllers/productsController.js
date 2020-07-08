@@ -39,7 +39,7 @@ let productsController = {
   // MODIFICAR - muestra formulario para editar producto con el producto
   editProduct: function(req, res, next) {
     for(let i = 0; i < productosParseados.length; i++) {
-      if (productosParseados[i].id == req.params.productId) {
+      if (productosParseados[i].idProducto == req.params.id) {
         res.render ('productEditForm', {
           producto: productosParseados[i]
         })
