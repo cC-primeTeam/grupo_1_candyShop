@@ -14,7 +14,7 @@
     <div class="container">
         <div class="row">
             <div class= "col-md-12 mb-12 tituloForm">
-                <h1 class="col-md-8 col-mb-12">Formulario carga de productos</h1>
+                <h1 class="col-md-8 col-mb-12">FORMULARIO DE CARGA DE PRODUCTOS</h1>
             </div>
             <div class="col-md-8 mb-12 contenidoForm">
                 <form action="" method="post" enctype="multipart/form-data">
@@ -35,17 +35,6 @@
                                 <label for="Costo">Costo</label>
                                 <input type="text" class="form-control" name="costo" required placeholder="Ej: $ 10.00">
                             </section>
-                            <section class="oferta col-12">
-                                <h5>OFERTA</h5>
-                                <div class="form-group form-check">
-                                    <input type="checkbox" name="oferta" class="form-check-input">
-                                    <label class="form-check-label" for="exampleCheck1">Marcar para poner en oferta</label>
-                                </div>
-                                <div class="col-md-4 mb-12">
-                                    <label for="descuento">Descuento</label>
-                                    <input type="text" name="descuento" class="form-control" placeholder="Ej: % 10">
-                                </div>
-                            </section>
                             <section class="precios col-12">
                                 <h5 class="">PRECIO MINORISTA</h5>
                                 <label for="utilidadMinorista">Utilidad</label>
@@ -57,6 +46,25 @@
                                 <input type="text" class="form-control" name="utilidadMayorista" required placeholder="Ej: % 35">
                                 <label for="precioMayorista">Precio</label>
                                 <input type="text" class="form-control" name="precioMayorista" required placeholder="Ej: $ 13.50">
+                            </section>
+                            <section class="oferta col-12">
+                                <h5>OFERTA</h5>
+                                <div class="form-group form-check">
+                                    <input type="checkbox" name="oferta" class="form-check-input">
+                                    <label class="form-check-label" for="exampleCheck1">Marcar para poner en oferta</label>
+                                </div>
+                                <div class="col-md-4 mb-12">
+                                    <label for="descuento">Descuento</label>
+                                    <input type="text" name="descuento" class="form-control" placeholder="Ej: % 10">
+                                </div>
+                                <div class="col-md-4 mb-12">
+                                    <label for="descuento">Precio Oferta Minorista</label>
+                                    <input type="text" name="ofertaMinorista" class="form-control" placeholder="Ej: $ 10">
+                                </div>
+                                <div class="col-md-4 mb-12">
+                                    <label for="descuento">Precio Oferta Mayorista</label>
+                                    <input type="text" name="ofertaMayorista" class="form-control" placeholder="Ej: $ 10">
+                                </div>
                             </section>
                         </div>
                     </div>
