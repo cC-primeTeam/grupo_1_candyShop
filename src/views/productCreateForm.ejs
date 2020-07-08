@@ -17,7 +17,7 @@
                 <h1 class="col-md-8 col-mb-12">Formulario carga de productos</h1>
             </div>
             <div class="col-md-8 mb-12 contenidoForm">
-                <form action="" method="post">
+                <form action="" method="post" enctype="multipart/form-data">
                     <div class="row">
                         <div class="row">
                             <section class="detalleProducto col-md-12 mb-12">
@@ -43,7 +43,7 @@
                                 </div>
                                 <div class="col-md-4 mb-12">
                                     <label for="descuento">Descuento</label>
-                                    <input type="text" name="descuento" class="form-control" required placeholder="Ej: % 10">
+                                    <input type="text" name="descuento" class="form-control" placeholder="Ej: % 10">
                                 </div>
                             </section>
                             <section class="precios col-12">
@@ -63,7 +63,8 @@
                 </div>
                 <div class="col-md-4 mb-12 contenedorImg">
                     <img src="/images/uploads/no-imagen.jpg" class="card-img-top imagenForm" alt="">
-                    <button type="button" class="btn btn-secondary btn-lg btn-block botonForm1 col-md-12 mb-8">Cargar Imagen</button>
+                    <input class="btn" type="file" name="imgProducto">
+                    <!-- <button type="button" class="btn btn-secondary btn-lg btn-block botonForm1 col-md-12 mb-8">Cargar Imagen</button> -->
                 </div>
                 <button type="submit" class="btn btn-success btn-lg btn-block botonForm2 col-md-12 mb-12">Guardar Producto</button>
             </form>

@@ -8,6 +8,7 @@ let productsController = {
   index: function(req, res, next) {
     res.render('products');
   },
+  // DETALLE PRODUCTO
   detailProduct: function(req, res, next) {
     let idProducto = req.params.id;
     for(let i = 0; i < productosParseados.length; i++) {
@@ -26,13 +27,14 @@ let productsController = {
   // CREAR - muestra formulario guardar producto
   store: function(req, res, next) {
     let nuevoProducto = {
-      id: Number(productosParseados.length + 1),
-      ...req.body
+      idProducto: Number(productosParseados.length + 1),
+      ...req.body,
+      imgProducto: req.files[0].filename
     };
     productosParseados.push(nuevoProducto);
     let productosActualizados = JSON.stringify(productosParseados);
     fs.writeFileSync(path.join(__dirname, '../data/productsDataBase.json'), productosActualizados);
-    res.redirect('/products/detail/' + nuevoProdcuto.id)
+    res.redirect('/products/productDetail/' + nuevoProdcuto.idProducto)
   },
   // MODIFICAR - muestra formulario para editar producto con el producto
   editProduct: function(req, res, next) {
