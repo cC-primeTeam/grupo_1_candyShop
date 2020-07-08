@@ -3,7 +3,7 @@
 
 <head>
   <!-- Include Head -->
-  <%- include('partials/contenidoHead') %>
+  <%- include('partials/_contentHead') %>
   
   <title>CandyShop - Home</title>
 </head>
@@ -55,55 +55,57 @@
         <span class="sr-only">Next</span>
       </a>
     </div>
-  </section>
+  </section> <!-- </ carrousell > -->
+  
+  <h1 class="titularProductsBest"> Productos mas vendidos!!!</h1>
   
   <section class="productosDestacados container">
     <div class="row">
       
       
       <article class="col-3">
-        <a href="/detalleProducto"> <img src="/images/prodDestacados/img-01.jpg" alt="Destacado 1"></a>
+        <a href="/products/1"> <img src="/images/productsBest/img-01.jpg" alt="Destacado 1"></a>
         <div>
           <h6>**Titulo Producto**</h6>
           <p> Detalle Producto </p>
           <p>$ 0.00</p>
-          <a class="carrito" href="/carrito"><i class="fas fa-shopping-cart"></i></a>
+          <a class="carrito" href="/purchase"><i class="fas fa-shopping-cart"></i></a>
         </div>
       </article>
       
       <article class="col-3">
-        <a href="/detalleProducto">
-          <img src="/images/prodDestacados/img-02.jpg" alt="Destacado 2">
+        <a href="/products/2">
+          <img src="/images/productsBest/img-02.jpg" alt="Destacado 2">
         </a>
         <div>
           <h6>**Titulo Producto**</h6>
           <p> Detalle Producto </p>
           <p>$ 0.00</p>
-          <a class="carrito" href="/carrito"><i class="fas fa-shopping-cart"></i></a>
+          <a class="carrito" href="/purchase"><i class="fas fa-shopping-cart"></i></a>
         </div>
       </article>
       
       <article class="col-3">
-        <a href="/detalleProducto">
-          <img src="/images/prodDestacados/img-03.jpg" alt="Destacado 3">
+        <a href="/products/3">
+          <img src="/images/productsBest/img-03.jpg" alt="Destacado 3">
         </a>
         <div>
           <h6>**Titulo Producto**</h6>
           <p> Detalle Producto </p>
           <p>$ 0.00</p>
-          <a class="carrito" href="/carrito"><i class="fas fa-shopping-cart"></i></a>
+          <a class="carrito" href="/purchase"><i class="fas fa-shopping-cart"></i></a>
         </div>
       </article>
       
       <article class="col-3">
-        <a href="/detalleProducto">
-          <img src="/images/prodDestacados/img-04.jpg" alt="Destacado 4">
+        <a href="/products/4">
+          <img src="/images/productsBest/img-04.jpg" alt="Destacado 4">
         </a>
         <div>
           <h6>**Titulo Producto**</h6>
           <p> Detalle Producto </p>
           <p>$ 0.00</p>
-          <a class="carrito" href="/carrito"><i class="fas fa-shopping-cart"></i></a>
+          <a class="carrito" href="/purchase"><i class="fas fa-shopping-cart"></i></a>
         </div>
       </article>
       
@@ -113,5 +115,7 @@
   <!--Include footer -->
   <%- include('partials/footer') %>
   
+  <!-- Include End Body Scripts -->
+  <%- include('partials/_endBodyScripts') %>
 </body>
 </html>

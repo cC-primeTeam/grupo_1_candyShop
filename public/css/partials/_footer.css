@@ -1,17 +1,12 @@
 /* =====================
 - FOOTER
 ===================== */
-
-a:hover {
-    text-decoration: none;
-    color: grey;
-  }
   
   footer{
     overflow: hidden;
-    background-color: #84d2f1;
+    background-color: var(--celeste-background);
     padding: 20px 0;
-    color: #5b007f;
+    color: var(--violeta-textos);
   }
   footer div section div div{
     padding: 3px;
@@ -41,12 +36,12 @@ a:hover {
   
   footer div section div div div ul li a{
     text-decoration: none;
-    color: #5b007f;
+    color: var(--violeta-textos);
   }
   
-  footer div section div div div ul li a:hoover{
+  footer div section div div div ul li a:hover{
     text-decoration: none;
-    color: grey;
+    color: var(--gris-oscuro);
   }
   
   footer div section div.footer2{
@@ -60,7 +55,7 @@ a:hover {
   }
   
   footer div section div.footer2 div a{
-    color: #5b007f;
+    color: var(--violeta-textos);
   }
   
   footer div section div.footer2 form{
@@ -79,8 +74,8 @@ a:hover {
   
   section#copyright p{
     margin: 0;
-    background-color: #84d2f1;
+    background-color: var(--celeste-background);
     text-align: center;
     font-weight: 700;
-    color: #c3ebfc;
+    color: var(--celeste-claro);
   }

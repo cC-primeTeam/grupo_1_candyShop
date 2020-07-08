@@ -2,3 +2,9 @@
 body {  
     background: rgb(248, 248, 248);
   }
+
+  h1.titularProductsBest{
+    text-align: center;
+    padding: 20px;
+    color: var(--violeta-textos);
+  }

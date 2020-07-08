@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <!-- Include Head -->
+  <%- include('partials/_contentHead') %>
+  
+  <title>CandyShop - Registro</title>
+</head>
+
+<body>
+  <!--include HEADER-->
+  <%- include('partials/header') %>
+  
+  <!--include Nav Bar 2-->
+  <%- include('partials/navBar2') %>
+  
+  <div class="container">
+    <div class="container info-Usuario">
+      <form class="container row">
+        <div class=" container col-6">
+          <label for="email">Email</label>
+          <input type="email" class=" container" id="email" placeholder="name@ejemplo.com">
+        </div>
+        <div class="container col-6">
+          <label for="password">Contraseña</label>
+          <input type="password" class=" container" id="password" placeholder="Contraseña">
+        </div>
+      </div>
+      
+      <h1>Datos del Usuario</h1>
+      
+      <div class="container row info-Registro">
+        <div class=" container col-4">
+          <label for="nombreEmpresa">Nombre Empresa</label>
+          <input type="text" class=" container" id="text" >
+        </div>
+        <div class=" container col-4">
+          <label for="direccion">Dirección</label>
+          <input type="text" class=" container" id="text" >
+        </div>
+        <div class=" container col-4">
+          <label for="telefono">Teléfono</label>
+          <input type="text" class=" container" id="text" >
+        </div>
+        <div class=" container col-4">
+          <label for="razonSocial">Razón social</label>
+          <input type="text" class=" container" id="text" >
+        </div>
+        <div class=" container col-4">
+          <label for="identidad">CUIT/DNI</label>
+          <input type="text" class=" container" id="text" >
+        </div>
+        <div class=" container col-4">
+          <label for="factura">Factura</label>
+          <input type="text" class=" container" id="text" >
+        </div>
+        <div class=" container col-4">
+          <label for="imagen">Cargar Imagen</label>
+          <input type="text" class=" container" id="text" >
+        </div>
+        <div class="btn-group col-4">
+          <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Action
+          </button>
+          <div class="dropdown-menu">
+            <p class="dropdown-item" href="#">Mayorista</p>
+            <p class="dropdown-item" href="#">Minorista</p>
+          </div>
+        </form>
+        
+        
+        <div class="button container craer col-12">
+          <input class="btn btn-success" type="submit" value="Crear Cuenta">
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+  <!--Include footer -->
+  <%- include('partials/footer') %>
+  
+  <!-- Include End Body Scripts -->
+  <%- include('partials/_endBodyScripts') %>
+</body>
+</html>

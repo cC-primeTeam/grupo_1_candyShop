@@ -1,14 +1,23 @@
 /* =====================
 - NAV BAR 2
 ===================== */
-
 nav.navBar2{
-    background-color: #84d2f1;
-  }
+  background-color: var(--celeste-background);
   
-  nav div.nav-sec{
-  }
-  
-  nav div li a.nav-link{
-    color: #5b007f;
-  }
+}
+nav.navBar2 div.nav-sec ul.ulMenuDrop li a{
+  color: var(--violeta-textos);
+}
+nav.navBar2 div.nav-sec ul.ulMenuDrop li a:hover{
+  text-decoration: none;
+  color: var(--violeta-hovercolor);
+}
+
+/* =====================
+- ESPECIALES DROP MENU
+===================== */
+nav.navBar2 div.nav-sec ul.ulMenuDrop li a.nav-link.active,
+nav.navBar2 div.nav-sec ul.ulMenuDrop .show > .nav-link{
+  background-color: var(--violeta-textos);
+  color: var(--blanco);
+}

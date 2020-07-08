@@ -1,4 +1,15 @@
 :root {
-    --amarillo-ml: orange;
+
+    /***CARTA DE COLORES***/
+    --violeta-textos: #5b007f; /* var(--violeta-textos); */
+    --violeta-hovercolor: #b31370; /* var(--violeta-hovercolor); */
+    --rosa-background-header: #F6398B; /* var(--rosa-background-header); */
+    --celeste-background: #84d2f1; /* var(--celeste-background); */
+    --celeste-claro: #c3ebfc; /* var(--celeste-claro); */
+    --gris-oscuro: #7a7979; /* var(--gris-oscuro); */
+    --gris-claro: #e6e6e6; /* var(--gris-claro); */
+    --blanco: #ffffff; /* var(--blanco); */
+
+    /***PRESET FIJOS***/
     --radioDeBorde: 5px;
 }

@@ -6,13 +6,13 @@ let productosParseados = JSON.parse(jsonDeProductos);
 
 let productsController = {
   index: function(req, res, next) {
-    res.render('todosLosProductos');
+    res.render('products');
   },
   detailProduct: function(req, res, next) {
-    let idProducto = req.params.productId;
+    let idProducto = req.params.id;
     for(let i = 0; i < productosParseados.length; i++) {
       if(productosParseados[i].id == idProducto) {
-        res.render('detalleProducto', {
+        res.render('productDetail', {
           producto: productosParseados[i]
         })
       }
@@ -20,7 +20,7 @@ let productsController = {
   },
   // CREAR - muestra formulario vacio para crear
   create: function(req, res, next) {
-    res.render('product-create-form')
+    res.render('productCreateForm');
     //res.render('product-create-form')
   },
   // CREAR - muestra formulario guardar producto
@@ -38,7 +38,7 @@ let productsController = {
   editProduct: function(req, res, next) {
     for(let i = 0; i < productosParseados.length; i++) {
       if (productosParseados[i].id == req.params.productId) {
-        res.render ('product-edit-form', {
+        res.render ('productEditForm', {
           producto: productosParseados[i]
         })
       }

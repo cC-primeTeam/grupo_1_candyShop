@@ -3,7 +3,10 @@ let usersController = {
     res.render('user');
   },
   register: function(req, res, next) {
-    res.render('registro');
+    res.render('register');
+  },
+  registerEdit: function(req, res, next) {
+    res.render('registerEdit');
   },
   login: function(req, res, next) {
     res.render('login');

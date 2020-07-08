@@ -4,7 +4,7 @@
 
 <head>
     <!-- Include Head -->
-    <%- include('partials/contenidoHead') %>
+    <%- include('partials/_contentHead') %>
     
     <title>CandyShop - 404</title>
 </head>
@@ -17,15 +17,18 @@
     <!--include Nav Bar 2-->
     <%- include('partials/navBar2') %>
     <div class="container">
-    <h1><%= error.status %> <%= message %></h1>
-    <h2>Hemos buscado en todos los rincones de nuestros depositos y no hemos podido encontrar venus que tanto deseas</h2>
-    <h4>Por favor, revisa la URL o regresa a la página principal.</h4>
-    <!-- <pre><%= error.stack %></pre> -->
+        <h1><%= error.status %> <%= message %></h1>
+        <h2>Hemos buscado en todos los rincones de nuestros depositos y no hemos podido encontrar venus que tanto deseas</h2>
+        <h4>Por favor, revisa la URL o regresa a la página principal.</h4>
+        <!-- <pre><%= error.stack %></pre> -->
     </div>
     
     
     <!--Include footer -->
     <%- include('partials/footer') %>
+    
+    <!-- Include End Body Scripts -->
+    <%- include('partials/_endBodyScripts') %>
     
 </body>
 </html>

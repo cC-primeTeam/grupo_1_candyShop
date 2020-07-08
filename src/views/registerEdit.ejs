@@ -3,7 +3,7 @@
 
 <head>
   <!-- Include Head -->
-  <%- include('partials/contenidoHead') %>
+  <%- include('partials/_contentHead') %>
   
   <title>CandyShop - Registro</title>
 </head>
@@ -14,15 +14,15 @@
   
   <!--include Nav Bar 2-->
   <%- include('partials/navBar2') %>
-  
+  <h1>EDITA TU PERFIL</h1>
   <div class="container info-Usuario">
     <form class="container row">
       <div class=" container col-6">
-        <label for="exampleFormControlInput1">Email</label>
+        <label for="email">Email</label>
         <input type="email" class=" container" id="email" placeholder="name@ejemplo.com">
       </div>
       <div class="container col-6">
-        <label for="exampleFormControlSelect1">Contraseña</label>
+        <label for="contrseña">Contraseña</label>
         <input type="password" class=" container" id="password" placeholder="Contraseña">
       </div>
     </div>
@@ -62,6 +62,9 @@
   
   <!--Include footer -->
   <%- include('partials/footer') %>
+  
+  <!-- Include End Body Scripts -->
+  <%- include('partials/_endBodyScripts') %>
   
 </body>
 </html>

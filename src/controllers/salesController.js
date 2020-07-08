@@ -1,6 +1,6 @@
 let salesController = {
-    carrito: function(req, res, next) {
-    res.render('carrito');
+    purchase: function(req, res, next) {
+    res.render('purchase');
   }
   
 }

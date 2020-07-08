@@ -1,58 +1,57 @@
 <header>
-  <!-- NAV PRINCIPAL-->
-  <div class="container-fluid">
-    <div class="row">
+  <div class="masterContain container-fluid">
+    <div class="firstDivRow row">
       <nav class="navbar navbar-expand-lg navbar-light container">
-        <!-- LOGO CANDYSHOP-->
-        <a class="col-4" href="/"><img src="/images/logo/logo-01.svg" alt=""></a>     
         
-        <!-- HAMBURGUESA
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-          </div> -->
-          
-          
-          <!--SEARCH BAR-->
-          <!-- <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <a href=""><i class="fas fa-search"></i></a>
-          </form> -->
-          <div class="col-4">
-            <form action="/search" method="GET" class="search-form">
-              <input type="text" name="keywords" placeholder="Busca tus candy's" class="search-form_input">
-              <button type="submit" class="search-form_button"><i class="fas fa-search"></i></button>
-            </form>
-          </div>
-          <!--BOTONES DERECHA-->
-          <div class="col-4">
-            <ul class="navbar-nav mr-auto mt-2 mt-lg-0 botonesHeader">
-              <li class="nav-item active">
-                <!-- <a class="nav-link" href="#">Login / Registro<span class="sr-only">(current)</span></a> -->
-                
-                <!--MENU DROP TU CUENTA-->
-                <ul class="nav nav-pills">
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle " data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><i class="fas fa-users"></i> TU CUENTA</a>
-                    <div class="dropdown-menu">
-                      <a class="dropdown-item d-none" href="#"><i class="fas fa-sign-in-alt"></i> LOGIN</a>
-                      <a class="dropdown-item" href="/registro"><i class="fas fa-money-check"></i>   REGISTRATE</a>
-                      <div class="dropdown-divider"></div>
-                      <a class="dropdown-item" href="#"> <i class="fas fa-cog"></i> Modificar perfil</a>
-                      <a class="dropdown-item" href="/formularioProducto"><i class="fas fa-clipboard-check"></i> Carga productos</a>
-                      <a class="dropdown-item" href="#"><i class="fas fa-stopwatch"></i> Proximamente</a>
-                    </div>
-                  </li>
-                </ul>
-                <li class="nav-item">
-                  <a class="nav-link" href="/carrito"></a>
-                </li><li class="nav-item">
-                  <a class="nav-link" href="/carrito">Carrito</a>
-                </li>
-              </ul>
-            </div>
-          </nav>
-        </div>
-      </div>
-    </header>
+        <!-- LOGO CANDYSHOP-->
+        <div class="containLogo col-12 col-sm-6 col-lg-4">
+          <a class="col-12" href="/"><img src="/images/logo/logo-01.svg" alt=""></a>     
+        </div> <!-- /.containLogo -->
+        
+        <!--SEARCH BAR-->
+        <div class="containSearch col-12 col-sm-6 col-lg-4">
+          <form action="/search" method="GET" class="search-form">
+            <input type="text" name="keywords" placeholder="Busca tus candy's" class="search-form_input">
+            <button type="submit" class="search-form_button"><i class="fas fa-search"></i></button>
+          </form>
+        </div> <!-- /.containSearch -->
+        
+        <!--BOTONES DERECHA-->
+        <div class="containButtons col-12 col-sm-12 col-lg-4">
+          <!--MENU DROP TU CUENTA-->
+          <ul class="headerButtons nav nav-pills">
+            <li class="categDropDown nav-item dropdown">
+              <a class="categDropDn nav-link dropdown-toggle " data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><i class="fas fa-users"></i> TU CUENTA</a>
+              <div class="categDropMenu dropdown-menu">
+                <a class="dropdown-item d-none" href="#"><i class="fas fa-sign-in-alt"></i> LOGIN</a>
+                <a class="dropdown-item" href="/users/register"><i class="fas fa-money-check"></i>   REGISTRATE</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="/users/registerEdit"> <i class="fas fa-cog"></i> Modificar perfil</a>
+                <a class="dropdown-item" href="/products/create"><i class="fas fa-clipboard-check"></i> Carga productos</a>
+                <a class="dropdown-item" href="#"><i class="fas fa-stopwatch"></i> Proximamente</a>
+              </div> <!-- /.categDropMenu -->
+            </li> <!-- /.categDropDown -->
+            
+            <li class="liFixed liCarrito nav-item">
+              <a class="nav-link" href="/sales/purchase"><i class="fas fa-shopping-cart"></i> Carrito</a>
+            </li> <!-- /.liCarrito -->
+
+          </ul> <!-- /.headerButtons -->
+        </div> <!-- /.containButtons -->
+        
+      </nav> <!-- /.navbar -->
+    </div> <!-- /.firstDivRow -->
+  </div> <!-- /.masterContain --> 
+</header>
+
+
+
+
+<!-- HAMBURGUESA
+  <div class="burger">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+    </div>
+  </div> -->
