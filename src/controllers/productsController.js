@@ -10,14 +10,15 @@ let productsController = {
   },
   // DETALLE PRODUCTO
   detailProduct: function(req, res, next) {
-    let idProducto = req.params.id;
-    for(let i = 0; i < productosParseados.length; i++) {
-      if(productosParseados[i].id == idProducto) {
-        res.render('productDetail', {
-          producto: productosParseados[i]
-        })
-      }
-    }
+  //   let idProducto = req.params.id;
+  //   for(let i = 0; i < productosParseados.length; i++) {
+  //     if(productosParseados[i].id == idProducto) {
+  //       res.render('productDetail', {
+  //         producto: productosParseados[i]
+  //       })
+  //     }
+  //   }
+  res.send('ok!!!')
   },
   // CREAR - muestra formulario vacio para crear
   create: function(req, res, next) {

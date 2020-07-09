@@ -18,18 +18,17 @@ let upload = multer({ storage: storage })
 //TODOS LOS PRODUCTOS
 router.get('/', productsController.index);
 
-//DETALLE DE PRODCUTO
-router.get('/detail/:idProdcuto', productsController.detailProduct);
-
 //CREAR UN PRODUCTO
 router.get('/create', productsController.create);
 router.post('/create', upload.any(), productsController.store);
 
 //EDITAR UN PRODUCTO
-router.get('/edit/:idProducto', productsController.editProduct);
-router.put('/edit/:idProducto', productsController.updateProduct);
-
+router.get('/edit/:id', productsController.editProduct);
+router.put('/edit/:id', productsController.updateProduct);
 // ELIMINAR UN PRODUCTO
 router.delete('/delete/:productId', productsController.destroy);
+
+//DETALLE DE PRODCUTO
+router.get('/:id', productsController.detailProduct);
 
 module.exports = router;
