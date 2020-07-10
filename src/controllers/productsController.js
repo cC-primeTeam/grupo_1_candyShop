@@ -27,6 +27,11 @@ let productsController = {
   },
   // CREAR - muestra formulario guardar producto
   store: function(req, res, next) {
+    req.body.costo = Number(req.body.costo);
+    req.body.utilidad = Number(req.body.utilidad);
+    req.body.precio = Number(req.body.precio);
+    req.body.descuento = Number(req.body.descuento);
+    req.body.precioOferta = Number(req.body.precioOferta);
     let nuevoProducto = {
       idProducto: Number(productosParseados.length + 1),
       ...req.body,
@@ -35,10 +40,11 @@ let productsController = {
     productosParseados.push(nuevoProducto);
     let productosActualizados = JSON.stringify(productosParseados);
     fs.writeFileSync(path.join(__dirname, '../data/productsDataBase.json'), productosActualizados);
-    res.redirect('/products/productDetail/' + nuevoProdcuto.idProducto)
+    res.redirect('/products/' + nuevoProducto.idProducto)
   },
   // MODIFICAR - muestra formulario para editar producto con el producto
   editProduct: function(req, res, next) {
+    //res.send(productosParseados)
     for(let i = 0; i < productosParseados.length; i++) {
       if (productosParseados[i].idProducto == req.params.id) {
         res.render ('productEditForm', {
@@ -50,14 +56,14 @@ let productsController = {
   // MODIFICAR - muestra formulario para actualizar producto.
   updateProduct: (req, res) => {
     let productoActualizado = {
-      id: Number(req.params.productId),
+      id: Number(req.params.id),
       ...req.body
     };
     for(let i = 0; i < productosParseados.length; i++) {
-      if (productosParseados[i].id == productoActualizado.id) {
+      if (productosParseados[i].id == productoActualizado.idProducto) {
         productosParseados[i] = productoActualizado;
         fs.writeFileSync(path.join(__dirname, '../data/productsDataBase.json'), JSON.stringify(productosParseados));
-        res.redirect('/products/detail/' + productoActualizado.id)
+        res.redirect('/products/' + productoActualizado.idProducto)
       }
     }
   },

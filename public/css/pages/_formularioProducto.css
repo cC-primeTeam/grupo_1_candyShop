@@ -48,6 +48,25 @@ section.detalleProducto h5 {
     font-weight: bold;
 }
 
+/* =====================
+- MAS VENDIDOS
+===================== */
+
+section.masVendidos {
+    margin-top: 10px;
+    border-top: solid black 1px;
+}
+
+section.masVendidos h5 {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+
+/* =====================
+- OFERTA
+===================== */
+
 section.oferta {
     margin-top: 10px;
     border-top: solid black 1px;

@@ -25,46 +25,76 @@
                                 <label for="nombreProducto">Nombre del Producto:</label>
                                 <input type="text" name="nombre" placeholder="Ej: Alfajor Jorgito" class="form-control">
                                 <label for="categoria">Categoria del Producto:</label>
-                                <input type="text" name="categoria" placeholder="Ej: Alfajor" class="form-control">
+                                <div class="input-group mb-3 col-md-6">
+                                    <div class="input-group-prepend">
+                                        <label class="input-group-text" for="inputGroupSelect01">Categoria</label>
+                                    </div>
+                                    <select name="categoria" class="custom-select" id="inputGroupSelect01">
+                                        <option selected>Seleccione una opcion...</option>
+                                        <option value="Alfajores">Alfajores</option>
+                                        <option value="Caramelos">Caramelos</option>
+                                        <option value="Chocolates">Chocolates</option>
+                                        <option value="Gomitas">Gomitas</option>
+                                    </select>
+                                </div>
                                 <label for="detalleProdcutos">Detalle del Producto:</label>
                                 <textarea class="form-control col-md-12 mb-12" id="detalleProductos" name="detalle" placeholder="Por favor coloque una descricion del producto aqui.."></textarea>
                             </section>
                             <section class="costoProducto col-md-4 mb-12">
-                                <label for="categoria">Cantidad por caja:</label>
-                                <input type="text" name="cantidad" placeholder="Ej: cantidad" class="form-control">
-                                <label for="Costo">Costo</label>
-                                <input type="text" class="form-control" name="costo" required placeholder="Ej: $ 10.00">
+                                <!-- <label for="categoria">Cantidad por caja:</label>
+                                <input type="text" name="cantidad" placeholder="Ej: cantidad" class="form-control"> -->
                             </section>
                             <section class="precios col-12">
-                                <h5 class="">PRECIO MINORISTA</h5>
-                                <label for="utilidadMinorista">Utilidad</label>
-                                <input type="text" class="form-control" name="utilidadMinorista" required placeholder="Ej: % 50">
-                                <label for="precioMinorista">Precio</label>
-                                <input type="text" class="form-control" name="precioMinorista" required placeholder="Ej: $ 15.00">
-                                <h5 class="">PRECIO MAYORISTA</h5>
+                                <h5 class="">PRECIO</h5>
+                                <label for="Costo">Costo</label>
+                                <input type="text" class="form-control" name="costo" required placeholder="Ej: $ 10.00">
+                                <label for="utilidad">Utilidad</label>
+                                <input type="number" class="form-control" name="utilidad" required placeholder="Ej: % 50">
+                                <label for="precio">Precio</label>
+                                <input type="number" class="form-control" name="precio" required placeholder="Ej: $ 15.00">
+                                <!-- <h5 class="">PRECIO MAYORISTA</h5>
                                 <label for="utilidadMinorista">Utilidad</label>
                                 <input type="text" class="form-control" name="utilidadMayorista" required placeholder="Ej: % 35">
                                 <label for="precioMayorista">Precio</label>
-                                <input type="text" class="form-control" name="precioMayorista" required placeholder="Ej: $ 13.50">
+                                <input type="text" class="form-control" name="precioMayorista" required placeholder="Ej: $ 13.50"> -->
+                            </section>
+                            <section class="masVendidos col-12">
+                                <h5>MAS VENDIDOS</h5>
+                                <div class="input-group mb-4 col-md-6">
+                                    <div class="input-group-prepend">
+                                        <label class="input-group-text" for="inputGroupSelect01">Mas Vendidos</label>
+                                    </div>
+                                    <select name="masVendidos" class="custom-select" id="inputGroupSelect01">
+                                        <option selected>Seleccione una opcion...</option>
+                                        <option value="si">SI</option>
+                                        <option value="no">NO</option>
+                                    </select>
+                                </div>
                             </section>
                             <section class="oferta col-12">
                                 <h5>OFERTA</h5>
-                                <div class="form-group form-check">
-                                    <input type="checkbox" name="oferta" class="form-check-input">
-                                    <label class="form-check-label" for="exampleCheck1">Marcar para poner en oferta</label>
+                                <div class="input-group mb-4 col-md-6">
+                                    <div class="input-group-prepend">
+                                        <label class="input-group-text" for="inputGroupSelect01">Oferta</label>
+                                    </div>
+                                    <select name="oferta" class="custom-select" id="inputGroupSelect01">
+                                        <option selected>Seleccione una opcion...</option>
+                                        <option value="si">SI</option>
+                                        <option value="no">NO</option>
+                                    </select>
                                 </div>
                                 <div class="col-md-4 mb-12">
                                     <label for="descuento">Descuento</label>
-                                    <input type="text" name="descuento" class="form-control" placeholder="Ej: % 10">
+                                    <input type="number" name="descuento" class="form-control" placeholder="Ej: % 10">
                                 </div>
                                 <div class="col-md-4 mb-12">
-                                    <label for="descuento">Precio Oferta Minorista</label>
-                                    <input type="text" name="ofertaMinorista" class="form-control" placeholder="Ej: $ 10">
+                                    <label for="descuento">Precio Oferta</label>
+                                    <input type="number" name="precioOferta" class="form-control" placeholder="Ej: $ 10">
                                 </div>
-                                <div class="col-md-4 mb-12">
+                                <!-- <div class="col-md-4 mb-12">
                                     <label for="descuento">Precio Oferta Mayorista</label>
-                                    <input type="text" name="ofertaMayorista" class="form-control" placeholder="Ej: $ 10">
-                                </div>
+                                    <input type="number" name="ofertaMayorista" class="form-control" placeholder="Ej: $ 10">
+                                </div> -->
                             </section>
                         </div>
                     </div>
@@ -79,8 +109,6 @@
         </div>    
     </div>
 </div>
-
-
 
 <!--Include footer -->
 <%- include('partials/footer') %>

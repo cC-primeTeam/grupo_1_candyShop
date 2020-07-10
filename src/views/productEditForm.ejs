@@ -11,8 +11,74 @@
 <body>
     <!--include HEADER-->
     <%- include('partials/header') %>
-
-<h1>EDICION DE PRODCUTOS</h1>
+    <div class="container">
+        <div class="row">
+            <div class= "col-md-12 mb-12 tituloForm">
+                <h1 class="col-md-8 col-mb-12">EDITANDO PRODUCTO <i>Id: <%= producto.idProducto %> Nombre: <%= producto.nombre %></i>
+            </div>
+            <div class="col-md-8 mb-12 contenidoForm">
+                <form action="/products/edit/<%= producto.idProducto %>?_method=put" method="post" enctype="multipart/form-data">
+                    <div class="row">
+                        <div class="row">
+                            <section class="detalleProducto col-md-12 mb-12">
+                                <h5>DETALLE PRODUCTO</h5>
+                                <label for="nombreProducto">Nombre del Producto:</label>
+                                <input type="text" name="nombre" placeholder="Ej: Alfajor Jorgito" class="form-control" value="<%= producto.nombre %>">
+                                <label for="categoria">Categoria del Producto:</label>
+                                <input type="text" name="categoria" placeholder="Ej: Alfajor" class="form-control" value="<%= producto.categoria %>">
+                                <label for="detalleProdcutos">Detalle del Producto:</label>
+                                <textarea class="form-control col-md-12 mb-12" id="detalleProductos" name="detalle" placeholder="<%= producto.detalle %>"></textarea>
+                            </section>
+                            <section class="costoProducto col-md-4 mb-12">
+                                <label for="categoria">Cantidad por caja:</label>
+                                <input type="text" name="cantidad" placeholder="Ej: cantidad" class="form-control" value="<%= producto.cantidad %>">
+                                <label for="Costo">Costo</label>
+                                <input type="text" class="form-control" name="costo" required placeholder="Ej: $ 10.00" value="<%= producto.costo %>">
+                            </section>
+                            <section class="precios col-12">
+                                <h5 class="">PRECIO MINORISTA</h5>
+                                <label for="utilidadMinorista">Utilidad</label>
+                                <input type="text" class="form-control" name="utilidadMinorista" required placeholder="Ej: % 50" value="<%= producto.utilidadMinorista %>">
+                                <label for="precioMinorista">Precio</label>
+                                <input type="text" class="form-control" name="precioMinorista" required placeholder="Ej: $ 15.00" value="<%= producto.precioMinorista %>">
+                                <h5 class="">PRECIO MAYORISTA</h5>
+                                <label for="utilidadMayorista">Utilidad</label>
+                                <input type="text" class="form-control" name="utilidadMayorista" required placeholder="Ej: % 35" value="<%= producto.utilidadMayorista %>">
+                                <label for="precioMayorista">Precio</label>
+                                <input type="text" class="form-control" name="precioMayorista" required placeholder="Ej: $ 13.50" value="<%= producto.utilidadMayorista %>">
+                            </section>
+                            <section class="oferta col-12">
+                                <h5>OFERTA</h5>
+                                <div class="form-group form-check">
+                                    <input type="checkbox" name="oferta" class="form-check-input" value="<%= producto.oferta %>">
+                                    <label class="form-check-label" for="exampleCheck1">Marcar para poner en oferta</label>
+                                </div>
+                                <div class="col-md-4 mb-12">
+                                    <label for="descuento">Descuento</label>
+                                    <input type="text" name="descuento" class="form-control" placeholder="Ej: % 10" value="<%= producto.escuento %>">
+                                </div>
+                                <div class="col-md-4 mb-12">
+                                    <label for="descuento">Precio Oferta Minorista</label>
+                                    <input type="text" name="ofertaMinorista" class="form-control" placeholder="Ej: $ 10" value="<%= producto.ofertaMinorista %>">
+                                </div>
+                                <div class="col-md-4 mb-12">
+                                    <label for="descuento">Precio Oferta Mayorista</label>
+                                    <input type="text" name="ofertaMayorista" class="form-control" placeholder="Ej: $ 10" value="<%= producto.ofertaMayorista %>">
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-12 contenedorImg">
+                    <img src="/images/uploads/no-imagen.jpg" class="card-img-top imagenForm" alt="">
+                    <input class="btn" type="file" name="imgProducto">
+                    <!-- <button type="button" class="btn btn-secondary btn-lg btn-block botonForm1 col-md-12 mb-8">Cargar Imagen</button> -->
+                </div>
+                <button type="submit" class="btn btn-success btn-lg btn-block botonForm2 col-md-12 mb-12">Guardar Producto</button>
+            </form>
+        </div>    
+    </div>
+</div>
 
 <!--Include footer -->
 <%- include('partials/footer') %>
