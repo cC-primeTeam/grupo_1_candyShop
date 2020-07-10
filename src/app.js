@@ -1,15 +1,16 @@
-let createError = require('http-errors');
-let express = require('express');
-let path = require('path');
-let cookieParser = require('cookie-parser');
-let logger = require('morgan');
+const createError = require('http-errors');
+const express = require('express');
+const path = require('path');
+const cookieParser = require('cookie-parser');
+const logger = require('morgan');
+const methodOverride =  require('method-override');
 
-let mainRouter = require('./routes/main');
-let productsRouter = require('./routes/products');
-let salesRouter = require('./routes/sales');
-let usersRouter = require('./routes/users');
+const mainRouter = require('./routes/main');
+const productsRouter = require('./routes/products');
+const salesRouter = require('./routes/sales');
+const usersRouter = require('./routes/users');
 
-let app = express();
+const app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -20,6 +21,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '../public')));
+app.use(methodOverride('_method'));
 
 //Rutas
 app.use('/', mainRouter);

@@ -60,7 +60,7 @@ let productsController = {
   },
   // MODIFICAR - muestra formulario para editar producto con el producto
   editProduct: function(req, res, next) {
-    //res.send(productosParseados)
+    //res.send(req.body)
     for(let i = 0; i < productosParseados.length; i++) {
       if (productosParseados[i].idProducto == req.params.id) {
         res.render ('productEditForm', {
@@ -72,11 +72,12 @@ let productsController = {
   // MODIFICAR - muestra formulario para actualizar producto.
   updateProduct: (req, res) => {
     let productoActualizado = {
-      id: Number(req.params.id),
+      idProducto: Number(req.params.id),
       ...req.body
-    };
+    }
+    //res.send(productoActualizado)
     for(let i = 0; i < productosParseados.length; i++) {
-      if (productosParseados[i].id == productoActualizado.idProducto) {
+      if (productosParseados[i].idProducto == productoActualizado.idProducto) {
         productosParseados[i] = productoActualizado;
         fs.writeFileSync(path.join(__dirname, '../data/productsDataBase.json'), JSON.stringify(productosParseados));
         res.redirect('/products/' + productoActualizado.idProducto)
@@ -85,10 +86,10 @@ let productsController = {
   },
   destroy : (req, res) => {
 		for(let i = 0; i < productosParseados.length; i++) {
-			if(productosParseados[i].id == req.params.productId) {
+			if(productosParseados[i].idProducto == req.params.id) {
 				let index = productosParseados.indexOf(productosParseados[i]); productosParseados.splice(index, 1);
 				fs.writeFileSync(path.join(__dirname, '../data/productsDataBase.json'), JSON.stringify(productosParseados));
-				res.redirect('todosLosProductos')
+				res.redirect('/products/')
 			}
 		}
   }
