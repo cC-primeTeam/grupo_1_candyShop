@@ -95,3 +95,17 @@ div.contenedorImg {
     align-items: flex-end;
     border-color: red;
 }
+
+/* =====================
+- CONTENEDOR IMAGEN
+===================== */
+
+section.contenedorImg {
+    margin-top: 10px;
+    border-top: solid black 1px;
+}
+
+section.contenedorImg h5 {
+    margin-top: 10px;
+    font-weight: bold;
+}

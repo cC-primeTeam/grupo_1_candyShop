@@ -11,147 +11,130 @@
 <body>
     <!--include HEADER-->
     <%- include('partials/header') %>
+    
     <div class="container">
         <div class="row">
             <div class= "col-md-12 mb-12 tituloForm">
-                <h1 class="col-md-8 col-mb-12">EDITANDO PRODUCTO <i>Id: <%= producto.idProducto %> Nombre: <%= producto.nombre %></i>
-                </div>
-                <div class="col-md-8 mb-12 contenidoForm">
-                    <form action="/products/edit/<%= producto.idProducto %>?_method=put" method="post" enctype="multipart/form-data">
-                        <div class="row">
-                            <div class="row">
-                                <section class="detalleProducto col-md-12 mb-12">
-                                    <h5>DETALLE PRODUCTO</h5>
-                                    <label for="nombreProducto">Nombre del Producto:</label>
-                                    <input type="text" name="nombre" placeholder="Ej: Alfajor Jorgito" class="form-control" value="<%= producto.nombre %>">
-                                    <label for="categoria">Categoria del Producto:</label>
-                                    <div class="input-group mb-3 col-md-6">
-                                        <div class="input-group-prepend">
-                                            <label class="input-group-text" for="inputGroupSelect01">Categoria</label>
-                                        </div>
-                                        <select name="categoria" class="custom-select" id="inputGroupSelect01">
-                                            <option selected>Seleccione una opcion...</option>
-                                            <% if(producto.categoria == "Alfajores") { %>
-                                                <option value="Alfajores" selected>Alfajores</option>
+                <h1 class="col-md-8 col-mb-12">EDITANDO PRODUCTO</h1>
+                <h5>Id: <%= producto.idProducto %> Nombre: <%= producto.nombre %></h5>
+            </div>
+            <div class="col-md-12 mb-12 contenidoForm">
+                <form action="/products/edit/<%= producto.idProducto %>?_method=put" method="post" enctype="multipart/form-data">
+                    <div class="row">
+                        <section class="detalleProducto col-md-8 mb-12">
+                            <h5>DETALLE PRODUCTO</h5>
+                            <label for="nombreProducto">Nombre del Producto:</label>
+                            <input type="text" name="nombre" placeholder="Ej: Alfajor Jorgito" class="form-control" value="<%= producto.nombre %>">
+                            <label for="categoria">Categoria del Producto:</label>
+                            <div class="input-group mb-3 col-md-6">
+                                <div class="input-group-prepend">
+                                    <label class="input-group-text" for="inputGroupSelect01">Categoria</label>
+                                </div>
+                                <select name="categoria" class="custom-select" id="inputGroupSelect01">
+                                    <option selected>Seleccione una opcion...</option>
+                                    <% if(producto.categoria == "Alfajores") { %>
+                                        <option value="Alfajores" selected>Alfajores</option>
+                                        <% } else { %>
+                                            <option value="Alfajores">Alfajores</option>
+                                            <% } %>
+                                            <% if(producto.categoria == "Caramelos") { %>
+                                                <option value="Caramelos" selected>Caramelos</option>
                                                 <% } else { %>
-                                                    <option value="Alfajores">Alfajores</option>
+                                                    <option value="Caramelos">Caramelos</option>
                                                     <% } %>
-                                                    <% if(producto.categoria == "Caramelos") { %>
-                                                        <option value="Caramelos" selected>Caramelos</option>
+                                                    <% if(producto.categoria == "Chocolates") { %>
+                                                        <option value="Chocolates" selected>Chocolates</option>
                                                         <% } else { %>
-                                                            <option value="Caramelos">Caramelos</option>
+                                                            <option value="Chocolates">Chocolates</option>
                                                             <% } %>
-                                                            <% if(producto.categoria == "Chocolates") { %>
-                                                                <option value="Chocolates" selected>Chocolates</option>
+                                                            <% if(producto.categoria == "Gomitas") { %>
+                                                                <option value="Gomitas" selected>Gomitas</option>
                                                                 <% } else { %>
-                                                                    <option value="Chocolates">Chocolates</option>
+                                                                    <option value="Gomitas">Gomitas</option>
                                                                     <% } %>
-                                                                    <% if(producto.categoria == "Gomitas") { %>
-                                                                        <option value="Gomitas" selected>Gomitas</option>
+                                                                </select>
+                                                            </div>
+                                                            <label for="detalleProdcutos">Detalle del Producto:</label>
+                                                            <textarea class="form-control col-md-12 mb-12" id="detalleProductos" name="detalle" placeholder="<%= producto.detalle %>"></textarea>
+                                                        </section>
+                                                        <section class="precios col-md-8 mb-12">
+                                                            <h5 class="">PRECIO</h5>
+                                                            <label for="Costo">Costo</label>
+                                                            <input type="text" class="form-control" name="costo" required placeholder="Ej: $ 10.00" value="<%= producto.costo %>">
+                                                            <label for="utilidad">Utilidad</label>
+                                                            <input type="text" class="form-control" name="utilidad" required placeholder="Ej: % 50" value="<%= producto.utilidad %>">
+                                                            <label for="precio">Precio</label>
+                                                            <input type="text" class="form-control" name="precio" required placeholder="Ej: $ 15.00" value="<%= producto.precio %>">
+                                                        </section>
+                                                        <section class="masVendidos col-md-8 mb-12">
+                                                            <h5>MAS VENDIDOS</h5>
+                                                            <div class="input-group mb-4 col-md-6">
+                                                                <div class="input-group-prepend">
+                                                                    <label class="input-group-text" for="inputGroupSelect01">Mas Vendidos</label>
+                                                                </div>
+                                                                <select name="masVendidos" class="custom-select" id="inputGroupSelect01">
+                                                                    <option selected>Seleccione una opcion...</option>
+                                                                    <% if(producto.masVendidos == "si") { %>
+                                                                        <option value="SI" selected>SI</option>
                                                                         <% } else { %>
-                                                                            <option value="Gomitas">Gomitas</option>
+                                                                            <option value=SI>SI</option>
                                                                             <% } %>
-                                                                        </select>
-                                                                    </div>
-                                                                    <label for="detalleProdcutos">Detalle del Producto:</label>
-                                                                    <textarea class="form-control col-md-12 mb-12" id="detalleProductos" name="detalle" placeholder="<%= producto.detalle %>"></textarea>
-                                                                </section>
-                                                                <section class="costoProducto col-md-4 mb-12">
-                                                                    <!-- <label for="categoria">Cantidad por caja:</label>
-                                                                        <input type="text" name="cantidad" placeholder="Ej: cantidad" class="form-control"> -->
-                                                                    </section>
-                                                                    <section class="precios col-12">
-                                                                        <h5 class="">PRECIO</h5>
-                                                                        <label for="Costo">Costo</label>
-                                                                        <input type="text" class="form-control" name="costo" required placeholder="Ej: $ 10.00" value="<%= producto.costo %>">
-                                                                        <label for="utilidad">Utilidad</label>
-                                                                        <input type="text" class="form-control" name="utilidad" required placeholder="Ej: % 50" value="<%= producto.utilidad %>">
-                                                                        <label for="precio">Precio</label>
-                                                                        <input type="text" class="form-control" name="precio" required placeholder="Ej: $ 15.00" value="<%= producto.precio %>">
-                                                                        <!-- <h5 class="">PRECIO MAYORISTA</h5>
-                                                                            <label for="utilidadMinorista">Utilidad</label>
-                                                                            <input type="text" class="form-control" name="utilidadMayorista" required placeholder="Ej: % 35">
-                                                                            <label for="precioMayorista">Precio</label>
-                                                                            <input type="text" class="form-control" name="precioMayorista" required placeholder="Ej: $ 13.50"> -->
+                                                                            <% if(producto.masVendidos == "no") { %>
+                                                                                <option value="NO" selected>NO</option>
+                                                                                <% } else { %>
+                                                                                    <option value="NO">NO</option>
+                                                                                    <% } %>
+                                                                                </select>
+                                                                            </div>
                                                                         </section>
-                                                                        <section class="masVendidos col-12">
-                                                                            <h5>MAS VENDIDOS</h5>
+                                                                        <section class="oferta col-md-8 mb-12">
+                                                                            <h5>OFERTA</h5>
                                                                             <div class="input-group mb-4 col-md-6">
                                                                                 <div class="input-group-prepend">
-                                                                                    <label class="input-group-text" for="inputGroupSelect01">Mas Vendidos</label>
+                                                                                    <label class="input-group-text" for="inputGroupSelect01">Oferta</label>
                                                                                 </div>
-                                                                                <select name="masVendidos" class="custom-select" id="inputGroupSelect01">
+                                                                                <select name="oferta" class="custom-select" id="inputGroupSelect01">
                                                                                     <option selected>Seleccione una opcion...</option>
-                                                                                    <% if(producto.masVendidos == "si") { %>
+                                                                                    <% if(producto.oferta == "si") { %>
                                                                                         <option value="SI" selected>SI</option>
                                                                                         <% } else { %>
                                                                                             <option value=SI>SI</option>
                                                                                             <% } %>
-                                                                                            <% if(producto.masVendidos == "no") { %>
+                                                                                            <% if(producto.oferta == "no") { %>
                                                                                                 <option value="NO" selected>NO</option>
                                                                                                 <% } else { %>
                                                                                                     <option value="NO">NO</option>
                                                                                                     <% } %>
                                                                                                 </select>
                                                                                             </div>
+                                                                                            <div class="col-md-4 mb-12">
+                                                                                                <label for="descuento">Descuento</label>
+                                                                                                <input type="text" name="descuento" class="form-control" placeholder="Ej: % 10" value="<%= producto.descuento %>">
+                                                                                            </div>
+                                                                                            <div class="col-md-4 mb-12">
+                                                                                                <label for="descuento">Precio Oferta</label>
+                                                                                                <input type="text" name="precioOferta" class="form-control" placeholder="Ej: $ 10" value="<%= producto.precioOferta %>">
+                                                                                            </div>
                                                                                         </section>
-                                                                                        <section class="oferta col-12">
-                                                                                            <h5>OFERTA</h5>
-                                                                                            <div class="input-group mb-4 col-md-6">
-                                                                                                <div class="input-group-prepend">
-                                                                                                    <label class="input-group-text" for="inputGroupSelect01">Oferta</label>
-                                                                                                </div>
-                                                                                                <select name="oferta" class="custom-select" id="inputGroupSelect01">
-                                                                                                    <option selected>Seleccione una opcion...</option>
-                                                                                                    <% if(producto.oferta == "si") { %>
-                                                                                                        <option value="SI" selected>SI</option>
-                                                                                                        <% } else { %>
-                                                                                                            <option value=SI>SI</option>
-                                                                                                            <% } %>
-                                                                                                            <% if(producto.oferta == "no") { %>
-                                                                                                                <option value="NO" selected>NO</option>
-                                                                                                                <% } else { %>
-                                                                                                                    <option value="NO">NO</option>
-                                                                                                                    <% } %>
-                                                                                                                </select>
-                                                                                                            </div>
-                                                                                                            <div class="col-md-4 mb-12">
-                                                                                                                <label for="descuento">Descuento</label>
-                                                                                                                <input type="text" name="descuento" class="form-control" placeholder="Ej: % 10" value="<%= producto.descuento %>">
-                                                                                                            </div>
-                                                                                                            <div class="col-md-4 mb-12">
-                                                                                                                <label for="descuento">Precio Oferta</label>
-                                                                                                                <input type="text" name="precioOferta" class="form-control" placeholder="Ej: $ 10" value="<%= producto.precioOferta %>">
-                                                                                                            </div>
-                                                                                                            <!-- <div class="col-md-4 mb-12">
-                                                                                                                <label for="descuento">Precio Oferta Mayorista</label>
-                                                                                                                <input type="number" name="ofertaMayorista" class="form-control" placeholder="Ej: $ 10">
-                                                                                                            </div> -->
-                                                                                                        </section>
-                                                                                                    </div>
-                                                                                                </div>
-                                                                                            </div>
-                                                                                            <div class="col-md-4 mb-12 contenedorImg">
-                                                                                                <img src="/images/uploads/no-imagen.jpg" class="card-img-top imagenForm" alt="">
-                                                                                                <input class="btn" type="file" name="imgProducto">
-                                                                                                <!-- <button type="button" class="btn btn-secondary btn-lg btn-block botonForm1 col-md-12 mb-8">Cargar Imagen</button> -->
-                                                                                            </div>
-                                                                                            <button type="submit" class="btn btn-success btn-lg btn-block botonForm2 col-md-12 mb-12">Guardar Producto</button>
-                                                                                        </form>
-                                                                                        <form action="/products/delete/<%= producto.idProducto %>?_method=delete" method="POST">
-                                                                                            <button type="submit" class="btn btn-danger btn-lg btn-block botonForm2 col-md-12 mb-12">Eliminar Producto</button>
-                                                                                        </form>
-
-                                                                                        
-                                                                                    </div>    
-                                                                                </div>
+                                                                                        <section class="contenedorImg col-md-8 mb-12">
+                                                                                            <h5>CARGAR IMAGEN</h5>
+                                                                                            <input class="btn" type="file" name="imgProducto">
+                                                                                        </section>
+                                                                                    </div>
+                                                                                    <button type="submit" class="btn btn-success btn-lg btn-block botonForm2 col-md-12 mb-12">Guardar Producto</button>
+                                                                                </form>
+                                                                                <form action="/products/delete/<%= producto.idProducto %>?_method=delete" method="POST">
+                                                                                    <button type="submit" class="btn btn-danger btn-lg btn-block botonForm2 col-md-12 mb-12">Eliminar Producto</button>
+                                                                                </form>
                                                                             </div>
-                                                                            
-                                                                            <!--Include footer -->
-                                                                            <%- include('partials/footer') %>
-                                                                            
-                                                                            <!-- Include End Body Scripts -->
-                                                                            <%- include('partials/_endBodyScripts') %>
-                                                                            
-                                                                        </body>
-                                                                        </html>
+                                                                        </div>    
+                                                                    </div>
+                                                                    
+                                                                    <!--Include footer -->
+                                                                    <%- include('partials/footer') %>
+                                                                    
+                                                                    <!-- Include End Body Scripts -->
+                                                                    <%- include('partials/_endBodyScripts') %>
+                                                                    
+                                                                </body>
+                                                                </html>
