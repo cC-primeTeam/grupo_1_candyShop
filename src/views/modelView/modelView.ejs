@@ -1,0 +1,79 @@
+<!--  -->
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <!-- Include Head -->
+    <%- include('partials/_contentHead') %>
+    
+    <title>CandyShop - MODEL</title>
+    
+    
+    
+    <!-- ---------------------------------------------------------
+        ***Estos estilos son solo para la vista model***
+        Si necesitamos estilos personalizados -> 
+        -> se crea una hoja para cada vista en /public/css/pages
+        -> se la vincula en /public/css/style.css
+        --------------------------------------------------------- -->
+        <style>
+            div.masterContainer {color:var(--violeta-textos); padding: 17px;}
+        </style>
+        <!-- ---------------------------------------------------------
+            Borrar hasta aca la partecita de style
+            --------------------------------------------------------- -->
+            
+        </head>
+        
+        <body>
+            <!--include HEADER-->
+            <%- include('partials/header') %>
+            
+            <!--include Nav Bar 2-->
+            <%- include('partials/navBar2') %>
+            
+            <div class="masterContainer container">
+                <div class="masterRow row">
+                    
+                    <div class="divClass1 col-6">
+                        <h1> H1 - TITULO VISTA</h1>
+                        <h2> H2 - Lorem ipsum dolor sit amet. </h2>
+                        <h3> H3 - Lorem ipsum dolor sit amet. </h3>
+                        <h4> H4 - Lorem ipsum dolor sit amet. </h4>
+                        <h5> H5 - Lorem ipsum dolor sit amet. </h5>
+                        <h6> H6 - Lorem ipsum dolor sit amet. </h6>
+                    </div> <!-- /.divClass1 -->
+                    
+                    <div class="divClass2 col-6">
+                        <p class="pClass1"> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eum consequatur aut, illum, dignissimos animi dolorum laudantium inventore vero voluptas quisquam veniam qui vitae. Nostrum unde laborum quis repellat! Nesciunt ipsam sint maiores commodi deleniti aperiam cumque facilis, facere doloremque, odit eius! Optio, dolor itaque. Soluta facere reprehenderit repellat ad optio.
+                        </p> <!-- /.pClass1 -->
+                    </div> <!-- /.divClass2 -->
+                    
+                    <p  class="pClass2 col-12" > Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi eaque omnis expedita, recusandae dolore praesentium optio ipsum labore veritatis quae eos quod voluptatibus incidunt libero fugit est necessitatibus rem quaerat inventore suscipit. Rem nobis facilis mollitia, asperiores vel quod molestias ab molestiae possimus illum harum, totam dicta veniam dignissimos odit. Soluta unde doloribus consequuntur asperiores dolore veritatis aperiam porro repudiandae inventore, adipisci id ipsum ipsam aspernatur praesentium sit corporis repellat voluptatum eaque ullam impedit! Tempora laudantium sint quam maxime excepturi suscipit doloribus esse totam distinctio et quisquam veritatis modi, vitae dignissimos aperiam temporibus, vel neque laborum. Est deleniti ducimus quod quibusdam nihil recusandae iure cum culpa explicabo eius unde itaque cupiditate quisquam, aut beatae dolor laudantium ut nostrum aliquam! Temporibus nihil reiciendis totam ducimus, aspernatur provident neque doloremque vel recusandae hic incidunt maiores iste impedit nisi laboriosam ratione minima atque maxime alias? Omnis beatae enim doloremque debitis nesciunt eligendi hic perspiciatis praesentium quod? Atque ea ipsam obcaecati assumenda voluptates eius non reiciendis harum illo. Facilis numquam quis commodi hic ipsum, ad ipsa neque dolores sapiente vel ea aperiam praesentium tempore maxime exercitationem corporis magnam! Est perferendis odio laborum praesentium maxime, tenetur cum explicabo quaerat eius. Id amet vel iure labore. </p> <!-- /.pClass2 -->
+                    
+                    <Section class="sectionClass1 col-12 container">
+                        <div class="secondaryRow row">
+                            <div class="divClass3 col-6" >
+                                <ul class="ulClass1">
+                                    <li class="liClass1">Item 1</li>
+                                    <li class="liClass2">Item 2</li>
+                                    <li class="liClass3">Item 3</li>
+                                    <li class="liClass4">Item 4</li>
+                                    <li class="liClass5">Item 5</li>
+                                </ul> <!-- /.ulClass1 -->
+                                
+                            </div> <!-- /.divClass3 -->
+                            <p  class="pClass3 col-6" > Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores accusantium molestias sit quo officiis commodi alias necessitatibus eligendi non delectus. Odio amet incidunt doloribus unde ut iusto itaque eum provident distinctio non numquam laborum repellendus, illum, qui error iure expedita! Molestias doloribus nulla nesciunt. A quos similique nostrum quo veniam. </p> <!-- /.pClass3 -->
+                        </div> <!-- /.secondaryRow -->
+                        
+                    </Section> <!-- /.sectionClass1 -->
+                </div> <!-- /.masterRow -->
+            </div> <!-- /.masterContainer -->
+            
+            <!--Include footer -->
+            <%- include('partials/footer') %>
+            
+            <!-- Include End Body Scripts -->
+            <%- include('partials/_endBodyScripts') %>
+        </body>
+        </html>
