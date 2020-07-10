@@ -19,7 +19,8 @@
                 <h5>Id: <%= producto.idProducto %> Nombre: <%= producto.nombre %></h5>
             </div>
             <div class="col-md-12 mb-12 contenidoForm">
-                <form action="/products/edit/<%= producto.idProducto %>?_method=put" method="post" enctype="multipart/form-data">
+                <form action="/products/edit/<%= producto.idProducto %>?_method=put" method="post">
+                    <!-- enctype="multipart/form-data" -->
                     <div class="row">
                         <section class="detalleProducto col-md-8 mb-12">
                             <h5>DETALLE PRODUCTO</h5>
@@ -116,10 +117,10 @@
                                                                                                 <input type="text" name="precioOferta" class="form-control" placeholder="Ej: $ 10" value="<%= producto.precioOferta %>">
                                                                                             </div>
                                                                                         </section>
-                                                                                        <section class="contenedorImg col-md-8 mb-12">
+                                                                                        <!-- <section class="contenedorImg col-md-8 mb-12">
                                                                                             <h5>CARGAR IMAGEN</h5>
                                                                                             <input class="btn" type="file" name="imgProducto">
-                                                                                        </section>
+                                                                                        </section> -->
                                                                                     </div>
                                                                                     <button type="submit" class="btn btn-success btn-lg btn-block botonForm2 col-md-12 mb-12">Guardar Producto</button>
                                                                                 </form>

@@ -14,48 +14,78 @@
   
   <!--include Nav Bar 2-->
   <%- include('partials/navBar2') %>
-  <h1>EDITA TU PERFIL</h1>
-  <div class="container info-Usuario">
-    <form class="container row">
-      <div class=" container col-6">
-        <label for="email">Email</label>
-        <input type="email" class=" container" id="email" placeholder="name@ejemplo.com">
-      </div>
-      <div class="container col-6">
-        <label for="contrseña">Contraseña</label>
-        <input type="password" class=" container" id="password" placeholder="Contraseña">
-      </div>
-    </div>
-    
-    <div class="container row info-Registro">
-      <div class=" container col-4">
-        <label for="exampleFormControlInput1">Dato 1</label>
-        <input type="text" class=" container" id="text" >
-      </div>
-      <div class=" container col-4">
-        <label for="exampleFormControlInput1">Dato 2</label>
-        <input type="text" class=" container" id="text" >
-      </div>
-      <div class=" container col-4">
-        <label for="exampleFormControlInput1">Dato 3</label>
-        <input type="text" class=" container" id="text" >
-      </div>
-      <div class=" container col-4">
-        <label for="exampleFormControlInput1">Dato 4</label>
-        <input type="text" class=" container" id="text" >
-      </div>
-      <div class=" container col-4">
-        <label for="exampleFormControlInput1">Dato 5</label>
-        <input type="text" class=" container" id="text" >
-      </div>
-      <div class=" container col-4">
-        <label for="exampleFormControlInput1">Dato 6</label>
-        <input type="text" class=" container" id="text" >
-      </div>
-    </form>
-    
-    <div class="button">
-      <input class="btn btn-success" type="submit" value="Crear Cuenta">
+  
+  <div class="container">
+    <div class="container info-Usuario">
+      
+            
+      <h1>Edita tu Usuario</h1>
+      
+      
+      <form action="" method="post" enctype="multipart/form-data" class="container row">
+        <div class=" container col-6">
+          <label for="exampleInputEmail1">Email</label>
+          <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        </div>
+        <div class="container col-6">
+          <label for="exampleInputPassword1">Contraseña</label>
+          <input type="password" name="password" class="form-control" id="exampleInputPassword1">
+        </div>
+        
+        <div class="container row info-Registro">
+          <div class=" container col-4">
+            
+            <label for="nombreEmpresa">Nombre Empresa</label>
+            <input type="text" name="nombreEmpresa" class="form-control" id="text" aria-describedby="emailHelp">
+            
+          </div>
+          <div class=" container col-4">
+            
+            <label for="direccion"> Direccion </label>
+            <input type="text" name="direccion" class="form-control" id="text" aria-describedby="emailHelp">
+            
+          </div>
+          <div class=" container col-4">
+            <label for="direccion"> Teléfono</label>
+            <input type="number" name="telefono" class="form-control" id="text" aria-describedby="emailHelp">
+            
+            
+          </div>
+          <div class=" container col-4">
+            
+            <label for="razonSocial"> Razón social </label>
+            <input type="text" name="razonSocial" class="form-control" id="text" aria-describedby="emailHelp">
+            
+          </div>
+          <div class=" container col-4">
+            <label for="direccion"> CUIT/DNI</label>
+            <input type="number" name="cuit/dni" class="form-control" id="text" aria-describedby="emailHelp">
+            
+            
+          </div>
+          <div class=" container col-4">
+            
+            <label for="factura"> Factura </label>
+            <input type="text" name="factura" class="form-control" id="text" aria-describedby="emailHelp">
+            
+          </div>
+          <div class=" container col-4">
+            <label for="imagen">Cargar Imagen</label>
+            <input class="btn" type="file" name="imgProducto">
+          </div>
+          <div class="btn-group col-4">         
+            <p>
+              <input type="radio" name="valor" value="1" checked> <label for=""> Mayorista</label>
+              <input type="radio" name="valor" value="0" > <label for=""> Minorista</label>
+            </p>           
+          </div>
+          
+          <button type="submit" class="btn btn-success btn-lg btn-block botonForm2 col-md-12 mb-12"> Confirmar cambios    
+          </button>
+          
+        </div>
+        
+      </form>
     </div>
   </div>
   
@@ -65,6 +95,5 @@
   
   <!-- Include End Body Scripts -->
   <%- include('partials/_endBodyScripts') %>
-  
 </body>
 </html>
