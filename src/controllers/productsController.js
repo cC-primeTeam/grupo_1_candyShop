@@ -30,7 +30,6 @@ let productsController = {
   // CREAR - muestra formulario vacio para crear
   create: function(req, res, next) {
     res.render('productCreateForm');
-    //res.render('product-create-form')
   },
   // CREAR - muestra formulario guardar producto
   store: function(req, res, next) {
@@ -82,15 +81,17 @@ let productsController = {
 				res.redirect('todosLosProductos')
 			}
 		}
-	}
-    let pdtoID = req.params.id;
-    let productFind = productosParseados.find(pdto => pdto.idProducto == pdtoID);
-    
-    res.render('productDetail', {
-      productFind,
-      thousandGenerator: toThousand
-    });
   }
+  
+
+  //   let pdtoID = req.params.id;
+  //   let productFind = productosParseados.find(pdto => pdto.idProducto == pdtoID);
+    
+  //   res.render('productDetail', {
+  //     productFind,
+  //     thousandGenerator: toThousand
+  //   });
+  // }
 
 
 // ,
