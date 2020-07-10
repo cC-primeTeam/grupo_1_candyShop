@@ -20,38 +20,49 @@
   
   <section class="detalleProducto container">
     <div class="rowPrimary row">
-      <article class="col-4 contenedorFotoDetalleProducto">
+      <small class="col-1"></small>
+      <article class="col-3 contenedorFotoDetalleProducto">
         <img class="col-12 fotoDetalleProducto" src="/images/uploads/productDetail/<%= productFind.imgProducto %>" alt="Foto del producto: <%= productFind.nombre %>">   
       </article>
-      
+      <small class="col-1"></small>
       <article class="col-6 container productoDetallado">
-        
-        <div class="col-12">
-          <h2 class="tituloDetalleProducto"><%= productFind.nombre %></h2>
-          <p> Variantes Producto </p>
-          <p> <input type="radio" name="valor" value="Y" checked> <label for=""> Por unidad</label> <input type="radio" name="valor" value="Y" checked> <label for=""> Por mayor</label>  </p> 
-          <p>$ 0.00</p>
-        </div>
-        <div class="col-12 row container">
-          <div class="col-4 row precioCantidadTotal">
-            <div class="col-4">
-              <h4>Precio: <%= productFind.precioMinorista %></h4>
-            </div>
-            <div class="col-4">
-              <h5 class="col-12 col-sm-6 col-lg-4">Cantidad: </h5>
-            </div>
-            <div class="col-4">
-              <h5>Total:</h5>
+        <div class="row">
+          <div class="col-12">
+            
+            <h2 class="tituloDetalleProducto"><%= productFind.nombre %></h2>
+            
+            <p> Variantes Producto </p>
+            
+            <p>
+              <input type="radio" name="valor" value="1" checked> <label for=""> Por unidad</label>
+              <input type="radio" name="valor" value="0" > <label for=""> Por mayor</label>
+            </p> 
+            <p>$ 0.00</p>
+            
+          </div>
+          
+          <div class="col-12 container">
+            <div class="row precioCantidadTotal">
+              <div class="col-4">
+                <h4>Precio: <%= milesGenerator(productFind.precioMinorista) %></h4>
+              </div>
+              <div class="col-4">
+                <h5>Cantidad: </h5>
+              </div>
+              <div class="col-4">
+                <h5>Total: </h5>
+              </div>
             </div>
           </div>
           <div class="col-12">
-            <a href="/sales/purchase"> <button type="button" class="btn btn-success botonAñadirCarrito" >Añadir al carrito</button>
+            <a href="/sales/purchase"> <button type="button" class="btn btn-success botonAñadirCarrito">Añadir al carrito</button>
             </a>
           </div>
+          
         </div>
-        <
+        
       </article>    
-      
+      <small class="col-1"></small>
       
       
     </div>

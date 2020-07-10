@@ -1,0 +1,13 @@
+div.product-box_image{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+    padding: 0;
+    height: 200px;
+    overflow: hidden;
+    /* background-color: rebeccapurple; */
+}
+img.productImage{
+    height: 100%;
+}

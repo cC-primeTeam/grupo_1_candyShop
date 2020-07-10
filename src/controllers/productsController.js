@@ -4,28 +4,38 @@ const path = require('path');
 let jsonDeProductos = fs.readFileSync(path.join(__dirname, '../data/productsDataBase.json'), 'utf8');
 let productosParseados = JSON.parse(jsonDeProductos);
 
-const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+function milSeparator(x) {
+  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+}
 
 let productsController = {
   // TODOS LOS PRODUCTOS
   index: function(req, res, next) {
     res.render('products', {
-      productosParseados,
-      thousandGenerator: toThousand
+      productosParseados, 
+      milesGenerator: milSeparator
     });
   },
-
+  
   // DETALLE DE CADA PRODUCTO
   detailProduct: function(req, res, next) {
-  //   let idProducto = req.params.id;
-  //   for(let i = 0; i < productosParseados.length; i++) {
-  //     if(productosParseados[i].id == idProducto) {
-  //       res.render('productDetail', {
-  //         producto: productosParseados[i]
-  //       })
-  //     }
-  //   }
-  res.send('ok!!!')
+      // let idProducto = req.params.id;
+      // for(let i = 0; i < productosParseados.length; i++) {
+      //     if(productosParseados[i].id == idProducto) {
+      //         res.render('productDetail', {
+      //             producto: productosParseados[i]
+      //           })
+      //         }
+      //       }
+          // res.send('ok!!!')
+            let pdtoID = req.params.id;
+            let productFind = productosParseados.find(pdto => pdto.idProducto == pdtoID);
+            
+            res.render('productDetail', {
+              productFind,
+              milesGenerator: milSeparator
+            });
+          
   },
   // CREAR - muestra formulario vacio para crear
   create: function(req, res, next) {
@@ -84,14 +94,6 @@ let productsController = {
   }
   
 
-  //   let pdtoID = req.params.id;
-  //   let productFind = productosParseados.find(pdto => pdto.idProducto == pdtoID);
-    
-  //   res.render('productDetail', {
-  //     productFind,
-  //     thousandGenerator: toThousand
-  //   });
-  // }
 
 
 // ,
