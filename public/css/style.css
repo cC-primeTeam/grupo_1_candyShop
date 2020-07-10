@@ -35,6 +35,8 @@
 ===================== */
 *{
   font: 14px "Poppins", Helvetica, Arial, sans-serif;
+  box-sizing: border-box;
+  /* background-color: tomato; */
 }
 
 /* =====================
