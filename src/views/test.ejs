@@ -1,0 +1,63 @@
+<!--VISTA PARA PRUEBAS UNICAMENTE-->    
+    
+    
+    <!-- DETALLE DEL PRODUCTO-->
+    <div class="container products-wrapper">
+      <!-- <div class="row">
+        <div class="col-12">
+          <h2 class="products-title">Detalle del producto: <%= productFind.nombre %></h2>
+        </div>
+      </div> -->
+      <div class="product-detail">
+        <div class="row">
+          <div class="col-12 col-lg-8">
+            <img src="/images/uploads/productDetail/<%= productFind.imgProducto %>" alt="product image" class="product-detail-img">
+            <p class="product-detail-description">
+              <%= productFind.detalle %>
+            </p>
+          </div>
+          <div class="col-12 col-lg-4">
+            <article class="product-detail-info">
+              <h2 class="product-detail-title"><%= productFind.nombre %></h2>
+              <% if(productFind.descuento > 0) { 
+                let getDiscountPercentage = discount => (100 - discount) / 100;
+                let finalPrice = (productFind.precioMinorista * getDiscountPercentage(productFind.descuento)).toFixed(0);
+                %>
+                <p class="product-detail-price small">
+                  <span>$<%= thousandGenerator(productFind.precioMinorista) %></span>
+                  /
+                  <b><%= productFind.descuento %>% OFF</b>
+                </p>
+                <p class="product-detail-price">
+                  $<%= thousandGenerator(finalPrice) %>
+                </p>
+                <% } else { %>
+                  <p class="product-detail-price">
+                    $<%= thousandGenerator(productFind.precioMinorista) %>
+                  </p>
+                  <% } %>
+                  
+                  <ul class="actions-list">
+                    <li>
+                      <i class="fas fa-credit-card"></i>
+                      <p>Pagá en 12 cuotas sin interes</p>
+                    </li>
+                    <li>
+                      <i class="fas fa-store"></i>
+                      <p>Retiro gratis en locales del vendedor</p>
+                    </li>
+                  </ul>
+                  
+                  <a href="#" class="buy-now-button">COMPRAR AHORA</a>
+                  <hr>
+                  
+                  <a href="/products/edit/<%= productFind.id %>" class="action-button edit">EDITAR PRODUCTO</a>
+                  <form action="/products/delete/<%= productFind.id %>?_method=DELETE" method="POST" style="display: inline-flex">
+                    <button type="submit" class="action-button delete">ELIMINAR</button>
+                  </form>
+                </article>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /product detail -->

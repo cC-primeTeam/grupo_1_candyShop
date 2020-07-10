@@ -13,6 +13,8 @@
     
     <!--include Nav Bar 2-->
     <%- include('partials/navBar2') %>
+    
+    <!--carrousel-->
     <section class="banner container">
         <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
@@ -54,64 +56,64 @@
         </div>
     </section> <!-- </ carrousell > -->
     
-    <h1 class="titularProductsBest"> Todos nuestros productos</h1>
     
-    <section class="productosDestacados container">
+    
+    <div class="products-wrapper container">
         <div class="row">
+            <div class="col-12">
+                <h1 class="titularProducts"> Todos nuestros productos</h1>
+            </div>
             
-            
-            <article class="col-3">
-                <a href="/products/1"> <img src="/images/productsBest/img-01.jpg" alt="Destacado 1"></a>
-                <div>
-                    <h6>**Titulo Producto**</h6>
-                    <p> Detalle Producto </p>
-                    <p>$ 0.00</p>
-                    <a class="carrito" href="/carrito"><i class="fas fa-shopping-cart"></i></a>
+            <% for (product of productosParseados) { 
+                let getDiscountPercentage = discount => (100 - discount) / 100;
+                let finalPrice = (product.precioMinorista * getDiscountPercentage(product.descuento)).toFixed(0); 
+                %>
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <section class="product-box">
+                        <a href="/products/<%= `${product.idProducto}` %>">
+                            <figure class="product-box_image">
+                                <img src="/images/uploads/productDetail/<%= product.imgProducto %>" alt="imagen de producto">
+                            </figure>
+                            <article class="product-box_data">
+                                <h2>$<%= thousandGenerator(finalPrice) %></h2>
+                                <span><%= product.descuento %>% OFF</span>
+                                <p><%= product.nombre %></p>
+                                <i class="fas fa-truck"></i>
+                            </article>
+                        </a>
+                    </section>
                 </div>
-            </article>
-            
-            <article class="col-3">
-                <a href="/products/2">
-                    <img src="/images/productsBest/img-02.jpg" alt="Destacado 2">
-                </a>
-                <div>
-                    <h6>**Titulo Producto**</h6>
-                    <p> Detalle Producto </p>
-                    <p>$ 0.00</p>
-                    <a class="carrito" href="/carrito"><i class="fas fa-shopping-cart"></i></a>
-                </div>
-            </article>
-            
-            <article class="col-3">
-                <a href="/products/3">
-                    <img src="/images/productsBest/img-03.jpg" alt="Destacado 3">
-                </a>
-                <div>
-                    <h6>**Titulo Producto**</h6>
-                    <p> Detalle Producto </p>
-                    <p>$ 0.00</p>
-                    <a class="carrito" href="/carrito"><i class="fas fa-shopping-cart"></i></a>
-                </div>
-            </article>
-            
-            <article class="col-3">
-                <a href="/products/4">
-                    <img src="/images/productsBest/img-04.jpg" alt="Destacado 4">
-                </a>
-                <div>
-                    <h6>**Titulo Producto**</h6>
-                    <p> Detalle Producto </p>
-                    <p>$ 0.00</p>
-                    <a class="carrito" href="/carrito"><i class="fas fa-shopping-cart"></i></a>
-                </div>
-            </article>
-            
+                <% console.log(`${product.idProducto}`);%>
+                <% } %>
+            </div>
         </div>
-    </section>
-    <!--Include footer -->
-    <%- include('partials/footer') %>
-    
-    <!-- Include End Body Scripts -->
-    <%- include('partials/_endBodyScripts') %>
-</body>
-</html>
+        
+        
+        
+        
+        
+        
+        <h1 class="titularProductsBest"> Todos nuestros productos</h1>
+        
+        <!-- <section class="productosDestacados container">
+            <div class="row">
+                
+                <article class="col-3">
+                    <a href="/products/1"> <img src="/images/productsBest/img-01.jpg" alt="Destacado 1"></a>
+                    <div>
+                        <h6>**Titulo Producto**</h6>
+                        <p> Detalle Producto </p>
+                        <p>$ 0.00</p>
+                        <a class="carrito" href="/carrito"><i class="fas fa-shopping-cart"></i></a>
+                    </div>
+                </article>
+                
+            </div>
+        </section> -->
+        <!--Include footer -->
+        <%- include('partials/footer') %>
+        
+        <!-- Include End Body Scripts -->
+        <%- include('partials/_endBodyScripts') %>
+    </body>
+    </html>

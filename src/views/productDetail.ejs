@@ -12,42 +12,69 @@
 <body>
   <!--include HEADER-->
   <%- include('partials/header') %>
+  <!--/ include HEADER-->
   
   <!--include Nav Bar 2-->
   <%- include('partials/navBar2') %>
-  
+  <!--/ include Nav Bar 2-->
   
   <section class="detalleProducto container">
-    <div class="row">
-      
-      <article class="col-6 contenedorFotoDetalleProducto">
-        <img class="fotoDetalleProducto" src="/images/productDetail/img-01.jpg" alt="producto 1">   
+    <div class="rowPrimary row">
+      <article class="col-4 contenedorFotoDetalleProducto">
+        <img class="col-12 fotoDetalleProducto" src="/images/uploads/productDetail/<%= productFind.imgProducto %>" alt="Foto del producto: <%= productFind.nombre %>">   
       </article>
       
-      <article class="col-6 productoDetallado">
-        <div>
-          <h2 class="tituloDetalleProducto">**Titulo Producto**</h2>
+      <article class="col-6 container productoDetallado">
+        
+        <div class="col-12">
+          <h2 class="tituloDetalleProducto"><%= productFind.nombre %></h2>
           <p> Variantes Producto </p>
           <p> <input type="radio" name="valor" value="Y" checked> <label for=""> Por unidad</label> <input type="radio" name="valor" value="Y" checked> <label for=""> Por mayor</label>  </p> 
           <p>$ 0.00</p>
         </div>
-        <div class="row precioCantidadTotal">
-          <h4 class="col-4">Precio</h4>
-          <h5 class="col-4">Cantidad</h5>
-          <h5 class="col-4">Total:</h5>
-          
+        <div class="col-12 row container">
+          <div class="col-4 row precioCantidadTotal">
+            <div class="col-4">
+              <h4>Precio: <%= productFind.precioMinorista %></h4>
+            </div>
+            <div class="col-4">
+              <h5 class="col-12 col-sm-6 col-lg-4">Cantidad: </h5>
+            </div>
+            <div class="col-4">
+              <h5>Total:</h5>
+            </div>
+          </div>
+          <div class="col-12">
+            <a href="/sales/purchase"> <button type="button" class="btn btn-success botonAñadirCarrito" >Añadir al carrito</button>
+            </a>
+          </div>
         </div>
-        <a href="/carrito"> <button type="button" class="btn btn-success botonAñadirCarrito" >Añadir al carrito</button></a>
+        <
       </article>    
       
+      
+      
     </div>
-    <div class="descripcionDetallada"> <b>Descripcion detallada: </b> Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam unde nam aliquid error cupiditate. Molestias quisquam, corporis officia repudiandae maiores ab aut laborum commodi? Iure, magni architecto non repellendus ipsa voluptas corrupti reiciendis eius a fuga illo, natus necessitatibus assumenda ipsum nemo alias nesciunt tempora soluta! Omnis mollitia optio soluta incidunt quam aut minima modi unde quaerat, autem praesentium dolor facilis rerum expedita reprehenderit vero in quod nemo aperiam repellat sint totam. Doloremque distinctio eos at saepe placeat vero, error dolores repellendus sint est blanditiis? Eius iure architecto quaerat voluptatem pariatur deleniti quo, perspiciatis perferendis alias necessitatibus delectus vero cumque. </div>
+    <div class="descripcionDetallada"> <b>Descripcion detallada: </b> <%= productFind.detalle %>
+    </div>
+    
   </section>
+  
+  
+  
+  
+  
+  
+  
+  
   
   <!--Include footer -->
   <%- include('partials/footer') %>
+  <!--/ Include footer -->
   
   <!-- Include End Body Scripts -->
   <%- include('partials/_endBodyScripts') %>
+  <!-- /Include End Body Scripts -->
+  
 </body>
 </html>
