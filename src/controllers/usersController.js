@@ -21,7 +21,7 @@ let usersController = {
     usuarios.push(nuevoUsuario);
     fs.writeFileSync(path.join(__dirname, '../data/usuarios.json'), JSON.stringify(usuarios));
 
-    res.redirect('/')
+    res.render('login')
 
   },
   registerEdit: function(req, res, next) {
@@ -30,6 +30,16 @@ let usersController = {
   login: function(req, res, next) {
     res.render('login');
   },
+  verify: function(req, res){
+    usuarios.forEach(function(elemento){
+        if(elemento.email == req.body.email && bcrypt.compareSync(req.body.password, elemento.password)){
+            res.render('loginOk'); {
+                check: bcrypt.compareSync(req.body.password, elemento.password)
+            }
+        }
+    });
+    res.render ('loginError');
+}
   
 }
 module.exports = usersController;

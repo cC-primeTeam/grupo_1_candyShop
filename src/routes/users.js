@@ -27,6 +27,8 @@ router.get('/registerEdit', usersController.registerEdit);
 
 // LOGIN
 router.get('/login', usersController.login);
+router.post('/login', usersController.verify);
+//verofoca el form de login
 //router.post('/login', xxxxxxxxxx);
 
 module.exports = router;
