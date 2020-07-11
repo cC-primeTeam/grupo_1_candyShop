@@ -5,12 +5,18 @@ const productsController = require('../controllers/productsController');
 const multer = require('multer');
 
 let storage = multer.diskStorage({
-    destination: function (req, file, cb) {
-      cb(null, path.join(__dirname, '../../public/images/uploads/productDetail'))
-    },
-    filename: function (req, file, cb) {
-      cb(null, req.body.nombre + '-' + Date.now() + path.extname(file.originalname))
-    }
+  destination: function (req, file, cb) {
+    cb(null, path.join(__dirname, '../../public/images/uploads/productDetail'))
+  },
+  filename: function (req, file, cb) {
+    let nombreTodoJunto = req.body.nombre;
+    nombreTodoJunto = nombreTodoJunto.replace(/ /g, "");
+    cb(null, nombreTodoJunto + '-' + Date.now() + path.extname(file.originalname))
+  }
+  
+  // filename: function (req, file, cb) {
+  //   cb(null, req.body.nombre + '-' + Date.now() + path.extname(file.originalname))
+  // }
 })
 
 let upload = multer({ storage: storage })

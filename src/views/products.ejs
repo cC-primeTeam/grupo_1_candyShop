@@ -57,7 +57,7 @@
     </section> <!-- </ carrousell > -->
     
     
-    
+    <!-- MUESTRA DE LOS PRODUCTOS -->
     <div class="products-wrapper container">
         <div class="row">
             <div class="col-12">
@@ -66,7 +66,7 @@
             
             <% for (product of productosParseados) { 
                 let getDiscountPercentage = discount => (100 - discount) / 100;
-                let finalPrice = (product.precioMinorista * getDiscountPercentage(product.descuento)).toFixed(0); 
+                let finalPrice = (product.precio * getDiscountPercentage(product.descuento)).toFixed(0); 
                 %>
                 <div class="col-12 col-sm-6 col-lg-3">
                     <section class="product-box">
