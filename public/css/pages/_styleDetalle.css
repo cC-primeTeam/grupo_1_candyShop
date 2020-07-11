@@ -24,12 +24,12 @@ section div article div h2.tituloDetalleProducto {
     margin-bottom: 20px;
 }
 
-section div article div.precioCantidadTotal{
+section div article div div div.precioCantidadTotal{
     text-align: center;
 }
 
-section div article button.botonAñadirCarrito{
-    padding: 5px 100px;
+section div article div div button.botonAñadirCarrito{
+    padding: 5px 50px;
     margin-top: 30px;
 }
 

@@ -42,30 +42,30 @@
           </div>
           
           <div class="col-12 container">
-            <div class="row precioCantidadTotal">
-              <div class="col-4">
+            <div class="row">
+              <div class="col-4 container">
                 <h4>Precio: <%= milesGenerator(productFind.precio) %></h4>
               </div>
-              <div class="col-4">
+              <div class="col-4 container">
                 <h5>Cantidad: </h5>
               </div>
-              <div class="col-4">
+              <div class="col-4 container">
                 <h5>Total: </h5>
               </div>
             </div>
           </div>
-          <div class="col-12">
-            <a href="/sales/purchase"> <button type="button" class="btn btn-success botonAñadirCarrito">Añadir al carrito</button>
+          <div class="col-12 container">
+            <a href="/sales/purchase"> 
+              <button type="button" class="btn btn-success botonAñadirCarrito">Añadir al carrito</button>
             </a>
           </div>
           
         </div>
         
       </article>    
-      <small class="col-1"></small>
-      
-      
+      <small class="col-1"></small>    
     </div>
+
     <div class="descripcionDetallada"> <b>Descripcion detallada: </b> <%= productFind.detalle %>
     </div>
     

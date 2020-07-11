@@ -1,4 +1,29 @@
+/* =====================
+- BODY FROMULARIO
+===================== */
 
+/* body {
 
+} */
 
+/* body div.container {
+
+} */
+
+body div h1.tituloRegistro {
+    background-color: rgb(235, 230, 230);
+    height: auto;
+    margin: 20px auto;
+    padding-top: 10px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+body div form div div div.botonMinYMay {
+    margin: auto;
+}
+
+body div form div div div.botonCargarImg{
+    margin: 20px;
+}
 

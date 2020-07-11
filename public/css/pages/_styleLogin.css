@@ -1,0 +1,17 @@
+div.cajaInicioSesion{
+    background-color: white;
+    width: 600px;
+    padding: 15px 15px;
+    margin: 20px auto;
+    border-radius: 20px;;
+}
+
+div h1.tituloInicioSesion {
+    background-color: rgb(235, 230, 230);
+    height: auto;
+    margin: 20px auto;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+}
+
