@@ -1,42 +1,119 @@
-/* *{} */
-
-section.detalleProducto div.rowPrimary{
-    margin: 15px 0;
+section.containerPrimary div.rowPrimary{
+    margin: 20px 0;
+    align-items: center;
+    
 }
-
-section.detalleProducto div.rowPrimary article.contenedorFotoDetalleProducto{
-display: flex;
-justify-content: center;
-align-items: center;
-margin: 20px 0;
-padding: 0;
-background-color: rebeccapurple;
+/* TITULOCONTAINER */
+section.containerPrimary div.rowPrimary article.tituloContainer div.tituloRow{
+    justify-content: center;
 }
-section div article img.fotoDetalleProducto{}
-
-section div article.productoDetallado{
-    text-align: center;
-}
-
-section div article div h2.tituloDetalleProducto {
+section.containerPrimary div.rowPrimary article.tituloContainer div.tituloRow h2.tituloDetalleProducto{
+    border-radius: 10px;
     background-color: rgb(235, 235, 235);
-    padding: 10px 0;
+    padding: 10px 25px;
     margin-bottom: 20px;
+    color: var(--violeta-textos);
 }
 
-section div article div div div.precioCantidadTotal{
+/* -----------------------------
+contenedorFotoDetalleProducto
+----------------------------- */
+section.containerPrimary div.rowPrimary article.contenedorFotoDetalleProducto{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0; 
+}
+
+/* -----------------------------
+productoDetalladoContainer
+----------------------------- */
+section.containerPrimary div.rowPrimary article.productoDetalladoContainer{
+    justify-content: center;
+}
+
+/* PRECIOCONTAINER */
+div.precioContainer div.precioRow h4.precioh4{
+    font-size: 20px;
+    margin: 10px 0;
+    color: var(--violeta-textos);
+}
+div.precioContainer div.precioRow h4.precioh4 small.smallPrecioh4::before {
+    content: "$ ";
+}
+
+div.precioContainer div.precioRow h4.precioh4 small.smallPrecioh4{
+    font-size: 20px;
+    margin: 10px 0;
+    color: var(--violeta-textos);
+}
+
+
+/* CANTIDADCONTAINER */
+div.cantidadContainer div.cantidadRow label.cantidadLabel{
+    padding: 6px 0 0 0;
+    margin: 10px 0;
+    color: var(--violeta-textos);
+} h5{}
+
+div.cantidadContainer div.cantidadRow select.cantidadSelect{
+    margin: 10px 0;
+    
+} 
+
+/* TOTALCONTAINER */
+div.totalContainer{
+    text-align: center;
+} 
+div.totalRow h5.totalh5{
+    font-size: 20px;
+    margin: 10px 0;
+    color: var(--violeta-textos);
+    font-weight: bold;
+}
+
+small.smalltotalh5::before {
+    content: "$ ";
+}
+small.smalltotalh5{
+    font-size: 20px;
+    margin: 10px 0;
+    color: var(--violeta-textos);
+    font-weight: bold;
+}
+
+/* CONTAINERBUTTON */
+div.containerButton{
     text-align: center;
 }
-
-section div article div div button.botonAñadirCarrito{
-    padding: 5px 50px;
+div.containerButton a button{
+    padding: 5px 40px;
     margin-top: 30px;
 }
 
-section div.descripcionDetallada {
+/* DESCRIPCIONDETALLADA */
+article.descripcionDetallada{
+    border-radius: 10px;
     padding: 15px 40px;
-
     margin: 20px 0;
     background-color:rgb(235, 235, 235);
+}
+section.containerPrimary div.rowPrimary article.descripcionDetallada div.descripcionDetalladaRow p{
+    padding-left: 160px;
+}
+
+@media (max-width: 768px){
     
+    section.containerPrimary div.rowPrimary article.contenedorFotoDetalleProducto img.fotoDetalleProducto{
+        max-width: 60%;
+    }
+    
+    section.containerPrimary div.rowPrimary article.descripcionDetallada div.descripcionDetalladaRow p{
+        padding-left: 60px;
+    }
+    section.containerPrimary div.rowPrimary article.productoDetalladoContainer{
+max-width: 80%;
+    }
+
+
 }

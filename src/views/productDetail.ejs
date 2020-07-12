@@ -2,90 +2,93 @@
 <html lang="es">
 
 <head>
+  
   <!-- Include Head -->
   <%- include('partials/_contentHead') %>
+  <!--/ Include Head-->
   
   <title>CandyShop - Detalle Producto</title>
+  
 </head>
 
-
 <body>
-  <!--include HEADER-->
+  
+  <!--Include Header-->
   <%- include('partials/header') %>
-  <!--/ include HEADER-->
+  <!--/ Include Header-->
   
-  <!--include Nav Bar 2-->
+  <!--include NavBar2-->
   <%- include('partials/navBar2') %>
-  <!--/ include Nav Bar 2-->
+  <!--/ include NavBar2-->
   
-  <section class="detalleProducto container">
+  <section class="containerPrimary container">
     <div class="rowPrimary row">
-      <small class="col-1"></small>
-      <article class="col-3 contenedorFotoDetalleProducto">
-        <img class="col-12 fotoDetalleProducto" src="/images/uploads/productDetail/<%= productFind.imgProducto %>" alt="Foto del producto: <%= productFind.nombre %>">   
-      </article>
-      <small class="col-1"></small>
-      <article class="col-6 container productoDetallado">
-        <div class="row">
-          <div class="col-12">
-            
-            <h2 class="tituloDetalleProducto"><%= productFind.nombre %></h2>
-            
-            <p> Variantes Producto </p>
-            
-            <p>
-              <input type="radio" name="valor" value="1" checked> <label for=""> Por unidad</label>
-              <input type="radio" name="valor" value="0" > <label for=""> Por mayor</label>
-            </p> 
-            <p>$ 0.00</p>
-            
-          </div>
+      
+      <article class="tituloContainer container col-12">
+        <div class="tituloRow row">
+          <h2 class="tituloDetalleProducto"><%= productFind.nombre %></h2>
+        </div> <!-- ./tituloRow-->
+      </article> <!-- ./tituloContainer-->
+      
+      <article class=" contenedorFotoDetalleProducto col-12 col-md-3 ">
+        <img class="fotoDetalleProducto col-12" src="/images/uploads/productDetail/<%= productFind.imgProducto %>" alt="Foto del producto: <%= productFind.nombre %>">   
+      </article> <!-- ./contenedorFotoDetalleProducto-->
+      
+      <article class="productoDetalladoContainer col-12 col-md-7 container ">
+        <div class="productoDetalladoRow row">
+                    
+          <div class="precioContainer container col-12">
+            <div class="precioRow row">
+              <h4 class="precioh4">Precio: <small class="smallPrecioh4"><%= milesGenerator(productFind.precio) %></small></h4>
+            </div> <!-- ./precioRow-->
+          </div> <!-- ./precioContainer-->
           
-          <div class="col-12 container">
-            <div class="row">
-              <div class="col-4 container">
-                <h4>Precio: <%= milesGenerator(productFind.precio) %></h4>
-              </div>
-              <div class="col-4 container">
+          <div class="cantidadContainer container col-12">
+            <div class="cantidadRow row">
+              <label for="cantidad" class="cantidadLabel col-12 col-md-3">
                 <h5>Cantidad: </h5>
-              </div>
-              <div class="col-4 container">
-                <h5>Total: </h5>
-              </div>
-            </div>
-          </div>
-          <div class="col-12 container">
+              </label>
+              <select name="select" class="cantidadSelect col-12 col-md-3 custom-select" id="cantidad">
+                <option selected value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+              </select>
+            </div> <!-- ./cantidadRow-->
+          </div> <!-- ./cantidadContainer-->
+
+          <div class="totalContainer container col-12">
+            <div class="totalRow row">
+              <h5 class="totalh5">Total:  <small class="smalltotalh5"><%= milesGenerator(productFind.precio) %></small></h5>
+            </div> <!-- ./totalRow-->
+          </div> <!-- ./totalContainer-->
+          
+          <div class="containerButton col-12 container">
             <a href="/sales/purchase"> 
               <button type="button" class="btn btn-success botonAñadirCarrito">Añadir al carrito</button>
             </a>
-          </div>
+          </div> <!-- ./containerButton-->
           
+        </div> <!-- ./productoDetalladoRow-->
+      </article> <!-- ./productoDetalladoContainer-->
+      
+      <article class="descripcionDetallada col-12">
+        <div class="descripcionDetalladaRow row">
+          <b class="col-12">Descripcion detallada: </b>
+          <p class="col-12"><%= productFind.detalle %></p>
         </div>
-        
-      </article>    
-      <small class="col-1"></small>    
-    </div>
+      </article> <!-- ./descripcionDetallada -->
+      
+    </div> <!-- ./rowPrimary -->
+  </section> <!-- ./containerPrimary -->
 
-    <div class="descripcionDetallada"> <b>Descripcion detallada: </b> <%= productFind.detalle %>
-    </div>
-    
-  </section>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  <!--Include footer -->
+  <!--Include Footer -->
   <%- include('partials/footer') %>
-  <!--/ Include footer -->
+  <!--/ Include Footer -->
   
-  <!-- Include End Body Scripts -->
+  <!-- Include EndBodyScripts -->
   <%- include('partials/_endBodyScripts') %>
-  <!-- /Include End Body Scripts -->
+  <!-- /Include EndBodyScripts -->
   
 </body>
 </html>
