@@ -24,6 +24,8 @@ let upload = multer({ storage: storage })
 //TODOS LOS PRODUCTOS
 router.get('/', productsController.index);
 
+router.get('/allProductsModify', productsController.allProductsModify);
+
 //CREAR UN PRODUCTO
 router.get('/create', productsController.create);
 router.post('/create', upload.any(), productsController.store);
@@ -31,6 +33,7 @@ router.post('/create', upload.any(), productsController.store);
 //EDITAR UN PRODUCTO
 router.get('/edit/:id', productsController.editProduct);
 router.put('/edit/:id', productsController.updateProduct);
+
 
 // ELIMINAR UN PRODUCTO
 router.delete('/delete/:id', productsController.destroy);

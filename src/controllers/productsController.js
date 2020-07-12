@@ -59,7 +59,7 @@ let productsController = {
     res.redirect('/products/' + nuevoProducto.idProducto)
   },
   // MODIFICAR - muestra formulario para editar producto con el producto
-  editProduct: function(req, res, next) {
+  editProduct: function (req, res, next) {
     //res.send(req.body)
     for(let i = 0; i < productosParseados.length; i++) {
       if (productosParseados[i].idProducto == req.params.id) {
@@ -70,7 +70,7 @@ let productsController = {
     }
   },
   // MODIFICAR - muestra formulario para actualizar producto.
-  updateProduct: (req, res) => {
+  updateProduct: function (req, res) {
     //res.send(req.body)
     let productoActualizado = {
       idProducto: Number(req.params.id),
@@ -84,7 +84,13 @@ let productsController = {
       }
     }
   },
-  destroy: (req, res) => {
+  allProductsModify: function(req, res, next) {
+    res.render('allProductsModify', {
+      productosParseados, 
+      milesGenerator: milSeparator
+    });
+  },
+  destroy: function (req, res) {
     for(let i = 0; i < productosParseados.length; i++) {
       if(productosParseados[i].idProducto == req.params.id) {
         let index = productosParseados.indexOf(productosParseados[i]); productosParseados.splice(index, 1);
