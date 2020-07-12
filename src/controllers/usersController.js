@@ -21,7 +21,7 @@ let usersController = {
     usuarios.push(nuevoUsuario);
     fs.writeFileSync(path.join(__dirname, '../data/usuarios.json'), JSON.stringify(usuarios));
 
-    res.render('login')
+    res.render('registerOk')
 
   },
   registerEdit: function(req, res, next) {
