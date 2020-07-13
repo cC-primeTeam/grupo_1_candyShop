@@ -5,7 +5,7 @@
     <%- include('partials/_contentHead') %>
     
     
-    <title>CandyShop - Todos los productos</title>
+    <title>CandyShop - Modificar productos</title>
 </head>
 <body>
     <!--include HEADER-->
@@ -13,14 +13,12 @@
     
     <!--include Nav Bar 2-->
     <%- include('partials/navBar2') %>
-    
-    <!--include CAROUSEL-->
-    <%- include('partials/carousel') %>
+   
     <div class="products-wrapper container">
         <div class="row">
             
             <div class="col-12">
-                <h1 class="titularProductsBest">Todos nuestros productos a Modificar</h1>
+                <h1 class="titularProductsBest">Todos tus productos para modificar</h1>
             </div>
             
             <!-- MUESTRA DE LOS PRODUCTOS -->
@@ -30,36 +28,41 @@
                         let getDiscountPercentage = discount => (100 - discount) / 100;
                         let finalPrice = (product.precio * getDiscountPercentage(product.descuento)).toFixed(0); 
                         %>
-                        <div class="col-12 col-sm-6 col-lg-3">
-                            <article class="elProducto">
-                                <a href="/products/<%= `${product.idProducto}` %>"></a>
+                        <article class="elContenedor col-6 col-sm-4 col-lg-2 container">
+                            <div class="elProducto row">
                                 
-                                <div class="imagenProducto">
+                                <div class="imagenProducto col-12">
                                     <img src="/images/uploads/productDetail/<%= product.imgProducto %>" alt="imagen de producto <%= product.nombre %>">
-                                </div>
+                                </div>  <!-- ./imagenProducto -->
                                 
-                                <div class="infoProducto">
+                                <div class="infoProducto col-12">
                                     <h6><%= product.nombre %></h6>
+                                </div>  <!-- ./infoProducto -->
+                                
+                                <div class="losLinks col-12 container-fluid">
+                                    <div class="losLinksRow row">
+                                    <a class="elLink col-12 col-sm-6" href="/products/edit/<%= `${product.idProducto}` %>">
+                                        <button type="submit" class="btn btn-warning">Modificar</button>
+                                    </a>  
+                                    
+                                    <a class="elLink col-12 col-sm-6" href="/products/<%= `${product.idProducto}` %>">
+                                        <button type="submit" class="btn btn-info">Ver</button>
+                                    </a>
+                                    </div>
                                 </div>
-                            </a>
-                            
-                            <a href="/products/edit/<%= `${product.idProducto}` %>">
-                                <button type="submit" class="btn btn-warning">Modificar</button>
-                            </a>                            
-                            
+                            </div>
                         </article>
+                        <% } %>
                     </div>
-                    <% } %>
-                </div>
-            </section>
-            
+                </section>
+                
+            </div>
         </div>
-    </div>
-    
-    <!--Include footer -->
-    <%- include('partials/footer') %>
-    
-    <!-- Include End Body Scripts -->
-    <%- include('partials/_endBodyScripts') %>
-</body>
-</html>
+        
+        <!--Include footer -->
+        <%- include('partials/footer') %>
+        
+        <!-- Include End Body Scripts -->
+        <%- include('partials/_endBodyScripts') %>
+    </body>
+    </html>
