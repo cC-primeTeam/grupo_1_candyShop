@@ -1,0 +1,112 @@
+/* =====================
+- BODY FROMULARIO
+===================== */
+
+/* body {
+
+} */
+
+/* body div.container {
+
+} */
+
+body div.container div.tituloForm {
+    background-color: var(--rosa-background-header);
+    color: var(--violeta-textos);
+    height: 90px;
+    margin: 20px auto;
+    padding-top: 10px;
+    border-radius: 5px;
+}
+
+/* body div.container div.tituloForm h1 {
+    
+} */
+
+body div.container div.tituloForm div.contenidoForm div form div label{
+    margin-top: 10px;
+    align-items: center;
+}
+
+/* body div.container div form {
+
+} */
+
+button.botonForm1 {
+    margin: 20px auto;
+}
+
+button.botonForm2 {
+    margin: 20px auto;
+}
+
+div.card img.imagenForm {
+    width: 370px;
+}
+
+section.detalleProducto h5 {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+/* =====================
+- MAS VENDIDOS
+===================== */
+
+section.masVendidos {
+    margin-top: 10px;
+    border-top: solid black 1px;
+}
+
+section.masVendidos h5 {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+
+/* =====================
+- OFERTA
+===================== */
+
+section.oferta {
+    margin-top: 10px;
+    border-top: solid black 1px;
+}
+
+section.oferta h5 {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+/* =====================
+- PRECIOS
+===================== */
+
+section.precios {
+    margin-top: 10px;
+    border-top: solid black 1px;
+}
+
+section.precios h5 {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+div.contenedorImg {
+    align-items: flex-end;
+    border-color: red;
+}
+
+/* =====================
+- CONTENEDOR IMAGEN
+===================== */
+
+section.contenedorImg {
+    margin-top: 10px;
+    border-top: solid black 1px;
+}
+
+section.contenedorImg h5 {
+    margin-top: 10px;
+    font-weight: bold;
+}

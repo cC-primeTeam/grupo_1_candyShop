@@ -11,7 +11,8 @@
 } */
 
 body div.container div.tituloForm {
-    background-color: rgb(235, 230, 230);
+    background-color: var(--rosa-background-header);
+    color: var(--violeta-textos);
     height: 70px;
     margin: 20px auto;
     padding-top: 10px;

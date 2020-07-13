@@ -16,7 +16,8 @@
 - PAGES
 ===================== */
 
-@import 'pages/_formularioProducto.css';
+@import 'pages/_styleProductCreateForm.css';
+@import 'pages/_styleProductEditForm.css';
 @import 'pages/_styleRegistro.css';
 @import 'pages/_styleHome.css';
 @import 'pages/_styleDetalle.css';
