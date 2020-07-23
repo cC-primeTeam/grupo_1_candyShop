@@ -3,43 +3,43 @@
 <head>
   <!-- Include Head -->
   <%- include('partials/_contentHead') %>
-
-    <title>CandyShop - Login Usuario</title>
+  
+  <title>CandyShop - Login Usuario</title>
 </head>
 <body>
-      <!--include HEADER-->
+  <!--include HEADER-->
   <%- include('partials/header') %>
   
   <!--include Nav Bar 2-->
   <%- include('partials/navBar2') %>
-
+  
   <div class="container cajaInicioSesion">
     <h1 class="mb-5 tituloInicioSesion">Inicio de Sesión</h1>
     <form action="" method="post">
-        <div class="form-group">
-          <label for="exampleInputEmail1">Email</label>
-          <input type="email" value="<%= (typeof old != 'undefined' && !errors.email) ? old.email : '' %>" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-          <small class="text-danger"><%= (typeof errors != 'undefined' && errors.email) ? errors.email.msg : '' %></small>
-        </div>
-        <div class="form-group">
-          <label for="exampleInputPassword1">Password</label>
-          <input type="password" name="password" class="form-control" id="exampleInputPassword1">
-          <small class="text-danger"><%= (typeof errors != 'undefined' && errors.password) ? errors.password.msg : '' %></small>
-        </div>
-        <div class="form-group form-check">
-          <input name="remember" type="checkbox" class="form-check-input" id="remember">
-          <label class="form-check-label" for="remember">Mantener sesion iniciada</label>
-        </div>
-        <!-- <a href="/main">  -->
+      <div class="form-group">
+        <label for="exampleInputEmail1">Email</label>
+        <input type="email" value="<%= (typeof old != 'undefined' && !errors.email) ? old.email : '' %>" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        <small class="text-danger"><%= (typeof errors != 'undefined' && errors.email) ? errors.email.msg : '' %></small>
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Password</label>
+        <input type="password" name="password" class="form-control" id="exampleInputPassword1">
+        <small class="text-danger"><%= (typeof errors != 'undefined' && errors.password) ? errors.password.msg : '' %></small>
+      </div>
+      <div class="form-group form-check">
+        <input name="remember" type="checkbox" class="form-check-input" id="remember">
+        <label class="form-check-label" for="remember">Mantener sesion iniciada</label>
+      </div>
+      <!-- <a href="/main">  -->
         <button type="submit" class="btn btn-primary">Ingresar</button>
         <!-- </a> -->
-    </form>
-  </div>
-
+      </form>
+    </div>
+    
     <!--Include footer -->
-  <%- include('partials/footer') %>
-  
-  <!-- Include End Body Scripts -->
-  <%- include('partials/_endBodyScripts') %>
-</body>
-</html>
+    <%- include('partials/footer') %>
+    
+    <!-- Include End Body Scripts -->
+    <%- include('partials/_endBodyScripts') %>
+  </body>
+  </html>
