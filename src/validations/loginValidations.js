@@ -8,17 +8,15 @@ usuarios = JSON.parse(usuarios);
 module.exports = [
     check('email')
     .isEmail().withMessage('Verifica el e-mail ingresado por favor!'),
-    body('email'),
-
-    //NO FUNCIONA ESTA LA VALIDACION CUSTOM
-    /*.custom(function(value) {
+    body('email')
+    .custom(function(value) {
         for(let i = 0; i < usuarios.length; i++) {
-            if(usuarios[i].email != value) {
-                return false;
+            if(usuarios[i].email == value) {
+                return true;
             }
         }
-        return true
-    }).withMessage('Este mail no se encuentra registrado!'),*/
+        return false
+    }).withMessage('Este mail no se encuentra registrado!'),
 
     check('password')
     .isLength({min: 8, max: 16}).withMessage('El password debe poseer entre 8 y 16 caracteres')

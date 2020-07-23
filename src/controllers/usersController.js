@@ -7,15 +7,12 @@ let usuariosJson = fs.readFileSync(path.join(__dirname, '../data/usuarios.json')
 let usuarios = JSON.parse(usuariosJson);
 
 let usersController = {
-  
   index: function(req, res, next) {
     res.render('user');
   },
-
   register: function(req, res, next) {
     res.render('register');
   },
-
   save: function(req, res, next) {
     let errors = validationResult(req);
     if(errors.isEmpty()) {
@@ -34,11 +31,9 @@ let usersController = {
       });
     }
   },
-
   registerEdit: function(req, res, next) {
     res.render('registerEdit');
   },
-
   login: function(req, res, next) {
     res.render('login');
   },
@@ -69,7 +64,6 @@ let usersController = {
       })
     }
   },
-
   users: function(req, res, next) {
     res.render('user', {
       usuario: req.session.emailUsuario
@@ -80,6 +74,5 @@ let usersController = {
     res.cookie('authRemember', ''.email, {maxAge: -1});
     res.redirect('/');
   }
-};
-
+}
 module.exports = usersController;
