@@ -1,0 +1,2 @@
+Nuevo usuario: tomas@consek.com.ar, se creo correctamente, el 23 de Julio del 2020
+Nuevo usuario: No completo Mail, no completo password, el 23 de Julio del 2020

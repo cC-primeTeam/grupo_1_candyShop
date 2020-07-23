@@ -13,11 +13,16 @@
   <!--include Nav Bar 2-->
   <%- include('partials/navBar2') %>
 
-
-  <div class="container cajaInicioSesion">
-    <h1 class="text-center">Hubo un error al querer loguearte! </h1>
-    <h4 class="text-center">Volvé a ingresar tu usuario registrado y la contraseña correspondiente</h4>
+  <div class="container cajaLoginOk cajaInicioSesion">
+    <h1> ¡Bienvenidx <%= usuario %> !</h1>
+    <h2>¡Ya estas logueado!</h2>
+    <h6> Mira tu carrito o podes ir viendo nuestros productos!</h6>
+    <a href="/products" class="">
+        <button type="button" class="btn btn-primary botonAñadirCarrito">Todos los productos</button>
     </a>
+    <a href="/sales/purchase" class="">
+      <button type="button" class="btn btn-primary botonAñadirCarrito">Ver carrito</button>
+  </a>
   </div>
 
     <!--Include footer -->
