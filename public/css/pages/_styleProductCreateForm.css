@@ -17,11 +17,15 @@ body div.container div.tituloForm {
     margin: 20px auto;
     padding-top: 10px;
     border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 }
 
-/* body div.container div.tituloForm h1 {
-    
-} */
+body div.container div.tituloForm h1 {
+    size: 20px;
+}
 
 body div.container div.tituloForm div.contenidoForm div form div label{
     margin-top: 10px;
