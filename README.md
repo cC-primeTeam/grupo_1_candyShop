@@ -38,6 +38,6 @@ Colores:
 Enlace tablero
 https://trello.com/b/WlSeniwJ
 
-
+ //npm run start
     
     // © >_cuarentenialCoders </primeTeam>
