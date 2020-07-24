@@ -15,10 +15,12 @@ div.divAvatarUser{
     justify-content: center;
     display: flex;
     padding: 20px;
-
+    
 }
 div.divAvatarUser img.avatarUser{
     height: 200px;
+    border: gray 1px solid;
+    border-radius: 100px;
 }
 div.cajaLoginOk h1.tituloInicioSesion {
     background-color: rgb(235, 230, 230);
