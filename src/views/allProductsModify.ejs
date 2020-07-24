@@ -1,68 +1,68 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <!-- Include Head -->
-    <%- include('partials/_contentHead') %>
-    
-    
-    <title>CandyShop - Modificar productos</title>
+  <!-- Include Head -->
+  <%- include('partials/_contentHead') %>
+  
+  
+  <title>CandyShop - Modificar productos</title>
 </head>
 <body>
-    <!--include HEADER-->
-    <%- include('partials/header') %>
-    
-    <!--include Nav Bar 2-->
-    <%- include('partials/navBar2') %>
-   
-    <div class="products-wrapper container">
+  <!--include HEADER-->
+  <%- include('partials/header') %>
+  
+  <!--include Nav Bar 2-->
+  <%- include('partials/navBar2') %>
+  
+  <div class="products-wrapper container">
+    <div class="row">
+      
+      <div class="col-12">
+        <h1 class="titularProductsBest">Todos tus productos para modificar</h1>
+      </div>
+      
+      <!-- MUESTRA DE LOS PRODUCTOS -->
+      <section class="productosDestacados container">
         <div class="row">
-            
-            <div class="col-12">
-                <h1 class="titularProductsBest">Todos tus productos para modificar</h1>
-            </div>
-            
-            <!-- MUESTRA DE LOS PRODUCTOS -->
-            <section class="productosDestacados container">
-                <div class="row">
-                    <% for (product of productosParseados) { 
-                        let getDiscountPercentage = discount => (100 - discount) / 100;
-                        let finalPrice = (product.precio * getDiscountPercentage(product.descuento)).toFixed(0); 
-                        %>
-                        <article class="elContenedor col-6 col-sm-4 col-lg-2 container">
-                            <div class="elProducto row">
-                                
-                                <div class="imagenProducto col-12">
-                                    <img src="/images/uploads/productDetail/<%= product.imgProducto %>" alt="imagen de producto <%= product.nombre %>">
-                                </div>  <!-- ./imagenProducto -->
-                                
-                                <div class="infoProducto col-12">
-                                    <h6><%= product.nombre %></h6>
-                                </div>  <!-- ./infoProducto -->
-                                
-                                <div class="losLinks col-12 container-fluid">
-                                    <div class="losLinksRow row">
-                                    <a class="elLink col-12 col-sm-6" href="/products/edit/<%= `${product.idProducto}` %>">
-                                        <button type="submit" class="btn btn-warning">Modificar</button>
-                                    </a>  
-                                    
-                                    <a class="elLink col-12 col-sm-6" href="/products/<%= `${product.idProducto}` %>">
-                                        <button type="submit" class="btn btn-info">Ver</button>
-                                    </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </article>
-                        <% } %>
-                    </div>
-                </section>
+          <% for (product of productosParseados) { 
+            let getDiscountPercentage = discount => (100 - discount) / 100;
+            let finalPrice = (product.precio * getDiscountPercentage(product.descuento)).toFixed(0); 
+            %>
+            <article class="elContenedor col-6 col-sm-4 col-lg-2 container">
+              <div class="elProducto row">
                 
-            </div>
-        </div>
+                <div class="imagenProducto col-12">
+                  <img src="/images/uploads/productDetail/<%= product.imgProducto %>" alt="imagen de producto <%= product.nombre %>">
+                </div>  <!-- ./imagenProducto -->
+                
+                <div class="infoProducto col-12">
+                  <h6><%= product.nombre %></h6>
+                </div>  <!-- ./infoProducto -->
+                
+                <div class="losLinks col-12 container-fluid">
+                  <div class="losLinksRow row">
+                    <a class="elLink col-12 col-sm-6" href="/products/edit/<%= `${product.idProducto}` %>">
+                      <button type="submit" class="btn btn-warning">Modificar</button>
+                    </a>  
+                    
+                    <a class="elLink col-12 col-sm-6" href="/products/<%= `${product.idProducto}` %>">
+                      <button type="submit" class="btn btn-info">Ver</button>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </article>
+            <% } %>
+          </div>
+        </section>
         
-        <!--Include footer -->
-        <%- include('partials/footer') %>
-        
-        <!-- Include End Body Scripts -->
-        <%- include('partials/_endBodyScripts') %>
-    </body>
-    </html>
+      </div>
+    </div>
+    
+    <!--Include footer -->
+    <%- include('partials/footer') %>
+    
+    <!-- Include End Body Scripts -->
+    <%- include('partials/_endBodyScripts') %>
+  </body>
+  </html>

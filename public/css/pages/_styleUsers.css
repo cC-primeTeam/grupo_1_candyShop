@@ -1,7 +1,5 @@
 div.cajaInicioUsers{
     background-color: white;
-    height: 450px;
-    width: 600px;
     padding: 15px 15px;
     margin: 20px auto;
     border-radius: 20px;
@@ -10,7 +8,19 @@ div.cajaInicioUsers{
     justify-content: center;
 }
 
-div h1.tituloInicioSesion {
+div div.avatarRow{
+    justify-content: center;
+}
+div.divAvatarUser{
+    justify-content: center;
+    display: flex;
+    padding: 20px;
+
+}
+div.divAvatarUser img.avatarUser{
+    height: 200px;
+}
+div.cajaLoginOk h1.tituloInicioSesion {
     background-color: rgb(235, 230, 230);
     height: auto;
     margin: 20px auto;
@@ -18,13 +28,28 @@ div h1.tituloInicioSesion {
     border-radius: 10px;
     text-align: center;
 }
+div.cajaLoginOk h2.subTituloInicioSesion {
+    height: auto;
+    text-align: center;
+}
 
-.botonAñadirCarrito {
-    margin: 10px auto;
-    width: 200px;
+div.cajaLoginOk p.elParrafoInicioSesion {
+    height: auto;
+    text-align: center;
+}
+
+a.aButton{
+    display: flex;
 }
 
 .botonAñadirCarrito {
     margin: 10px auto;
     width: 200px;
+
+}
+
+.botonAñadirCarrito {
+    margin: 10px auto;
+    width: 200px;
+
 }

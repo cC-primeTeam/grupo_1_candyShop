@@ -3,29 +3,37 @@
 <head>
   <!-- Include Head -->
   <%- include('partials/_contentHead') %>
-
-    <title>CandyShop - Login Usuario</title>
+  
+  <title>CandyShop - Login Usuario</title>
 </head>
 <body>
-      <!--include HEADER-->
+  <!--include HEADER-->
   <%- include('partials/header') %>
   
   <!--include Nav Bar 2-->
   <%- include('partials/navBar2') %>
-
+  
   <div class="container cajaLoginOk cajaInicioUsers">
-    <h1> ¡Bienvenidx <%= usuario %> !</h1>
-    <h2>¡Ya estas logueado!</h2>
-    <h6> Mira tu carrito o podes ir viendo nuestros productos!</h6>
-    <a href="/products" class="">
-        <button type="button" class="btn btn-primary botonAñadirCarrito">Todos los productos</button>
-    </a>
-    <a href="/sales/purchase" class="">
-      <button type="button" class="btn btn-primary botonAñadirCarrito">Ver carrito</button>
-  </a>
-  </div>
+    <div class="avatarRow row">
+      <div class="divAvatarUser col-12">
+      <img class="avatarUser" src="/images/uploads/users/<%= elUsuario.avatar %>" alt="Foto del usuario: <%= elUsuario.email %>">
+    </div>
+    </div>
+    <h1 class="tituloInicioSesion"> ¡Bienvenidx <%= usuario %> !</h1>
+    <h2 class="subTituloInicioSesion">¡Ya estas logueado!</h2>
+    <p class="elParrafoInicioSesion"> Mira tu carrito o podes ir viendo nuestros productos!</p>
 
-    <!--Include footer -->
+    <div class="rowButtons row">
+    <a href="/products" class="aButton col-6">
+      <button type="button" class="btn btn-primary botonAñadirCarrito">Todos los productos</button>
+    </a>
+    <a href="/sales/purchase" class="aButton col-6">
+      <button type="button" class="btn btn-primary botonAñadirCarrito">Ver carrito</button>
+    </a>
+  </div>
+  </div>
+  
+  <!--Include footer -->
   <%- include('partials/footer') %>
   
   <!-- Include End Body Scripts -->

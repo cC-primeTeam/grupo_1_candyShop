@@ -22,22 +22,25 @@ let upload = multer({ storage: storage })
 
 /* -------------------
    VISTAS PRODUCTS
--------------------*/
-router.get('/', productsController.index); //TODOS LOS PRODUCTOS
-router.get('/:id', productsController.detailProduct); //DETALLE DE PRODCUTO
-
-/* -------------------
+   -------------------*/
+   router.get('/', productsController.index); //TODOS LOS PRODUCTOS
+   
+   /* -------------------
    CREAR PRODUCTOS
--------------------*/
-router.get('/create', adminMiddleware, productsController.create); //CREAR UN PRODUCTO - SOLO ADMINS
-router.post('/create', upload.any(), productsController.store); //CREAR UN PRODUCTO - POST
-
-/* -------------------
+   -------------------*/
+   router.get('/create', adminMiddleware, productsController.create); //CREAR UN PRODUCTO - SOLO ADMINS
+   router.post('/create', upload.any(), productsController.store); //CREAR UN PRODUCTO - POST
+   
+   /* -------------------
    MODIF. PRODUCTOS
--------------------*/
-router.get('/allProductsModify', adminMiddleware, productsController.allProductsModify); //TODOS LOS PRODUCTOS PARA EDITAR - SOLO ADMIN
-router.get('/edit/:id', adminMiddleware, productsController.editProduct); //EDITAR UN PRODUCTO - SOLO ADMINS
-router.put('/edit/:id', productsController.updateProduct); //EDITAR UN PRODUCTO - POST
-router.delete('/delete/:id', productsController.destroy); //ELIMINA UN PRODUCTO - POST
-
+   -------------------*/
+   router.get('/allProductsModify', adminMiddleware, productsController.allProductsModify); //TODOS LOS PRODUCTOS PARA EDITAR - SOLO ADMIN
+   router.get('/edit/:id', adminMiddleware, productsController.editProduct); //EDITAR UN PRODUCTO - SOLO ADMINS
+   router.put('/edit/:id', productsController.updateProduct); //EDITAR UN PRODUCTO - POST
+   router.delete('/delete/:id', productsController.destroy); //ELIMINA UN PRODUCTO - POST
+   
+/* -------------------
+   VISTAS VARIABLE (ID)
+   -------------------*/
+   router.get('/:id', productsController.detailProduct); //DETALLE DE PRODCUTO
 module.exports = router;

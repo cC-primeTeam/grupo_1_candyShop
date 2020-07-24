@@ -65,8 +65,12 @@ let usersController = {
     }
   },
   users: function(req, res, next) {
+    
+    let usrID = req.session.emailUsuario;
+    let elUsuario  = usuarios.find(user => user.email == usrID);
     res.render('user', {
-      usuario: req.session.emailUsuario
+      usuario: req.session.emailUsuario,
+      elUsuario
     });
   },
   logout: function(req, res, next) {
