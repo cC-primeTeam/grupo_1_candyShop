@@ -35,7 +35,7 @@ let upload = multer({ storage: storage })
    MODIF. PRODUCTOS
    -------------------*/
    router.get('/allProductsModify', adminMiddleware, productsController.allProductsModify); //TODOS LOS PRODUCTOS PARA EDITAR - SOLO ADMIN
-   router.get('/edit/:id', adminMiddleware, productsController.editProduct); //EDITAR UN PRODUCTO - SOLO ADMINS
+   router.get('/edit/:id', adminMiddleware, productsController.editProduct); //EDITAR UN PRODUCTO - SOLO ADMINS 
    router.put('/edit/:id', productsController.updateProduct); //EDITAR UN PRODUCTO - POST
    router.delete('/delete/:id', productsController.destroy); //ELIMINA UN PRODUCTO - POST
    

@@ -29,8 +29,8 @@ let productsController = {
     //       }
     // res.send('ok!!!')
     let pdtoID = req.params.id;
-    let productFind = productosParseados.find(pdto => pdto.idProducto == pdtoID);
-    
+    let productFind = productosParseados.find(pdto => pdto.idProducto == pdtoID); 
+
     res.render('productDetail', {
       productFind,
       milesGenerator: milSeparator
@@ -72,10 +72,20 @@ let productsController = {
   // MODIFICAR - muestra formulario para actualizar producto.
   updateProduct: function (req, res) {
     //res.send(req.body)
+    let productoRecuperado;
+    
+    for(let i = 0; i < productosParseados.length; i++) {
+      if(productosParseados[i].idProducto == req.params.id) {
+        productoRecuperado = productosParseados[i];
+      }
+    }    
+
     let productoActualizado = {
       idProducto: Number(req.params.id),
-      ...req.body
+      ...req.body,
+      imgProducto: productoRecuperado.imgProducto
     }
+
     for(let i = 0; i < productosParseados.length; i++) {
       if (productosParseados[i].idProducto == productoActualizado.idProducto) {
         productosParseados[i] = productoActualizado;
@@ -84,6 +94,7 @@ let productsController = {
       }
     }
   },
+
   allProductsModify: function(req, res, next) {
     res.render('allProductsModify', {
       productosParseados, 

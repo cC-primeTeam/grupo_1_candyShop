@@ -14,4 +14,8 @@ router.get('/model', function(req, res, next) {
   res.render('modelView');
 })
 
+router.get('/session', function(req, res) {
+   res.send(req.session);
+ })
+
 module.exports = router;
