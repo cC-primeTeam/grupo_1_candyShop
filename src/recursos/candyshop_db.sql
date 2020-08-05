@@ -1,4 +1,4 @@
-CREATE DATABASE  IF NOT EXISTS `candyshop_db` /*!40100 DEFAULT CHARACTER SET utf8mb4 */;
+CREATE DATABASE  IF NOT EXISTS `candyshop_db` /*!40100 DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci */;
 USE `candyshop_db`;
 -- MySQL dump 10.13  Distrib 5.7.17, for Win64 (x86_64)
 --
@@ -18,6 +18,91 @@ USE `candyshop_db`;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Table structure for table `categories_products`
+--
+
+DROP TABLE IF EXISTS `categories_products`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `categories_products` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `name` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `categories_products`
+--
+
+LOCK TABLES `categories_products` WRITE;
+/*!40000 ALTER TABLE `categories_products` DISABLE KEYS */;
+INSERT INTO `categories_products` VALUES (1,NULL,NULL,'ALFAJOR');
+/*!40000 ALTER TABLE `categories_products` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `images_products`
+--
+
+DROP TABLE IF EXISTS `images_products`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `images_products` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `image` varchar(45) COLLATE utf8_unicode_ci NOT NULL,
+  `products_id` int(10) unsigned DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `candy_idx` (`products_id`),
+  KEY `prueba_idx` (`products_id`),
+  CONSTRAINT `images_products_id_foreign` FOREIGN KEY (`products_id`) REFERENCES `products` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `images_products`
+--
+
+LOCK TABLES `images_products` WRITE;
+/*!40000 ALTER TABLE `images_products` DISABLE KEYS */;
+/*!40000 ALTER TABLE `images_products` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `prices`
+--
+
+DROP TABLE IF EXISTS `prices`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `prices` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `cost` int(10) DEFAULT NULL,
+  `utility` int(10) DEFAULT NULL,
+  `price` int(10) DEFAULT NULL,
+  `products_id` int(10) unsigned DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `prices_products_id_foreign_idx` (`products_id`),
+  CONSTRAINT `prices_products_id_foreign` FOREIGN KEY (`products_id`) REFERENCES `products` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `prices`
+--
+
+LOCK TABLES `prices` WRITE;
+/*!40000 ALTER TABLE `prices` DISABLE KEYS */;
+/*!40000 ALTER TABLE `prices` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `products`
 --
 
@@ -25,13 +110,20 @@ DROP TABLE IF EXISTS `products`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `products` (
-  `idproduct` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `name` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
-  `detail` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (`idproduct`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+  `name` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+  `detail` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `category_id` int(10) unsigned DEFAULT NULL,
+  `top_check` tinyint(1) unsigned NOT NULL,
+  `oferta_check` tinyint(1) unsigned NOT NULL,
+  `oferta_descuento` int(10) DEFAULT NULL,
+  `oferta_precio` int(10) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `prueba_idx` (`category_id`),
+  CONSTRAINT `products_category_id_foreign` FOREIGN KEY (`category_id`) REFERENCES `categories_products` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -40,7 +132,44 @@ CREATE TABLE `products` (
 
 LOCK TABLES `products` WRITE;
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
+INSERT INTO `products` VALUES (1,NULL,NULL,'prueba','prueba',NULL,123,123,123,123);
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `users`
+--
+
+DROP TABLE IF EXISTS `users`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `users` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `password` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `adress` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `location` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `province` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `postal_code` int(11) DEFAULT NULL,
+  `telephone` varchar(17) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `name_fantasy` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `business_name` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `cuit` int(11) DEFAULT NULL,
+  `fiscal_condition` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `image` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `users`
+--
+
+LOCK TABLES `users` WRITE;
+/*!40000 ALTER TABLE `users` DISABLE KEYS */;
+/*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -52,4 +181,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-08-03 20:13:17
+-- Dump completed on 2020-08-04 22:35:20
