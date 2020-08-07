@@ -2,7 +2,7 @@ module.exports = (sequelize, dataTypes) => {
   let alias = 'ImgProd';
   let cols = {
     id: {
-      type: dataTypes.INTEGER(10),
+      type: dataTypes.INTEGER(10).UNSIGNED,
       primaryKey: true,
       autoIncrement: true
     },
@@ -23,12 +23,12 @@ module.exports = (sequelize, dataTypes) => {
   };
   const ImgProd = sequelize.define(alias, cols, config);
   
-  ImgProd.associate = function(models) {
-    ImgProd.belongsTo(models.Prod, {
-        as: 'Prod',
-        foreignKey: 'products_id'
-    })
-};
+//   ImgProd.associate = function(models) {
+//     ImgProd.belongsTo(models.Prod, {
+//         as: 'Prod',
+//         foreignKey: 'products_id'
+//     })
+// };
 
   return ImgProd;
 }

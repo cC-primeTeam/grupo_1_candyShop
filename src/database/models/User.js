@@ -2,13 +2,14 @@ module.exports = (sequelize, dataTypes) => {
   const alias = 'Usuario';
   const cols = {
     id: {
-      type: dataTypes.INTEGER(10),
+      type: dataTypes.INTEGER(10).UNSIGNED,
       primaryKey: true,
       autoIncrement: true
     },
     email: {
       type: dataTypes.STRING(255),
-      allowNull: false
+      allowNull: false,
+      unique: true
     },
     password: {
       type: dataTypes.STRING(255),
@@ -27,7 +28,7 @@ module.exports = (sequelize, dataTypes) => {
       type: dataTypes.INTEGER(11)
     },
     telephone: {
-      type: dataTypes.STRING(17)
+      type: dataTypes.STRING(20)
     },
     name_fantasy:{
       type: dataTypes.STRING(255)
@@ -36,7 +37,7 @@ module.exports = (sequelize, dataTypes) => {
       type: dataTypes.STRING(255)
     },
     cuit:{
-      type: dataTypes.INTEGER(11)
+      type: dataTypes.STRING(20)
     },
     fiscal_condition:{
       type: dataTypes.STRING(45)

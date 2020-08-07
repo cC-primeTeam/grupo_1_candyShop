@@ -30,9 +30,9 @@ router.get('/', authMiddleware, usersController.users); // EL USUARIO - SOLO USR
 /* -------------------
    REGISTRO - USR
 -------------------*/
-router.get('/register', guestMiddleware, usersController.register); //CREAR UN USUARIO - SOLO URS VISITANTE
-router.post('/register', upload.any(), registerValidation, registerLogMiddleware, usersController.save); //CREAR UN USUARIO - POST
-router.get('/registerEdit', authMiddleware, usersController.registerEdit); //EDITAR USUARIO - SOLO USR LOGUEADOS
+// router.get('/register', guestMiddleware, usersController.register); //CREAR UN USUARIO - SOLO URS VISITANTE
+// router.post('/register', upload.any(), registerValidation, registerLogMiddleware, usersController.save); //CREAR UN USUARIO - POST
+// router.get('/registerEdit', authMiddleware, usersController.registerEdit); //EDITAR USUARIO - SOLO USR LOGUEADOS
 //router.put('/registerEdit/:id', authMiddleware, xxxxxxxxxx); //EDITAR USUARIO - POST
 
 /* -------------------
@@ -45,6 +45,19 @@ router.get('/registerEdit', authMiddleware, usersController.registerEdit); //EDI
 /* -------------------
    LOGIN
 -------------------*/
+// router.get('/login', guestMiddleware, usersController.login); // LOGIN - SOLO URS VISITANTE
+// router.post('/login', loginValidation, usersController.verify); // LOGIN - POST
+// router.get('/logout', authMiddleware, usersController.logout); // LOGOUT - SOLO USR LOGUEADOS
+
+
+/* -------------------
+   PRUEBAS DB
+-------------------*/
+router.get('/db', usersController.list);
+router.get('/detail/:id', usersController.detail);
+
+router.get('/register', usersController.register);
+router.post('/register', upload.any(), usersController.save);
 router.get('/login', guestMiddleware, usersController.login); // LOGIN - SOLO URS VISITANTE
 router.post('/login', loginValidation, usersController.verify); // LOGIN - POST
 router.get('/logout', authMiddleware, usersController.logout); // LOGOUT - SOLO USR LOGUEADOS

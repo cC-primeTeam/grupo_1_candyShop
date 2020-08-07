@@ -29,12 +29,12 @@ module.exports = (sequelize, dataTypes) => {
   };
   const Price = sequelize.define(alias, cols, config);
   
-  Price.associate = function(models) {
-    Price.belongsTo(models.Prod, {
-        as: 'Prod',
-        foreignKey: 'products_id'
-    })
-};
+//   Price.associate = function(models) {
+//     Price.belongsTo(models.Prod, {
+//         as: 'Prod',
+//         foreignKey: 'products_id'
+//     })
+// };
 
   return Price;
 }
