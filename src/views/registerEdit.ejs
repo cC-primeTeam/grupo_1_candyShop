@@ -16,62 +16,56 @@
       
       <h1 class="col-md-8 col-mb-12 tituloRegistro">Edita tu Usuario </h1>
   
-      <form action="" method="post" enctype="multipart/form-data" class="container row">
+      <form action="/users/registerEdit/<%=elUsuario.id%>" method="post" enctype="multipart/form-data" class="container row">
     
         <div class="container row info-Registro">
           <div class=" container col-6">
             <label for="exampleInputEmail1">Email</label>
-            <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="<%= elUsuario.email %>">
           </div>
 
           <div class="container col-6">
             <label for="exampleInputPassword1">Contraseña</label>
-            <input type="password" name="password" class="form-control" id="exampleInputPassword1">
+            <input type="password" name="password" class="form-control" id="exampleInputPassword1" value="<%= elUsuario.password %>">
           </div>
 
           <div class=" container col-4">            
-            <label for="nombreEmpresa">Nombre Empresa</label>
-            <input type="text" name="nombreEmpresa" class="form-control" id="text" aria-describedby="emailHelp">          
+            <label for="name_fantasy">Nombre Empresa</label>
+            <input type="text" name="name_fantasy" class="form-control" id="name_fantasy" aria-describedby="emailHelp" value="<%= elUsuario.name_fantasy %>">          
           </div>
 
           <div class=" container col-4">           
-            <label for="direccion"> Direccion </label>
-            <input type="text" name="direccion" class="form-control" id="text" aria-describedby="emailHelp">           
+            <label for="adress"> Direccion </label>
+            <input type="text" name="adress" class="form-control" id="adress" aria-describedby="emailHelp" value="<%= elUsuario.adress %>">           
           </div>
 
           <div class=" container col-4">
-            <label for="direccion"> Teléfono</label>
-            <input type="number" name="telefono" class="form-control" id="text" aria-describedby="emailHelp">          
+            <label for="telephone"> Teléfono</label>
+            <input type="number" name="telephone" class="form-control" id="telephone" aria-describedby="emailHelp" value="<%= elUsuario.telephone %>">          
           </div>
 
           <div class=" container col-4">       
-            <label for="razonSocial"> Razón social </label>
-            <input type="text" name="razonSocial" class="form-control" id="text" aria-describedby="emailHelp">            
+            <label for="business_name"> Razón social </label>
+            <input type="text" name="business_name" class="form-control" id="business_name" aria-describedby="emailHelp" value="<%= elUsuario.business_name %>">            
           </div>
 
           <div class=" container col-4">
-            <label for="direccion"> CUIT/DNI</label>
-            <input type="number" name="cuit/dni" class="form-control" id="text" aria-describedby="emailHelp">
+            <label for="cuit"> CUIT/DNI</label>
+            <input type="number" name="cuit" class="form-control" id="cuit" aria-describedby="emailHelp" value="<%= elUsuario.cuit %>">
           </div>
 
           <div class=" container col-4">              
-            <label for="factura"> Factura </label>
-            <input type="text" name="factura" class="form-control" id="text" aria-describedby="emailHelp">              
-          </div>
-          
-          <div class= "btn-group col-6">                 
-            <div class= "botonMinYMay">
-              <input type="radio" name="valor" value="1" checked> <label for=""> Mayorista</label>
-              <input type="radio" name="valor" value="0" > <label for=""> Minorista</label>
-            </div>           
+            <label for="fiscal_condition"> Condicion fiscal </label>
+            <input type="text" name="fiscal_condition" class="form-control" id="fiscal_condition" aria-describedby="emailHelp" value="<%= elUsuario.fiscal_condition %>">              
           </div>
           
           <div class= "container col-6">
             <div class="botonCargarImg">
-              <label for="imagen">Cargar Imagen</label>
-              <input class="btn" type="file" name="imgProducto">
+              <label for="imgUser">Cargar Imagen</label>
+              <input class="file" type="file" name="imgUser" id="imgUser">
             </div>
           </div>
+
 
           <button type="submit" class="btn btn-success btn-lg btn-block botonForm2 col-md-12 mb-12">Confirmar cambios
           </button>

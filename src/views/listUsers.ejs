@@ -9,8 +9,9 @@
     <h1>Listado de usuarios</h1>
     <a href="/"><button>IR AL HOME</button></a>
     <ul>
-        <% for( let i = 0; i < usuarios.length; i++ ) { %>
-            <li><a href="/users/detail/<%= usuarios[i].id %>"><%= usuarios[i].email %></a></li>
+        <% for( let i = 0; i < losUsuarios.length; i++ ) { %>
+            <li><a href="/users/usrManagementForAdmin/<%= losUsuarios[i].id %>"><%= losUsuarios[i].email %></a> Admin: <%= losUsuarios[i].admin %> Activo: <%= losUsuarios[i].active %>
+                </li>
         <% } %>
     </ul>
 </body>
