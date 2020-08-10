@@ -9,16 +9,40 @@ const {check, validationResult, body} = require('express-validator');
 module.exports = [
     check('email')
     .isEmail().withMessage('Verifica el e-mail ingresado por favor!'),
+    
+    
+    
+    
+    
+    
+    
     body('email')
     .custom(function(value) {
-        for(let i = 0; i < usuarios.length; i++) {
-            if(usuarios[i].email == value) {
-                return true;
+        db.Usuario.findOne({ where:{ email:value } })
+        .then(function(elUsuario){
+            console.log('elUsuario.email es: ' + elUsuario.email);
+            console.log('el value es: ' + value);
+            // for(let i = 0; i < elUsuario.length; i++) {
+            if(elUsuario.email == value) {
+                return false;
             }
-        }
-        return false
+            // }
+        })
+        return true
     }).withMessage('Este mail no se encuentra registrado!'),
-
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     check('password')
     .isLength({min: 8, max: 16}).withMessage('El password debe poseer entre 8 y 16 caracteres')
 ]

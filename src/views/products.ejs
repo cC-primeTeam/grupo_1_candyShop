@@ -23,21 +23,22 @@
       <!-- MUESTRA DE LOS PRODUCTOS -->
       <section class="productosDestacados container">
         <div class="row">
-          <% for (product of productosParseados) { 
+          <% for (product of losProductos) { 
             let getDiscountPercentage = discount => (100 - discount) / 100;
-            let finalPrice = (product.precio * getDiscountPercentage(product.descuento)).toFixed(0); 
+            let finalPrice = (product.price * getDiscountPercentage(product.offer_discount)).toFixed(0); 
             %>
             <div class="col-12 col-sm-6 col-lg-3">
               <article class="elProducto">
-                <a href="/products/<%= `${product.idProducto}` %>">
+                <a href="/products/<%= `${product.id}` %>">
                   
                   <div class="imagenProducto">
-                    <img src="/images/uploads/productDetail/<%= product.imgProducto %>" alt="imagen de producto <%= product.nombre %>">
+                    <img src="/images/uploads/productDetail/<%= product.image %>                   
+                    " alt="imagen de producto <%= product.name %>">
                   </div>
                   
                   <div class="infoProducto">
-                    <h6><%= product.nombre %></h6>
-                    <p> <%= product.detalle %></p>  <p><%= product.descuento %>% OFF</p>
+                    <h6><%= product.name %></h6>
+                    <p> <%= product.detail %></p>  <p><%= product.offer_discount %>% OFF</p>
                     <b><%= milesGenerator (finalPrice) %></b>
                     <a class="carrito" href="/sales/purchase"><i class="fas fa-shopping-cart"></i></a>
                   </div>

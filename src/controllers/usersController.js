@@ -140,7 +140,7 @@ let usersController = {
     registerUpdate: function(req, res) {
       db.Usuario.update({
         email: req.body.email,
-        password: req.body.password,
+        password: bcrypt.hashSync(req.body.password, 10),
         adress: req.body.adress,
         location: req.body.location,
         province: req.body.province,

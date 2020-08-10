@@ -21,12 +21,12 @@
       
       <article class="tituloContainer container col-12">
         <div class="tituloRow row">
-          <h2 class="tituloDetalleProducto"><%= productFind.nombre %></h2>
+          <h2 class="tituloDetalleProducto"><%= elProducto.name %></h2>
         </div> <!-- ./tituloRow-->
       </article> <!-- ./tituloContainer-->
       
       <article class=" contenedorFotoDetalleProducto col-12 col-md-3 ">
-        <img class="fotoDetalleProducto col-12" src="/images/uploads/productDetail/<%= productFind.imgProducto %>" alt="Foto del producto: <%= productFind.nombre %>">   
+        <img class="fotoDetalleProducto col-12" src="/images/uploads/productDetail/<%= elProducto.image %>" alt="Foto del producto: <%= elProducto.name %>">   
       </article> <!-- ./contenedorFotoDetalleProducto-->
       
       <article class="productoDetalladoContainer col-12 col-md-7 container ">
@@ -34,7 +34,11 @@
                     
           <div class="precioContainer container col-12">
             <div class="precioRow row">
-              <h4 class="precioh4">Precio: <small class="smallPrecioh4"><%= milesGenerator(productFind.precio) %></small></h4>
+              <% let product = elProducto;
+                let getDiscountPercentage = discount => (100 - discount) / 100;
+                let finalPrice = (product.price * getDiscountPercentage(product.offer_discount)).toFixed(0); 
+                %>
+              <h4 class="precioh4">Precio: <small class="smallPrecioh4"><%= milesGenerator(finalPrice) %></small></h4>
             </div> <!-- ./precioRow-->
           </div> <!-- ./precioContainer-->
           
@@ -54,7 +58,7 @@
 
           <div class="totalContainer container col-12">
             <div class="totalRow row">
-              <h5 class="totalh5">Total:  <small class="smalltotalh5"><%= milesGenerator(productFind.precio) %></small></h5>
+              <h5 class="totalh5">Total:  <small class="smalltotalh5"><%= milesGenerator(finalPrice) %></small></h5>
             </div> <!-- ./totalRow-->
           </div> <!-- ./totalContainer-->
           
@@ -70,7 +74,7 @@
       <article class="descripcionDetallada col-12">
         <div class="descripcionDetalladaRow row">
           <b class="col-12">Descripcion detallada: </b>
-          <p class="col-12"><%= productFind.detalle %></p>
+          <p class="col-12"><%= elProducto.detail %></p>
         </div>
       </article> <!-- ./descripcionDetallada -->
       
