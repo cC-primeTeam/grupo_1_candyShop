@@ -25,14 +25,18 @@ let upload = multer({ storage: storage })
 /* -------------------
 PRUEBAS DB
 -------------------*/
-router.get('/', productsController.index);
+router.get('/', productsController.all);
+router.get('/offer', productsController.offers);
 router.get('/create', productsController.create);
 router.post('/create', upload.any(), productsController.store);
 
 
+router.get('/allProductsModify', productsController.allProductsModify);
+router.get('/edit/:id', productsController.editProduct);
+router.put('/edit/:id', upload.any(), productsController.updateProduct);
+router.delete('/delete/:id', productsController.destroy);
 
-
- router.get('/:id', productsController.detailProduct);
+router.get('/:id', productsController.detailProduct);
 
 
 /* -------------------

@@ -15,21 +15,20 @@ module.exports = [
     
     
     
-    
+    /*
     body('email')
     .custom(function(value) {
         db.Usuario.findOne({ where:{ email:value } })
         .then(function(elUsuario){
             console.log('elUsuario.email es: ' + elUsuario.email);
             console.log('el value es: ' + value);
-            // for(let i = 0; i < elUsuario.length; i++) {
             if(elUsuario.email == value) {
-                return false;
+                return true;
             }
-            // }
         })
-        return true
+        return false
     }).withMessage('Este mail no se encuentra registrado!'),
+*/
     
     
     

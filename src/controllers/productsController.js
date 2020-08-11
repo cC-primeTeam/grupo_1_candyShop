@@ -1,7 +1,8 @@
 const db = require('../database/models');
-const {check, validationResult, body} = require('express-validator');
 
 
+
+// const {check, validationResult, body} = require('express-validator');
 // const fs = require('fs');
 // const path = require('path');
 // let jsonDeProductos = fs.readFileSync(path.join(__dirname, '../data/productsDataBase.json'), 'utf8');
@@ -13,67 +14,102 @@ function milSeparator(x) {
 
 let productsController = {
   // TODOS LOS PRODUCTOS
-  index: function(req, res, next) {
-    db.Producto.findAll()
+  all: function(req, res, next) {
+    db.Producto.findAll({
+      where:{
+        active: {[db.Sequelize.Op.eq] : 1}
+      }
+    })
     .then(function(losProductos) {
       res.render('products', {losProductos, milesGenerator: milSeparator})
     })
   },
-// CREAR - muestra formulario vacio para crear
-create: function(req, res, next) {
-  res.render('productCreateForm');
-},
-// CREAR - Almacena producto
-store: function(req, res, next) {
-  db.Producto.create({
-    name: req.body.name,
-    category: req.body.category,
-    detail: req.body.detail,
-    price: req.body.price,
-    top_check: req.body.top_check,
-    offer_check: req.body.offer_check,
-    offer_discount: req.body.offer_discount,
-    image: req.files[0].filename,
-    active: 1
-  })
-    res.redirect('/products')
-    // res.redirect('/products/' + nuevoProducto.idProducto) mandar al producto creado
-},
-// DETALLE DE CADA PRODUCTO
-detailProduct: function(req, res, next) {
-  db.Producto.findByPk(req.params.id)
-  .then(function(elProducto) {
-    let activeStat = elProducto.active == true ? 'SI, EL PRODUCTO ESTA ACTIVO' : 'NO, EL PRODUCTO ESTA SUSPENDIDO';
-    res.render('productDetail', {elProducto:elProducto, activeStat, milesGenerator: milSeparator});
+    // PRODUCTOS EN OFERTA
+    offers: function(req, res, next) {
+      db.Producto.findAll({
+        where:{
+          offer_check: {[db.Sequelize.Op.eq] : 1}
+        }
+      })
+      .then(function(losProductos) {
+        res.render('offers', {losProductos, milesGenerator: milSeparator})
       })
     },
-
-
-
-  // let pdtoID = req.params.id;
-  // let productFind = productosParseados.find(pdto => pdto.idProducto == pdtoID); 
+  // CREAR - muestra formulario vacio para crear
+  create: function(req, res, next) {
+    res.render('productCreateForm');
+  },
+  // CREAR - Almacena producto
+  store: function(req, res, next) {
+    db.Producto.create({
+      name: req.body.name,
+      category: req.body.category,
+      detail: req.body.detail,
+      price: req.body.price,
+      top_check: req.body.top_check,
+      offer_check: req.body.offer_check,
+      offer_discount: req.body.offer_discount,
+      image: req.files[0].filename,
+      active: 1
+    })
+    res.redirect('/products')
+    // res.redirect('/products/' + nuevoProducto.idProducto) mandar al producto creado
+  },
+  // DETALLE DE CADA PRODUCTO
+  detailProduct: function(req, res, next) {
+    db.Producto.findByPk(req.params.id)
+    .then(function(elProducto) {
+      let activeStat = elProducto.active == true ? 'SI, EL PRODUCTO ESTA ACTIVO' : 'NO, EL PRODUCTO ESTA SUSPENDIDO';
+      res.render('productDetail', {elProducto:elProducto, activeStat, milesGenerator: milSeparator});
+    })
+  },
+  allProductsModify: function(req, res, next) {
+    db.Producto.findAll()
+    .then(function(losProductos) {
+      res.render('allProductsModify', {losProductos, milesGenerator: milSeparator})
+    })
+  },
+  // MODIFICAR - muestra formulario para editar producto con el producto
+  editProduct: function (req, res, next) {
+    db.Producto.findByPk(req.params.id)
+    .then(function(elProducto) {
+      let activeStat = elProducto.active == true ? 'La venta del producto se encuentra ACTIVA' : 'La venta del producto se encuentra  PAUSADA';
+      res.render ('productEditForm', {elProducto:elProducto, activeStat})
+    })      
+  },
+  // MODIFICAR - put.
+  updateProduct: function (req, res) {
+    db.Producto.update({
+      name: req.body.name,
+      category: req.body.category,
+      detail: req.body.detail,
+      price: req.body.price,
+      top_check: req.body.top_check,
+      offer_check: req.body.offer_check,
+      offer_discount: req.body.offer_discount,
+      // image: req.files[0].filename,
+      active: req.body.active
+    },
+    {
+      where: {
+        id: req.params.id
+      }
+    })
+    .then(function() {
+      res.redirect('/products/' + req.params.id);
+    }); 
+  },
+  destroy: function (req, res) {
+    db.Producto.destroy({
+      where: {
+        id: req.params.id
+      }
+    })
+    .then(function() {
+      res.redirect('/products');
+    });
+  }
   
-  // res.render('productDetail', {
-  //   productFind,
-  //   milesGenerator: milSeparator
-  // });
-  
-// },
-
-
-// listUsrManagementForAdmin: function(req, res, next) {
-//   db.Usuario.findByPk(req.params.id)
-//   .then(function(elUsuario) {
-//     let adminStat = elUsuario.admin == true ? 'SI, ES ADMINISTRADOR' : 'NO, ES USUARIO';
-//     let activeStat = elUsuario.active == true ? 'SI, EL USUARIO ESTA ACTIVO' : 'NO, EL USUARIO ESTA SUSPENDIDO';
-//     res.render('userManagementForAdmin', {elUsuario:elUsuario, adminStat, activeStat});
-//   })
-// },
-
-
-
-
-
 }
 module.exports = productsController;
 

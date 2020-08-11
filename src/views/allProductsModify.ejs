@@ -21,28 +21,28 @@
       <!-- MUESTRA DE LOS PRODUCTOS -->
       <section class="productosDestacados container">
         <div class="row">
-          <% for (product of productosParseados) { 
+          <% for (product of losProductos) { 
             let getDiscountPercentage = discount => (100 - discount) / 100;
-            let finalPrice = (product.precio * getDiscountPercentage(product.descuento)).toFixed(0); 
+            let finalPrice = (product.price * getDiscountPercentage(product.offer_discount)).toFixed(0); 
             %>
             <article class="elContenedor col-6 col-sm-4 col-lg-2 container">
               <div class="elProducto row">
                 
                 <div class="imagenProducto col-12">
-                  <img src="/images/uploads/productDetail/<%= product.imgProducto %>" alt="imagen de producto <%= product.nombre %>">
+                  <img src="/images/uploads/productDetail/<%= product.image %>" alt="imagen de producto <%= product.name %>">
                 </div>  <!-- ./imagenProducto -->
                 
                 <div class="infoProducto col-12">
-                  <h6><%= product.nombre %></h6>
+                  <h6><%= product.name %></h6>
                 </div>  <!-- ./infoProducto -->
                 
                 <div class="losLinks col-12 container-fluid">
                   <div class="losLinksRow row">
-                    <a class="elLink col-12 col-sm-6" href="/products/edit/<%= `${product.idProducto}` %>">
+                    <a class="elLink col-12 col-sm-6" href="/products/edit/<%= `${product.id}` %>">
                       <button type="submit" class="btn btn-warning">Modificar</button>
                     </a>  
                     
-                    <a class="elLink col-12 col-sm-6" href="/products/<%= `${product.idProducto}` %>">
+                    <a class="elLink col-12 col-sm-6" href="/products/<%= `${product.id}` %>">
                       <button type="submit" class="btn btn-info">Ver</button>
                     </a>
                   </div>

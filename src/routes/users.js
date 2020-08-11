@@ -70,7 +70,7 @@ router.post('/registerEdit/:id', upload.any(), authMiddleware, usersController.r
 
 
 router.get('/login', guestMiddleware, usersController.login); // LOGIN - SOLO URS VISITANTE
-router.post('/login',  usersController.verify); // LOGIN - POST loginValidation,
+router.post('/login', loginValidation, usersController.verify); // LOGIN - POST 
 router.get('/logout', authMiddleware, usersController.logout); // LOGOUT - SOLO USR LOGUEADOS
 
 module.exports = router;
