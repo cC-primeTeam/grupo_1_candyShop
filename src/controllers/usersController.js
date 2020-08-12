@@ -163,7 +163,9 @@ let usersController = {
         res.redirect('/users');
       }); 
     },
-    
+    noAdmin: function(req, res, next) {
+      res.render('noAdmin',)
+    }
     
     
     

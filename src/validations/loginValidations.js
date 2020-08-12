@@ -10,37 +10,18 @@ module.exports = [
     check('email')
     .isEmail().withMessage('Verifica el e-mail ingresado por favor!'),
     
-    
-    
-    
-    
-    
-    /*
     body('email')
-    .custom(function(value) {
-        db.Usuario.findOne({ where:{ email:value } })
+    .custom(async function(value) {
+        let usuario = await db.Usuario.findOne({ where:{ email:value } })
         .then(function(elUsuario){
-            console.log('elUsuario.email es: ' + elUsuario.email);
-            console.log('el value es: ' + value);
-            if(elUsuario.email == value) {
-                return true;
+            if (elUsuario){
+                return true
+            } else{
+                return false
             }
         })
-        return false
+        return usuario
     }).withMessage('Este mail no se encuentra registrado!'),
-*/
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     check('password')
     .isLength({min: 8, max: 16}).withMessage('El password debe poseer entre 8 y 16 caracteres')

@@ -40,7 +40,8 @@ router.get('/', authMiddleware, usersController.users); // EL USUARIO - SOLO USR
 /* -------------------
    REGISTRO - ADMIN
 -------------------*/
-// router.get('/registerAdminList', adminMiddleware, usersController.registerAdminList); //LISTADO USUARIOS - SOLO ADMINS
+router.get('/list', authMiddleware, usersController.list); // adminMiddleware, 
+// router.get('/registerAdminList', usersController.registerAdminList); //LISTADO USUARIOS - SOLO ADMINS
 // router.get('/register/:id', adminMiddleware, productsController.editProduct); //EDITAR UN PRODUCTO - SOLO ADMINS
 //router.post('/suspend/:id', productsController.suspend); //SUSPENDE UN USUARIO - POST
 
@@ -72,5 +73,10 @@ router.post('/registerEdit/:id', upload.any(), authMiddleware, usersController.r
 router.get('/login', guestMiddleware, usersController.login); // LOGIN - SOLO URS VISITANTE
 router.post('/login', loginValidation, usersController.verify); // LOGIN - POST 
 router.get('/logout', authMiddleware, usersController.logout); // LOGOUT - SOLO USR LOGUEADOS
+
+
+
+
+router.get('/noadmin', usersController.noAdmin);
 
 module.exports = router;
