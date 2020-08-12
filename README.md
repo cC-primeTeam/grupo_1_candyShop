@@ -39,5 +39,20 @@ Enlace tablero
 https://trello.com/b/WlSeniwJ
 
  //npm run start
-    
-    // © >_cuarentenialCoders </primeTeam>
+
+-------------------
+BASE DE DATOS
+-------------------
+sequelize db:migrate
+sequelize db:seed:all
+
+Usuarios Admin
+
+	user: hbaravalle@digitalhouse.com
+	pass: 1234567890
+
+	user: uriel@digitalhouse.com
+	pass: 1234567890
+
+
+// © >_cuarentenialCoders </primeTeam>
