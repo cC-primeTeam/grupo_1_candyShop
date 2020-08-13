@@ -110,3 +110,17 @@ section.contenedorImg h5 {
     margin-top: 10px;
     font-weight: bold;
 }
+
+/* =====================
+- SECTION ACTIVO
+===================== */
+
+section.active {
+    margin-top: 10px;
+    border-top: solid black 1px;
+}
+
+section.active h5 {
+    margin-top: 10px;
+    font-weight: bold;
+}
