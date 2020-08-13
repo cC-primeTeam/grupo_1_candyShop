@@ -25,7 +25,15 @@ let upload = multer({ storage: storage })
 /* -------------------
 PRUEBAS DB
 -------------------*/
+
+
+
+
+
 router.get('/', productsController.all);
+router.get('/category/:id', productsController.categoryFilterView);
+router.get('/category/:id/offer', productsController.categoryFilterViewOffer);
+router.get('/category/:id/cheeky', productsController.categoryFilterViewCheeky);
 router.get('/offer', productsController.offers);
 router.get('/create', productsController.create);
 router.post('/create', upload.any(), productsController.store);
@@ -43,6 +51,10 @@ router.get('/:id', productsController.detailProduct);
 VISTAS PRODUCTS
 -------------------*/
 //  router.get('/', productsController.index); //TODOS LOS PRODUCTOS
+/* -------------------
+VISTAS FILTRADO CATEGORIAS
+-------------------*/
+// router.get('/categoryalfajores', productsController.categoryAlfajores); //VISTA CATEGORIA ALFAJORES
 
 /* -------------------
 CREAR PRODUCTOS

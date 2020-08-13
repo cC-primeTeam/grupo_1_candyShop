@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <!-- Include Head -->
+  <%- include('partials/_contentHead') %>
+  
+  <title>CandyShop - Home</title>
+</head>
+
+
+<body>
+  <!--include HEADER-->
+  <%- include('partials/header') %>
+  
+  <!--include CAROUSEL-->
+  <%- include('partials/carousel') %>
+  
+  
+  <h1 class="titularProductsBest"> Buscas <%= laCategoria.name %>, aca tenemos para ofrecerte! </h1>
+ 
+  <!-- MUESTRA DE LOS PRODUCTOS -->
+  <section class="productosDestacados container">
+    <div class="row">
+      <% for (product of losProductos) { 
+        let getDiscountPercentage = discount => (100 - discount) / 100;
+        let finalPrice = (product.price * getDiscountPercentage(product.offer_discount)).toFixed(0); 
+        %>
+        <div class="col-12 col-sm-6 col-lg-3">
+          <article class="elProducto">
+            <a href="/products/<%= `${product.id}` %>">
+              
+              <div class="imagenProducto">
+                <img src="/images/uploads/productDetail/<%= product.image %>                   
+                " alt="imagen de producto <%= product.name %>">
+              </div>
+              
+              <div class="infoProducto">
+                <h6><%= product.name %></h6>
+                <p> <%= product.detail %></p>  <p><%= product.offer_discount %>% OFF</p>
+                <b><%= milesGenerator (finalPrice) %></b>
+                <a class="carrito" href="/sales/purchase"><i class="fas fa-shopping-cart"></i></a>
+              </div>
+            </a>
+            
+          </article>
+        </div>
+        <% } %>
+      </div>
+    </section>
+    
+    <!--Include footer -->
+    <%- include('partials/footer') %>
+    
+    <!-- Include End Body Scripts -->
+    <%- include('partials/_endBodyScripts') %>
+  </body>
+  </html>

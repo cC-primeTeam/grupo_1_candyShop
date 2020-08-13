@@ -15,33 +15,33 @@ function milSeparator(x) {
 let productsController = {
   // TODOS LOS PRODUCTOS
   all: function(req, res, next) {
-    db.Producto.findAll({
+    db.Prod.findAll({
       where:{
         active: {[db.Sequelize.Op.eq] : 1}
       }
     })
     .then(function(losProductos) {
-      res.render('products', {losProductos, milesGenerator: milSeparator})
+      res.render('products', {losProductos:losProductos, milesGenerator: milSeparator})
     })
   },
-    // PRODUCTOS EN OFERTA
-    offers: function(req, res, next) {
-      db.Producto.findAll({
-        where:{
-          offer_check: {[db.Sequelize.Op.eq] : 1}
-        }
-      })
-      .then(function(losProductos) {
-        res.render('offers', {losProductos, milesGenerator: milSeparator})
-      })
-    },
+  // PRODUCTOS EN OFERTA
+  offers: function(req, res, next) {
+    db.Prod.findAll({
+      where:{
+        offer_check: {[db.Sequelize.Op.eq] : 1}
+      }
+    })
+    .then(function(losProductos) {
+      res.render('offers', {losProductos:losProductos, milesGenerator: milSeparator})
+    })
+  },
   // CREAR - muestra formulario vacio para crear
   create: function(req, res, next) {
     res.render('productCreateForm');
   },
   // CREAR - Almacena producto
   store: function(req, res, next) {
-    db.Producto.create({
+    db.Prod.create({
       name: req.body.name,
       category: req.body.category,
       detail: req.body.detail,
@@ -57,29 +57,29 @@ let productsController = {
   },
   // DETALLE DE CADA PRODUCTO
   detailProduct: function(req, res, next) {
-    db.Producto.findByPk(req.params.id)
+    db.Prod.findByPk(req.params.id)
     .then(function(elProducto) {
       let activeStat = elProducto.active == true ? 'SI, EL PRODUCTO ESTA ACTIVO' : 'NO, EL PRODUCTO ESTA SUSPENDIDO';
       res.render('productDetail', {elProducto:elProducto, activeStat, milesGenerator: milSeparator});
     })
   },
   allProductsModify: function(req, res, next) {
-    db.Producto.findAll()
+    db.Prod.findAll()
     .then(function(losProductos) {
-      res.render('allProductsModify', {losProductos, milesGenerator: milSeparator})
+      res.render('allProductsModify', {losProductos:losProductos, milesGenerator: milSeparator})
     })
   },
   // MODIFICAR - muestra formulario para editar producto con el producto
   editProduct: function (req, res, next) {
-    db.Producto.findByPk(req.params.id)
+    db.Prod.findByPk(req.params.id)
     .then(function(elProducto) {
       let activeStat = elProducto.active == true ? 'La venta del producto se encuentra ACTIVA' : 'La venta del producto se encuentra  PAUSADA';
       res.render ('productEditForm', {elProducto:elProducto, activeStat})
     })      
   },
   // MODIFICAR - put.
-  updateProduct: function (req, res) {
-    db.Producto.update({
+  updateProduct: function (req, res, next) {
+    db.Prod.update({
       name: req.body.name,
       category: req.body.category,
       detail: req.body.detail,
@@ -99,8 +99,8 @@ let productsController = {
       res.redirect('/products/' + req.params.id);
     }); 
   },
-  destroy: function (req, res) {
-    db.Producto.destroy({
+  destroy: function (req, res, next) {
+    db.Prod.destroy({
       where: {
         id: req.params.id
       }
@@ -108,16 +108,74 @@ let productsController = {
     .then(function() {
       res.redirect('/products');
     });
+  },
+  categoryFilterView: function(req, res, next) {
+    db.Prod.findAll({
+      include:[{association: 'Category'}],
+      where:{
+        category_id: {[db.Sequelize.Op.eq] : req.params.id}
+      }
+    })
+    .then(function(losProductos) {
+      db.Category.findByPk(req.params.id)
+      .then(function(laCategoria){
+        res.render('categoryFilterView', {losProductos:losProductos, laCategoria:laCategoria, milesGenerator: milSeparator})
+      })
+    })
+  },
+  categoryFilterViewOffer: function(req, res, next) {
+    db.Prod.findAll({
+      include:[{association: 'Category'}],
+      where:{
+        category_id: {[db.Sequelize.Op.eq] : req.params.id},
+        offer_check: {[db.Sequelize.Op.eq] : 1}
+      }
+    })
+    .then(function(losProductos) {
+      db.Category.findByPk(req.params.id)
+      .then(function(laCategoria){
+        res.render('categoryFilterView', {losProductos:losProductos, laCategoria:laCategoria, milesGenerator: milSeparator})
+      })
+    })
+  },
+  categoryFilterViewCheeky: function(req, res, next) {
+    db.Prod.findAll({
+      include:[{association: 'Category'}],
+      where:{
+        category_id: {[db.Sequelize.Op.eq] : req.params.id},
+        top_check: {[db.Sequelize.Op.eq] : 1}
+      }
+    })
+    .then(function(losProductos) {
+      db.Category.findByPk(req.params.id)
+      .then(function(laCategoria){
+        res.render('categoryFilterView', {losProductos:losProductos, laCategoria:laCategoria, milesGenerator: milSeparator})
+      })
+    })
   }
-  
-}
+ }
+
+
+
+
 module.exports = productsController;
-
-
-
-
-
-
+/*
+categoryFilterView: function(req, res, next) {
+  db.Prod.findAll({
+    include:[{association: 'Category'}],
+    where:{
+      category_id: {[db.Sequelize.Op.eq] : req.params.id}
+    }
+  })
+  .then(function(losProductos) {
+    db.Category.findByPk(req.params.id)
+    .then(function(laCategoria){
+      res.render('categoryFilterView', {losProductos:losProductos, laCategoria:laCategoria, milesGenerator: milSeparator})
+    })
+  })
+}
+}
+*/
 
 
 

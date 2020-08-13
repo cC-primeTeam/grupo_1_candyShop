@@ -7,13 +7,14 @@ function milSeparator(x) {
 let mainController = {
   //TOP PRODUCTS - Vista index web
   index: function(req, res, next) {
-    db.Producto.findAll({
+    db.Prod.findAll({
+      include:[{association: 'Category'}],
       where:{
         top_check: {[db.Sequelize.Op.eq] : 1}
       }
     })
     .then(function(losProductos) {
-      res.render('index', {losProductos, milesGenerator: milSeparator})
+      res.render('index', {losProductos:losProductos, milesGenerator: milSeparator})
     })
   }
 }

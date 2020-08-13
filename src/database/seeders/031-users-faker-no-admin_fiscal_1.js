@@ -1,7 +1,7 @@
 'use strict';
 const faker = require ('faker');
 
-const users = [...Array(10)].map((users) => (
+const users = [...Array(5)].map((users) => (
   {
     email: faker.internet.email(),
     password: faker.internet.password(16),
@@ -13,8 +13,8 @@ const users = [...Array(10)].map((users) => (
     name_fantasy: faker.company.companyName(),
     business_name: faker.company.companyName(),
     cuit: faker.finance.account(),
-    fiscal_condition: "CONSUMIDOR FINAL",
-    image: "no-imagen.jpg",
+    fiscal_condition_id: 1,
+    image: "no-image.jpg",
     admin: "0",
     active: "1",
     created_at: new Date(),

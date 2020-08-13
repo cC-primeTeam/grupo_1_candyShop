@@ -39,8 +39,8 @@ module.exports = (sequelize, dataTypes) => {
     cuit:{
       type: dataTypes.STRING(20)
     },
-    fiscal_condition:{
-      type: dataTypes.STRING(45)
+    fiscal_condition_id:{
+      type: dataTypes.INTEGER(10),
     },
     image:{
       type: dataTypes.STRING(100)
@@ -63,5 +63,12 @@ module.exports = (sequelize, dataTypes) => {
   };
   const User = sequelize.define(alias, cols, config);  
   
+  User.associate = function(models) {
+    User.belongsTo(models.FiscalC, {
+        as: 'FiscalC',
+        foreignKey: 'fiscal_condition_id'
+    })
+};
+
   return User;
 }

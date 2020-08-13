@@ -27,7 +27,7 @@ let upload = multer({ storage: storage })
 /* -------------------
    PERFIL USUARIO
 -------------------*/
-router.get('/', authMiddleware, usersController.users); // EL USUARIO - SOLO USR LOGUEADOS
+router.get('/', authMiddleware, usersController.users); // EL USUARIO - SOLO USR LOGUEADOS 
 
 /* -------------------
    REGISTRO - USR
@@ -40,7 +40,7 @@ router.get('/', authMiddleware, usersController.users); // EL USUARIO - SOLO USR
 /* -------------------
    REGISTRO - ADMIN
 -------------------*/
-router.get('/list', authMiddleware, usersController.list); // adminMiddleware, 
+router.get('/list', usersController.list); //  authMiddleware, adminMiddleware, 
 // router.get('/registerAdminList', usersController.registerAdminList); //LISTADO USUARIOS - SOLO ADMINS
 // router.get('/register/:id', adminMiddleware, productsController.editProduct); //EDITAR UN PRODUCTO - SOLO ADMINS
 //router.post('/suspend/:id', productsController.suspend); //SUSPENDE UN USUARIO - POST
@@ -66,13 +66,13 @@ router.get('/detail/:id', usersController.detail);
 router.get('/register', usersController.register);
 router.post('/register', upload.any(), usersController.save);
 
-router.get('/registerEdit/:id', authMiddleware, usersController.registerEdit); //EDITAR USUARIO - SOLO USR LOGUEADOS
-router.post('/registerEdit/:id', upload.any(), authMiddleware, usersController.registerUpdate);
+router.get('/registerEdit/:id', usersController.registerEdit); //EDITAR USUARIO - SOLO USR authMiddleware, LOGUEADOS
+router.post('/registerEdit/:id', upload.any(), usersController.registerUpdate);//authMiddleware, 
 
 
 router.get('/login', guestMiddleware, usersController.login); // LOGIN - SOLO URS VISITANTE
 router.post('/login', loginValidation, usersController.verify); // LOGIN - POST 
-router.get('/logout', authMiddleware, usersController.logout); // LOGOUT - SOLO USR LOGUEADOS
+router.get('/logout', usersController.logout); // LOGOUT - SOLO USR LOGUEADOSauthMiddleware, 
 
 
 

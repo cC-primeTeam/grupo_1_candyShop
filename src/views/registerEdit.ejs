@@ -54,9 +54,20 @@
             <input type="number" name="cuit" class="form-control" id="cuit" aria-describedby="emailHelp" value="<%= elUsuario.cuit %>">
           </div>
 
-          <div class=" container col-4">              
-            <label for="fiscal_condition"> Condicion fiscal </label>
-            <input type="text" name="fiscal_condition" class="form-control" id="fiscal_condition" aria-describedby="emailHelp" value="<%= elUsuario.fiscal_condition %>">              
+          <div class=" container col-4">    
+            
+            <label for="fiscal_condition_id"> Condicion fiscal // </label>
+            <select name="fiscal_condition_id" id="fiscal_condition_id">
+              <%for (let i=0; i<fiscalCond.length; i++) { %>
+                <option value="<%=fiscalCond[i].id%>" <%=fiscalCheck%>>
+                  <%= fiscalCond[i].name%>
+                </option>
+                <% } %>
+                
+              </select>
+
+            <!-- <label for="fiscal_condition"> Condicion fiscal </label>
+            <input type="text" name="fiscal_condition" class="form-control" id="fiscal_condition" aria-describedby="emailHelp" value="<%= //elUsuario.fiscal_condition %>">               -->
           </div>
           
           <div class= "container col-6">

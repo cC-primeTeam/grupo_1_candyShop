@@ -1,14 +1,19 @@
 const db = require('../database/models');
 
 function adminMiddleware(req, res, next) {
-  async function ok (value) {{
+let ok = async function(value) {
+
+
     let usuario = await db.Usuario.findOne({ where:{ email:req.session.emailUsuario } })
     .then(function(elUsuario){
-    return elUsuario
+    return elUsuario.admin
   })
-  return usuario}
+ 
+  return usuario
 }
-  console.log(usuario)}
+ console.log('***************' + ok)
+}
+  
 
 //VALIDACION ADMINISTRADORES CORREGIR, POR AHORA SOLO VALIDA = QUE AUTHMIDDLEWARE
 //     if(req.session.emailUsuario == undefined) {

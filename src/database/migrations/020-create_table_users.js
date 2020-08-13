@@ -41,8 +41,13 @@ module.exports = {
       cuit:{
         type: Sequelize.DataTypes.STRING(20)
       },
-      fiscal_condition:{
-        type: Sequelize.DataTypes.STRING(45)
+      fiscal_condition_id:{
+        type: Sequelize.DataTypes.INTEGER(10).UNSIGNED,
+        allowNull: false,
+        references: {
+          model: 'fiscals_conditions',
+          key: 'id'
+        }
       },
       image:{
         type: Sequelize.DataTypes.STRING(100)
