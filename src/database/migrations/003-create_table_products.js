@@ -32,8 +32,13 @@ module.exports = {
       image:{
         type: Sequelize.DataTypes.STRING(100)
       },
-      category:{
-        type: Sequelize.DataTypes.STRING(100),
+      category_id:{
+        type: Sequelize.DataTypes.INTEGER(10).UNSIGNED,
+        allowNull: false,
+        references: {
+          model: 'categories',
+          key: 'id'
+        }
       },
       active:{
         type: Sequelize.DataTypes.BOOLEAN(1),

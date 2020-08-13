@@ -10,7 +10,7 @@ module.exports = {
         offer_discount: "0",
         price: "14.00",
         image: "ChocolateBiznike-1594408922740.jpg",
-        category: "Chocolates",
+        category_id: "3",
         active: "1",
         created_at: new Date(),
         updated_at: new Date()
