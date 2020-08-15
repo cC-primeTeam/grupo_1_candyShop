@@ -13,13 +13,32 @@ window.addEventListener('load', function() {
     console.log(header.offsetHeight + "px");
 
     //ARRANQUE CON FETCH PARA UTILIZAR LA API DE PROVINCIAS Y LOCALIDADES
-    // fetch('https://apis.datos.gob.ar/georef/api/provincias')
-    // .then(function(response) {
-    //     return response.json();
-    // })
-    // .then(function(resultado) {
-    //     resultado.provincias.forEach(function(elemento) {
-    //         console.log(elemento.nombre);
-    //     })
-    // })
+
+    let selectProvincia = qs('select#provincia');
+    let selectMunicipio = qs('select#municipio')
+    
+    fetch('https://apis.datos.gob.ar/georef/api/provincias')
+    .then(function(response) {
+        return response.json();
+    })
+    .then(function(resultado) {
+        resultado.provincias.forEach(elemento => {
+            selectProvincia.innerHTML += `<option value=${elemento.id}>${elemento.nombre}</option>`
+        });
+    });
+
+    selectProvincia.addEventListener('change', function () {
+        selectMunicipio.disabled = false;
+        let valueProvincia = selectProvincia.options[selectProvincia.selectedIndex].value;
+        fetch(`https://apis.datos.gob.ar/georef/api/departamentos?provincia=${valueProvincia}&max=200`)
+        .then(function(response) {
+            return response.json();
+        })
+        .then(function(resultado) {
+            selectMunicipio.innerHTML = `<option hidden>Selecciona una municipio...</option>`;
+            resultado.departamentos.forEach(function(elemento) {
+                selectMunicipio.innerHTML += `<option value=${elemento.id}>${elemento.nombre}</option>`
+            });
+        });
+    })
 })

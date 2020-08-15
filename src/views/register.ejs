@@ -19,71 +19,83 @@
       <form action="" method="post" enctype="multipart/form-data" class="container row">
         
         <div class="container row info-Registro">
-          <div class=" container col-6">
+          <div class=" container col-12">
             <label for="exampleInputEmail1">Email</label>
-            <input type="email" value="<%= (typeof old != 'undefined' && !errors.email) ? old.email : '' %>" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <input type="email" value="<%= (typeof old != 'undefined' && !errors.email) ? old.email : '' %>" name="email" class="form-control col-md-6 col-mb-8" id="exampleInputEmail1" aria-describedby="emailHelp">
             <small class="text-danger"><%= (typeof errors != 'undefined' && errors.email) ? errors.email.msg : '' %></small>
           </div>
           
-          <div class="container col-6">
+          <div class="container col-12">
             <label for="exampleInputPassword1">Contraseña</label>
-            <input type="password" value="" name="password" class="form-control" id="exampleInputPassword1">
+            <input type="password" value="" name="password" class="form-control col-md-6 col-mb-8" id="exampleInputPassword1">
             <small class="text-danger"><%= (typeof errors != 'undefined' && errors.password) ? errors.password.msg : '' %></small>
           </div>
           
-          <div class=" container col-4">            
+          <div class="container col-12">            
             <label for="name_fantasy">Nombre Empresa</label>
-            <input type="text" name="name_fantasy" class="form-control" id="name_fantasy" aria-describedby="emailHelp">          
+            <input type="text" name="name_fantasy" class="form-control col-md-6 col-mb-8" id="name_fantasy" aria-describedby="emailHelp">          
+          </div>
+
+          <div class="provincia col-12">
+            <label for="provincia" id="provincia" class="">Provincia</label>
+              <select name="provincia" id="provincia" class="form-control col-md-6 col-mb-8">
+                <option hidden>Selecciona una provincia...</option>
+              </select>
+          </div>
+
+          <div class="municipio col-12">
+            <label for="municipio" id="municipio" class="">Municipo</label>
+              <select name="municipio" id="municipio" class="form-control col-md-6 col-mb-8" disabled>
+                <option hidden>Selecciona una municipio...</option>
+              </select>
           </div>
           
-          <div class=" container col-4">           
+          <div class=" container col-12">           
             <label for="adress"> Direccion </label>
-            <input type="text" name="adress" class="form-control" id="adress" aria-describedby="emailHelp">           
+            <input type="text" name="adress" class="form-control col-md-6 col-mb-8" id="adress" aria-describedby="emailHelp">           
           </div>
           
-          <div class=" container col-4">
+          <div class=" container col-12">
             <label for="telephone"> Teléfono</label>
-            <input type="number" name="telephone" class="form-control" id="telephone" aria-describedby="emailHelp">          
+            <input type="number" name="telephone" class="form-control col-md-4 col-mb-6" id="telephone" aria-describedby="emailHelp">          
           </div>
           
-          <div class=" container col-4">       
+          <div class=" container col-12">       
             <label for="business_name"> Razón social </label>
-            <input type="text" name="business_name" class="form-control" id="business_name" aria-describedby="emailHelp">            
+            <input type="text" name="business_name" class="form-control col-md-4 col-mb-6" id="business_name" aria-describedby="emailHelp">            
           </div>
           
-          <div class=" container col-4">
+          <div class=" container col-12">
             <label for="cuit"> CUIT/DNI</label>
-            <input type="number" name="cuit" class="form-control" id="cuit" aria-describedby="emailHelp">
+            <input type="number" name="cuit" class="form-control col-md-4 col-mb-6" id="cuit" aria-describedby="emailHelp">
           </div>
           
-          <div class=" container col-4">              
-            <label for="fiscal_condition_id"> Condicion fiscal </label>
-            <select name="fiscal_condition_id" id="fiscal_condition_id">
+          <div class="container col-12">              
+            <label for="fiscal_condition_id">Condicion fiscal</label>
+            <select name="fiscal_condition_id" id="fiscal_condition_id" class="form-control col-md-4 col-mb-6">
               <%for (let i=0; i<fiscalCond.length; i++) { %>
                 <option value="<%=fiscalCond[i].id%>">
                   <%= fiscalCond[i].name%>
                 </option>
                 <% } %>
                 
-              </select>
+            </select>
               <!-- <input type="text" name="fiscal_condition" class="form-control" id="fiscal_condition" aria-describedby="emailHelp">               -->
-            </div>
+          </div>
             
-            <div class= "container col-6">
-              <div class="botonCargarImg">
-                <label for="imgUser">Cargar Imagen</label>
-                <input class="file" type="file" name="imgUser" id="imgUser">
-              </div>
+          
+            <div class="col-12 botonCargarImg">
+              <label for="imgUser" class="col-12">Cargar Imagen</label>
+              <input class="btn btn-succes file col-md-4 col-mb-6" type="file" name="imgUser" id="imgUser">
             </div>
-            
             <button type="submit" class="btn btn-success btn-lg btn-block botonForm2 col-md-12 mb-12">Crear usuario    
             </button>
+          
+                        
+        </div>      
+      </form>
+    </div>
             
-          </div>      
-        </form>
-      </div>
-      
-      
       <!--Include footer -->
       <%- include('partials/footer') %>
       
