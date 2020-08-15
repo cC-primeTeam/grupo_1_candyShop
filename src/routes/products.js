@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const path = require('path');
 const productsController = require('../controllers/productsController');
+const authMiddleware = require('../middlewares/authMiddleware');
 const adminMiddleware = require('../middlewares/adminMiddleware');
 const multer = require('multer');
 
@@ -35,7 +36,7 @@ router.get('/category/:id', productsController.categoryFilterView);
 router.get('/category/:id/offer', productsController.categoryFilterViewOffer);
 router.get('/category/:id/cheeky', productsController.categoryFilterViewCheeky);
 router.get('/offer', productsController.offers);
-router.get('/create', productsController.create);
+router.get('/create', authMiddleware, adminMiddleware.verify, productsController.create);//
 router.post('/create', upload.any(), productsController.store);
 
 

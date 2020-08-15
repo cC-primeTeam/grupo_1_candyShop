@@ -37,7 +37,7 @@ let usersController = {
   usrManagementForAdmin: function(req, res) {
     db.Usuario.update({
       email: req.body.email,
-      password: req.body.password,
+      password: (!req.body.password) ? this.password : bcrypt.hashSync(req.body.password, 10),
       adress: req.body.adress,
       location: req.body.location,
       province: req.body.province,
@@ -47,6 +47,7 @@ let usersController = {
       business_name: req.body.business_name,
       cuit: req.body.cuit,
       fiscal_condition_id: req.body.fiscal_condition_id,
+      image: (!req.files[0]) ? this.imagen_usuario : req.files[0].filename,
       admin: req.body.admin,
       active: req.body.active         
     },
@@ -88,7 +89,7 @@ save: function(req, res, next) {
       business_name: req.body.business_name,
       cuit: req.body.cuit,
       fiscal_condition_id: req.body.fiscal_condition_id,
-      image: req.files[0].filename,
+      image: (req.files[0] == undefined) ? 'no-image.jpg' : req.files[0].filename,
       admin: 0,
       active: 1
     })
@@ -160,7 +161,7 @@ verify: function(req, res, next) {
   registerUpdate: function(req, res) {
     db.Usuario.update({
       email: req.body.email,
-      password: bcrypt.hashSync(req.body.password, 10),
+      password: (!req.body.password) ? this.password : bcrypt.hashSync(req.body.password, 10),
       adress: req.body.adress,
       location: req.body.location,
       province: req.body.province,
@@ -170,8 +171,7 @@ verify: function(req, res, next) {
       business_name: req.body.business_name,
       cuit: req.body.cuit,
       fiscal_condition_id: req.body.fiscal_condition_id,
-      image: req.files[0].filename,
-      admin: 1,
+      image: (!req.files[0]) ? this.image : req.files[0].filename,
       active: 1         
     },
     {

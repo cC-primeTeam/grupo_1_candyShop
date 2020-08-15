@@ -6,7 +6,7 @@ module.exports = {
             {
         id:5,
         email: "hbaravalle@digitalhouse.com",
-        password: "1234567890",
+        password: "$2b$10$.oJBPLA.66IeSy0x4uL3UOdkKA0imXGQl7NG7F1srWFWLODD6osHG",
         adress: "Monroe 860",
         location: "CABA",
         province: "Buenos Aires",
@@ -25,7 +25,7 @@ module.exports = {
       {
         id:6,
         email: "uriel@digitalhouse.com",
-        password: "1234567890",
+        password: "$2b$10$.oJBPLA.66IeSy0x4uL3UOdkKA0imXGQl7NG7F1srWFWLODD6osHG",
         adress: "Monroe 860",
         location: "CABA",
         province: "Buenos Aires",

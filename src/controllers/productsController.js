@@ -49,7 +49,7 @@ let productsController = {
       top_check: req.body.top_check,
       offer_check: req.body.offer_check,
       offer_discount: req.body.offer_discount,
-      image: req.files[0].filename,
+      image: (req.files[0] == undefined) ? 'no-image.jpg' : req.files[0].filename,
       active: 1
     })
     res.redirect('/products')
@@ -87,7 +87,7 @@ let productsController = {
       top_check: req.body.top_check,
       offer_check: req.body.offer_check,
       offer_discount: req.body.offer_discount,
-      // image: req.files[0].filename,
+      image: (!req.files[0]) ? this.imagen_usuario : req.files[0].filename,
       active: req.body.active
     },
     {

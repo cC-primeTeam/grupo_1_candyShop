@@ -8,6 +8,7 @@ const logger = require('morgan');
 const methodOverride =  require('method-override');
 const session = require('express-session');
 const authCookieMiddleware = require('./middlewares/authCookieMiddleware');
+const lasCategoriasMiddleware = require('./middlewares/lasCategoriasMiddleware');
 
 const mainRouter = require('./routes/main');
 const productsRouter = require('./routes/products');
@@ -29,6 +30,7 @@ app.use(methodOverride('_method'));
 app.use(session({secret: 'session secret candyShop'}));
 
 app.use(authCookieMiddleware);
+app.use(lasCategoriasMiddleware.listado);
 
 //Rutas
 app.use('/', mainRouter);

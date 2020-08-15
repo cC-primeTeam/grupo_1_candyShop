@@ -7,6 +7,9 @@ function milSeparator(x) {
 let mainController = {
   //TOP PRODUCTS - Vista index web
   index: function(req, res, next) {
+db.Category.findAll()
+  .then(function(laCategoria){   
+
     db.Prod.findAll({
       include:[{association: 'Category'}],
       where:{
@@ -14,8 +17,9 @@ let mainController = {
       }
     })
     .then(function(losProductos) {
-      res.render('index', {losProductos:losProductos, milesGenerator: milSeparator})
+      res.render('index', {losProductos:losProductos, laCategoria:laCategoria, milesGenerator: milSeparator})
     })
+  })
   }
 }
 module.exports = mainController;

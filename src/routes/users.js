@@ -63,7 +63,7 @@ router.post('/usrManagementForAdmin/:id', upload.any(), usersController.usrManag
 
 router.get('/detail/:id', usersController.detail);
 
-router.get('/register', usersController.register);
+router.get('/register', guestMiddleware, usersController.register);
 router.post('/register', upload.any(), usersController.save);
 
 router.get('/registerEdit/:id', usersController.registerEdit); //EDITAR USUARIO - SOLO USR authMiddleware, LOGUEADOS
