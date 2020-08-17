@@ -5,10 +5,10 @@
     <!-- MENU DROP-->
     <ul class="ulMenuDrop nav nav-pills">
       
-
-
-
-
+      
+      
+      
+      
       <!-- CATEGORIAS DESPLEGABLE -->
       <li class="categDropDown nav-item dropdown">
         <a class="nav-link dropdown-toggle " data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">CATEGORIAS </a>
@@ -17,44 +17,47 @@
           <a class="dropdown-item" href="cheeky"><i class="fas fa-fire-alt"></i> Destacados</a>
           <!-- <a class="dropdown-item" href="#">Ultimos visitados</a> -->
           <div class="dropdown-divider"></div>
-
-           <!--LO DE LAS CATEGORIAS MIDDLEWARE VA ACA-->
-
-          <a class="dropdown-item" href="/products/category/1/">ALFAJORES</a>
-          <a class="dropdown-item" href="/products/category/2/">CARAMELOS</a>
-          <a class="dropdown-item" href="/products/category/3/">CHOCOLATES</a>
-          <a class="dropdown-item" href="/products/category/4/">CHUPETINES</a>
-          <a class="dropdown-item" href="/products/category/5/">GALLETITAS</a>
-          <a class="dropdown-item" href="/products/category/6/">GOMITAS</a>
-        </div> <!-- /.categDropMenu -->
-      </li> <!-- /.categDropDown -->
-      
-      <!-- CATEGORIAS FIJAS -->
-      <li class="liFixed liProducts nav-item">
-        <a class="nav-link" href="/products"><i class="fas fa-award"></i> Todos los productos</a> 
-      </li>
-      <!-- /.liProducts -->
-      
-      <li class="liFixed liOffer nav-item">
-        <a class="nav-link" href="/products/offer"><i class="fas fa-tag"> </i> Ofertas</a>
-      </li>
-      <!-- /.liOffer -->
-      
-      <!-- <li class="liFixed liPromotions nav-item">
-        <a class="nav-link" href="#" tabindex="-1" aria-disabled="true"><i class="fas fa-fire-alt"></i> Promociones</a>
-      </li> --> 
-      <!-- /.liPromotions -->
-      
-      
-      <!-- BOTON DE PRUEBA A LISTADO DE USUARIOS -->
-      <li class="liFixed liPromotions nav-item">
-        <a class="nav-link" href="/users/list" tabindex="-1" aria-disabled="true"><i class="fas fa-wrench"></i> List user admin</a>
-      </li> 
-      <!-- /.liPromotions -->
-      
-      
-      
-      
-    </ul> <!-- /.ulMenuDrop -->
-  </div> <!-- /.nav-sec -->
-</nav> <!-- /.navBar2 -->
+          
+          <!--LO DE LAS CATEGORIAS MIDDLEWARE VA ACA-->
+          <!-- <%//for (let i=0; i<laCategoria.length; i++) { %>
+            <a class="theCategoryList dropdown-item" href="/products/category/<%=//laCategoria[i].id%>"><%= //laCategoria[i].name%></a>
+            <%// } %> -->
+            <!--LO DE LAS CATEGORIAS MIDDLEWARE VA ACA-->
+            <a class="dropdown-item" href="/products/category/1/">ALFAJORES</a>
+            <a class="dropdown-item" href="/products/category/2/">CARAMELOS</a>
+            <a class="dropdown-item" href="/products/category/3/">CHOCOLATES</a>
+            <a class="dropdown-item" href="/products/category/4/">CHUPETINES</a>
+            <a class="dropdown-item" href="/products/category/5/">GALLETITAS</a>
+            <a class="dropdown-item" href="/products/category/6/">GOMITAS</a>
+          </div> <!-- /.categDropMenu -->
+        </li> <!-- /.categDropDown -->
+        
+        <!-- CATEGORIAS FIJAS -->
+        <li class="liFixed liProducts nav-item">
+          <a class="nav-link" href="/products"><i class="fas fa-award"></i> Todos los productos</a> 
+        </li>
+        <!-- /.liProducts -->
+        
+        <li class="liFixed liOffer nav-item">
+          <a class="nav-link" href="/products/offer"><i class="fas fa-tag"> </i> Ofertas</a>
+        </li>
+        <!-- /.liOffer -->
+        
+        <!-- <li class="liFixed liPromotions nav-item">
+          <a class="nav-link" href="#" tabindex="-1" aria-disabled="true"><i class="fas fa-fire-alt"></i> Promociones</a>
+        </li> --> 
+        <!-- /.liPromotions -->
+        
+        
+        <!-- BOTON DE PRUEBA A LISTADO DE USUARIOS -->
+        <li class="liFixed liPromotions nav-item">
+          <a class="nav-link" href="/users/listUsersForAdmin" tabindex="-1" aria-disabled="true"><i class="fas fa-wrench"></i> List user admin</a>
+        </li> 
+        <!-- /.liPromotions -->
+        
+        
+        
+        
+      </ul> <!-- /.ulMenuDrop -->
+    </div> <!-- /.nav-sec -->
+  </nav> <!-- /.navBar2 -->

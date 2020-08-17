@@ -1,16 +1,23 @@
 
+/************** REQUIRES **************/
 const express = require('express');
 const router = express.Router();
 const path = require('path');
 const usersController = require('../controllers/usersController');
 const multer = require('multer');
+
+/************** MIDDLEWARES **************/
 const registerLogMiddleware = require('../middlewares/registerLogMiddleware');
-const authMiddleware = require('../middlewares/authMiddleware');
-const adminMiddleware = require('../middlewares/adminMiddleware');
 const guestMiddleware = require('../middlewares/guestMiddleware');
+const authMiddleware = require('../middlewares/authMiddleware');
+const userIdOkMiddleware = require('../middlewares/userIdVerifyMiddleware');
+const adminMiddleware = require('../middlewares/adminMiddleware');
+
+/**************  VALIDATIONS **************/
 const registerValidation = require('../validations/registerValidations');
 const loginValidation = require('../validations/loginValidations');
 
+/**************  MULTER **************/
 let storage = multer.diskStorage({
     destination: function (req, file, cb) {
       cb(null, path.join(__dirname, '../../public/images/uploads/users'))
@@ -19,64 +26,43 @@ let storage = multer.diskStorage({
       cb(null, req.body.email + path.extname(file.originalname))
     }
 })
-
-//cb(null, req.body.email + '-' + Date.now() + path.extname(file.originalname))
-
 let upload = multer({ storage: storage })
 
-/* -------------------
-   PERFIL USUARIO
--------------------*/
-router.get('/', authMiddleware, usersController.users); // EL USUARIO - SOLO USR LOGUEADOS 
+/* ----------------------------------
+   LOGIN Y PERFIL USUARIO LOGUEADO   
+---------------------------------- */
+/************ SOLO VISITANTES ************/
+router.get('/login', guestMiddleware, usersController.login); //LOGIN
+router.post('/login', loginValidation, usersController.verify); //LOGIN
+/************ SOLO USUARIOS LOGUEADOS ************/
+router.get('/', authMiddleware, usersController.users); //PERFIL DEL USR
+/************ PARA TODOS ************/
+router.get('/logout', usersController.logout); //LOGOUT
 
-/* -------------------
-   REGISTRO - USR
--------------------*/
-// router.get('/register', guestMiddleware, usersController.register); //CREAR UN USUARIO - SOLO URS VISITANTE
-// router.post('/register', upload.any(), registerValidation, registerLogMiddleware, usersController.save); //CREAR UN USUARIO - POST
-// router.get('/registerEdit', authMiddleware, usersController.registerEdit); //EDITAR USUARIO - SOLO USR LOGUEADOS
-//router.put('/registerEdit/:id', authMiddleware, xxxxxxxxxx); //EDITAR USUARIO - POST
+/* --------------------------------
+  REGISTRO Y EDICION DE USUARIOS     
+-------------------------------- */
+/************ SOLO VISITANTES ************/
+router.get('/register', guestMiddleware, usersController.register); //CREA USR
+router.post('/register', upload.any(), registerValidation, registerLogMiddleware, usersController.save); //CREA USR
 
-/* -------------------
-   REGISTRO - ADMIN
--------------------*/
-router.get('/list', usersController.list); //  authMiddleware, adminMiddleware, 
-// router.get('/registerAdminList', usersController.registerAdminList); //LISTADO USUARIOS - SOLO ADMINS
-// router.get('/register/:id', adminMiddleware, productsController.editProduct); //EDITAR UN PRODUCTO - SOLO ADMINS
-//router.post('/suspend/:id', productsController.suspend); //SUSPENDE UN USUARIO - POST
+/************ SOLO ACCEDE A SU USUARIO ************/
+router.get('/registerEdit/:id', authMiddleware, userIdOkMiddleware.idOk, usersController.regEdit); //EDITA USR
+router.put('/registerEdit/:id', upload.any(), authMiddleware, userIdOkMiddleware.idOk, usersController.regUpdt); //EDITA USR
 
-/* -------------------
-   LOGIN
--------------------*/
-// router.get('/login', guestMiddleware, usersController.login); // LOGIN - SOLO URS VISITANTE
-// router.post('/login', loginValidation, usersController.verify); // LOGIN - POST
-// router.get('/logout', authMiddleware, usersController.logout); // LOGOUT - SOLO USR LOGUEADOS
+/* --------------------- 
+   MANEJO DE USUARIOS   
+--------------------- */
+/************ SOLO ADMINISTRADORES ************/
+router.get('/listUsersForAdmin', authMiddleware, adminMiddleware.verify, usersController.list);//LISTADO USRS
 
+router.get('/usrManagementForAdmin/:id', authMiddleware, adminMiddleware.verify, usersController.usrManage);//EDITAR USRS
+router.put('/usrManagementForAdmin/:id', upload.any(), adminMiddleware.verify, usersController.usrManageUpdt);//EDITAR USRS
 
-/* -------------------
-   PRUEBAS DB
--------------------*/
-router.get('/list', usersController.list);
-
-router.get('/usrManagementForAdmin/:id', usersController.listUsrManagementForAdmin);
-router.post('/usrManagementForAdmin/:id', upload.any(), usersController.usrManagementForAdmin);
-
-router.get('/detail/:id', usersController.detail);
-
-router.get('/register', guestMiddleware, usersController.register);
-router.post('/register', upload.any(), usersController.save);
-
-router.get('/registerEdit/:id', usersController.registerEdit); //EDITAR USUARIO - SOLO USR authMiddleware, LOGUEADOS
-router.post('/registerEdit/:id', upload.any(), usersController.registerUpdate);//authMiddleware, 
-
-
-router.get('/login', guestMiddleware, usersController.login); // LOGIN - SOLO URS VISITANTE
-router.post('/login', loginValidation, usersController.verify); // LOGIN - POST 
-router.get('/logout', usersController.logout); // LOGOUT - SOLO USR LOGUEADOSauthMiddleware, 
-
-
-
-
-router.get('/noadmin', usersController.noAdmin);
+/* -----------------------
+   MUESTRA JSON USUARIO   
+----------------------- */
+/************ SOLO ACCEDE A SU USUARIO ************/
+router.get('/detail/:id', authMiddleware, userIdOkMiddleware.idOk, usersController.detail); //JSON
 
 module.exports = router;

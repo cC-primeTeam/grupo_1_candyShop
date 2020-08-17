@@ -21,6 +21,7 @@
           <label for="email">Email</label>
           <input type="email" value="<%= (typeof old != 'undefined' && !errors.email) ? old.email : '' %>" name="email" class="form-control" id="email" aria-describedby="emailHelp">
           <small class="text-danger"><%= (typeof errors != 'undefined' && errors.email) ? errors.email.msg : '' %></small>
+          <a href="/users/register"><%= (typeof errors != 'undefined' && errors.email.msg == 'Este mail no se encuentra registrado!') ? 'Registrate !' : '' %></a>
         </div>
         <div class="form-group">
           <label for="password">Password</label>

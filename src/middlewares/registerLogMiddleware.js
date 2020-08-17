@@ -26,7 +26,7 @@ function registerMiddleware(req, res, next) {
     creacionOK = ', se creo correctamente'
   }
   const monthNames = ["Enero", "Febrero", "Marzo", "Abril", "Mao", "Junio",
-  "Julio", "Agostp", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
+  "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
   let dateObj = new Date();
   let month = monthNames[dateObj.getMonth()];
   let day = String(dateObj.getDate()).padStart(2, '0');

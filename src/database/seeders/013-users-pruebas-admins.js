@@ -16,7 +16,7 @@ module.exports = {
         business_name: "Pepe Pepino S.A.",
         cuit: "00-00000000-0",
         fiscal_condition_id: 2,
-        image: "pepe@pepino.jpg",
+        image: "pepe@pepino.com.jpg",
         admin: "1",
         active: "1",
         created_at: new Date(),
