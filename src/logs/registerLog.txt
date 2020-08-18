@@ -19,3 +19,9 @@ Nuevo usuario: No completo Mail, no completo password, el 17 de Agosto del 2020
 Nuevo usuario: jtomaschiesa@gmail.com, con error en el mail, el 17 de Agosto del 2020
 Nuevo usuario: jtomaschiesa@gmail.com, con error en el mail, el 17 de Agosto del 2020
 Nuevo usuario: jtomaschiesa@gmail.com, con error en el mail, el 17 de Agosto del 2020
+Nuevo usuario: pepe@pepino.com, con error en el mail, el 18 de Agosto del 2020
+Nuevo usuario: jtomaschiesa@gmail.com, se creo correctamente, el 18 de Agosto del 2020
+Nuevo usuario: jtomaschiesa@gmail.com, se creo correctamente, el 18 de Agosto del 2020
+Nuevo usuario: jtomaschiesa@gmail.com, se creo correctamente, el 18 de Agosto del 2020
+Nuevo usuario: jtomaschiesa@gmail.com, se creo correctamente, el 18 de Agosto del 2020
+Nuevo usuario: jtomaschiesa@gmail.com, se creo correctamente, el 18 de Agosto del 2020

@@ -19,9 +19,11 @@
           <div class="dropdown-divider"></div>
           
           <!--LO DE LAS CATEGORIAS MIDDLEWARE VA ACA-->
-          <!-- <%//for (let i=0; i<laCategoria.length; i++) { %>
-            <a class="theCategoryList dropdown-item" href="/products/category/<%=//laCategoria[i].id%>"><%= //laCategoria[i].name%></a>
-            <%// } %> -->
+
+          <%for (let i=0; i<lasCategorias.length; i++) { %>
+            <a class="theCategoryList dropdown-item" href="/products/category/<%=lasCategorias[i].id%>"><%= lasCategorias[i].name%></a>
+            <% } %>
+
             <!--LO DE LAS CATEGORIAS MIDDLEWARE VA ACA-->
             <a class="dropdown-item" href="/products/category/1/">ALFAJORES</a>
             <a class="dropdown-item" href="/products/category/2/">CARAMELOS</a>

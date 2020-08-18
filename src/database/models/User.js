@@ -21,6 +21,9 @@ module.exports = (sequelize, dataTypes) => {
     location: {
       type: dataTypes.STRING(255)
     },
+    municipality: {
+      type: dataTypes.STRING(255)
+    },
     province: {
       type: dataTypes.STRING(255)
     },
@@ -28,7 +31,7 @@ module.exports = (sequelize, dataTypes) => {
       type: dataTypes.INTEGER(11)
     },
     telephone: {
-      type: dataTypes.STRING(20)
+      type: dataTypes.STRING(255)
     },
     name_fantasy:{
       type: dataTypes.STRING(255)
@@ -37,7 +40,7 @@ module.exports = (sequelize, dataTypes) => {
       type: dataTypes.STRING(255)
     },
     cuit:{
-      type: dataTypes.STRING(20)
+      type: dataTypes.STRING(255)
     },
     fiscal_condition_id:{
       type: dataTypes.INTEGER(10),

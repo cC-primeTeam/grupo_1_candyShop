@@ -23,6 +23,9 @@ module.exports = {
       location: {
         type: Sequelize.DataTypes.STRING(255)
       },
+      municipality: {
+        type: Sequelize.DataTypes.STRING(255)
+      },
       province: {
         type: Sequelize.DataTypes.STRING(255)
       },
@@ -30,7 +33,7 @@ module.exports = {
         type: Sequelize.DataTypes.INTEGER(11)
       },
       telephone: {
-        type: Sequelize.DataTypes.STRING(20)
+        type: Sequelize.DataTypes.STRING(255)
       },
       name_fantasy:{
         type: Sequelize.DataTypes.STRING(255)
@@ -39,7 +42,7 @@ module.exports = {
         type: Sequelize.DataTypes.STRING(255)
       },
       cuit:{
-        type: Sequelize.DataTypes.STRING(20)
+        type: Sequelize.DataTypes.STRING(255)
       },
       fiscal_condition_id:{
         type: Sequelize.DataTypes.INTEGER(10).UNSIGNED,

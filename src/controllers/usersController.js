@@ -79,6 +79,7 @@ let usersController = {
         password: bcrypt.hashSync(req.body.password, 10),
         adress: req.body.adress,
         location: req.body.location,
+        municipality: req.body.municipality,
         province: req.body.province,
         postal_code: req.body.postal_code,
         telephone: req.body.telephone,
