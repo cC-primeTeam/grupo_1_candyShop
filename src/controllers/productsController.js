@@ -1,8 +1,6 @@
 const db = require('../database/models');
-
-
-
 // const {check, validationResult, body} = require('express-validator');
+
 // const fs = require('fs');
 // const path = require('path');
 // let jsonDeProductos = fs.readFileSync(path.join(__dirname, '../data/productsDataBase.json'), 'utf8');
@@ -43,13 +41,14 @@ let productsController = {
   store: function(req, res, next) {
     db.Prod.create({
       name: req.body.name,
-      category: req.body.category,
       detail: req.body.detail,
-      price: req.body.price,
       top_check: req.body.top_check,
       offer_check: req.body.offer_check,
       offer_discount: req.body.offer_discount,
+      stock: req.body.stock,
+      price: req.body.price,
       image: (req.files[0] == undefined) ? 'no-image.jpg' : req.files[0].filename,
+      category_id: req.body.category,
       active: 1
     })
     res.redirect('/products')
@@ -59,8 +58,14 @@ let productsController = {
   detailProduct: function(req, res, next) {
     db.Prod.findByPk(req.params.id)
     .then(function(elProducto) {
-      let activeStat = elProducto.active == true ? 'SI, EL PRODUCTO ESTA ACTIVO' : 'NO, EL PRODUCTO ESTA SUSPENDIDO';
-      res.render('productDetail', {elProducto:elProducto, activeStat, milesGenerator: milSeparator});
+      let disponible;
+      if (elProducto.stock >= 1 && elProducto.active){
+        disponible = true
+      }
+      let activeStat = disponible == true ? 'Añadir al carrito' : 'Venta pausada';
+      let activeStatDisable = disponible == true ? '' : 'disabled';
+      let activeStatClass = disponible == true ? 'btn-success' : 'btn-secondary';
+      res.render('productDetail', {elProducto:elProducto, activeStat, activeStatDisable, activeStatClass, milesGenerator: milSeparator});
     })
   },
   allProductsModify: function(req, res, next) {

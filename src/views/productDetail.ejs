@@ -47,12 +47,15 @@
               <label for="cantidad" class="cantidadLabel col-12 col-md-3">
                 <h5>Cantidad: </h5>
               </label>
-              <select name="select" class="cantidadSelect col-12 col-md-3 custom-select" id="cantidad">
-                <option selected value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
+              <select name="select" class="cantidadSelect col-12 col-md-3 custom-select" id="cantidad" <%= activeStatDisable %>>
+                <%let stockAMostrar = 0%>
+                <%for (let i=0; i<elProducto.stock; i++) { %>
+                  <%stockAMostrar = stockAMostrar+1%>
+                  <option value="<%=stockAMostrar%>"><%=stockAMostrar%></option>
+                  <% } %>
               </select>
+              
+              
             </div> <!-- ./cantidadRow-->
           </div> <!-- ./cantidadContainer-->
 
@@ -64,7 +67,7 @@
           
           <div class="containerButton col-12 container">
             <a href="/sales/purchase"> 
-              <button type="button" class="btn btn-success botonAñadirCarrito">Añadir al carrito</button>
+              <button type="button" class="btn <%= activeStatClass %> botonAñadirCarrito" <%= activeStatDisable %>><%= activeStat %></button>
             </a>
           </div> <!-- ./containerButton-->
           

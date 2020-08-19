@@ -17,20 +17,9 @@
           <a class="dropdown-item" href="cheeky"><i class="fas fa-fire-alt"></i> Destacados</a>
           <!-- <a class="dropdown-item" href="#">Ultimos visitados</a> -->
           <div class="dropdown-divider"></div>
-          
-          <!--LO DE LAS CATEGORIAS MIDDLEWARE VA ACA-->
-
           <%for (let i=0; i<lasCategorias.length; i++) { %>
             <a class="theCategoryList dropdown-item" href="/products/category/<%=lasCategorias[i].id%>"><%= lasCategorias[i].name%></a>
             <% } %>
-
-            <!--LO DE LAS CATEGORIAS MIDDLEWARE VA ACA-->
-            <a class="dropdown-item" href="/products/category/1/">ALFAJORES</a>
-            <a class="dropdown-item" href="/products/category/2/">CARAMELOS</a>
-            <a class="dropdown-item" href="/products/category/3/">CHOCOLATES</a>
-            <a class="dropdown-item" href="/products/category/4/">CHUPETINES</a>
-            <a class="dropdown-item" href="/products/category/5/">GALLETITAS</a>
-            <a class="dropdown-item" href="/products/category/6/">GOMITAS</a>
           </div> <!-- /.categDropMenu -->
         </li> <!-- /.categDropDown -->
         

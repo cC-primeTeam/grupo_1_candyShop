@@ -34,95 +34,95 @@
                   <label class="input-group-text" for="category">Categoria</label>
                 </div>
                 <select name="category" class="custom-select" id="category">
-                  <option selected>Seleccione una opcion...</option>
-                  <option value="Alfajores">Alfajores</option>
-                  <option value="Caramelos">Caramelos</option>
-                  <option value="Chocolates">Chocolates</option>
-                  <option value="Gomitas">Gomitas</option>
-                  <option value="Galletitas">Galletitas</option>
-                </select>
-              </div>
-
-              <label for="detail">Detalle del Producto:</label>
-              <textarea class="form-control col-md-12 mb-12" id="detail" name="detail" placeholder="Por favor coloque una descricion del producto aqui.."></textarea>
-            </section> <!-- ./detalleProducto -->
-            
-            <section class="precios col-md-8 mb-12">
-              <h5 class="">PRECIO</h5>
-              <!-- <label for="Costo">Costo</label>
-              <input type="text" class="form-control" name="costo" required placeholder="Ej: $ 10.00">
-              <label for="utilidad">Utilidad</label>
-              <input type="text" class="form-control" name="utilidad" required placeholder="Ej: % 50"> -->
-              <label for="price">Precio</label>
-              <input type="text" class="form-control" name="price" required placeholder="Ej: $ 15.00" id='price'>
-            </section> <!-- ./precios -->
-            
-            <section class="masVendidos col-md-8 mb-12">
-              <h5>MAS VENDIDOS</h5>
-              <div class="input-group mb-4 col-md-6">
-                
-                <div class="input-group-prepend">
-                  <label class="input-group-text" for="top_check">Mas Vendidos</label>
+                  <option selected hidden>Seleccione una opcion...</option>
+                  <%for (let i=0; i<lasCategorias.length; i++) { %>
+                    <option value="<%=lasCategorias[i].id%>"><%=lasCategorias[i].name%></option>
+                    <% } %>
+                  </select>
                 </div>
                 
-                <select name="top_check" class="custom-select" id="top_check">
-                  <option selected>Seleccione una opcion...</option>
-                  <option value="1">SI</option>
-                  <option value="0">NO</option>
-                </select>
-                
-              </div>
-            </section> <!-- ./masVendidos -->
-            
-            <section class="oferta col-md-8 mb-12">
-              <h5>OFERTA</h5>
+                <label for="detail">Detalle del Producto:</label>
+                <textarea class="form-control col-md-12 mb-12" id="detail" name="detail" placeholder="Por favor coloque una descricion del producto aqui.."></textarea>
+              </section> <!-- ./detalleProducto -->
               
-              <div class="input-group mb-4 col-md-6">
+              <section class="precios col-md-8 mb-12">
+                <h5 class="">CANTIDAD Y PRECIO</h5>
+                <!-- <label for="Costo">Costo</label>
+                  <input type="text" class="form-control" name="costo" required placeholder="Ej: $ 10.00">
+                  <label for="utilidad">Utilidad</label>
+                  <input type="text" class="form-control" name="utilidad" required placeholder="Ej: % 50"> -->
+                  <label for="stock">Cantidad a la venta</label>
+                  <input type="text" class="form-control" name="stock" required placeholder="Ejemplo: 7" id='stock'>
+                  <label for="price">Precio</label>
+                  <input type="text" class="form-control" name="price" required placeholder="Ejemplo: 15" id='price'>
+                </section> <!-- ./precios -->
                 
-                <div class="input-group-prepend">
-                  <label class="input-group-text" for="oferta_check">Oferta</label>
-                </div>
+                <section class="masVendidos col-md-8 mb-12">
+                  <h5>MAS VENDIDOS</h5>
+                  <div class="input-group mb-4 col-md-6">
+                    
+                    <div class="input-group-prepend">
+                      <label class="input-group-text" for="top_check">Mas Vendidos</label>
+                    </div>
+                    
+                    <select name="top_check" class="custom-select" id="top_check">
+                      <option selected>Seleccione una opcion...</option>
+                      <option value="1">SI</option>
+                      <option value="0">NO</option>
+                    </select>
+                    
+                  </div>
+                </section> <!-- ./masVendidos -->
                 
-                <select name="offer_check" class="custom-select" id="offer_check">
-                  <option selected>Seleccione una opcion...</option>
-                  <option value="1">SI</option>
-                  <option value="0">NO</option>
-                </select>
+                <section class="oferta col-md-8 mb-12">
+                  <h5>OFERTA</h5>
+                  
+                  <div class="input-group mb-4 col-md-6">
+                    
+                    <div class="input-group-prepend">
+                      <label class="input-group-text" for="oferta_check">Oferta</label>
+                    </div>
+                    
+                    <select name="offer_check" class="custom-select" id="offer_check">
+                      <option selected>Seleccione una opcion...</option>
+                      <option value="1">SI</option>
+                      <option value="0">NO</option>
+                    </select>
+                    
+                  </div>
+                  
+                  <div class="col-md-4 mb-12">
+                    <label for="offer_discount">Descuento</label>
+                    <input type="text" name="offer_discount" class="form-control" placeholder="Ej: % 10" id='offer_discount'>
+                  </div>
+                  
+                  <!-- <div class="col-md-4 mb-12">
+                    <label for="descuento">Precio Oferta</label>
+                    <input type="text" name="precioOferta" class="form-control" placeholder="Ej: $ 10">
+                  </div> -->
+                </section> <!-- ./oferta -->
                 
-              </div>
+                <section class="contenedorImg col-md-8 mb-12">
+                  <h5>CARGAR IMAGEN</h5>
+                  <input class="btn" type="file" name="imgProducto">
+                </section> <!-- ./contenedorImg -->
+                
+              </div> <!-- ./div-row -->
               
-              <div class="col-md-4 mb-12">
-                <label for="offer_discount">Descuento</label>
-                <input type="text" name="offer_discount" class="form-control" placeholder="Ej: % 10" id='offer_discount'>
-              </div>
+              <button type="submit" class="btn btn-success btn-lg btn-block botonForm2 col-md-12 mb-12">
+                Guardar Producto
+              </button>
               
-              <!-- <div class="col-md-4 mb-12">
-                <label for="descuento">Precio Oferta</label>
-                <input type="text" name="precioOferta" class="form-control" placeholder="Ej: $ 10">
-              </div> -->
-            </section> <!-- ./oferta -->
-            
-            <section class="contenedorImg col-md-8 mb-12">
-              <h5>CARGAR IMAGEN</h5>
-              <input class="btn" type="file" name="imgProducto">
-            </section> <!-- ./contenedorImg -->
-            
-          </div> <!-- ./div-row -->
-          
-          <button type="submit" class="btn btn-success btn-lg btn-block botonForm2 col-md-12 mb-12">
-            Guardar Producto
-          </button>
-          
-        </form> <!-- ./globalForm -->
-      </div> <!-- ./div-contenidoForm -->
-    </div> <!-- ./div-row -->
-  </div> <!-- ./div-container -->
-  
-  <!--Include footer -->
-  <%- include('partials/footer') %>
-  
-  <!-- Include End Body Scripts -->
-  <%- include('partials/_endBodyScripts') %>
-  
-</body>
-</html>
+            </form> <!-- ./globalForm -->
+          </div> <!-- ./div-contenidoForm -->
+        </div> <!-- ./div-row -->
+      </div> <!-- ./div-container -->
+      
+      <!--Include footer -->
+      <%- include('partials/footer') %>
+      
+      <!-- Include End Body Scripts -->
+      <%- include('partials/_endBodyScripts') %>
+      
+    </body>
+    </html>
