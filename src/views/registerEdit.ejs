@@ -34,6 +34,19 @@
             <input type="text" name="name_fantasy" class="form-control col-md-6 col-mb-8" id="name_fantasy" aria-describedby="emailHelp" value="<%= elUsuario.name_fantasy %>">          
           </div>
 
+          <!-- PARA TRAER LA PROVINCIA QUE TENIA 
+          <div class="labelInput">
+            <label for="categorie">Categorias</label>
+            <select name="categorie" id="categorie">
+                <% for(i = 0; i < categorias.length; i++) { %>
+                    <option
+                        value=<%= categorias[i].id %>
+                        <%= (producto.categorie_id == categorias[i].id) ? "selected" : "" %>><%= categorias[i].categorie %></option>
+                <% } %>
+            </select>
+          </div>
+          -->
+
           <div class="province col-12">
             <label for="province" id="province" class="">Provincia</label>
               <select name="province" id="province" class="form-control col-md-6 col-mb-8">
