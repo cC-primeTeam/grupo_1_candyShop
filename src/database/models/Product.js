@@ -23,6 +23,9 @@ module.exports = (sequelize, dataTypes) => {
     offer_discount: {
       type: dataTypes.INTEGER(10)
     },
+    stock: {
+      type: dataTypes.INTEGER(10)
+    },
     price:{
       type: dataTypes.INTEGER(10).UNSIGNED,
       allowNull: false

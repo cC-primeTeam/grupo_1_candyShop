@@ -25,3 +25,5 @@ Nuevo usuario: jtomaschiesa@gmail.com, se creo correctamente, el 18 de Agosto de
 Nuevo usuario: jtomaschiesa@gmail.com, se creo correctamente, el 18 de Agosto del 2020
 Nuevo usuario: jtomaschiesa@gmail.com, se creo correctamente, el 18 de Agosto del 2020
 Nuevo usuario: jtomaschiesa@gmail.com, se creo correctamente, el 18 de Agosto del 2020
+Nuevo usuario: jtomaschiesa@gmail, con error en el mail, con error en el password, el 19 de Agosto del 2020
+Nuevo usuario: pepe@pepino.com, con error en el mail, el 19 de Agosto del 2020

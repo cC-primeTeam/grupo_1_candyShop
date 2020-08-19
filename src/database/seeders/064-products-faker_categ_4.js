@@ -7,6 +7,7 @@ const products = [...Array(10)].map((products) => (
     top_check: 0,
     offer_check: 0,
     offer_discount: 0,
+    stock: 20,
     price: faker.commerce.price(),
     image: 'no-image.jpg',
     category_id: 4,
