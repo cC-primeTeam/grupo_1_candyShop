@@ -10,13 +10,17 @@
 
 } */
 
-body div h1.tituloRegistro {
-    background-color: rgb(235, 230, 230);
-    height: auto;
+div.titulo h1.tituloRegistro {
+    background-color: var(--rosa-background-header);
+    color: var(--violeta-textos);
+    height: 70px;
     margin: 20px auto;
     padding-top: 10px;
     border-radius: 5px;
-    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 }
 
 body div form div div div.botonMinYMay {
@@ -25,4 +29,33 @@ body div form div div div.botonMinYMay {
 
 body div form div div div.botonCargarImg{
     margin: 20px;
+}
+
+section.registro {
+    margin-top: 10px;
+}
+
+section.registro h5 {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+section.datos {
+    margin-top: 10px;
+    border-top: solid black 1px;
+}
+
+section.datos h5 {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+section.imagen_usuario {
+    margin-top: 10px;
+    border-top: solid black 1px;
+}
+
+section.imagen_usuario h5 {
+    margin-top: 10px;
+    font-weight: bold;
 }

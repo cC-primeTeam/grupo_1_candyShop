@@ -14,24 +14,30 @@
     
     <div class="container ">          
       
-      <h1 class="col-md-8 col-mb-12 tituloRegistro">Registrate como nuevo Usuario</h1>
+      <div class="titulo col-md-12 col-mb-12">
+        <h1 class="col-md-12 col-mb- tituloRegistro">REGISTRATE COMO NUEVO USUARIO</h1>
+      </div>
       
       <form action="" method="post" enctype="multipart/form-data" class="container row">
-        
-        <div class="container row info-Registro">
-          <div class=" container col-12">
-            <label for="exampleInputEmail1">Email</label>
-            <input type="email" value="<%= (typeof old != 'undefined' && !errors.email) ? old.email : '' %>" name="email" class="form-control col-md-6 col-mb-8" id="exampleInputEmail1" aria-describedby="emailHelp">
-            <small class="text-danger"><%= (typeof errors != 'undefined' && errors.email) ? errors.email.msg : '' %></small>
-            <a href="/users/login"><%= (typeof errors != 'undefined' && errors.email.msg == 'Este mail ya se encuentra registrado!') ? 'Accede a tu cuenta !' : '' %></a>
-          </div>
-          
-          <div class="container col-12">
-            <label for="exampleInputPassword1">Contraseña</label>
-            <input type="password" value="" name="password" class="form-control col-md-6 col-mb-8" id="exampleInputPassword1">
-            <small class="text-danger"><%= (typeof errors != 'undefined' && errors.password) ? errors.password.msg : '' %></small>
-          </div>
-          
+        <section class="registro col-12">
+          <h5>REGISTRO</h5>
+          <div class="container row info-Registro">
+            <div class=" container col-12">
+              <label for="exampleInputEmail1">Email</label>
+              <input type="email" value="<%= (typeof old != 'undefined' && !errors.email) ? old.email : '' %>" name="email" class="form-control col-md-6 col-mb-8" id="exampleInputEmail1" aria-describedby="emailHelp">
+              <small class="text-danger"><%= (typeof errors != 'undefined' && errors.email) ? errors.email.msg : '' %></small>
+              <a href="/users/login"><%= (typeof errors != 'undefined' && errors.email.msg == 'Este mail ya se encuentra registrado!') ? 'Accede a tu cuenta !' : '' %></a>
+            </div>
+            
+            <div class="container col-12">
+              <label for="exampleInputPassword1">Contraseña</label>
+              <input type="password" value="" name="password" class="form-control col-md-6 col-mb-8" id="exampleInputPassword1">
+              <small class="text-danger"><%= (typeof errors != 'undefined' && errors.password) ? errors.password.msg : '' %></small>
+            </div>
+        </section>
+
+        <section class="datos col-12">
+          <h5>DATOS</h5>
           <div class="container col-12">            
             <label for="name_fantasy">Nombre Empresa</label>
             <input type="text" name="name_fantasy" class="form-control col-md-6 col-mb-8" id="name_fantasy" aria-describedby="emailHelp">          
@@ -51,13 +57,11 @@
               </select>
           </div>
 
-
           <div class=" container col-12">           
             <label for="location"> Localidad </label>
             <input type="text" name="location" class="form-control col-md-6 col-mb-8" id="location" aria-describedby="emailHelp" disabled placeholder="Completa tu localidad...">           
           </div>
           
-
           <div class="postal_code container col-12">           
             <label for="postal_code"> Codigo Postal </label>
             <input type="text" name="postal_code" class="form-control col-md-6 col-mb-8" id="postal_code" aria-describedby="emailHelp" disabled placeholder="Completa tu codigo postal...">           
@@ -91,18 +95,20 @@
                   <%= fiscalCond[i].name%>
                 </option>
                 <% } %>
-                
             </select>
-              <!-- <input type="text" name="fiscal_condition" class="form-control" id="fiscal_condition" aria-describedby="emailHelp">               -->
           </div>
-            
-          
-            <div class="col-12 botonCargarImg">
-              <label for="imgUser" class="col-12">Cargar Imagen</label>
-              <input class="btn btn-succes file col-md-4 col-mb-6" type="file" name="imgUser" id="imgUser">
-            </div>
-            <button type="submit" class="btn btn-success btn-lg btn-block botonForm2 col-md-12 mb-12">Crear usuario    
-            </button>
+        </section>
+
+        <section class="imagen_usuario">
+          <h5>IMAGEN USUARIO</h5>
+          <div class="col-12 botonCargarImg">
+            <label for="imgUser" class="col-12">Cargar Imagen</label>
+            <input class="btn btn-succes file col-md-4 col-mb-6" type="file" name="imgUser" id="imgUser">
+          </div>
+        </section>
+
+          <button type="submit" class="btn btn-success btn-lg btn-block botonForm2 col-md-12 mb-12">Crear usuario    
+          </button>
           
                         
         </div>      
