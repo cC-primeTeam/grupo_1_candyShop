@@ -42,7 +42,7 @@ let usersController = {
       business_name: req.body.business_name,
       cuit: req.body.cuit,
       fiscal_condition_id: req.body.fiscal_condition_id,
-      image: (!req.files[0]) ? this.imagen_usuario : req.files[0].filename,
+      image: (!req.files[0]) ? this.image : req.files[0].filename,
       admin: req.body.admin,
       active: req.body.active         
     },

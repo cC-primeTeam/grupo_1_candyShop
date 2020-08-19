@@ -76,23 +76,31 @@ let productsController = {
   },
   // MODIFICAR - muestra formulario para editar producto con el producto
   editProduct: function (req, res, next) {
-    db.Prod.findByPk(req.params.id)
+    db.Prod.findByPk(req.params.id, {
+      include:[{association: 'Category'}]
+    })
     .then(function(elProducto) {
-      let activeStat = elProducto.active == true ? 'La venta del producto se encuentra ACTIVA' : 'La venta del producto se encuentra  PAUSADA';
-      res.render ('productEditForm', {elProducto:elProducto, activeStat})
-    })      
+      db.Category.findAll()
+      .then(function(resultadoCategorias){
+        let categoryCheck = elProducto.category_id == resultadoCategorias.id ? 'selected' : '';
+        let activeStat = elProducto.active == true ? 'La venta del producto se encuentra ACTIVA' : 'La venta del producto se encuentra  PAUSADA';
+        // res.send(elProducto.image)
+        res.render ('productEditForm', {elProducto:elProducto, activeStat, resultadoCategorias:resultadoCategorias, categoryCheck})//
+      })      
+    })
   },
   // MODIFICAR - put.
   updateProduct: function (req, res, next) {
     db.Prod.update({
       name: req.body.name,
-      category: req.body.category,
       detail: req.body.detail,
-      price: req.body.price,
       top_check: req.body.top_check,
       offer_check: req.body.offer_check,
       offer_discount: req.body.offer_discount,
-      image: (!req.files[0]) ? this.imagen_usuario : req.files[0].filename,
+      stock: req.body.stock,
+      price: req.body.price,
+      image: (!req.files[0]) ? this.image : req.files[0].filename,
+      category_id: req.body.category,
       active: req.body.active
     },
     {
@@ -158,7 +166,7 @@ let productsController = {
       })
     })
   }
- }
+}
 
 
 

@@ -32,136 +32,131 @@
                   <label class="input-group-text" for="inputGroupSelect01">Categoria</label>
                 </div>
                 <select name="category" class="custom-select" id="category">
-                  <option selected>Seleccione una opcion...</option>
-                  <% if(elProducto.category == "Alfajores") { %>
-                    <option value="Alfajores" selected>Alfajores</option>
-                    <% } else { %>
-                      <option value="Alfajores">Alfajores</option>
-                      <% } %>
-                      <% if(elProducto.category == "Caramelos") { %>
-                        <option value="Caramelos" selected>Caramelos</option>
-                        <% } else { %>
-                          <option value="Caramelos">Caramelos</option>
-                          <% } %>
-                          <% if(elProducto.category == "Chocolates") { %>
-                            <option value="Chocolates" selected>Chocolates</option>
-                            <% } else { %>
-                              <option value="Chocolates">Chocolates</option>
-                              <% } %>
-                              <% if(elProducto.category == "Gomitas") { %>
-                                <option value="Gomitas" selected>Gomitas</option>
-                                <% } else { %>
-                                  <option value="Gomitas">Gomitas</option>
-                                  <% } %>
-                                </select>
+                  
+                  <%for (let i=0; i<resultadoCategorias.length; i++) { %>
+                    <option value="<%=resultadoCategorias[i].id%>" <%=categoryCheck%>>
+                      <%= resultadoCategorias[i].name%>
+                    </option>
+                    <% } %>
+                  </select>
+                </div>
+                <label for="detail">Detalle del Producto:</label>
+                <textarea class="form-control col-md-12 mb-12" id="detail" name="detail" placeholder="<%= elProducto.detail %>"></textarea>
+              </section>
+              <section class="precios col-md-8 mb-12">
+                <h5 class="">CANTIDAD Y PRECIO</h5>
+                <!-- <label for="Costo">Costo</label>
+                  <input type="text" class="form-control" name="costo" required placeholder="Ej: $ 10.00" value="<%= //elProducto.costo %>"> -->
+                  <!-- <label for="utilidad">Utilidad</label>
+                    <input type="text" class="form-control" name="utilidad" required placeholder="Ej: % 50" value="<%= //elProducto.utilidad %>"> -->
+                    <label for="stock">Cantidad a la venta</label>
+                    <input type="text" class="form-control" name="stock" required placeholder="Ejemplo: 7" value="<%= elProducto.stock %>"id='stock'>
+                    <label for="price">Precio</label>
+                    <input type="text" class="form-control" name="price" required placeholder="Ej: $ 15.00" value="<%= elProducto.price %>" id='price'>
+                  </section>
+                  <section class="masVendidos col-md-8 mb-12">
+                    <h5>MAS VENDIDOS</h5>
+                    <div class="input-group mb-4 col-md-6">
+                      <div class="input-group-prepend">
+                        <label class="input-group-text" for="top_check">Mas Vendidos</label>
+                      </div>
+                      
+                      <select name="top_check" class="custom-select" id="top_check">
+                        <option selected>Seleccione una opcion...</option>
+                        <% if(elProducto.top_check == true) { %>
+                          <option value=true selected>SI</option>
+                          <% } else { %>
+                            <option value=true>SI</option>
+                            <% } %>
+                            <% if(elProducto.top_check == false) { %>
+                              <option value=false selected>NO</option>
+                              <% } else { %>
+                                <option value=false>NO</option>
+                                <% } %>
+                              </select>
+                              
+                            </div>
+                          </section>
+                          <section class="oferta col-md-8 mb-12">
+                            <h5>OFERTA</h5>
+                            <div class="input-group mb-4 col-md-6">
+                              <div class="input-group-prepend">
+                                <label class="input-group-text" for="offer_check">Oferta</label>
                               </div>
-                              <label for="detail">Detalle del Producto:</label>
-                              <textarea class="form-control col-md-12 mb-12" id="detail" name="detail" placeholder="<%= elProducto.detail %>"></textarea>
-                            </section>
-                            <section class="precios col-md-8 mb-12">
-                              <h5 class="">PRECIO</h5>
-                              <!-- <label for="Costo">Costo</label>
-                                <input type="text" class="form-control" name="costo" required placeholder="Ej: $ 10.00" value="<%= //elProducto.costo %>"> -->
-                                <!-- <label for="utilidad">Utilidad</label>
-                                  <input type="text" class="form-control" name="utilidad" required placeholder="Ej: % 50" value="<%= //elProducto.utilidad %>"> -->
-                                  <label for="price">Precio</label>
-                                  <input type="text" class="form-control" name="price" required placeholder="Ej: $ 15.00" value="<%= elProducto.price %>" id='price'>
-                                </section>
-                                <section class="masVendidos col-md-8 mb-12">
-                                  <h5>MAS VENDIDOS</h5>
-                                  <div class="input-group mb-4 col-md-6">
-                                    <div class="input-group-prepend">
-                                      <label class="input-group-text" for="top_check">Mas Vendidos</label>
+                              <select name="ofeoffer_checkrta" class="custom-select" id="offer_check">
+                                <option selected>Seleccione una opcion...</option>
+                                <% if(elProducto.offer_check == true) { %>
+                                  <option value=true selected>SI</option>
+                                  <% } else { %>
+                                    <option value=true>SI</option>
+                                    <% } %>
+                                    <% if(elProducto.offer_check == false) { %>
+                                      <option value=false selected>NO</option>
+                                      <% } else { %>
+                                        <option value=false>NO</option>
+                                        <% } %>
+                                      </select>
                                     </div>
-                                    
-                                    <select name="top_check" class="custom-select" id="top_check">
-                                      <option selected>Seleccione una opcion...</option>
-                                      <% if(elProducto.top_check == true) { %>
-                                        <option value=true selected>SI</option>
-                                        <% } else { %>
-                                          <option value=true>SI</option>
-                                          <% } %>
-                                          <% if(elProducto.top_check == false) { %>
-                                            <option value=false selected>NO</option>
-                                            <% } else { %>
-                                              <option value=false>NO</option>
-                                              <% } %>
-                                            </select>
-                                            
-                                          </div>
-                                        </section>
-                                        <section class="oferta col-md-8 mb-12">
-                                          <h5>OFERTA</h5>
-                                          <div class="input-group mb-4 col-md-6">
-                                            <div class="input-group-prepend">
-                                              <label class="input-group-text" for="offer_check">Oferta</label>
+                                    <div class="col-md-4 mb-12">
+                                      <label for="offer_discount">Descuento</label>
+                                      <input type="text" name="offer_discount" class="form-control" placeholder="Ej: % 10" value="<%= elProducto.offer_discount %>" id='offer_discount'>
+                                    </div>
+                                    <!-- <div class="col-md-4 mb-12">
+                                      <label for="descuento">Precio Oferta</label>
+                                      <input type="text" name="precioOferta" class="form-control" placeholder="Ej: $ 10" value="<%= //elProducto.precioOferta %>">
+                                    </div> -->
+                                  </section>
+
+                                  <section class="contenedorImg col-md-8 mb-12">
+                                    <h5>CARGAR IMAGEN</h5>
+                                    <label for="imgProducto" class="col-12">Cargar Imagen</label>
+                                    <input class="btn" type="file" name="imgProducto"  id="imgProducto">
+                                    <img class="fotoMuestraSmallProducto col-12" src="/images/uploads/productDetail/<%= elProducto.image %>" alt="Foto del producto: <%= elProducto.name %>" id='fotoMuestraSmallProducto'>
+                                  </section> <!-- ./contenedorImg -->
+
+                                  <section class="active col-md-8 mb-12">
+                                    <h5>PRODUCTO EN VENTA / VENTA PAUSADA</h5>
+                                    <div class="input-group mb-8 col-md-10">
+                                      <div class="input-group-prepend">
+                                        <label class="input-group-text" for="active"><%= activeStat %></label>
+                                      </div>
+                                      <select name="active" class="custom-select" id="active">
+                                        <% if(elProducto.active == true) { %>
+                                          <option value=true selected>ACTIVAR VENTA</option>
+                                          <% } else { %>
+                                            <option value=true>ACTIVAR VENTA</option>
+                                            <% } %>
+                                            <% if(elProducto.active == false) { %>
+                                              <option value=false selected>PAUSAR VENTA</option>
+                                              <% } else { %>
+                                                <option value=false>PAUSAR VENTA</option>
+                                                <% } %>
+                                              </select>
                                             </div>
-                                            <select name="ofeoffer_checkrta" class="custom-select" id="offer_check">
-                                              <option selected>Seleccione una opcion...</option>
-                                              <% if(elProducto.offer_check == true) { %>
-                                                <option value=true selected>SI</option>
-                                                <% } else { %>
-                                                  <option value=true>SI</option>
-                                                  <% } %>
-                                                  <% if(elProducto.offer_check == false) { %>
-                                                    <option value=false selected>NO</option>
-                                                    <% } else { %>
-                                                      <option value=false>NO</option>
-                                                      <% } %>
-                                                    </select>
-                                                  </div>
-                                                  <div class="col-md-4 mb-12">
-                                                    <label for="offer_discount">Descuento</label>
-                                                    <input type="text" name="offer_discount" class="form-control" placeholder="Ej: % 10" value="<%= elProducto.offer_discount %>" id='offer_discount'>
-                                                  </div>
-                                                  <!-- <div class="col-md-4 mb-12">
-                                                    <label for="descuento">Precio Oferta</label>
-                                                    <input type="text" name="precioOferta" class="form-control" placeholder="Ej: $ 10" value="<%= //elProducto.precioOferta %>">
-                                                  </div> -->
-                                                </section>
-                                                <section class="active col-md-8 mb-12">
-                                                  <h5>PRODUCTO EN VENTA / VENTA PAUSADA</h5>
-                                                  <div class="input-group mb-8 col-md-10">
-                                                    <div class="input-group-prepend">
-                                                      <label class="input-group-text" for="active"><%= activeStat %></label>
-                                                    </div>
-                                                    <select name="active" class="custom-select" id="active">
-                                                      <% if(elProducto.active == true) { %>
-                                                        <option value=true selected>ACTIVAR VENTA</option>
-                                                        <% } else { %>
-                                                          <option value=true>ACTIVAR VENTA</option>
-                                                          <% } %>
-                                                          <% if(elProducto.active == false) { %>
-                                                            <option value=false selected>PAUSAR VENTA</option>
-                                                            <% } else { %>
-                                                              <option value=false>PAUSAR VENTA</option>
-                                                              <% } %>
-                                                            </select>
-                                                          </div>
-                                                          <!-- <div class="col-md-4 mb-12">
-                                                            <label for="descuento">Precio Oferta</label>
-                                                            <input type="text" name="precioOferta" class="form-control" placeholder="Ej: $ 10" value="<%= //elProducto.precioOferta %>">
-                                                          </div> -->
-                                                        </section>
-                                                        <!-- <section class="contenedorImg col-md-8 mb-12">
-                                                          <h5>CARGAR IMAGEN</h5>
-                                                          <input class="btn" type="file" name="imgProducto">
-                                                        </section> -->
-                                                      </div>
-                                                      <button type="submit" class="btn btn-success btn-lg btn-block botonForm2 col-md-12 mb-12">Guardar Producto</button>
-                                                    </form>
-                                                    <form action="/products/delete/<%= elProducto.id %>?_method=delete" method="POST">
-                                                      <button type="submit" class="btn btn-danger btn-lg btn-block botonForm2 col-md-12 mb-12">Eliminar Producto</button>
-                                                    </form>
-                                                  </div>
-                                                </div> <!-- ./div-row -->
-                                              </div> <!-- ./div-container -->
-                                              
-                                              <!--Include footer -->
-                                              <%- include('partials/footer') %>
-                                              
-                                              <!-- Include End Body Scripts -->
-                                              <%- include('partials/_endBodyScripts') %>
-                                              
-                                            </body>
-                                            </html>
+                                            <!-- <div class="col-md-4 mb-12">
+                                              <label for="descuento">Precio Oferta</label>
+                                              <input type="text" name="precioOferta" class="form-control" placeholder="Ej: $ 10" value="<%= //elProducto.precioOferta %>">
+                                            </div> -->
+                                          </section>
+                                          <!-- <section class="contenedorImg col-md-8 mb-12">
+                                            <h5>CARGAR IMAGEN</h5>
+                                            <input class="btn" type="file" name="imgProducto">
+                                          </section> -->
+                                        </div>
+                                        <button type="submit" class="btn btn-success btn-lg btn-block botonForm2 col-md-12 mb-12">Guardar Producto</button>
+                                      </form>
+                                      <form action="/products/delete/<%= elProducto.id %>?_method=delete" method="POST">
+                                        <button type="submit" class="btn btn-danger btn-lg btn-block botonForm2 col-md-12 mb-12">Eliminar Producto</button>
+                                      </form>
+                                    </div>
+                                  </div> <!-- ./div-row -->
+                                </div> <!-- ./div-container -->
+                                
+                                <!--Include footer -->
+                                <%- include('partials/footer') %>
+                                
+                                <!-- Include End Body Scripts -->
+                                <%- include('partials/_endBodyScripts') %>
+                                
+                              </body>
+                              </html>

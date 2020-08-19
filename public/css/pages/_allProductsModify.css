@@ -43,6 +43,10 @@ a.elLink button{
     font-size: 70%;
 }
 
+#fotoMuestraSmallProducto{
+  max-width: 100px;
+}
+
 @media (max-width: 991px){
   article.elContenedor div.elProducto div.imagenProducto{
     padding: 0;

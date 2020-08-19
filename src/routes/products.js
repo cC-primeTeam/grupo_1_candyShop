@@ -16,13 +16,10 @@ let storage = multer.diskStorage({
   filename: function (req, file, cb) {
     let nombreTodoJunto = req.body.name;
     nombreTodoJunto = nombreTodoJunto.replace(/ /g, "");
-    cb(null, nombreTodoJunto+ path.extname(file.originalname))
+    cb(null, nombreTodoJunto + path.extname(file.originalname))
   }
 })
-//cb(null, nombreTodoJunto + '-' + Date.now() + path.extname(file.originalname))
 let upload = multer({ storage: storage })
-
-
 /* -------------------
 PRUEBAS DB
 -------------------*/
@@ -41,8 +38,10 @@ router.post('/create', upload.any(), productsController.store);
 
 
 router.get('/allProductsModify', productsController.allProductsModify);
+
 router.get('/edit/:id', productsController.editProduct);
 router.put('/edit/:id', upload.any(), productsController.updateProduct);
+
 router.delete('/delete/:id', productsController.destroy);
 
 router.get('/:id', productsController.detailProduct);
