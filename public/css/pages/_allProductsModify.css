@@ -3,28 +3,89 @@
 /* article.elContenedor{
   padding: 0;
 } */
-article.elContenedor div.elProducto div.imagenProducto{
-    padding: 0;
-    height: 165px;
-    display: flex;
-    align-items: center;
+
+.elProducto {
+  background-color: #ffffff;
+  border-radius: 5px;
+  overflow: hidden;
+  transition: 300ms;
+  margin: 20px 0;
 }
 
-article.elContenedor div.elProducto div.infoProducto{
-  padding: 0;
+.elProducto a div.imagenProducto {
+  display: block;
+  border-bottom: 1px solid var(--light-gray);
 }
-article.elContenedor div.elProducto div.infoProducto h6{
-  font-size: 80%;
-  height: 50px;
-  display: flex;
+
+section.productosDestacados div article div.infoProducto {
+  padding: 15px;
+  position: relative;
   align-items: center;
+  flex-wrap: wrap;
+  background-color: var(--celeste-claro);
+  padding: 10px;
+  border-radius: 10px;
 }
 
-div.infoProducto h6{
+section.productosDestacados div article div.infoProducto h5 {
+  margin-top: 15px;
   justify-content: center;
   text-align: center;
+  color: var(--violeta-textos);
+  font-weight: 600;
 }
 
+section.productosDestacados div article div.infoProducto h6 {
+  font-weight: 300;
+  color: var(--green);
+}
+
+section.productosDestacados div article div.infoProducto p {
+  color: var(--gray);
+}
+
+section.productosDestacados div article div.infoProducto b{
+  color: var(--green);
+  position: absolute;
+  top: -10px;
+  width: 50px;
+  height: 25px;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+}
+
+section.productosDestacados div article div.infoProducto i {
+  color: var(--rosa-background-header);
+  font-size: 1.5em;
+  width: 35px;
+  height: 35px;
+  text-align: center;
+  border-radius: 50%;
+  position: absolute;
+  top: -15px;
+  right: 15px;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 600ms;
+}
+
+.elProducto:hover {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.elProducto:hover i{
+  transform: rotate(360deg);
+  box-shadow: 0 0 10px var(--celeste-background);
+}
+
+section.productosDestacados div article div.infoProducto:hover {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
 
 div.losLinksRow{
   justify-content: center;

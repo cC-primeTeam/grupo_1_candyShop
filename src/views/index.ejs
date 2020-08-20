@@ -36,9 +36,10 @@
               </div>
               
               <div class="infoProducto">
-                <h6><%= product.name %></h6>
-                <p> <%= product.detail %></p>  <p><%= product.offer_discount %>% OFF</p>
-                <b><%= milesGenerator (finalPrice) %></b>
+                <h5><%= product.name %></h5>
+                <p> <%= product.detail %></p>  
+                <h6><%= product.offer_discount %>% OFF</h6>
+                <b><%= milesGenerator (finalPrice) %> $</b>
                 <a class="carrito" href="/sales/purchase"><i class="fas fa-shopping-cart"></i></a>
               </div>
             </a>
