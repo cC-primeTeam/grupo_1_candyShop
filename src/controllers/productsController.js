@@ -76,10 +76,9 @@ let productsController = {
   },
   // MODIFICAR - muestra formulario para editar producto con el producto
   editProduct: function (req, res, next) {
-    db.Prod.findByPk(req.params.id, {
-      include:[{association: 'Category'}]
-    })
+    db.Prod.findByPk(req.params.id)
     .then(function(elProducto) {
+    //  return res.send((elProducto.category_id).toString())
       db.Category.findAll()
       .then(function(resultadoCategorias){
         let categoryCheck = elProducto.category_id == resultadoCategorias.id ? 'selected' : '';
@@ -91,6 +90,7 @@ let productsController = {
   },
   // MODIFICAR - put.
   updateProduct: function (req, res, next) {
+    // return res.send(typeof req.files)
     db.Prod.update({
       name: req.body.name,
       detail: req.body.detail,
@@ -99,7 +99,7 @@ let productsController = {
       offer_discount: req.body.offer_discount,
       stock: req.body.stock,
       price: req.body.price,
-      image: (!req.files[0]) ? this.image : req.files[0].filename,
+      image: (!req.files) ? this.image : req.files[0].filename,
       category_id: req.body.category,
       active: req.body.active
     },

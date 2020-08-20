@@ -24,6 +24,7 @@ window.addEventListener('load', function() {
     return response.json();
   })
   .then(function(resultado) {
+    resultado.provincias.sort((a, b) => (a.nombre > b.nombre) ? 1 : -1 );
     resultado.provincias.forEach(elemento => {
       selectProvincia.innerHTML += `<option value=${elemento.id}>${elemento.nombre}</option>`
     });
@@ -37,6 +38,7 @@ window.addEventListener('load', function() {
       return response.json();
     })
     .then(function(resultado) {
+      resultado.departamentos.sort((a, b) => (a.nombre > b.nombre) ? 1 : -1 );
       selectMunicipio.innerHTML = `<option hidden>Selecciona una municipio...</option>`;
       resultado.departamentos.forEach(function(elemento) {
         selectMunicipio.innerHTML += `<option value=${elemento.id}>${elemento.nombre}</option>`
@@ -48,8 +50,17 @@ window.addEventListener('load', function() {
     selectLocalidad.disabled = false;
   });
 
-  selectLocalidad.addEventListener('click', function () {
-    selectCPostal.disabled = false;
+  // selectLocalidad.addEventListener('click', function () {
+  //   selectCPostal.disabled = false;
+  // });
+
+  selectLocalidad.addEventListener('keydown', function(event) {
+    if(selectLocalidad.value.length >= 5 && selectCPostal.disabled) {
+      console.log("HABILITAR")
+      selectCPostal.disabled = false;
+    } else {
+      selectCPostal.disabled = true
+    }
   });
   
 })
