@@ -4,8 +4,8 @@ module.exports = {
   up: async (queryInterface, Sequelize) => {
     return queryInterface.bulkInsert('products', [
       {
-        name: "Chocolate biznike",
-        detail: "Bloque Biznikke x 120gr.",
+        name: "Chocolate Biznikke Nevado",
+        detail: "Bloque Biznikke Nevado x 120gr.",
         top_check: 1,
         offer_check: 0,
         offer_discount: 0,
@@ -18,7 +18,7 @@ module.exports = {
         updated_at: new Date()
       },
       {
-        name: "Alfajor bagley blanco triple",
+        name: "Alfajor Bagley Blanco Triple",
         detail: "Alfajor Bagley Blanco 73.5gr X 1 Uni.",
         top_check: 1,
         offer_check: 1,
@@ -32,8 +32,8 @@ module.exports = {
         updated_at: new Date()
       },
       {
-        name: "Alfajor bon o bon",
-        detail: "Alfajor Bon O Bon 40gr X 1 Uni.",
+        name: "Alfajor Bon o Bon Chocolate",
+        detail: "Alfajor Bon o Bon Arcor 40gr X 1 Uni.",
         top_check: 0,
         offer_check: 0,
         offer_discount: 0,
@@ -46,7 +46,7 @@ module.exports = {
         updated_at: new Date()
       },
       {
-        name: "Caramelos duros pico dulce",
+        name: "Caramelos Pico Dulce Duros",
         detail: "Bolsa de caramelos pico dulce duro x 450gr.",
         top_check: 1,
         offer_check: 1,
@@ -60,7 +60,7 @@ module.exports = {
         updated_at: new Date()
       },
       {
-        name: "Caramelos masticables sugus",
+        name: "Caramelos Sugus Masticables",
         detail: "Bolsa de Caramelos Sugus masticables x 700gr.",
         top_check: 0,
         offer_check: 1,
@@ -74,7 +74,7 @@ module.exports = {
         updated_at: new Date()
       },
       {
-        name: "Chocolate cadbury yogurt frutilla",
+        name: "Chocolate Cadbury Yogurt Frutilla",
         detail: "Chocolate Cadbury Frutilla x27gr, caja x12u.",
         top_check: 0,
         offer_check: 1,
@@ -88,7 +88,7 @@ module.exports = {
         updated_at: new Date()
       },
       {
-        name: "Gomitas mogul ositos extreme",
+        name: "Gomitas Mogul Ositos Extreme",
         detail: "Gomitas acido y dulce mogul ositos extreme.",
         top_check: 1,
         offer_check: 0,
@@ -102,7 +102,7 @@ module.exports = {
         updated_at: new Date()
       },
       {
-        name: "Gomitas mogul tiburoncitos",
+        name: "Gomitas Mogul Tiburoncitos",
         detail: "Gomitas dulces mogul tiburoncitos.",
         top_check: 0,
         offer_check: 1,
@@ -116,7 +116,7 @@ module.exports = {
         updated_at: new Date()
       },
       {
-        name: "Paraguita de chocolate felfort",
+        name: "Paraguita de Chocolate Felfort",
         detail: "Caja de chupetines Paraguita de chocolate felfort.",
         top_check: 1,
         offer_check: 1,
@@ -130,7 +130,7 @@ module.exports = {
         updated_at: new Date()
       },
       {
-        name: "Galletitas saladix snack pizza",
+        name: "Galletitas Saladix Snack Pizza",
         detail: "Galletitas saladix snack pizza x100gr, pack 6u.",
         top_check: 0,
         offer_check: 1,

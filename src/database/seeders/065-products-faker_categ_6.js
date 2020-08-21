@@ -2,8 +2,8 @@
 const faker = require('faker');
 const products = [...Array(10)].map((products) => (
   {
-    name: faker.commerce.productName(),
-    detail: faker.random.words(10),
+    name: faker.commerce.productName(4),
+    detail: faker.random.words(4),
     top_check: 0,
     offer_check: 0,
     offer_discount: 0,
