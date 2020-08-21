@@ -31,14 +31,14 @@
       
       <article class="productoDetalladoContainer col-12 col-md-7 container ">
         <div class="productoDetalladoRow row">
-                    
+          
           <div class="precioContainer container col-12">
             <div class="precioRow row">
               <% let product = elProducto;
-                let getDiscountPercentage = discount => (100 - discount) / 100;
-                let finalPrice = (product.price * getDiscountPercentage(product.offer_discount)).toFixed(0); 
-                %>
-              <h4 class="precioh4">Precio: <small class="smallPrecioh4"><%= milesGenerator(finalPrice) %></small></h4>
+              let getDiscountPercentage = discount => (100 - discount) / 100;
+              let finalPrice = (product.price * getDiscountPercentage(product.offer_discount)).toFixed(0); 
+              %>
+              <h4 class="precioh4">Precio unitario: <small class="smallPrecioh4"><%= milesGenerator(finalPrice) %></small></h4>
             </div> <!-- ./precioRow-->
           </div> <!-- ./precioContainer-->
           
@@ -53,42 +53,42 @@
                   <%stockAMostrar = stockAMostrar+1%>
                   <option value="<%=stockAMostrar%>"><%=stockAMostrar%></option>
                   <% } %>
-              </select>
-              
-              
-            </div> <!-- ./cantidadRow-->
-          </div> <!-- ./cantidadContainer-->
-
-          <div class="totalContainer container col-12">
-            <div class="totalRow row">
-              <h5 class="totalh5">Total:  <small class="smalltotalh5"><%= milesGenerator(finalPrice) %></small></h5>
-            </div> <!-- ./totalRow-->
-          </div> <!-- ./totalContainer-->
-          
-          <div class="containerButton col-12 container">
-            <a href="/sales/purchase"> 
-              <button type="button" class="btn <%= activeStatClass %> botonAñadirCarrito" <%= activeStatDisable %>><%= activeStat %></button>
-            </a>
-          </div> <!-- ./containerButton-->
-          
-        </div> <!-- ./productoDetalladoRow-->
-      </article> <!-- ./productoDetalladoContainer-->
-      
-      <article class="descripcionDetallada col-12">
-        <div class="descripcionDetalladaRow row">
-          <b class="col-12">Descripcion detallada: </b>
-          <p class="col-12"><%= elProducto.detail %></p>
-        </div>
-      </article> <!-- ./descripcionDetallada -->
-      
-    </div> <!-- ./rowPrimary -->
-  </section> <!-- ./containerPrimary -->
-
-  <!--Include Footer -->
-  <%- include('partials/footer') %>
-  
-  <!-- Include EndBodyScripts -->
-  <%- include('partials/_endBodyScripts') %>
-  
-</body>
-</html>
+                </select>
+                
+                
+              </div> <!-- ./cantidadRow-->
+            </div> <!-- ./cantidadContainer-->
+            
+            <div class="totalContainer container col-12">
+              <div class="totalRow row">
+                <h5 class="totalh5">Total:  <small class="smalltotalh5"><%= milesGenerator(finalPrice) %></small></h5>
+              </div> <!-- ./totalRow-->
+            </div> <!-- ./totalContainer-->
+            
+            <div class="containerButton col-12 container">
+              <a href="/sales/purchase"> 
+                <button type="button" class="btn <%= activeStatClass %> botonAñadirCarrito" <%= activeStatDisable %>><%= activeStat %></button>
+              </a>
+            </div> <!-- ./containerButton-->
+            
+          </div> <!-- ./productoDetalladoRow-->
+        </article> <!-- ./productoDetalladoContainer-->
+        
+        <article class="descripcionDetallada col-12">
+          <div class="descripcionDetalladaRow row">
+            <b class="col-12">Descripcion detallada: </b>
+            <p class="col-12"><%= elProducto.detail %></p>
+          </div>
+        </article> <!-- ./descripcionDetallada -->
+        
+      </div> <!-- ./rowPrimary -->
+    </section> <!-- ./containerPrimary -->
+    
+    <!--Include Footer -->
+    <%- include('partials/footer') %>
+    
+    <!-- Include EndBodyScripts -->
+    <%- include('partials/_endBodyScripts') %>
+    
+  </body>
+  </html>

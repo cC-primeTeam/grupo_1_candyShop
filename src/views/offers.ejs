@@ -22,47 +22,46 @@
         <h1 class="titularProductsBest"> Productos en OFERTA!!!</h1>
       </div>
     </div>
-  <section/>
-  
-  <!-- MUESTRA DE LOS PRODUCTOS -->
-  <section class="productosDestacados container">
-    <div class="row">
-      <% for (product of losProductos) { 
-        let getDiscountPercentage = discount => (100 - discount) / 100;
-        let originalPrice = (product.price).toFixed(0);
-        let finalPrice = (product.price * getDiscountPercentage(product.offer_discount)).toFixed(0); 
-        %>
-        <div class="col-12 col-sm-6 col-lg-3">
-          <article class="elProducto">
-            <a href="/products/<%= `${product.id}` %>">
+    <section/>
+    
+    <!-- MUESTRA DE LOS PRODUCTOS -->
+    <section class="productosDestacados container">
+      <div class="row">
+        <% for (product of losProductos) { 
+          let getDiscountPercentage = discount => (100 - discount) / 100;
+          let originalPrice = (product.price).toFixed(0);
+          let finalPrice = (product.price * getDiscountPercentage(product.offer_discount)).toFixed(0); 
+          %>
+          <div class="col-12 col-sm-6 col-lg-3">
+            <article class="elProducto">
+              <a href="/products/<%= `${product.id}` %>">
+                
+                <div class="imagenProducto">
+                  <%let displayDiscount = product.offer_discount <= 0 ? 'd-none' : '';%>
+                  <h6 class="<%=displayDiscount%>"><%= product.offer_discount %>% OFF</h6>
+                  <img src="/images/uploads/productDetail/<%= product.image %>                   
+                  " alt="imagen de producto <%= product.name %>">
+                </div>
+                
+                <div class="infoProducto">
+                  <h5><%= product.name %></h5>
+                  <p> <%= product.detail %></p>
+                  <p class="precioSinDescuento <%=displayDiscount%>"><%= milesGenerator (originalPrice) %> $</p>
+                  <b><%= milesGenerator (finalPrice) %> $</b>
+                  <a class="carrito" href="/sales/purchase"><i class="fas fa-shopping-cart"></i></a>
+                </div>
+              </a>
               
-              <div class="imagenProducto">
-                <h6><%= product.offer_discount %>% OFF</h6>
-                <img src="/images/uploads/productDetail/<%= product.image %>                   
-                " alt="imagen de producto <%= product.name %>">
-              </div>
-              
-              <div class="infoProducto">
-                <h5><%= product.name %></h5>
-                <p> <%= product.detail %></p>  
-                <%let displayDiscount = product.offer_discount <= 0 ? 'd-none' : '';%>
-                <h6 class="<%=displayDiscount%>"><%= product.offer_discount %>% OFF </h6>
-                <p class="precioSinDescuento <%=displayDiscount%>"><%= milesGenerator (originalPrice) %> $</p>
-                <b><%= milesGenerator (finalPrice) %> $</b>
-                <a class="carrito" href="/sales/purchase"><i class="fas fa-shopping-cart"></i></a>
-              </div>
-            </a>
-            
-          </article>
+            </article>
+          </div>
+          <% } %>
         </div>
-        <% } %>
-      </div>
-    </section>
-    
-    <!--Include footer -->
-    <%- include('partials/footer') %>
-    
-    <!-- Include End Body Scripts -->
-    <%- include('partials/_endBodyScripts') %>
-  </body>
-  </html>
+      </section>
+      
+      <!--Include footer -->
+      <%- include('partials/footer') %>
+      
+      <!-- Include End Body Scripts -->
+      <%- include('partials/_endBodyScripts') %>
+    </body>
+    </html>

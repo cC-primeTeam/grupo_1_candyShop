@@ -34,7 +34,8 @@
             <a href="/products/<%= `${product.id}` %>">
               
               <div class="imagenProducto">
-                <h6><%= product.offer_discount %>% OFF</h6>
+                <%let displayDiscount = product.offer_discount <= 0 ? 'd-none' : '';%>
+                <h6 class="<%=displayDiscount%>"><%= product.offer_discount %>% OFF</h6>
                 <img src="/images/uploads/productDetail/<%= product.image %>                   
                 " alt="imagen de producto <%= product.name %>">
               </div>
@@ -42,8 +43,6 @@
               <div class="infoProducto">
                 <h5><%= product.name %></h5>
                 <p> <%= product.detail %></p>  
-                <%let displayDiscount = product.offer_discount <= 0 ? 'd-none' : '';%>
-                <h6 class="<%=displayDiscount%>"><%= product.offer_discount %>% OFF </h6>
                 <p class="precioSinDescuento <%=displayDiscount%>"><%= milesGenerator (originalPrice) %> $</p>
                 <b><%= milesGenerator (finalPrice) %> $</b>
                 <a class="carrito" href="/sales/purchase"><i class="fas fa-shopping-cart"></i></a>
