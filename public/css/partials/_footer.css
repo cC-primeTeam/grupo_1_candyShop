@@ -13,7 +13,9 @@
   align-items: center;
   }
   
-  div.lalala{padding: 0;}/*corregir clase*/
+  div.imgLogoFooter{
+    padding: 0;
+  }
   
   
   footer div section div div img{
@@ -66,10 +68,12 @@
   footer div section div.footer2 form input.form-control {
     width: 100%;
     color: white;
+    margin: 10px;
   }
   footer div section div.footer2 form button {
     width: 100%;
     color: black;
+    margin: 10px;
   }
   
   section#copyright p{
@@ -79,3 +83,12 @@
     font-weight: 700;
     color: var(--celeste-claro);
   }
+
+  @media (max-width: 991px){
+    footer div section div.footer2 div.redesFooter{
+      justify-content: center;
+      padding: 0px 100px;
+    }
+
+  }
+ 
