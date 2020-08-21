@@ -99,7 +99,7 @@ let productsController = {
       offer_discount: req.body.offer_discount,
       stock: req.body.stock,
       price: req.body.price,
-      image: (!req.files) ? this.image : req.files[0].filename,
+      image: (!req.files[0]) ? this.image : req.files[0].filename,
       category_id: req.body.category,
       active: req.body.active
     },
