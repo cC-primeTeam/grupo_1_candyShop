@@ -13,12 +13,18 @@
   
   <!--include CAROUSEL-->
   <%- include('partials/carousel') %>
-  <div class="products-wrapper container">
+
+  <section class="productosDestacados container">
     <div class="row">
-      
       <div class="col-12">
         <h1 class="titularProductsBest">Todos nuestros productos</h1>
       </div>
+    </div>
+  <section/>
+
+  <div class="products-wrapper container">
+    <div class="row">
+      
       
       <!-- MUESTRA DE LOS PRODUCTOS -->
       <section class="productosDestacados container">
@@ -41,6 +47,7 @@
                     <h5><%= product.name %></h5>
                     <p> <%= product.detail %></p>  
                     <h6><%= product.offer_discount %>% OFF</h6>
+                    <p class="precioSinDescuento"><%= milesGenerator (finalPrice) %> $</p>
                     <b><%= milesGenerator (finalPrice) %> $</b>
                     <a class="carrito" href="/sales/purchase"><i class="fas fa-shopping-cart"></i></a>
                   </div>

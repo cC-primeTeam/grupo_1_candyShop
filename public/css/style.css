@@ -64,7 +64,7 @@ imagenes a 960 x 205 en formato jpg
 ===================== */
 section.banner{
   padding: 0;
-  margin-top: 5px;
+  margin-top: -30px;
 }
 section.banner div.carousel-inner{
   width: 100%;
@@ -75,6 +75,12 @@ section.banner div.carousel-inner{
 /* =====================
 - PRODUCTOS DESTACADOS
 ===================== */
+h1.titularProductsBest{
+  background-color: white;
+  padding: 10px;
+  border-radius: 5px;
+}
+
 section.productosDestacados {
   padding: 0;
 }/*En el article falta ajustar en cada uno*/
@@ -95,8 +101,4 @@ section.productosDestacados div article div{
 }
 section.productosDestacados div article div h6{
   font-weight: 700;
-}
-
-section.productosDestacados div article div a.carrito { 
-  color: #84d2f1;
 }

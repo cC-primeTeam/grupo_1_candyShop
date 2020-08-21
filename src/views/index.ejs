@@ -17,11 +17,15 @@
   <%- include('partials/carousel') %>
   
   
-  <h1 class="titularProductsBest"> Productos mas vendidos!!!</h1>
+  
   
   <!-- MUESTRA DE LOS PRODUCTOS -->
+  
   <section class="productosDestacados container">
     <div class="row">
+      <div class="col-12">
+        <h1 class="titularProductsBest"> Productos mas vendidos!!!</h1>
+      </div>
       <% for (product of losProductos) { 
         let getDiscountPercentage = discount => (100 - discount) / 100;
         let finalPrice = (product.price * getDiscountPercentage(product.offer_discount)).toFixed(0); 
@@ -39,6 +43,7 @@
                 <h5><%= product.name %></h5>
                 <p> <%= product.detail %></p>  
                 <h6><%= product.offer_discount %>% OFF</h6>
+                <p class="precioSinDescuento"><%= milesGenerator (finalPrice) %> $</p>
                 <b><%= milesGenerator (finalPrice) %> $</b>
                 <a class="carrito" href="/sales/purchase"><i class="fas fa-shopping-cart"></i></a>
               </div>
