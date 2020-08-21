@@ -31,6 +31,7 @@
         <div class="row">
           <% for (product of losProductos) { 
             let getDiscountPercentage = discount => (100 - discount) / 100;
+            let originalPrice = (product.price).toFixed(0);
             let finalPrice = (product.price * getDiscountPercentage(product.offer_discount)).toFixed(0); 
             %>
             <div class="col-12 col-sm-6 col-lg-3">
@@ -46,8 +47,9 @@
                   <div class="infoProducto">
                     <h5><%= product.name %></h5>
                     <p> <%= product.detail %></p>  
-                    <h6><%= product.offer_discount %>% OFF</h6>
-                    <p class="precioSinDescuento"><%= milesGenerator (finalPrice) %> $</p>
+                    <%let displayDiscount = product.offer_discount <= 0 ? 'd-none' : '';%>
+                <h6 class="<%=displayDiscount%>"><%= product.offer_discount %>% OFF </h6>
+                <p class="precioSinDescuento <%=displayDiscount%>"><%= milesGenerator (originalPrice) %> $</p>
                     <b><%= milesGenerator (finalPrice) %> $</b>
                     <a class="carrito" href="/sales/purchase"><i class="fas fa-shopping-cart"></i></a>
                   </div>

@@ -33,6 +33,7 @@ router.get('/category/:id', productsController.categoryFilterView);
 router.get('/category/:id/offer', productsController.categoryFilterViewOffer);
 router.get('/category/:id/cheeky', productsController.categoryFilterViewCheeky);
 router.get('/offer', productsController.offers);
+router.get('/cheeky', productsController.cheeky);
 router.get('/create', authMiddleware, adminMiddleware.verify, productsController.create);//
 router.post('/create', upload.any(), productsController.store);
 

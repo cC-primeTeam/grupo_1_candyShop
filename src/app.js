@@ -9,6 +9,8 @@ const methodOverride =  require('method-override');
 const session = require('express-session');
 const authCookieMiddleware = require('./middlewares/authCookieMiddleware');
 const lasCategoriasMiddleware = require('./middlewares/lasCategoriasMiddleware');
+const urlMiddleware = require('./middlewares/urlMiddleware');
+const userVerifyMiddleware = require('./middlewares/userVerifyMiddleware');
 
 const mainRouter = require('./routes/main');
 const productsRouter = require('./routes/products');
@@ -31,6 +33,14 @@ app.use(session({secret: 'session secret candyShop'}));
 
 app.use(authCookieMiddleware);
 app.use(lasCategoriasMiddleware);
+app.use(urlMiddleware);
+app.use(userVerifyMiddleware.admin);
+app.use(userVerifyMiddleware.usuario);
+app.use(userVerifyMiddleware.session);
+
+
+
+
 
 //Rutas
 app.use('/', mainRouter);

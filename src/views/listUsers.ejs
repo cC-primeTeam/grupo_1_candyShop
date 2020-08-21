@@ -1,18 +1,51 @@
+<!--  -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es-AR">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Listado de usuarios</title>
+    <!-- Include Head -->
+    <%- include('partials/_contentHead') %>
+    
+    <title>CandyShop - Todos los usuarios</title>
 </head>
+
 <body>
-    <h1>Listado de usuarios</h1>
-    <a href="/"><button>IR AL HOME</button></a>
-    <ul>
-        <% for( let i = 0; i < losUsuarios.length; i++ ) { %>
-            <li><a href="/users/usrManagementForAdmin/<%= losUsuarios[i].id %>"><%= losUsuarios[i].email %></a> Admin: <%= losUsuarios[i].admin %> Activo: <%= losUsuarios[i].active %>
-                </li>
-        <% } %>
-    </ul>
-</body>
-</html>
+    <!--include HEADER-->
+    <%- include('partials/header') %>
+    <div class="masterContainer container-fluid">
+        <h1 class="col-12 tituloLosUsuarios container">Listado de usuarios</h1>
+        <div class=" masterRow row">
+            <ul class="ulLosUsuarios row col-12">
+                <% for( let i = 0; i < losUsuarios.length; i++ ) { %>
+                    <a class="cadaUsuario col-12 col-sm-6 col-md-4 col-lg-3 row" href="/users/usrManagementForAdmin/<%= losUsuarios[i].id %>">
+                        <li class="col-12 row cadaUsuario">
+                        <p class="col-12 pDeCadaUsuario cadaUsuarioEmail"> <%= losUsuarios[i].email %> </p>
+                        <p class="col-6 pDeCadaUsuario cadaUsuarioAdmin
+                        <%if (losUsuarios[i].admin){%>
+                            <%='cadaUsuarioAdminGreen'%>
+                            <%} else {%>
+                              <%="d-none"%>
+                              <%}%>
+                        "> Admin: <%= losUsuarios[i].admin %> </p>
+                        <p class="col-6 pDeCadaUsuario cadaUsuarioActive 
+                        <%if (losUsuarios[i].active){%>
+                            <%='d-none'%>
+                            <%} else {%>
+                              <%="cadaUsuarioActiveRed"%>
+                              <%}%>
+                        "> Activo: <%= losUsuarios[i].active %> </p>
+                    </li>
+                </a>
+                    <% } %>
+                </ul>
+                
+            </div> <!-- /.masterRow -->
+        </div> <!-- /.masterContainer -->
+        
+        <!--Include footer -->
+        <%- include('partials/footer') %>
+        
+        <!-- Include End Body Scripts -->
+        <%- include('partials/_endBodyScripts') %>
+    </body>
+    </html>

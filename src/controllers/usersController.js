@@ -173,6 +173,11 @@ let usersController = {
         .then(function() {
           res.redirect('/users');
         }); 
-      }
+      },
+      suspend: function(req, res, next) {
+        req.session.destroy();
+        res.cookie('authRemember', ''.email, {maxAge: -1});
+        res.render('suspend');
+      },     
     }
     module.exports = usersController;

@@ -14,6 +14,20 @@ let userIdVerifyMiddleware = {
         next();
       }
     })
-    }
+  },
+  suspend: function(req, res, next) {
+    db.Usuario.findOne({
+      where:{
+        email: {[db.Sequelize.Op.eq] : req.body.email}
+      }
+    })
+    .then(function(usuario) {
+      if(!usuario.active){
+        res.redirect('/users/suspend')
+      } else {
+        next();
+      }
+    })
   }
-  module.exports = userIdVerifyMiddleware;
+}
+module.exports = userIdVerifyMiddleware;

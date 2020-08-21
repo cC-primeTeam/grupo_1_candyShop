@@ -1,0 +1,62 @@
+h1.tituloLosUsuarios{
+  background-color: rgb(235, 230, 230);
+  height: auto;
+  margin: 0px auto;
+  margin-bottom: 40px;
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+
+div.masterRow{
+  margin: 0 auto;
+  justify-content: space-around;
+}
+
+ul.ulLosUsuarios{
+  padding: 5px;
+  margin: 0px;
+}
+
+a.cadaUsuario{
+  border: 2px solid var(--gris-claro);
+  border-radius: 7px;
+  list-style-type: none;
+  margin: 0px;
+  padding: 2px;
+  width: 90%;
+}
+li.cadaUsuario{
+  justify-content: center;
+}
+
+ul.ulLosUsuarios :hover{
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+a.cadaUsuario :hover{
+  box-shadow: 0 0 0px rgba(0, 0, 0, 0);
+}
+
+p.cadaUsuarioEmail{
+  font-weight: 700;
+}
+
+p.cadaUsuarioAdmin{
+  text-align: center;
+  color: black;
+}
+
+p.pDeCadaUsuario{
+  text-decoration: none;
+  text-align: center;
+  color: black;
+}
+
+p.cadaUsuarioAdminGreen{
+  color: green;
+}
+
+p.cadaUsuarioActiveRed{
+  color: red;
+}

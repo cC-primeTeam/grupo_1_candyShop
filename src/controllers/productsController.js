@@ -33,6 +33,17 @@ let productsController = {
       res.render('offers', {losProductos:losProductos, milesGenerator: milSeparator})
     })
   },
+  // PRODUCTOS DESTACADOS
+  cheeky: function(req, res, next) {
+    db.Prod.findAll({
+      where:{
+        top_check: {[db.Sequelize.Op.eq] : 1}
+      }
+    })
+    .then(function(losProductos) {
+      res.render('offers', {losProductos:losProductos, milesGenerator: milSeparator})
+    })
+  },
   // CREAR - muestra formulario vacio para crear
   create: function(req, res, next) {
     res.render('productCreateForm');
@@ -132,7 +143,9 @@ let productsController = {
     .then(function(losProductos) {
       db.Category.findByPk(req.params.id)
       .then(function(laCategoria){
-        res.render('categoryFilterView', {losProductos:losProductos, laCategoria:laCategoria, milesGenerator: milSeparator})
+        let paramId = req.params.id
+        // return res.send(typeof Number(paramId))
+        res.render('categoryFilterView', {losProductos:losProductos, paramId, laCategoria:laCategoria, milesGenerator: milSeparator})
       })
     })
   },

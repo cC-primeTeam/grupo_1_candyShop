@@ -10,7 +10,7 @@ const multer = require('multer');
 const registerLogMiddleware = require('../middlewares/registerLogMiddleware');
 const guestMiddleware = require('../middlewares/guestMiddleware');
 const authMiddleware = require('../middlewares/authMiddleware');
-const userIdOkMiddleware = require('../middlewares/userIdVerifyMiddleware');
+const userIdVerifyMiddleware = require('../middlewares/userIdVerifyMiddleware');
 const adminMiddleware = require('../middlewares/adminMiddleware');
 
 /**************  VALIDATIONS **************/
@@ -33,9 +33,11 @@ let upload = multer({ storage: storage })
 ---------------------------------- */
 /************ SOLO VISITANTES ************/
 router.get('/login', guestMiddleware, usersController.login); //LOGIN
-router.post('/login', loginValidation, usersController.verify); //LOGIN
+router.post('/login', loginValidation, userIdVerifyMiddleware.suspend, usersController.verify); //LOGIN
 /************ SOLO USUARIOS LOGUEADOS ************/
 router.get('/', authMiddleware, usersController.users); //PERFIL DEL USR
+/************ SOLO USUARIOS SUSPENDIDOS ************/
+router.get('/suspend', usersController.suspend); //USUARIO SUSPENDIDO
 /************ PARA TODOS ************/
 router.get('/logout', usersController.logout); //LOGOUT
 
@@ -47,8 +49,8 @@ router.get('/register', guestMiddleware, usersController.register); //CREA USR
 router.post('/register', upload.any(), registerValidation, registerLogMiddleware, usersController.save); //CREA USR
 
 /************ SOLO ACCEDE A SU USUARIO ************/
-router.get('/registerEdit/:id', authMiddleware, userIdOkMiddleware.idOk, usersController.regEdit); //EDITA USR
-router.put('/registerEdit/:id', upload.any(), authMiddleware, userIdOkMiddleware.idOk, usersController.regUpdt); //EDITA USR
+router.get('/registerEdit/:id', authMiddleware, userIdVerifyMiddleware.idOk, usersController.regEdit); //EDITA USR
+router.put('/registerEdit/:id', upload.any(), authMiddleware, userIdVerifyMiddleware.idOk, usersController.regUpdt); //EDITA USR
 
 /* --------------------- 
    MANEJO DE USUARIOS   
@@ -63,6 +65,6 @@ router.put('/usrManagementForAdmin/:id', upload.any(), adminMiddleware.verify, u
    MUESTRA JSON USUARIO   
 ----------------------- */
 /************ SOLO ACCEDE A SU USUARIO ************/
-router.get('/detail/:id', authMiddleware, userIdOkMiddleware.idOk, usersController.detail); //JSON
+router.get('/detail/:id', authMiddleware, userIdVerifyMiddleware.idOk, usersController.detail); //JSON
 
 module.exports = router;

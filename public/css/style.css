@@ -25,8 +25,8 @@
 @import 'pages/_styleProducts.css';
 @import 'pages/_styleLogin.css';
 @import 'pages/_styleUsers.css';
-@import 'pages/_allProductsModify.css';
-
+@import 'pages/_styleAllProductsModify.css';
+@import 'pages/_styleListUsers.css';
 
 /* =====================
 - IMPORTS
