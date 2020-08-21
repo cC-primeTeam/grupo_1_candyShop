@@ -1,5 +1,5 @@
-  <!DOCTYPE html>
-  <html lang="es">
+<!DOCTYPE html>
+<html lang="es">
   
   <head>
     <!-- Include Head -->
@@ -20,8 +20,11 @@
       
       <form action="" method="post" enctype="multipart/form-data" class="container row">
         <section class="registro col-12">
+          
           <h5>REGISTRO</h5>
+          
           <div class="container row info-Registro">
+            
             <div class=" container col-12">
               <label for="email">Email</label>
               <input type="email" value="<%= (typeof old != 'undefined' && !errors.email) ? old.email : '' %>" name="email" class="form-control col-md-6 col-mb-8" id="email" aria-describedby="emailHelp">
@@ -34,29 +37,40 @@
               <input type="password" value="" name="password" class="form-control col-md-6 col-mb-8" id="password">
               <small class="text-danger" id="password"><%= (typeof errors != 'undefined' && errors.password) ? errors.password.msg : '' %></small>
             </div>
-        </section>
 
+            <div class="container col-12">
+              <label for="rePassword">Repita su Contraseña</label>
+              <input type="Password" value="" name="rePassword" class="form-control col-md-6 col-mb-8" id="rePassword">
+              <small class="text-danger" id="password"><%= (typeof errors != 'undefined' && errors.password) ? errors.password.msg : '' %></small>
+            </div>
+            
+          </div>
+          
+        </section>
+        
         <section class="datos col-12">
+          
           <h5>DATOS</h5>
+          
           <div class="container col-12">            
             <label for="name_fantasy">Nombre Empresa</label>
             <input type="text" name="name_fantasy" class="form-control col-md-6 col-mb-8" id="name_fantasy" aria-describedby="emailHelp">      
           </div>
-
+          
           <div class="province col-12">
             <label for="province" id="province" class="">Provincia</label>
-              <select name="province" id="province" class="form-control col-md-6 col-mb-8">
-                <option hidden>Selecciona una provincia...</option>
-              </select>
+            <select name="province" id="province" class="form-control col-md-6 col-mb-8">
+              <option hidden>Selecciona una provincia...</option>
+            </select>
           </div>
-
+          
           <div class="municipality col-12">
             <label for="municipality" id="municipality" class="">Municipio</label>
-              <select name="municipality" id="municipality" class="form-control col-md-6 col-mb-8" disabled>
-                <option hidden>Selecciona una municipio...</option>
-              </select>
+            <select name="municipality" id="municipality" class="form-control col-md-6 col-mb-8" disabled>
+              <option hidden>Selecciona una municipio...</option>
+            </select>
           </div>
-
+          
           <div class=" container col-12">           
             <label for="location"> Localidad </label>
             <input type="text" name="location" class="form-control col-md-6 col-mb-8" id="location" aria-describedby="emailHelp" disabled placeholder="Completa tu localidad...">           
@@ -97,29 +111,34 @@
                 <% } %>
             </select>
           </div>
+            
         </section>
-
+          
         <section class="imagen_usuario">
+
           <h5>IMAGEN USUARIO</h5>
+
           <div class="col-12 botonCargarImg">
             <label for="imgUser" class="col-12">Cargar Imagen</label>
             <input class="btn btn-succes file col-md-4 col-mb-6" type="file" name="imgUser" id="imgUser">
           </div>
+
         </section>
 
-          <button type="submit" class="btn btn-success btn-lg btn-block botonForm2 col-md-12 mb-12">Crear usuario    
-          </button>
-          
-                        
-        </div>      
+        
+        <button id="crear" type="submit" class="btn btn-success btn-lg btn-block botonForm2 col-md-12 mb-12">Crear Usuario</button>
+        
       </form>
+
     </div>
-            
-      <!--Include footer -->
-      <%- include('partials/footer') %>
-      <script src="/js/register.js"></script>
-      
-      <!-- Include End Body Scripts -->
-      <%- include('partials/_endBodyScripts') %>
-    </body>
-    </html>
+    
+    <!--Include footer -->
+    <%- include('partials/footer') %>
+    
+    <!-- Include End Body Scripts -->
+    <%- include('partials/_endBodyScripts') %>
+    <script src="/js/validationsUser.js"></script>
+    <script src="/js/register.js"></script>
+    
+  </body>
+  </html>
