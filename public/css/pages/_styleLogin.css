@@ -18,3 +18,8 @@ div h1.tituloInicioSesion {
     border-radius: 10px;
     text-align: center;
 }
+
+div.containerLogin div.cajaInicioSesion h6.nuevoRegistrate{
+    text-align: center;
+    padding: 10px;
+}
