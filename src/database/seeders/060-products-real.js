@@ -142,6 +142,62 @@ module.exports = {
         active: 1,
         created_at: new Date(),
         updated_at: new Date()
+      },
+      {
+        name: "Confites Rocklets",
+        detail: "Confites Rocklets chocolate uni x 150 gs.",
+        top_check: 0,
+        offer_check: 1,
+        offer_discount: 15,
+        stock: 20,
+        price: 500,
+        image: "confitesroklets.jpg",
+        category_id: 3,
+        active: 1,
+        created_at: new Date(),
+        updated_at: new Date()
+      },
+      {
+        name: "Bocadito Tofi",
+        detail: "Bocadito Tofi chocolate relleno de dulce de leche uni x 150 gs.",
+        top_check: 1,
+        offer_check: 0,
+        offer_discount: 0,
+        stock: 20,
+        price: 600,
+        image: "bocaditotofi.jpg",
+        category_id: 3,
+        active: 1,
+        created_at: new Date(),
+        updated_at: new Date()
+      },
+      {
+        name: "Bocadito Cabsha",
+        detail: "Bocadito Cabsha chocolate relleno de dulce de leche",
+        top_check: 1,
+        offer_check: 0,
+        offer_discount: 0,
+        stock: 20,
+        price: 400,
+        image: "bocaditocabsha.jpg",
+        category_id: 3,
+        active: 1,
+        created_at: new Date(),
+        updated_at: new Date()
+      },
+      {
+        name: "Caja Bon o Bon",
+        detail: "Caja bocadito Bon o Bon chocolate leche",
+        top_check: 1,
+        offer_check: 0,
+        offer_discount: 0,
+        stock: 20,
+        price: 600,
+        image: "bocaditosbonobon.jpg",
+        category_id: 3,
+        active: 1,
+        created_at: new Date(),
+        updated_at: new Date()
       }
     ])
   },
