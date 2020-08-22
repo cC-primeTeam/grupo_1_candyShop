@@ -26,7 +26,7 @@ module.exports = {
       {
         id:8,
         email: "jtomaschiesa@gmail.com",
-        password: "$2b$10$6/7cIv1J/MllFRxXs5mVbO/FHbkoF.B1ekXL6j5AvCySenUaXhHji",
+        password: "$2b$10$bC1cXUqjlfydaul6bYN7leeISYS4cnsPP.IrfSuphGBKaOcNfwHlm",
         adress: "Calle 000",
         location: "Ciudadela",
         municipality: 'Tres de Febrero',
