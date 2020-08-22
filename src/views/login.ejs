@@ -27,6 +27,7 @@
         <div class="form-group">
           <label for="password">Password
           <input type="password" name="password" class="form-control" id="password">
+          <span id="eye"></span>
           </label>
           <small class="text-danger"><%= (typeof errors != 'undefined' && errors.password) ? errors.password.msg : '' %></small>
         </div>
@@ -51,6 +52,7 @@
     
     <!-- Include End Body Scripts -->
     <%- include('partials/_endBodyScripts') %>
+    <script src="/js/validationLogin.js"></script>
 
    
     

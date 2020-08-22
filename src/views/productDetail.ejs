@@ -16,7 +16,7 @@
   <!--Include Header-->
   <%- include('partials/header') %>
   
-  <section class="containerPrimary container">
+  <section class="containerPrimary container cajaProductDetail">
     <div class="rowPrimary row">
       
       <article class="tituloContainer container col-12">
@@ -76,13 +76,13 @@
         
         <article class="descripcionDetallada col-12">
           <div class="descripcionDetalladaRow row">
-            <b class="col-12">Descripcion detallada: </b>
-            <p class="col-12"><%= elProducto.detail %></p>
+            <b class="col-3">Descripcion detallada: </b>
+            <p class="col-9"><%= elProducto.detail %></p>
           </div>
         </article> <!-- ./descripcionDetallada -->
         
-      </div> <!-- ./rowPrimary -->
-    </section> <!-- ./containerPrimary -->
+    </div> <!-- ./rowPrimary -->
+  </section> <!-- ./containerPrimary -->
     
     <!--Include Footer -->
     <%- include('partials/footer') %>
