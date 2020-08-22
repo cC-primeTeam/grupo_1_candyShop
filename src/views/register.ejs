@@ -1,135 +1,155 @@
 <!DOCTYPE html>
 <html lang="es">
+
+<head>
+  <!-- Include Head -->
+  <%- include('partials/_contentHead') %>
   
-  <head>
-    <!-- Include Head -->
-    <%- include('partials/_contentHead') %>
-    
-    <title>CandyShop - Registro</title>
-  </head>
+  <title>CandyShop - Registro</title>
+</head>
+
+<body>
+  <!--include HEADER-->
+  <%- include('partials/header') %>
   
-  <body>
-    <!--include HEADER-->
-    <%- include('partials/header') %>
+  <div class="container col-6">
     
-    <div class="container ">          
+    <div class="titulo">
+      <h2 class="tituloRegistro">REGISTRATE COMO NUEVO USUARIO</h2>
+    </div>
+    
+    <form action="" method="post" enctype="multipart/form-data" class="container row form-group">
       
-      <div class="titulo col-md-12 col-mb-12">
-        <h1 class="col-md-12 col-mb- tituloRegistro">REGISTRATE COMO NUEVO USUARIO</h1>
+      <div class="registro col-12">
+        
+        <h5>REGISTRO</h5>
+        
+        <div class="form-group">
+          <label for="email" class="">Email
+            <input type="email" value="<%= (typeof old != 'undefined' && !errors.email) ? old.email : '' %>" name="email" class="form-control" id="email" aria-describedby="emailHelp">
+          </label>
+          <small class="text-danger" id="email"><%= (typeof errors != 'undefined' && errors.email) ? errors.email.msg : '' %></small>
+          <a href="/users/login"><%= (typeof errors != 'undefined' && errors.email.msg == 'Este mail ya se encuentra registrado!') ? 'Accede a tu cuenta !' : '' %></a>
+        </div>
+        
+        <div class="form-group">
+          <label for="password" class="">Contraseña
+            <input type="password" value="" name="password" class="form-control" id="password">
+            <span id="eye"></span>
+          </label>
+          <small class="text-danger" id="password"><%= (typeof errors != 'undefined' && errors.password) ? errors.password.msg : '' %></small>
+        </div>
+        
+        <div class="form-group">
+          <label for="rePassword" class="">Repita su Contraseña
+            <input type="Password" value="" name="rePassword" class="form-control" id="rePassword">
+          </label>
+          <small class="text-danger" id="rePassword"><%= (typeof errors != 'undefined' && errors.password) ? errors.password.msg : '' %></small>
+        </div>
+        
       </div>
       
-      <form action="" method="post" enctype="multipart/form-data" class="container row">
-        <section class="registro col-12">
-          
-          <h5>REGISTRO</h5>
-          
-          <div class="container row info-Registro">
-            
-            <div class=" container col-12">
-              <label for="email">Email</label>
-              <input type="email" value="<%= (typeof old != 'undefined' && !errors.email) ? old.email : '' %>" name="email" class="form-control col-md-6 col-mb-8" id="email" aria-describedby="emailHelp">
-              <small class="text-danger" id="email"><%= (typeof errors != 'undefined' && errors.email) ? errors.email.msg : '' %></small>
-              <a href="/users/login"><%= (typeof errors != 'undefined' && errors.email.msg == 'Este mail ya se encuentra registrado!') ? 'Accede a tu cuenta !' : '' %></a>
-            </div>
-            
-            <div class="container col-12">
-              <label for="password">Contraseña</label>
-              <input type="password" value="" name="password" class="form-control col-md-6 col-mb-8" id="password">
-              <small class="text-danger" id="password"><%= (typeof errors != 'undefined' && errors.password) ? errors.password.msg : '' %></small>
-            </div>
-
-            <div class="container col-12">
-              <label for="rePassword">Repita su Contraseña</label>
-              <input type="Password" value="" name="rePassword" class="form-control col-md-6 col-mb-8" id="rePassword">
-              <small class="text-danger" id="password"><%= (typeof errors != 'undefined' && errors.password) ? errors.password.msg : '' %></small>
-            </div>
-            
-          </div>
-          
-        </section>
+      <div class="datos col-12">
         
-        <section class="datos col-12">
-          
-          <h5>DATOS</h5>
-          
-          <div class="container col-12">            
-            <label for="name_fantasy">Nombre Empresa</label>
-            <input type="text" name="name_fantasy" class="form-control col-md-6 col-mb-8" id="name_fantasy" aria-describedby="emailHelp">      
-          </div>
-          
-          <div class="province col-12">
-            <label for="province" id="province" class="">Provincia</label>
-            <select name="province" id="province" class="form-control col-md-6 col-mb-8">
-              <option hidden>Selecciona una provincia...</option>
+        <h5>DATOS</h5>
+        
+        <div class="form-group">            
+          <label for="name_fantasy" class="">Nombre Empresa
+            <input type="text" name="name_fantasy" class="form-control" id="name_fantasy" aria-describedby="emailHelp">
+          </label>
+          <small class="text-danger" id="name_fantasy"></small>      
+        </div>
+        
+        <div class="form-group">
+          <label for="province" id="province" class="">Provincia
+          <select name="province" id="province" class="form-control">
+            <option hidden>Selecciona una provincia...</option>
+          </select>
+          </label>
+          <small class="text-danger" id="province"></small>      
+        </div>
+        
+        <div class="form-group">
+          <label for="municipality" id="municipality" class="">Municipio
+          <select name="municipality" id="municipality" class="form-control" disabled>
+            <option hidden>Selecciona una municipio...</option>
+          </select>
+          </label>
+          <small class="text-danger" id="municipality"></small>      
+        </div>
+        
+        <div class="form-group">           
+          <label for="location" class="">Localidad 
+          <input type="text" name="location" class="form-control" id="location" aria-describedby="emailHelp" disabled placeholder="Completa tu localidad...">
+          </label>
+          <small class="text-danger" id="location"></small>      
+        </div>
+        
+        <div class="form-group">           
+          <label for="postal_code" class="">Codigo Postal 
+          <input type="text" name="postal_code" class="form-control" id="postal_code" aria-describedby="emailHelp" disabled placeholder="Completa tu codigo postal...">
+          </label>
+          <small class="text-danger" id="postal_code"></small>
+        </div>
+        
+        <div class="form-group">           
+          <label for="adress" class="">Direccion
+          <input type="text" name="adress" class="form-control" id="adress" aria-describedby="emailHelp">
+          </label>
+          <small class="text-danger" id="adress"></small>   
+        </div>
+        
+        <div class="form-group">
+          <label for="telephone" class=""> Teléfono
+          <input type="text" name="telephone" class="form-control" id="telephone" aria-describedby="emailHelp">
+          </label>
+          <small class="text-danger" id="telephone"></small>
+        </div>
+        
+        <div class="form-group">       
+          <label for="business_name" class=""> Razón social
+          <input type="text" name="business_name" class="form-control" id="business_name" aria-describedby="emailHelp">  
+          </label>           
+          <small class="text-danger" id="business_name"></small>
+        </div>
+        
+        <div class="form-group">
+          <label for="cuit" class=""> CUIT/DNI
+          <input type="text" name="cuit" class="form-control" id="cuit" aria-describedby="emailHelp">
+          </label>
+          <small class="text-danger" id="cuit"></small>
+        </div>
+        
+        <div class="form-group">              
+          <label for="fiscal_condition_id" class="">Condicion fiscal
+          <select name="fiscal_condition_id" id="fiscal_condition_id" class="form-control">
+            <%for (let i=0; i<fiscalCond.length; i++) { %>
+              <option value="<%=fiscalCond[i].id%>">
+                <%= fiscalCond[i].name%>
+              </option>
+              <% } %>
             </select>
+            </label>
+            <small class="text-danger" id="fiscal_condition_id"></small>
           </div>
           
-          <div class="municipality col-12">
-            <label for="municipality" id="municipality" class="">Municipio</label>
-            <select name="municipality" id="municipality" class="form-control col-md-6 col-mb-8" disabled>
-              <option hidden>Selecciona una municipio...</option>
-            </select>
-          </div>
+        </div>
+        
+        <div class="imagen_usuario">
           
-          <div class=" container col-12">           
-            <label for="location"> Localidad </label>
-            <input type="text" name="location" class="form-control col-md-6 col-mb-8" id="location" aria-describedby="emailHelp" disabled placeholder="Completa tu localidad...">           
-          </div>
+        <h5>IMAGEN USUARIO</h5>
           
-          <div class="postal_code container col-12">           
-            <label for="postal_code"> Codigo Postal </label>
-            <input type="text" name="postal_code" class="form-control col-md-6 col-mb-8" id="postal_code" aria-describedby="emailHelp" disabled placeholder="Completa tu codigo postal...">           
-          </div>
-          
-          <div class=" container col-12">           
-            <label for="adress"> Direccion </label>
-            <input type="text" name="adress" class="form-control col-md-6 col-mb-8" id="adress" aria-describedby="emailHelp">           
-          </div>
-          
-          <div class=" container col-12">
-            <label for="telephone"> Teléfono</label>
-            <input type="text" name="telephone" class="form-control col-md-4 col-mb-6" id="telephone" aria-describedby="emailHelp">          
-          </div>
-          
-          <div class=" container col-12">       
-            <label for="business_name"> Razón social </label>
-            <input type="text" name="business_name" class="form-control col-md-4 col-mb-6" id="business_name" aria-describedby="emailHelp">            
-          </div>
-          
-          <div class=" container col-12">
-            <label for="cuit"> CUIT/DNI</label>
-            <input type="text" name="cuit" class="form-control col-md-4 col-mb-6" id="cuit" aria-describedby="emailHelp">
-          </div>
-          
-          <div class="container col-12">              
-            <label for="fiscal_condition_id">Condicion fiscal</label>
-            <select name="fiscal_condition_id" id="fiscal_condition_id" class="form-control col-md-4 col-mb-6">
-              <%for (let i=0; i<fiscalCond.length; i++) { %>
-                <option value="<%=fiscalCond[i].id%>">
-                  <%= fiscalCond[i].name%>
-                </option>
-                <% } %>
-            </select>
-          </div>
-            
-        </section>
-          
-        <section class="imagen_usuario">
+        <div class="col-12 botonCargarImg">
+          <input class="btn btn-succes file" type="file" name="imgUser" id="imgUser">
+        </div>
 
-          <h5>IMAGEN USUARIO</h5>
-
-          <div class="col-12 botonCargarImg">
-            <label for="imgUser" class="col-12">Cargar Imagen</label>
-            <input class="btn btn-succes file col-md-4 col-mb-6" type="file" name="imgUser" id="imgUser">
-          </div>
-
-        </section>
-
+      </div>
+        
         
         <button id="crear" type="submit" class="btn btn-success btn-lg btn-block botonForm2 col-md-12 mb-12">Crear Usuario</button>
         
       </form>
-
+      
     </div>
     
     <!--Include footer -->
