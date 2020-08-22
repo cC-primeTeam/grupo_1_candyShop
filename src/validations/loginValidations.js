@@ -5,6 +5,9 @@ module.exports = [
   check('email')
   .isEmail().withMessage('Verifica el e-mail ingresado por favor! ya que no tiene el formato correcto'),
   
+  check('password')
+  .isLength({min: 8, max: 16}).withMessage('El password debe poseer entre 8 y 16 caracteres'),
+
   body('email')
   .custom(async function(value) {
     let usuario = await db.Usuario.findOne({
@@ -20,8 +23,5 @@ module.exports = [
       }
     })
     return usuario
-  }),
-  
-  check('password')
-  .isLength({min: 8, max: 16}).withMessage('El password debe poseer entre 8 y 16 caracteres')
+  })
 ]

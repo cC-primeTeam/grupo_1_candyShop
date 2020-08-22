@@ -1,4 +1,5 @@
 const db = require('../database/models');
+const bcrypt = require ('bcrypt');
 
 let userIdVerifyMiddleware = {
   idOk: function(req, res, next) {
@@ -22,11 +23,17 @@ let userIdVerifyMiddleware = {
       }
     })
     .then(function(usuario) {
+      if (usuario && usuario.email == req.body.email && bcrypt.compareSync(req.body.password, usuario.password)){
       if(!usuario.active){
-        res.redirect('/users/suspend')
+        res.locals.suspended = true
+        // res.redirect('/users/suspend')
+        res.render('login')
       } else {
         next();
       }
+    } else {
+      next();
+    }
     })
   }
 }

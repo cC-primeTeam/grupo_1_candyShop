@@ -12,7 +12,7 @@
   
 <div class="bienvenida"></div>
 
-
+ 
   <div class="containerLogin">
     <div class="cajaInicioSesion">
       <h1 class="mb-5 tituloInicioSesion">Inicio de Sesión</h1>
@@ -51,5 +51,19 @@
     
     <!-- Include End Body Scripts -->
     <%- include('partials/_endBodyScripts') %>
+
+   
+    
+  <%if (typeof suspended != 'undefined') {%>
+     <script> Swal.fire({
+      icon: 'error',
+      title: 'La cuenta se encuentra suspendida',
+      text: 'Por favor contactate con la administración!',
+      footer: '<a href="https://wa.me/5491130197729?text=Solicito%20ayuda%20con%20mi%20cuenta%20suspendida" target="_blank"><i class="fab fa-whatsapp"></i> Envianos un whatsapp</a>'
+    })</script>
+    <%} else {%>
+      <%=''%>
+      <%}%>
+
   </body>
   </html>

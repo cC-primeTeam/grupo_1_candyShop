@@ -4,6 +4,8 @@ function qs (elemento) {
 
 window.addEventListener('load', function() {
 
+    let elFormularioReg = qs("#elFormularioReg") //LA CDTMADREEEEE
+
     let labelEmail = qs("label[for='email']");
     let inputEmail = qs("input#email");
     let errorEmail = qs("small#email");
@@ -40,7 +42,7 @@ window.addEventListener('load', function() {
     })
 
     btnCrearUsuario.addEventListener('click', function(event){
-        event.preventDefault();
+        event.preventDefault(elFormularioReg);
 
         let errores = {};
 
@@ -116,9 +118,20 @@ window.addEventListener('load', function() {
             // errorNameFantasy.innerText = (errores.namefanatasy) ? errores.namefanatasy : '';
 
         } else {
-            alert('El formulario fue enviado')
+            Swal.fire({
+                position: 'center',
+                icon: 'success',
+                title: 'Gracias. Ya podes loguearte !',
+                text: 'El registro fue procesado correctamente.',
+                showConfirmButton: false,
+                timer: 3000
+              })
+            // alert('Gracias, el registro fue procesado correctamente, ahora si, logueate..')
+            
         }
+        setTimeout( function () { 
+            elFormularioReg.submit();
+        }, 3000);
         
     })
-
 })
