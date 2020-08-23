@@ -41,7 +41,7 @@ window.addEventListener('load', function() {
   });
   
   selectLocalidad.addEventListener('keydown', function(event) {
-    if(selectLocalidad.value.length >= 5) {
+    if(selectLocalidad.value.length >= 4) {
       selectCPostal.disabled = false;
     } else {
       selectCPostal.disabled = true
@@ -49,7 +49,7 @@ window.addEventListener('load', function() {
   });
   
   selectLocalidad.addEventListener('mouseout', function(event) {
-    if(selectLocalidad.value.length >= 5) {
+    if(selectLocalidad.value.length >= 4) {
       selectCPostal.disabled = false;
     } else {
       selectCPostal.disabled = true
@@ -57,7 +57,7 @@ window.addEventListener('load', function() {
     }
   });
   selectCPostal.addEventListener('mouseover', function(event) {
-    if(selectLocalidad.value.length >= 5) {
+    if(selectLocalidad.value.length >= 4) {
       selectCPostal.disabled = false;
     } else {
       selectCPostal.disabled = true 

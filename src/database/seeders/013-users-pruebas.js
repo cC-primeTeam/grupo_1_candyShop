@@ -6,7 +6,7 @@ module.exports = {
       {
         id:7,
         email: "pepe@pepino.com",
-        password: "$2b$10$vY/xMFAyA9A.yqQPKIDduu6JeBhRVPSYldMJDd7cqJjr3EQqKjTd2", //milanesa
+        password: "$2b$10$ULBIm08dogS9RBGKDiQugOxkp2GWxwMRi7fuJ7IHahDz9J6/UCOMq",
         adress: "Calle 000",
         location: "Ciudadela",
         municipality: 'CABA',
@@ -26,7 +26,7 @@ module.exports = {
       {
         id:8,
         email: "jtomaschiesa@gmail.com",
-        password: "$2b$10$bC1cXUqjlfydaul6bYN7leeISYS4cnsPP.IrfSuphGBKaOcNfwHlm",
+        password: "$2b$10$ULBIm08dogS9RBGKDiQugOxkp2GWxwMRi7fuJ7IHahDz9J6/UCOMq",
         adress: "Calle 000",
         location: "Ciudadela",
         municipality: 'Tres de Febrero',

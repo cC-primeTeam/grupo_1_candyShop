@@ -94,6 +94,27 @@ section.registro h5 {
     font-family: 'Font Awesome 5 Free'
 }
 
+.form-group span#eyeRePass {
+    position: absolute;
+    height: 20px;
+    right: 14px;
+    top: calc(50% - 10px);
+    background: none;
+    border: none;
+}
+
+.form-group span#eyeRePass:before {
+    content: '\f06e';
+    color: #888;
+    font-size: 16px;
+    font-family: 'Font Awesome 5 Free'
+}
+
+.form-group span#eyeRePass.hide:before {
+    content: '\f070';
+    font-family: 'Font Awesome 5 Free'
+}
+
 div.datos {
     margin-top: 10px;
     border-top: solid black 1px;

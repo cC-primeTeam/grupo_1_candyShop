@@ -6,7 +6,7 @@ module.exports = {
             {
         id:5,
         email: "hbaravalle@digitalhouse.com",
-        password: "$2b$10$.oJBPLA.66IeSy0x4uL3UOdkKA0imXGQl7NG7F1srWFWLODD6osHG",
+        password: "$2b$10$ULBIm08dogS9RBGKDiQugOxkp2GWxwMRi7fuJ7IHahDz9J6/UCOMq",
         adress: "Monroe 860",
         location: "Belgrano",
         municipality: 'CABA',
@@ -26,7 +26,7 @@ module.exports = {
       {
         id:6,
         email: "uriel@digitalhouse.com",
-        password: "$2b$10$.oJBPLA.66IeSy0x4uL3UOdkKA0imXGQl7NG7F1srWFWLODD6osHG",
+        password: "$2b$10$ULBIm08dogS9RBGKDiQugOxkp2GWxwMRi7fuJ7IHahDz9J6/UCOMq",
         adress: "Monroe 860",
         location: "Belgrano",
         municipality: 'CABA',

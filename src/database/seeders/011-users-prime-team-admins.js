@@ -6,7 +6,7 @@ module.exports = {
       {
         id:1,
         email: "juanespinel@gmail.com",
-        password: "$2b$10$6/7cIv1J/MllFRxXs5mVbO/FHbkoF.B1ekXL6j5AvCySenUaXhHji",
+        password: "$2b$10$ULBIm08dogS9RBGKDiQugOxkp2GWxwMRi7fuJ7IHahDz9J6/UCOMq",
         adress: "Monroe 860",
         location: "Belgrano",
         municipality: 'CABA',
@@ -26,7 +26,7 @@ module.exports = {
       {
         id:2,
         email: "tomas@consek.com.ar",
-        password: "$2b$10$wf5i0Eshrw8QvfL0l6fl5ufJhKNvBcH2OHYN1WBo.X67malsdAuD6",
+        password: "$2b$10$ULBIm08dogS9RBGKDiQugOxkp2GWxwMRi7fuJ7IHahDz9J6/UCOMq",
         adress: "Monroe 860",
         location: "CABA",
         municipality: 'Ciudadela',
@@ -46,7 +46,7 @@ module.exports = {
       {
         id:3,
         email: "mica.lew@hotmail.com",
-        password: "$2b$10$2v7/ILfkXuxeCCJI8bb5m.OOv0hC2vMuXfLauk/YVrNmZ9oOh2roi",
+        password: "$2b$10$ULBIm08dogS9RBGKDiQugOxkp2GWxwMRi7fuJ7IHahDz9J6/UCOMq",
         adress: "Monroe 860",
         location: "Belgrano",
         municipality: 'CABA',
@@ -66,7 +66,7 @@ module.exports = {
       {
         id:4,
         email: "frankie.fcandia@gmail.com",
-        password: "1234567890",
+        password: "$2b$10$ULBIm08dogS9RBGKDiQugOxkp2GWxwMRi7fuJ7IHahDz9J6/UCOMq",
         adress: "Monroe 860",
         location: "Belgrano",
         municipality: 'CABA',
