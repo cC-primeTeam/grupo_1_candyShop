@@ -8,14 +8,16 @@ function authCookieMiddleware(req, res, next) {
       }
     })
     .then(function(users) {
+      // return res.send(users.email)
       if(req.session.emailUsuario == undefined) {
         req.session.emailUsuario = users.email
       }
       
     })
     next();
-  }
+  } else {
   next();
+}
 }
 module.exports = authCookieMiddleware;
 

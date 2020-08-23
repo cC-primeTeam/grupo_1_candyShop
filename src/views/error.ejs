@@ -3,14 +3,15 @@
 <html lang="es">
 
 <head>
-    <!-- Include Head -->
-    <%- include('partials/_contentHead') %>
-    
-    <title>CandyShop - 404</title>
+  <!-- Include Head -->
+  <%- include('partials/_contentHead') %>
+  
+  <title>CandyShop - 404</title>
 </head>
 
 
 <body>
+<<<<<<< HEAD
     <!--include HEADER-->
     <%- include('partials/header') %>
     
@@ -21,14 +22,32 @@
         <h4>Por favor, revisa la URL o regresa a la página principal.</h4>
         <pre><%= error.stack %></pre>
         <small><%= message %></small>
+=======
+  <!--include HEADER-->
+  <%- include('partials/header') %>
+  
+  <div class="container error">
+    <div class="row">
+      
+      <h1 ><%= error.status %></h1>
+      <img  src="/images/views/error/carameloRoto.png" id="carameloRoto" class="carameloRoto"alt="">
+      <h2 class='col-12'>Hemos buscado en todos los rincones de nuestros depositos y no hemos podido encontrar la venus de jalea que tanto deseas</h2>
+      <h4 class='col-12'>Por favor, revisa la URL o regresa a la página principal.</h4>
+      <!-- <pre><%= error.stack %></pre> -->
+      <h6 class='col-12'><%= message %></h6>
+     
+      
+>>>>>>> 09e23bd3baaf73e8d685bd665d4c15db98a754dc
     </div>
     
-    
-    <!--Include footer -->
-    <%- include('partials/footer') %>
-    
-    <!-- Include End Body Scripts -->
-    <%- include('partials/_endBodyScripts') %>
-    
+  </div>
+  
+  
+  <!--Include footer -->
+  <%- include('partials/footer') %>
+  
+  <!-- Include End Body Scripts -->
+  <%- include('partials/_endBodyScripts') %>
+  
 </body>
 </html>

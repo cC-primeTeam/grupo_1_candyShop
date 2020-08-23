@@ -6,7 +6,7 @@ function qs(element) {
 window.addEventListener('load', function() {
   
   let elFormularioLogin = qs("#elFormularioLogin") //LA CDTMADREEEEE
-
+  
   let labelEmail = qs("label[for='email']");
   let inputEmail = qs("input#email");
   let errorEmail = qs("small#email");
@@ -16,10 +16,10 @@ window.addEventListener('load', function() {
   let errorPassword = qs("small#password");
   
   let btnLogin = qs("button[type='submit']#loginButton");
-
+  
   let regexMail = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
   let regexPassword = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,16}$/;
-
+  
   let btnSpan = qs("#eye");
   
   btnSpan.addEventListener('click', function(event) {
@@ -72,18 +72,37 @@ window.addEventListener('load', function() {
       }
     }
     else {
+      let timerInterval
       Swal.fire({
-        position: 'center',
-        icon: 'success',
-        title: 'Hola!',
-        text: 'Te logueaste correctamente.',
-        showConfirmButton: false,
-        timer: 3000
+        title: 'Estamos procesando tu información',
+        html: 'Por favor aguardá <b></b> milliseconds.',
+        timer: 2000,
+        timerProgressBar: true,
+        onBeforeOpen: () => {
+          Swal.showLoading()
+          timerInterval = setInterval(() => {
+            const content = Swal.getContent()
+            if (content) {
+              const b = content.querySelector('b')
+              if (b) {
+                b.textContent = Swal.getTimerLeft()
+              }
+            }
+          }, 100)
+        },
+        onClose: () => {
+          clearInterval(timerInterval)
+        }
+      }).then((result) => {
+        /* Read more about handling dismissals below */
+        if (result.dismiss === Swal.DismissReason.timer) {
+          console.log('I was closed by the timer')
+        }
       })
       
       setTimeout( function () { 
         elFormularioLogin.submit();
-      }, 3000);
+      }, 2000);
       
     }
   })
