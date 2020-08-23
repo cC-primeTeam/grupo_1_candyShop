@@ -3,7 +3,7 @@ function qs (elemento) {
   }
   
   window.addEventListener('load', function() {
-    
+
     let elFormularioReg = qs("#elFormularioReg") //LA CDTMADREEEEE
     
     let labelEmail = qs("label[for='email']");
@@ -49,7 +49,7 @@ function qs (elemento) {
     let inputCuit = qs("input#cuit");
     let errorCuit = qs("small#cuit");
     
-    let btnCrearUsuario = qs("button[type='submit']#crear");
+    let btnConfirma = qs("button[type='submit']#confirma");
     
     let regexMail = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
     let regexPassword = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,16}$/;
@@ -67,144 +67,144 @@ function qs (elemento) {
       }
     })
     
-    btnCrearUsuario.addEventListener('click', function(event){
+    btnConfirma.addEventListener('click', function(event){
       event.preventDefault(elFormularioReg);
       
-      let errores = {};
+      let erroresEdit = {};
       
       if(inputEmail.value.length < 1) {
-        errores.email = "Este campo es obligatorio"
+        erroresEdit.email = "Este campo es obligatorio"
       } else {
         if(inputEmail.value.match(regexMail) == null) {
-          errores.email = "Inserta un email valido";
+          erroresEdit.email = "Inserta un email valido";
         }
       }
       if(inputPassword.value.length < 1) {
-        errores.password = "Este campo es obligatorio";
+        erroresEdit.password = "Este campo es obligatorio";
       } else {
         if(inputPassword.value.match(regexPassword) == null) {
-          errores.password = "La contraseña debe tener 8 carateres como minimo y 16 como maximo. 1 Min, 1 May y un numero";
+          erroresEdit.password = "La contraseña debe tener 8 carateres como minimo y 16 como maximo. 1 Min, 1 May y un numero";
         }
       }
-      if(inputRePassword.value.length < 1) {
-        errores.repassword = "Este campo es obligatorio";
-      } else {
-        if(inputPassword.value != inputRePassword.value) {
-          errores.repassword = "Las contraseñas deben coincidir";
-        }
-      }
+      // if(inputRePassword.value.length < 1) {
+      //   erroresEdit.repassword = "Este campo es obligatorio";
+      // } else {
+      //   if(inputPassword.value != inputRePassword.value) {
+      //     erroresEdit.repassword = "Las contraseñas deben coincidir";
+      //   }
+      // }
       if(inputNameFantasy.value.length < 1) {
-        errores.namefantasy = "Este campo es obligatorio";
+        erroresEdit.namefantasy = "Este campo es obligatorio";
       }
       if(inputLocation.value.length < 1) {
-        errores.location = "Este campo es obligatorio";
+        erroresEdit.location = "Este campo es obligatorio";
       }
       if(inputPostalCode.value.length < 1) {
-        errores.postal_code = "Este campo es obligatorio";
+        erroresEdit.postal_code = "Este campo es obligatorio";
       }
       if(inputAdress.value.length < 1) {
-        errores.adress = "Este campo es obligatorio";
+        erroresEdit.adress = "Este campo es obligatorio";
       }
       if(inputTelephone.value.length < 1) {
-        errores.telephone = "Este campo es obligatorio";
+        erroresEdit.telephone = "Este campo es obligatorio";
       }
       if(inputBusinessName.value.length < 1) {
-        errores.businessname = "Este campo es obligatorio";
+        erroresEdit.businessname = "Este campo es obligatorio";
       }
       if(inputCuit.value.length < 1) {
-        errores.cuit = "Este campo es obligatorio";
+        erroresEdit.cuit = "Este campo es obligatorio";
       } else {
         if(inputCuit.value.match(regexCuit) == null) {
-          errores.cuit = "Debes introducir un CUIT valido"
+          erroresEdit.cuit = "Debes introducir un CUIT valido"
         }
       }
       
-      if(Object.keys(errores).length >= 1) {
-        if(errores.email) {
+      if(Object.keys(erroresEdit).length >= 1) {
+        if(erroresEdit.email) {
           labelEmail.classList.remove('success')
           labelEmail.classList.add('error')
-          errorEmail.innerText = errores.email;
+          errorEmail.innerText = erroresEdit.email;
         } else {
           labelEmail.classList.remove('error')
           labelEmail.classList.add('success')
           errorEmail.innerText = '';
         }
-        if(errores.password) {
+        if(erroresEdit.password) {
           labelPassword.classList.remove('success')
           labelPassword.classList.add('error')
-          errorPassword.innerText = errores.password;
+          errorPassword.innerText = erroresEdit.password;
         } else {
           labelPassword.classList.remove('error')
           labelPassword.classList.add('success')
           errorPassword.innerText = '';
         }
-        if(errores.repassword) {
-          labelRePassword.classList.remove('success')
-          labelRePassword.classList.add('error')
-          errorRePassword.innerText = errores.repassword;
-        } else {
-          labelRePassword.classList.remove('error')
-          labelRePassword.classList.add('success')
-          errorRePassword.innerText = '';
-        }
-        if(errores.namefantasy) {
+        // if(erroresEdit.repassword) {
+        //   labelRePassword.classList.remove('success')
+        //   labelRePassword.classList.add('error')
+        //   errorRePassword.innerText = erroresEdit.repassword;
+        // } else {
+        //   labelRePassword.classList.remove('error')
+        //   labelRePassword.classList.add('success')
+        //   errorRePassword.innerText = '';
+        // }
+        if(erroresEdit.namefantasy) {
           labelNameFantasy.classList.remove('success')
           labelNameFantasy.classList.add('error')
-          errorNameFantasy.innerText = errores.namefantasy;
+          errorNameFantasy.innerText = erroresEdit.namefantasy;
         } else {
           labelNameFantasy.classList.remove('error')
           labelNameFantasy.classList.add('success')
-          errorNameFantasy.innerText = '';
+          //errorNameFantasy.innerText = '';
         }
-        if(errores.location) {
+        if(erroresEdit.location) {
           labelLocation.classList.remove('success')
           labelLocation.classList.add('error')
-          errorLocation.innerText = errores.location;
+          errorLocation.innerText = erroresEdit.location;
         } else {
           labelLocation.classList.remove('error')
           labelLocation.classList.add('success')
-          errorLocation.innerText = '';
+          //errorLocation.innerText = '';
         }
-        if(errores.postal_code) {
+        if(erroresEdit.postal_code) {
           labelPostalCode.classList.remove('success')
           labelPostalCode.classList.add('error')
-          errorPostalCode.innerText = errores.postal_code;
+          errorPostalCode.innerText = erroresEdit.postal_code;
         } else {
           labelPostalCode.classList.remove('error')
           labelPostalCode.classList.add('success')
-          errorPostalCode.innerText = '';
+          //errorPostalCode.innerText = '';
         }
-        if(errores.adress) {
+        if(erroresEdit.adress) {
           labelAdress.classList.remove('success')
           labelAdress.classList.add('error')
-          errorAdress.innerText = errores.adress;
+          errorAdress.innerText = erroresEdit.adress;
         } else {
           labelAdress.classList.remove('error')
           labelAdress.classList.add('success')
-          errorAdress.innerText = '';
+          //errorAdress.innerText = '';
         }
-        if(errores.telephone) {
+        if(erroresEdit.telephone) {
           labelTelephone.classList.remove('success')
           labelTelephone.classList.add('error')
-          errorTelephone.innerText = errores.telephone;
+          errorTelephone.innerText = erroresEdit.telephone;
         } else {
           labelTelephone.classList.remove('error')
           labelTelephone.classList.add('success')
-          errorTelephone.innerText = '';
+          //errorTelephone.innerText = '';
         }
-        if(errores.businessname) {
+        if(erroresEdit.businessname) {
           labelBusinessName.classList.remove('success')
           labelBusinessName.classList.add('error')
-          errorBusinessName.innerText = errores.businessname;
+          errorBusinessName.innerText = erroresEdit.businessname;
         } else {
           labelBusinessName.classList.remove('error')
           labelBusinessName.classList.add('success')
-          errorBusinessName.innerText = '';
+          //errorBusinessName.innerText = '';
         }
-        if(errores.cuit) {
+        if(erroresEdit.cuit) {
           labelCuit.classList.remove('success')
           labelCuit.classList.add('error')
-          errorCuit.innerText = errores.cuit;
+          errorCuit.innerText = erroresEdit.cuit;
         } else {
           labelCuit.classList.remove('error')
           labelCuit.classList.add('success')
@@ -218,9 +218,9 @@ function qs (elemento) {
           showConfirmButton: false,
           timer: 3000
         })
-        // setTimeout( function () { 
-        //   elFormularioReg.submit();
-        // }, 3000);
+        setTimeout( function () { 
+          elFormularioReg.submit();
+        }, 3000);
         
       }
       

@@ -15,7 +15,7 @@
   <div class="container col-6">          
     
     <div class="titulo">
-      <h1 class="tituloRegistro">Edita tu Usuario </h1>
+      <h2 class="tituloRegistro">EDITA TU USUARIO</h2>
     </div>
     
     <form action="?_method=PUT" method="post" enctype="multipart/form-data" class="form-group" id="elFormularioReg">
@@ -28,7 +28,7 @@
           <label for="email">Email
             <input type="email" name="email" class="form-control " id="email" aria-describedby="emailHelp" value="<%= elUsuario.email %>">
           </labe>
-          <small class="email"></small>
+          <small class="text-danger" id="email"></small>
         </div>
         
         <div class="form-group">
@@ -36,15 +36,15 @@
             <input type="password" name="password" class="form-control " id="password" value="" placeholder="Queres cambiar la contraseña ?">
             <span id="eye" class=""></span>
           </label>
-          <small class="password"></small>
+          <small class="text-danger" id="password"></small>
         </div>
         
-        <div class="form-group">
+        <!-- <div class="form-group">
           <label for="rePassword">Repeti tu Contraseña
             <input type="password" name="rePassword" class="form-control " id="rePassword" value="" placeholder="Queres cambiar la contraseña ?">
           </label>
-          <small class="rePassword"></small>
-        </div>
+          <small class="text-danger" id="rePassword"></small>
+        </div> -->
         
       </div>
       
@@ -56,7 +56,7 @@
           <label for="name_fantasy">Nombre Empresa
           <input type="text" name="name_fantasy" class="form-control " id="name_fantasy" aria-describedby="emailHelp" value="<%= elUsuario.name_fantasy %>">
           </label>        
-          <span class="name_fantasy"></span>
+          <small class="text-danger" id="name_fantasy"></small>
         </div>
         
         <div class="form-group">
@@ -65,7 +65,7 @@
             <option><%= elUsuario.province %></option>
           </select>
           </label>
-          <span class="province"></span>
+          <small class="text-danger" id="province"></small>
         </div>
         
         <div class="form-group">
@@ -74,49 +74,49 @@
             <option><%= elUsuario.municipality %></option>
           </select>
           </label>
-          <span class="municipality"></span>
+          <small class="text-danger" id="municipality"></small>
         </div>
         
         <div class="form-group">           
           <label for="location">Localidad
           <input type="text" name="location" class="form-control " id="location" aria-describedby="emailHelp" value="<%= elUsuario.location %>" placeholder="Completa tu localidad...">
           </label>
-          <span class="location"></span>
+          <small class="text-danger" id="location"></small>
         </div>
         
         <div class="form-group">           
           <label for="postal_code">Codigo Postal
           <input type="text" name="postal_code" class="form-control " id="postal_code" aria-describedby="emailHelp" value="<%= elUsuario.postal_code %>" disabled placeholder="Completa tu codigo postal...">           
           </label>
-          <span class="postal_code"></span>
+          <small class="text-danger" id="postal_code"></small>
         </div>
         
         <div class="form-group">           
           <label for="adress">Direccion
           <input type="text" name="adress" class="form-control " id="adress" aria-describedby="emailHelp" value="<%= elUsuario.adress %>">           
           </label>
-          <span class="adress"></span>
+          <small class="text-danger" id="adress"></small>
         </div>
         
         <div class="form-group">
           <label for="telephone"> Teléfono
           <input type="number" name="telephone" class="form-control " id="telephone" aria-describedby="emailHelp" value="<%= elUsuario.telephone %>">   
           </label>       
-          <span class="telephone"></span>
+          <small class="text-danger" id="telephone"></small>
         </div>
         
         <div class="form-group">       
           <label for="business_name">Razón social
           <input type="text" name="business_name" class="form-control " id="business_name" aria-describedby="emailHelp" value="<%= elUsuario.business_name %>">         
           </label>   
-          <span class="business_name"></span>
+          <small class="text-danger" id="business_name"></small>
         </div>
         
         <div class="form-group">
           <label for="cuit">CUIT/CUIL
           <input type="number" name="cuit" class="form-control " id="cuit" aria-describedby="emailHelp" value="<%= elUsuario.cuit %>">
           </label>
-          <span class="cuit"></span>
+          <small class="text-danger" id="cuit"></small>
         </div>
         
         <div class="form-group">    
@@ -129,7 +129,7 @@
               <% } %>
             </select>
             </label>
-            <span class="fiscal_condition"></span>
+            <small class="text-danger" id="fiscal_condition"></small>
           </div>
           
         </div>
@@ -139,13 +139,12 @@
           <h5>IMAGEN USUARIO</h5>
           
           <div class="botonCargarImg">
-            <label for="imgUser" class="">Cargar Imagen</label>
             <input class="btn btn-succes file" type="file" name="imgUser" id="imgUser">
           </div>
           
         </div>
         
-        <button type="submit" class="btn btn-success btn-lg btn-block botonForm2 col-md-12 mb-12">Confirmar cambios
+        <button id="confirma" type="submit" class="btn btn-success btn-lg btn-block botonForm2">Confirmar cambios
         </button>
         
       </form>
