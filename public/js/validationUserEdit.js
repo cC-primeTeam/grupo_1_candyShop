@@ -22,7 +22,7 @@ function qs (elemento) {
     let inputNameFantasy = qs("input#name_fantasy");
     let errorNameFantasy = qs('small#name_fantasy');
     
-    let inputProvince = qs("input#province");
+    let inputProvince = qs("select#province");
     let errorProvince = qs('small#province');
     
     let labelLocation = qs("label[for='location']");
@@ -66,7 +66,6 @@ function qs (elemento) {
         inputPassword.setAttribute('type', 'password');
       }
     })
-    
     
     btnCrearUsuario.addEventListener('click', function(event){
       event.preventDefault(elFormularioReg);
@@ -215,14 +214,13 @@ function qs (elemento) {
         Swal.fire({
           position: 'center',
           icon: 'success',
-          title: 'Gracias. Ya podes loguearte !',
-          text: 'El registro fue procesado correctamente.',
+          title: 'Actualizamos tu Datos!',
           showConfirmButton: false,
           timer: 3000
         })
-        setTimeout( function () { 
-          elFormularioReg.submit();
-        }, 3000);
+        // setTimeout( function () { 
+        //   elFormularioReg.submit();
+        // }, 3000);
         
       }
       

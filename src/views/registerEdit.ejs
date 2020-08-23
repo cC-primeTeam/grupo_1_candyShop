@@ -12,115 +12,153 @@
   <!--include HEADER-->
   <%- include('partials/header') %>
   
-  <div class="container">          
-      
-      <h1 class="col-md-8 col-mb-12 tituloRegistro">Edita tu Usuario </h1>
-  
-      <form action="?_method=PUT" method="post" enctype="multipart/form-data" class="container row">
+  <div class="container col-6">          
     
-        <div class="container row info-Registro">
-          <div class=" container col-12">
-            <label for="exampleInputEmail1">Email</label>
-            <input type="email" name="email" class="form-control col-md-6 col-mb-8" id="exampleInputEmail1" aria-describedby="emailHelp" value="<%= elUsuario.email %>">
-          </div>
+    <div class="titulo">
+      <h1 class="tituloRegistro">Edita tu Usuario </h1>
+    </div>
+    
+    <form action="?_method=PUT" method="post" enctype="multipart/form-data" class="form-group" id="elFormularioReg">
+      
+      <div class="registro col-12">
+        
+        <h5>REGISTRO</h5>
+        
+        <div class="form-group">
+          <label for="email">Email
+            <input type="email" name="email" class="form-control " id="email" aria-describedby="emailHelp" value="<%= elUsuario.email %>">
+          </labe>
+          <small class="email"></small>
+        </div>
+        
+        <div class="form-group">
+          <label for="password">Contraseña
+            <input type="password" name="password" class="form-control " id="password" value="" placeholder="Queres cambiar la contraseña ?">
+            <span id="eye" class=""></span>
+          </label>
+          <small class="password"></small>
+        </div>
+        
+        <div class="form-group">
+          <label for="rePassword">Repeti tu Contraseña
+            <input type="password" name="rePassword" class="form-control " id="rePassword" value="" placeholder="Queres cambiar la contraseña ?">
+          </label>
+          <small class="rePassword"></small>
+        </div>
+        
+      </div>
+      
+      <div class="datos col-12">
 
-          <div class="container col-12">
-            <label for="exampleInputPassword1">Contraseña</label>
-            <input type="password" name="password" class="form-control col-md-6 col-mb-8" id="exampleInputPassword1" value="" placeholder="Queres cambiar la contraseña ?">
-          </div>
-
-          <div class=" container col-12">            
-            <label for="name_fantasy">Nombre Empresa</label>
-            <input type="text" name="name_fantasy" class="form-control col-md-6 col-mb-8" id="name_fantasy" aria-describedby="emailHelp" value="<%= elUsuario.name_fantasy %>">          
-          </div>
-
-          <!-- PARA TRAER LA PROVINCIA QUE TENIA 
-          <div class="labelInput">
-            <label for="categorie">Categorias</label>
-            <select name="categorie" id="categorie">
-                <% //for(i = 0; i < categorias.length; i++) { %>
-                    <option
-                        value=<%= //categorias[i].id %>
-                        <%=// (producto.categorie_id == categorias[i].id) ? "selected" : "" %>><%=//categorias[i].categorie %></option>
-                <%// } %>
+        <h5>DATOS</h5>
+        
+        <div class="form-group">            
+          <label for="name_fantasy">Nombre Empresa
+          <input type="text" name="name_fantasy" class="form-control " id="name_fantasy" aria-describedby="emailHelp" value="<%= elUsuario.name_fantasy %>">
+          </label>        
+          <span class="name_fantasy"></span>
+        </div>
+        
+        <div class="form-group">
+          <label for="province" id="province" class="">Provincia
+          <select name="province" id="province" class="form-control ">
+            <option><%= elUsuario.province %></option>
+          </select>
+          </label>
+          <span class="province"></span>
+        </div>
+        
+        <div class="form-group">
+          <label for="municipality" id="municipality" class="">Municipio
+          <select name="municipality" id="municipality" class="form-control ">
+            <option><%= elUsuario.municipality %></option>
+          </select>
+          </label>
+          <span class="municipality"></span>
+        </div>
+        
+        <div class="form-group">           
+          <label for="location">Localidad
+          <input type="text" name="location" class="form-control " id="location" aria-describedby="emailHelp" value="<%= elUsuario.location %>" placeholder="Completa tu localidad...">
+          </label>
+          <span class="location"></span>
+        </div>
+        
+        <div class="form-group">           
+          <label for="postal_code">Codigo Postal
+          <input type="text" name="postal_code" class="form-control " id="postal_code" aria-describedby="emailHelp" value="<%= elUsuario.postal_code %>" disabled placeholder="Completa tu codigo postal...">           
+          </label>
+          <span class="postal_code"></span>
+        </div>
+        
+        <div class="form-group">           
+          <label for="adress">Direccion
+          <input type="text" name="adress" class="form-control " id="adress" aria-describedby="emailHelp" value="<%= elUsuario.adress %>">           
+          </label>
+          <span class="adress"></span>
+        </div>
+        
+        <div class="form-group">
+          <label for="telephone"> Teléfono
+          <input type="number" name="telephone" class="form-control " id="telephone" aria-describedby="emailHelp" value="<%= elUsuario.telephone %>">   
+          </label>       
+          <span class="telephone"></span>
+        </div>
+        
+        <div class="form-group">       
+          <label for="business_name">Razón social
+          <input type="text" name="business_name" class="form-control " id="business_name" aria-describedby="emailHelp" value="<%= elUsuario.business_name %>">         
+          </label>   
+          <span class="business_name"></span>
+        </div>
+        
+        <div class="form-group">
+          <label for="cuit">CUIT/CUIL
+          <input type="number" name="cuit" class="form-control " id="cuit" aria-describedby="emailHelp" value="<%= elUsuario.cuit %>">
+          </label>
+          <span class="cuit"></span>
+        </div>
+        
+        <div class="form-group">    
+          <label for="fiscal_condition_id">Condicion fiscal
+          <select name="fiscal_condition_id" id="fiscal_condition_id" class="form-control col-md-4 col-mb-6">
+            <%for (let i=0; i<fiscalCond.length; i++) { %>
+              <option value="<%=fiscalCond[i].id%>" <%=fiscalCheck%>>
+                <%= fiscalCond[i].name%>
+              </option>
+              <% } %>
             </select>
-          </div>
-          -->
-
-          <div class="province col-12">
-            <label for="province" id="province" class="">Provincia</label>
-              <select name="province" id="province" class="form-control col-md-6 col-mb-8">
-                <option><%= elUsuario.province %></option>
-              </select>
-          </div>
-
-          <div class="municipality col-12">
-            <label for="municipality" id="municipality" class="">Municipio</label>
-              <select name="municipality" id="municipality" class="form-control col-md-6 col-mb-8">
-                <option><%= elUsuario.municipality %></option>
-              </select>
-          </div>
-
-          <div class=" container col-12">           
-            <label for="location"> Localidad </label>
-            <input type="text" name="location" class="form-control col-md-6 col-mb-8" id="location" aria-describedby="emailHelp" value="<%= elUsuario.location %>" placeholder="Completa tu localidad...">           
+            </label>
+            <span class="fiscal_condition"></span>
           </div>
           
-          <div class="postal_code container col-12">           
-            <label for="postal_code"> Codigo Postal </label>
-            <input type="text" name="postal_code" class="form-control col-md-6 col-mb-8" id="postal_code" aria-describedby="emailHelp" value="<%= elUsuario.postal_code %>" disabled placeholder="Completa tu codigo postal...">           
-          </div>
-
-          <div class=" container col-12">           
-            <label for="adress"> Direccion </label>
-            <input type="text" name="adress" class="form-control col-md-6 col-mb-8" id="adress" aria-describedby="emailHelp" value="<%= elUsuario.adress %>">           
-          </div>
-
-          <div class=" container col-12">
-            <label for="telephone"> Teléfono</label>
-            <input type="number" name="telephone" class="form-control col-md-6 col-mb-8" id="telephone" aria-describedby="emailHelp" value="<%= elUsuario.telephone %>">          
-          </div>
-
-          <div class=" container col-12">       
-            <label for="business_name"> Razón social </label>
-            <input type="text" name="business_name" class="form-control col-md-6 col-mb-8" id="business_name" aria-describedby="emailHelp" value="<%= elUsuario.business_name %>">            
-          </div>
-
-          <div class=" container col-12">
-            <label for="cuit"> CUIT/DNI</label>
-            <input type="number" name="cuit" class="form-control col-md-6 col-mb-8" id="cuit" aria-describedby="emailHelp" value="<%= elUsuario.cuit %>">
-          </div>
-
-          <div class=" container col-12">    
-            <label for="fiscal_condition_id">Condicion fiscal</label>
-            <select name="fiscal_condition_id" id="fiscal_condition_id" class="form-control col-md-4 col-mb-6">
-              <%for (let i=0; i<fiscalCond.length; i++) { %>
-                <option value="<%=fiscalCond[i].id%>" <%=fiscalCheck%>>
-                  <%= fiscalCond[i].name%>
-                </option>
-                <% } %>
-              </select>
+        </div>
+        
+        <div class="imagen_usuario col-12">
+          
+          <h5>IMAGEN USUARIO</h5>
+          
+          <div class="botonCargarImg">
+            <label for="imgUser" class="">Cargar Imagen</label>
+            <input class="btn btn-succes file" type="file" name="imgUser" id="imgUser">
           </div>
           
-          <div class="col-12 botonCargarImg">
-            <label for="imgUser" class="col-12">Cargar Imagen</label>
-            <input class="file col-md-4 col-mb-6" type="file" name="imgUser" id="imgUser">
-          </div>
-
-          <button type="submit" class="btn btn-success btn-lg btn-block botonForm2 col-md-12 mb-12">Confirmar cambios
-          </button>
-          
-        </div>      
+        </div>
+        
+        <button type="submit" class="btn btn-success btn-lg btn-block botonForm2 col-md-12 mb-12">Confirmar cambios
+        </button>
+        
       </form>
-  </div>
-  
-  
-  <!--Include footer -->
-  <%- include('partials/footer') %>
-  <script src="/js/registerEdit.js"></script>
-  <script src="/js/validationUserEdit.js"></script>
-  
-  <!-- Include End Body Scripts -->
-  <%- include('partials/_endBodyScripts') %>
-</body>
-</html>
+      
+    </div>
+    
+    
+    <!--Include footer -->
+    <%- include('partials/footer') %>
+    <script src="/js/registerEdit.js"></script>
+    <script src="/js/validationUserEdit.js"></script>
+    
+    <!-- Include End Body Scripts -->
+    <%- include('partials/_endBodyScripts') %>
+  </body>
+  </html>
