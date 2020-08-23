@@ -12,14 +12,10 @@
     padding: 3px;
   align-items: center;
   }
-  
-  div.imgLogoFooter{
-    padding: 0;
-  }
-  
-  
-  footer div section div div img{
-    width: 100%;
+
+  footer div section div div a img{
+    width: 300px;
+    text-align: center;
   }
   
   footer div section div div div ul{

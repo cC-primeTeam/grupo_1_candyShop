@@ -40,7 +40,7 @@ module.exports = (sequelize, dataTypes) => {
       type: dataTypes.BOOLEAN(1),
       allowNull: false
     }
-
+    
   };
   let config = {
     tableName: 'products',
@@ -53,10 +53,17 @@ module.exports = (sequelize, dataTypes) => {
   
   Prod.associate = function(models) {
     Prod.belongsTo(models.Category, {
-        as: 'Category',
-        foreignKey: 'category_id'
-    })
-};
-
+      as: 'Category',
+      foreignKey: 'category_id'
+    });
+    Product.belongsToMany(models.User, {
+      as: 'user',
+      through: 'purchase',
+      foreignKey: 'product_id',
+      otherKey: 'user_id',
+      timestamps: true
+    });
+  };
+  
   return Prod;
 }

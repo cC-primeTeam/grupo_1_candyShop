@@ -6,6 +6,8 @@ const authMiddleware = require('../middlewares/authMiddleware');
 /* -------------------
    CARRITO
 -------------------*/
-router.get('/purchase', authMiddleware, salesController.purchase);
+// router.get('/cart', userController.cart);
+// router.get('/cart/add/:id', userController.cartAdd);
+// router.get('/cart/destroy/:id', userController.cartDestroy);
 
 module.exports = router;

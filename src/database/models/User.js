@@ -68,10 +68,17 @@ module.exports = (sequelize, dataTypes) => {
   
   User.associate = function(models) {
     User.belongsTo(models.FiscalC, {
-        as: 'FiscalC',
-        foreignKey: 'fiscal_condition_id'
-    })
-};
-
+      as: 'FiscalC',
+      foreignKey: 'fiscal_condition_id'
+    });
+    User.belongsToMany(models.Product, {
+      as: 'product',
+      through: 'User',
+      foreignKey: 'user_id',
+      otherKey: 'product_id',
+      timestamps: true
+    });
+  };
+  
   return User;
 }
