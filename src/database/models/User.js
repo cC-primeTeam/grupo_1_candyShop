@@ -71,9 +71,9 @@ module.exports = (sequelize, dataTypes) => {
       as: 'FiscalC',
       foreignKey: 'fiscal_condition_id'
     });
-    User.belongsToMany(models.Product, {
-      as: 'product',
-      through: 'User',
+    User.belongsToMany(models.Prod, {
+      as: 'Prod',
+      through: 'purchases',
       foreignKey: 'user_id',
       otherKey: 'product_id',
       timestamps: true

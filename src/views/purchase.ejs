@@ -2,79 +2,78 @@
 <html lang="es">
 
 <head> 
-    <!-- Include Head -->
-    <%- include('partials/_contentHead') %>
-    
-    <title>CandyShop - Carrito de Compras</title>
+  <!-- Include Head -->
+  <%- include('partials/_contentHead') %>
+  
+  <title>CandyShop - Carrito de Compras</title>
 </head>
 
 <body>
-    <!--include HEADER-->
-    <%- include('partials/header') %> 
-    
-<div class="container">
+  <!--include HEADER-->
+  <%- include('partials/header') %> 
+  
+  <div class="container">
     <section class="container carrito">
-        <div class="container-flex row">
-            
-            <!--DETALLE CAMPOS MENU CARRITO-->
-            <article class="col-12 row detailBar">
-                <small class="col-2"></small>
-                <div class="container-fluid row col-10">
-                    <h5 class="col-5">DETALLE</h5>
-                    <p class="col-2 cantidad"> CANTIDAD </p>
-                    <p class="col-3 precio">PRECIO</p>
-                    <small class="col-2"></small>
-                </div>
-            </article>
-            
-            <!--ITEMS MENU CARRITO-->
-            <article class="col-12 row items">
-                <img class="fotoItemCarrito col-2" src="/images/uploads/productDetail/<%=product.image%>" alt="Foto del producto: <%=product.image %>">
-
-                <div class="container-fluid row col-10">
-                    <h5 class="col-5"><%= product.name %></h5>
-                    <p class="col-2 cantidad"> 0 </p>
-                    <p class="col-3 precio">$ 0.00</p>
-                    <a class="carrito col-2 trash" href="/carrito"><i class="far fa-trash-alt"></i></a>
-                </div>
-            </article>
-            
-            <!--LAS AGREGADAS PARA BORRAR DESDE ACA-->
-            <!-- <article class="col-12 row items">
-                <img class="fotoItemCarrito col-2" src="/images/productsBest/img-01.jpg" alt="Nombre del producto">
-                <div class="container-fluid row col-10">
-                    <h5 class="col-5">**Titulo Producto**</h5>
-                    <p class="col-2 cantidad"> 0 </p>
-                    <p class="col-3 precio">$ 0.00</p>
-                    <a class="carrito col-2 trash" href="/carrito"><i class="far fa-trash-alt"></i></a>
-                </div>
-            </article> -->
-            <!--LAS AGREGADAS PARA BORRAR HASTA ACA-->
-        </div>
-    </section>
-    
-    
-    <div class="container envio">
+      <div class="container row">
         
+        <!--DETALLE CAMPOS MENU CARRITO-->
+        <article class="col-12 row detailBar">
+          <small class="col-2"></small>
+          <div class="container-fluid row col-10">
+            <h5 class="col-5">DETALLE</h5>
+            <p class="col-2 cantidad"> CANTIDAD </p>
+            <p class="col-3 precio">PRECIO</p>
+            <small class="col-2"></small>
+          </div>
+        </article>
+        
+        <!--ITEMS MENU CARRITO-->
+        <% for (purchase of purchases) { %>
+          <h1></h1>
+          <%=//milesGenerator(laCantidad) %>
+          
+          <% for (product of losProductos) { 
+          let getDiscountPercentage = discount => (100 - discount) / 100;
+          //let laCantidad = (product.quantity).toFixed(0);
+          //let finalPrice = (product.price * getDiscountPercentage(product.offer_discount)).toFixed(0); 
+          %>
+        <article class="col-12 row items">
+          <img class="fotoItemCarrito col-2" src="/images/uploads/productDetail/<%=product.image%>" alt="Foto del producto: <%=product.name %>">
+            
+          <div class="container row col-10">
+            <h5 class="col-5"><%=product.name %></h5>
+            <p class="col-2 cantidad">  <%=purchase.quantity.toString()%><%=//milesGenerator(laCantidad) %> </p>
+            <p class="col-3 precio">$ <%=//milesGenerator(finalPrice) %></p>
+            <a class="carrito col-2 trash" href="#"><i class="far fa-trash-alt"></i></a>
+          </div>
+          </article>
+          <% } %>
+          <%}%>
+                </div>
+      </section>
+      
+      
+      <div class="container envio">  
         <form class="row envio" action='index.html' method='get'>
-            <p class="col-4"><label for=''>Retiro / envio de tu pedido</label></p>
-            <p class="col-4"><input type="radio" name='envio' value='S'checked> Retiro en deposito</p>
-            <p class="col-4"><input type="radio" name='envio' value='N'> Envio a domicilio</p>
+          <p class="col-4"><label for=''>Retiro / envio de tu pedido</label></p>
+          <p class="col-4"><input type="radio" name='envio' value='S'checked> Retiro en deposito</p>
+          <p class="col-4"><input type="radio" name='envio' value='N'> Envio a domicilio</p>
         </form>
-        
-    </div>
-    <div>
+      </div>
+      
+      <div>
         <div class="carritoTotal">
-            <h2>$ 100,00 </h2>
+          <h2>$ 100,00 </h2>
         </div>
         <button type="button" class="btn btn-success btn-lg btn-block confirmBuy">Confirmar compra</button>
+      </div>
+      
     </div>
-</div>
     
     <!--Include footer -->
     <%- include('partials/footer') %>
     
     <!-- Include End Body Scripts -->
     <%- include('partials/_endBodyScripts') %>
-</body>
-</html>
+  </body>
+  </html>

@@ -76,7 +76,7 @@ window.addEventListener('load', function() {
       Swal.fire({
         title: 'Estamos procesando tu información',
         html: 'Por favor aguardá <b></b> milliseconds.',
-        timer: 3000,
+        timer: 2000,
         timerProgressBar: true,
         onBeforeOpen: () => {
           Swal.showLoading()
@@ -102,7 +102,7 @@ window.addEventListener('load', function() {
       
       setTimeout( function () { 
         elFormularioLogin.submit();
-      }, 3000);
+      }, 2000);
       
     }
   })

@@ -2,49 +2,34 @@
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    return queryInterface.createTable ('products', {
+    return queryInterface.createTable ('purchases', {
       id: {
         type: Sequelize.DataTypes.INTEGER(10).UNSIGNED,
         primaryKey: true,
         autoIncrement: true
       },
-      name: {
-        type: Sequelize.DataTypes.STRING(50),
+      delivery_check: {
+        type: Sequelize.DataTypes.BOOLEAN(1),
         allowNull: false
       },
-      detail: {
-        type: Sequelize.DataTypes.STRING(100),
-        allowNull: false
-      },
-      top_check: {
-        type: Sequelize.DataTypes.BOOLEAN(1)
-      },
-      offer_check: {
-        type: Sequelize.DataTypes.BOOLEAN(1)
-      },
-      offer_discount: {
-        type: Sequelize.DataTypes.INTEGER(10)
-      },
-      stock: {
-        type: Sequelize.DataTypes.INTEGER(10)
-      },
-      price:{
-        type: Sequelize.DataTypes.INTEGER(10).UNSIGNED,
-        allowNull: false
-      },
-      image:{
-        type: Sequelize.DataTypes.STRING(100)
-      },
-      category_id:{
+      user_id: {
         type: Sequelize.DataTypes.INTEGER(10).UNSIGNED,
         allowNull: false,
         references: {
-          model: 'categories',
+          model: 'users',
           key: 'id'
         }
       },
-      active:{
-        type: Sequelize.DataTypes.BOOLEAN(1),
+      product_id: {
+        type: Sequelize.DataTypes.INTEGER(10).UNSIGNED,
+        allowNull: false,
+        references: {
+          model: 'products',
+          key: 'id'
+        }
+      },
+      quantity:{
+        type: Sequelize.DataTypes.INTEGER(10),
         allowNull: false
       },
       created_at: Sequelize.DataTypes.DATE,
@@ -53,6 +38,6 @@ module.exports = {
   },
 
   down: async (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('products')
+    return queryInterface.dropTable('purchases')
   }
 };

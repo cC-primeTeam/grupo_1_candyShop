@@ -1,7 +1,7 @@
 module.exports = function(sequelize, dataTypes) {
-  let alias = "Purchase";
+  const alias = "purchases";
 
-  let cols = {
+  const cols = {
       id: {
           type: dataTypes.INTEGER(10),
           primaryKey: true,
@@ -18,15 +18,21 @@ module.exports = function(sequelize, dataTypes) {
       product_id: {
           type: dataTypes.INTEGER(10),
           allowNull: false,
+      },
+      quantity: {
+        type: dataTypes.INTEGER(10),
+          allowNull: false,
       }
   }
 
   let config = {
       tableName: "purchases",
-      timestamps: true
-  }
+      timestamps: true,
+    // createdAt: 'created_at',
+    // updatedAt: 'updated_at',
+    underscored: true
+  };
+  const purchases = sequelize.define(alias, cols, config);
 
-  let Purchase = sequelize.define(alias, cols, config);
-
-  return Purchase;
+  return purchases;
 }

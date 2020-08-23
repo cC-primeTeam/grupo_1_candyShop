@@ -89,7 +89,7 @@ let productsController = {
   editProduct: function (req, res, next) {
     db.Prod.findByPk(req.params.id)
     .then(function(elProducto) {
-    //  return res.send((elProducto.category_id).toString())
+      //  return res.send((elProducto.category_id).toString())
       db.Category.findAll()
       .then(function(resultadoCategorias){
         let categoryCheck = elProducto.category_id == resultadoCategorias.id ? 'selected' : '';
