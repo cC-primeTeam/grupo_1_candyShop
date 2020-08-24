@@ -3,7 +3,6 @@
 module.exports = {
   up: async (queryInterface, Sequelize) => {
     return queryInterface.bulkInsert('products', [
-
       // Chocolates
       {
         name: "Chocolate Biznikke Nevado",
@@ -19,7 +18,6 @@ module.exports = {
         created_at: new Date(),
         updated_at: new Date()
       },
-
       {
         name: "Chocolate Cadbury Yogurt Frutilla",
         detail: "Chocolate Cadbury Frutilla x27gr, caja x12u.",
@@ -34,7 +32,6 @@ module.exports = {
         created_at: new Date(),
         updated_at: new Date()
       },
-
       {
         name: "Paraguita de Chocolate Felfort",
         detail: "Caja de chupetines Paraguita de chocolate felfort.",
@@ -49,7 +46,6 @@ module.exports = {
         created_at: new Date(),
         updated_at: new Date()
       },
-
       {
         name: "Confites Rocklets",
         detail: "Confites Rocklets chocolate uni x 150 gs.",
@@ -64,7 +60,6 @@ module.exports = {
         created_at: new Date(),
         updated_at: new Date()
       },
-
       {
         name: "Bocadito Tofi",
         detail: "Bocadito Tofi chocolate relleno de dulce de leche uni x 150 gs.",
@@ -79,7 +74,6 @@ module.exports = {
         created_at: new Date(),
         updated_at: new Date()
       },
-
       {
         name: "Bocadito Cabsha",
         detail: "Bocadito Cabsha chocolate relleno de dulce de leche",
@@ -94,7 +88,6 @@ module.exports = {
         created_at: new Date(),
         updated_at: new Date()
       },
-
       {
         name: "Caja Bon o Bon",
         detail: "Caja bocadito Bon o Bon chocolate leche",
@@ -109,8 +102,6 @@ module.exports = {
         created_at: new Date(),
         updated_at: new Date()
       },
-
-      // #1
       {
         name: "Chocolate Cofler Blanco con Chocolinas",
         detail: "Chocolate cofler blanco con chocolinas 100gr x 1 uni",
@@ -125,7 +116,6 @@ module.exports = {
         created_at: new Date(),
         updated_at: new Date()
       },
-
       {
         name: "Chocolate Cofler 3 Placeres",
         detail: "Chocolate cofler 3 placeres 100gr x 1 uni",
@@ -140,7 +130,6 @@ module.exports = {
         created_at: new Date(),
         updated_at: new Date()
       },
-
       {
         name: "Chocolate Cofler Aireado Blanco",
         detail: "Chocolate cofler aireado blanco 50gr x 1 uni",
@@ -155,7 +144,6 @@ module.exports = {
         created_at: new Date(),
         updated_at: new Date()
       },
-
       {
         name: "Chocolate Cofler Aireado Negro",
         detail: "Chocolate cofler aireado Negro 50gr x 1 uni",
@@ -170,7 +158,6 @@ module.exports = {
         created_at: new Date(),
         updated_at: new Date()
       },
-
       {
         name: "Chocolate Cofler Block",
         detail: "Chocolate cofler block 20gr x 1 uni",
@@ -185,7 +172,6 @@ module.exports = {
         created_at: new Date(),
         updated_at: new Date()
       },
-
       {
         name: "Chocolate Aguila Semi Amargo",
         detail: "Chocolate aguila semi amargo 150gr x 1 uni",
@@ -194,13 +180,12 @@ module.exports = {
         offer_discount: 10,
         stock: 20,
         price: 550,
-        image: "chocolatecoflerblancorelleno.jpg",
+        image: "ChocolateAguilaSemiAmargo.jpg",
         category_id: 3,
         active: 1,
         created_at: new Date(),
         updated_at: new Date()
       },
-
       {
         name: "Chocolate Cofler Blanco Relleno",
         detail: "Chocolate cofler blanco relleno ddl 50gr x 1 uni",
@@ -215,7 +200,6 @@ module.exports = {
         created_at: new Date(),
         updated_at: new Date()
       },
-
       {
         name: "Chocolate Cofler Negro Relleno",
         detail: "Chocolate cofler negro relleno ddl 50gr x 1 uni",
@@ -230,7 +214,6 @@ module.exports = {
         created_at: new Date(),
         updated_at: new Date()
       },
-
       {
         name: "Chocolate Arcor Leche con Mani",
         detail: "Chocolate arcor leche con mani 20gr x 1 uni",
@@ -245,9 +228,7 @@ module.exports = {
         created_at: new Date(),
         updated_at: new Date()
       },
-
       // Alfajores
-
       {
         name: "Alfajor Bagley Blanco Triple",
         detail: "Alfajor Bagley Blanco 73.5gr X 1 Uni.",
@@ -276,7 +257,6 @@ module.exports = {
         created_at: new Date(),
         updated_at: new Date()
       },
-
       {
         name: "Alfajor Bon o Bon Blanco",
         detail: "Alfajor Bon o Bon Arcor blanco 40gr X 1 Uni.",
@@ -291,7 +271,6 @@ module.exports = {
         created_at: new Date(),
         updated_at: new Date()
       },
-
       {
         name: "Alfajor Aguila",
         detail: "Alfajor aguila 40gr X 1 Uni.",
@@ -306,7 +285,6 @@ module.exports = {
         created_at: new Date(),
         updated_at: new Date()
       },
-
       {
         name: "Alfajor Tofi Glaseado",
         detail: "Alfajor tofi glaseado 40gr x 1 uni.",
@@ -321,7 +299,6 @@ module.exports = {
         created_at: new Date(),
         updated_at: new Date()
       },
-
       {
         name: "Alfajor Tofi Negro",
         detail: "Alfajor tofi negro 40gr x 1 uni",
@@ -336,7 +313,6 @@ module.exports = {
         created_at: new Date(),
         updated_at: new Date()
       },
-
       {
         name: "Alfajor Tofi Negro Triple",
         detail: "Alfajor tofi negro triple 70gr x 1 uni",
@@ -351,7 +327,6 @@ module.exports = {
         created_at: new Date(),
         updated_at: new Date()
       },
-
       {
         name: "Alfajor Tofi Blanco Triple",
         detail: "Alfajor tofi blanco triple 70gr x 1 uni",
@@ -366,7 +341,6 @@ module.exports = {
         created_at: new Date(),
         updated_at: new Date()
       },
-
       {
         name: "Alfajor Cofler Block",
         detail: "Alfajor cofler block 60gr x 1 uni",
@@ -381,7 +355,6 @@ module.exports = {
         created_at: new Date(),
         updated_at: new Date()
       },
-
       {
         name: "Alfajor Bon o Bon Triple",
         detail: "Alfajor bon o bon triple 70gr x 1 uni",
@@ -396,7 +369,6 @@ module.exports = {
         created_at: new Date(),
         updated_at: new Date()
       },
-
       {
         name: "Alfajor Tatin Blanco Triple",
         detail: "Alfajor tatin triple 70gr x 1 uni",
@@ -411,7 +383,6 @@ module.exports = {
         created_at: new Date(),
         updated_at: new Date()
       },
-
       {
         name: "Alfajor Jorgito Chocolate",
         detail: "Alfajor jorgito chocolate 50gr x 1 uni",
@@ -426,9 +397,7 @@ module.exports = {
         created_at: new Date(),
         updated_at: new Date()
       },
-
       // Caramelos
-
       {
         name: "Caramelos Pico Dulce Duros",
         detail: "Bolsa de caramelos pico dulce duro x 450gr.",
@@ -443,7 +412,6 @@ module.exports = {
         created_at: new Date(),
         updated_at: new Date()
       },
-
       {
         name: "Caramelos Sugus Masticables",
         detail: "Bolsa de Caramelos Sugus masticables x 700gr.",
@@ -458,22 +426,20 @@ module.exports = {
         created_at: new Date(),
         updated_at: new Date()
       },
-
       {
         name: "Caramelos Mogul Confitados",
-        detail: "Bolsa de Caramelos confitados x 700gr.",
+        detail: "Mogul Confitados X16 Unidades de 40gr.",
         top_check: 0,
         offer_check: 0,
         offer_discount: 0,
         stock: 20,
-        price: 400,
+        price: 800,
         image: "caramelosconfitados.jpg",
         category_id: 2,
         active: 1,
         created_at: new Date(),
         updated_at: new Date()
       },
-
       {
         name: "Caramelos Butter Toffees Coco",
         detail: "Bolsa de Caramelos butter coco x 700gr.",
@@ -488,7 +454,6 @@ module.exports = {
         created_at: new Date(),
         updated_at: new Date()
       },
-
       {
         name: "Caramelos Butter Toffees Dulce de Leche",
         detail: "Bolsa de Caramelos butter ddl x 700gr.",
@@ -503,7 +468,6 @@ module.exports = {
         created_at: new Date(),
         updated_at: new Date()
       },
-
       {
         name: "Caramelos Butter Toffees Menta",
         detail: "Bolsa de Caramelos butter menta x 700gr.",
@@ -518,7 +482,6 @@ module.exports = {
         created_at: new Date(),
         updated_at: new Date()
       },
-
       {
         name: "Caramelos Butter Toffees Bon o Bon",
         detail: "Bolsa de Caramelos butter bon o bon x 700gr.",
@@ -533,7 +496,6 @@ module.exports = {
         created_at: new Date(),
         updated_at: new Date()
       },
-
       {
         name: "Caramelos Butter Toffees Chocolate Blanco",
         detail: "Bolsa de Caramelos butter chocolate blanco x 700gr.",
@@ -548,10 +510,9 @@ module.exports = {
         created_at: new Date(),
         updated_at: new Date()
       },
-
       {
         name: "Caramelos Menthoplus Sandia",
-        detail: "Bolsa de Caramelos menthoplus sandia x 700gr.",
+        detail: "Menthoplus Zero Sandia X6unidades.",
         top_check: 0,
         offer_check: 1,
         offer_discount: 20,
@@ -563,10 +524,9 @@ module.exports = {
         created_at: new Date(),
         updated_at: new Date()
       },
-
       {
         name: "Caramelos Menthoplus 2 Mentol",
-        detail: "Bolsa de Caramelos menthoplus 2 mentol x 700gr.",
+        detail: "Menthoplus 2 mentol X6unidades.",
         top_check: 0,
         offer_check: 0,
         offer_discount: 0,
@@ -578,10 +538,9 @@ module.exports = {
         created_at: new Date(),
         updated_at: new Date()
       },
-
       {
         name: "Caramelos Menthoplus Frutilla",
-        detail: "Bolsa de Caramelos menthoplus frutilla x 700gr.",
+        detail: "Menthoplus vitamin frutilla X6unidades.",
         top_check: 0,
         offer_check: 1,
         offer_discount: 10,
@@ -593,10 +552,9 @@ module.exports = {
         created_at: new Date(),
         updated_at: new Date()
       },
-
       {
         name: "Caramelos Menthoplus Limon",
-        detail: "Bolsa de Caramelos menthoplus limon x 700gr.",
+        detail: "Menthoplus vitamin limon X6unidades.",
         top_check: 0,
         offer_check: 0,
         offer_discount: 0,
@@ -608,9 +566,7 @@ module.exports = {
         created_at: new Date(),
         updated_at: new Date()
       },
-
       // Gomitas
-
       {
         name: "Gomitas Mogul Ositos Extreme",
         detail: "Gomitas acido y dulce mogul ositos extreme.",
@@ -639,7 +595,6 @@ module.exports = {
         created_at: new Date(),
         updated_at: new Date()
       },
-    
       {
         name: "Gomitas Mogul Frutilla Acidos",
         detail: "Gomitas dulces mogul frutilla acidos.",
@@ -654,7 +609,6 @@ module.exports = {
         created_at: new Date(),
         updated_at: new Date()
       },
-
       {
         name: "Gomitas Mogul Eucaliptus",
         detail: "Gomitas dulces mogul eucaliptus",
@@ -669,7 +623,6 @@ module.exports = {
         created_at: new Date(),
         updated_at: new Date()
       },
-
       {
         name: "Gomitas Mogul Tutti Frutti",
         detail: "Gomitas dulces mogul tutti frutti",
@@ -684,7 +637,6 @@ module.exports = {
         created_at: new Date(),
         updated_at: new Date()
       },
-
       {
         name: "Gomitas Mogul Dinos",
         detail: "Gomitas dulces mogul dinos",
@@ -699,22 +651,20 @@ module.exports = {
         created_at: new Date(),
         updated_at: new Date()
       },
-
       {
         name: "Gomitas Mogul Monstruitos",
-        detail: "Gomitas dulces mogul mostro",
+        detail: "Gomitas dulces mogul monstruitos",
         top_check: 0,
         offer_check: 1,
         offer_discount: 5,
         stock: 20,
         price: 55,
-        image: "gomitasmogulmostro.jpg",
+        image: "GomitasMogulMonstruitos.jpg",
         category_id: 6,
         active: 1,
         created_at: new Date(),
         updated_at: new Date()
       },
-
       {
         name: "Gomitas Mogul Rodajas Acidas",
         detail: "Gomitas dulces mogul rodajas",
@@ -729,7 +679,6 @@ module.exports = {
         created_at: new Date(),
         updated_at: new Date()
       },
-
       {
         name: "Gomitas Mogul Frutales",
         detail: "Gomitas dulces mogul frutales",
@@ -744,7 +693,6 @@ module.exports = {
         created_at: new Date(),
         updated_at: new Date()
       },
-
       {
         name: "Gomitas Mogul Ositos",
         detail: "Gomitas dulces mogul ositos",
@@ -759,7 +707,6 @@ module.exports = {
         created_at: new Date(),
         updated_at: new Date()
       },
-
       {
         name: "Gomitas Mogul Frutilla y Crema",
         detail: "Gomitas dulces mogul frutilla y crema",
@@ -774,24 +721,21 @@ module.exports = {
         created_at: new Date(),
         updated_at: new Date()
       },
-
       {
         name: "Gomitas Dientitos",
-        detail: "Gomitas dulces dientitos",
+        detail: "Gomitas dulces dientitos 700gr",
         top_check: 0,
         offer_check: 0,
         offer_discount: 0,
         stock: 20,
-        price: 65,
+        price: 350,
         image: "gomitasdientitos.jpg",
         category_id: 6,
         active: 1,
         created_at: new Date(),
         updated_at: new Date()
       },
-      
       // Galletitas
-
       {
         name: "Galletitas Saladix Snack Pizza",
         detail: "Galletitas saladix snack pizza x100gr, pack 6u.",
@@ -806,7 +750,6 @@ module.exports = {
         created_at: new Date(),
         updated_at: new Date()
       },
-      
       {
         name: "Galletitas Cereal Mix",
         detail: "Galletitas cereal mix x100gr, pack 6u.",
@@ -821,7 +764,6 @@ module.exports = {
         created_at: new Date(),
         updated_at: new Date()
       },
-
       {
         name: "Galletitas Formis Dulce de Leche",
         detail: "Galletitas ddl x100gr, pack 6u.",
@@ -836,7 +778,6 @@ module.exports = {
         created_at: new Date(),
         updated_at: new Date()
       },
-
       {
         name: "Galletitas Formis Chocolate",
         detail: "Galletitas chocolate x100gr, pack 6u.",
@@ -851,7 +792,6 @@ module.exports = {
         created_at: new Date(),
         updated_at: new Date()
       },
-
       {
         name: "Galletitas Formis Frutilla",
         detail: "Galletitas frutilla x100gr, pack 6u.",
@@ -866,7 +806,6 @@ module.exports = {
         created_at: new Date(),
         updated_at: new Date()
       },
-
       {
         name: "Galletitas Chocolinas",
         detail: "Galletitas chocolinas x100gr, pack 6u.",
@@ -881,7 +820,6 @@ module.exports = {
         created_at: new Date(),
         updated_at: new Date()
       },
-      
       {
         name: "Galletitas Cofler",
         detail: "Galletitas cofler x100gr, pack 6u.",
@@ -896,37 +834,34 @@ module.exports = {
         created_at: new Date(),
         updated_at: new Date()
       },
-
       {
-        name: "Galletitas DOn Satur Salados",
-        detail: "Galletitas don satur x100gr, pack 6u.",
-        top_check: 0,
+        name: "Biscochitos Don Satur Salados",
+        detail: "Biscochitos Don Satur salado x100gr, pack 6u.",
+        top_check: 1,
         offer_check: 0,
         offer_discount: 0,
         stock: 20,
         price: 650,
-        image: "galletitasdonsatur.jpg",
+        image: "BiscochitosDonSaturSalados.jpg",
         category_id: 5,
         active: 1,
         created_at: new Date(),
         updated_at: new Date()
       },
-
       {
-        name: "Galletitas Don Satur Salados",
-        detail: "Galletitas don satur x100gr, pack 6u.",
+        name: "Galletitas Don Satur Dulce",
+        detail: "Galletitas Don Satur dulce x100gr, pack 6u.",
         top_check: 0,
         offer_check: 1,
         offer_discount: 10,
         stock: 20,
         price: 550,
-        image: "galletitasdonsatur.jpg",
+        image: "BiscochitosDonSaturDulce.jpg",
         category_id: 5,
         active: 1,
         created_at: new Date(),
         updated_at: new Date()
       },
-
       {
         name: "Galletitas 9 de Oro",
         detail: "Galletitas 9 de oro x100gr, pack 6u.",
@@ -941,22 +876,92 @@ module.exports = {
         created_at: new Date(),
         updated_at: new Date()
       },
-
       {
         name: "Galletitas Pepitos",
         detail: "Galletitas pepitos x100gr, pack 6u.",
-        top_check: 0,
+        top_check: 1,
         offer_check: 1,
         offer_discount: 15,
         stock: 20,
-        price: 6500,
+        price: 650,
         image: "galletitaspepitos.jpg",
         category_id: 5,
         active: 1,
         created_at: new Date(),
         updated_at: new Date()
       },
-
+      //Chupetines borrados
+      {
+        name: "Chupetin Pop Frutal",
+        detail: "Chupetin Pop Frutal bolsa x100 unid.",
+        top_check: 1,
+        offer_check: 0,
+        offer_discount: 0,
+        stock: 20,
+        price: 350,
+        image: "chupetinespopfrutal.jpg",
+        category_id: 4,
+        active: 1,
+        created_at: new Date(),
+        updated_at: new Date()
+      },
+      {
+        name: "Chupetin Pop Pinta Lengua",
+        detail: "Chupetin Pop Pinta Lengua bolsa x100 unid.",
+        top_check: 0,
+        offer_check: 1,
+        offer_discount: 10,
+        stock: 20,
+        price: 350,
+        image: "chupetinespoppintalengua.jpg",
+        category_id: 4,
+        active: 1,
+        created_at: new Date(),
+        updated_at: new Date()
+      },
+      {
+        name: "Chupetin Pop Evolution",
+        detail: "Chupetin Pop Evolution bolsa x100 unid.",
+        top_check: 0,
+        offer_check: 1,
+        offer_discount: 15,
+        stock: 20,
+        price: 350,
+        image: "chupetinpopevolution.jpg",
+        category_id: 4,
+        active: 1,
+        created_at: new Date(),
+        updated_at: new Date()
+      },
+      {
+        name: "Chupetin Pop Trompito",
+        detail: "Chupetin Pop Trompito bolsa x100 unid.",
+        top_check: 0,
+        offer_check: 1,
+        offer_discount: 15,
+        stock: 20,
+        price: 350,
+        image: "Chupetinpoptrompito.jpg",
+        category_id: 4,
+        active: 1,
+        created_at: new Date(),
+        updated_at: new Date()
+      },
+      {
+        name: "Chupetin Pico Dulce",
+        detail: "Chupetin Pico Dulce bolsa x100 unid.",
+        top_check: 0,
+        offer_check: 1,
+        offer_discount: 15,
+        stock: 20,
+        price: 350,
+        image: "ChupetinPicoDulce.jpg",
+        category_id: 4,
+        active: 1,
+        created_at: new Date(),
+        updated_at: new Date()
+      }
+      
     ])
   },
   

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head> 
+  <!-- Include Head -->
+  <%- include('partials/_contentHead') %>
+  
+  <title>CandyShop - Carrito de Compras</title>
+</head>
+
+<body>
+  <!--include HEADER-->
+  <%- include('partials/header') %> 
+  
+  <div class="container">
+    <section class="container carrito">
+      <div class="container row">
+        
+        <div class="masterContainer container-fluid">
+          <h1 class="col-12 tituloCarrito container">Carrito!</h1>
+          <div class=" masterRow row">
+            
+            
+            
+            <ul class="ulCarrito row col-9">
+              
+              <% for (product of losProductos) { 
+                let getDiscountPercentage = discount => (100 - discount) / 100;
+                let finalPrice = (product.price * getDiscountPercentage(product.offer_discount)).toFixed(0); 
+                %>
+                
+                <li class="col-12 row cadaItemCarrito">
+                  <img class="fotoItemCarrito col-2" src="/images/uploads/productDetail/<%=product.image%>" alt="Foto del producto: <%=product.name %>">
+                  <p class="col-6 lasPDeCadaItem cadaItemTitulo"> <%=product.name %> </p>
+                  <p class="col-4 lasPDeCadaItem cadaItemPrecio"> 
+                    $ <%= finalPrice %> </p>
+                    <% } %>
+                  </li>
+                </ul>
+                
+                <ul class="ulCarrito row col-3">
+                <li class="row cadaItemCarrito">
+                  <% for (purchase of purchases) { %>
+                    <p class="col-10 lasPDeCadaItem cadaItemCantidad"> Cantidad: <%=purchase.quantity.toString()%> </p>
+                    <a class="carrito col-2 trash" href="#"><i class="far fa-trash-alt"></i></a>
+                    <% } %>
+                  </li>
+                </ul>
+              </div> <!-- /.masterRow -->
+            </div> <!-- /.masterContainer -->
+            
+          </div>
+        </section>
+        
+        
+        <div class="container envio">  
+          <form class="row envio" action='index.html' method='get'>
+            <p class="col-4"><label for=''>Retiro / envio de tu pedido</label></p>
+            <p class="col-4"><input type="radio" name='envio' value='S'checked> Retiro en deposito</p>
+            <p class="col-4"><input type="radio" name='envio' value='N'> Envio a domicilio</p>
+          </form>
+        </div>
+        
+        <div>
+          <div class="carritoTotal">
+            <h2>$ 100,00 </h2>
+          </div>
+          <button type="button" class="btn btn-success btn-lg btn-block confirmBuy">Confirmar compra</button>
+        </div>
+        
+      </div>
+      
+      <!--Include footer -->
+      <%- include('partials/footer') %>
+      
+      <!-- Include End Body Scripts -->
+      <%- include('partials/_endBodyScripts') %>
+    </body>
+    </html>

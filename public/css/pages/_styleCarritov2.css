@@ -1,0 +1,64 @@
+h1.tituloCarrito{
+    background-color: rgb(235, 230, 230);
+    height: auto;
+    margin: 0px auto;
+    margin-bottom: 40px;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+  }
+  
+  
+  div.masterRow{
+    margin: 0 auto;
+    justify-content: space-around;
+  }
+  
+  ul.ulCarrito{
+    padding: 5px;
+    margin: 0px;
+  }
+  
+  /* a.cadaItemCarrito{
+    border: 2px solid var(--gris-claro);
+    border-radius: 7px;
+    list-style-type: none;
+    margin: 0px;
+    padding: 2px;
+    width: 90%;
+  } */
+  li.cadaItemCarrito{
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* ul.ulCarrito :hover{
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  } */
+  /* a.cadaItemCarrito :hover{
+    box-shadow: 0 0 0px rgba(0, 0, 0, 0);
+  } */
+  
+  p.cadaItemTitulo{
+    font-weight: 700;
+  }
+  
+  p.cadaItemCantidad{
+    text-align: center;
+    color: black;
+  }
+  
+  p.cadaItemPrecio{
+    text-align: center;
+    color: black;
+  }
+
+  p.lasPDeCadaItem{
+    text-decoration: none;
+    text-align: center;
+    color: black;
+  }
+  
+  p.lasPDeCadaItem :hover{
+    box-shadow: 0 0 0px rgba(0, 0, 0, 0);
+  }
