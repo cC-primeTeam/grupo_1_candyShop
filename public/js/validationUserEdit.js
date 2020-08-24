@@ -86,13 +86,15 @@ function qs (elemento) {
           erroresEdit.password = "La contraseña debe tener 8 carateres como minimo y 16 como maximo. 1 Min, 1 May y un numero";
         }
       }
-      // if(inputRePassword.value.length < 1) {
-      //   erroresEdit.repassword = "Este campo es obligatorio";
-      // } else {
-      //   if(inputPassword.value != inputRePassword.value) {
-      //     erroresEdit.repassword = "Las contraseñas deben coincidir";
-      //   }
-      // }
+      /*
+      if(inputRePassword.value.length < 1) {
+        erroresEdit.repassword = "Este campo es obligatorio";
+      } else {
+        if(inputPassword.value != inputRePassword.value) {
+          erroresEdit.repassword = "Las contraseñas deben coincidir";
+        }
+      }
+      */
       if(inputNameFantasy.value.length < 1) {
         erroresEdit.namefantasy = "Este campo es obligatorio";
       }
@@ -138,15 +140,17 @@ function qs (elemento) {
           labelPassword.classList.add('success')
           errorPassword.innerText = '';
         }
-        // if(erroresEdit.repassword) {
-        //   labelRePassword.classList.remove('success')
-        //   labelRePassword.classList.add('error')
-        //   errorRePassword.innerText = erroresEdit.repassword;
-        // } else {
-        //   labelRePassword.classList.remove('error')
-        //   labelRePassword.classList.add('success')
-        //   errorRePassword.innerText = '';
-        // }
+        /*
+        if(erroresEdit.repassword) {
+          labelRePassword.classList.remove('success')
+          labelRePassword.classList.add('error')
+          errorRePassword.innerText = erroresEdit.repassword;
+        } else {
+          labelRePassword.classList.remove('error')
+          labelRePassword.classList.add('success')
+          errorRePassword.innerText = '';
+        }
+        */
         if(erroresEdit.namefantasy) {
           labelNameFantasy.classList.remove('success')
           labelNameFantasy.classList.add('error')
@@ -154,7 +158,7 @@ function qs (elemento) {
         } else {
           labelNameFantasy.classList.remove('error')
           labelNameFantasy.classList.add('success')
-          //errorNameFantasy.innerText = '';
+          errorNameFantasy.innerText = '';
         }
         if(erroresEdit.location) {
           labelLocation.classList.remove('success')
@@ -163,7 +167,7 @@ function qs (elemento) {
         } else {
           labelLocation.classList.remove('error')
           labelLocation.classList.add('success')
-          //errorLocation.innerText = '';
+          errorLocation.innerText = '';
         }
         if(erroresEdit.postal_code) {
           labelPostalCode.classList.remove('success')
@@ -172,7 +176,7 @@ function qs (elemento) {
         } else {
           labelPostalCode.classList.remove('error')
           labelPostalCode.classList.add('success')
-          //errorPostalCode.innerText = '';
+          errorPostalCode.innerText = '';
         }
         if(erroresEdit.adress) {
           labelAdress.classList.remove('success')
@@ -181,7 +185,7 @@ function qs (elemento) {
         } else {
           labelAdress.classList.remove('error')
           labelAdress.classList.add('success')
-          //errorAdress.innerText = '';
+          errorAdress.innerText = '';
         }
         if(erroresEdit.telephone) {
           labelTelephone.classList.remove('success')
@@ -190,7 +194,7 @@ function qs (elemento) {
         } else {
           labelTelephone.classList.remove('error')
           labelTelephone.classList.add('success')
-          //errorTelephone.innerText = '';
+          errorTelephone.innerText = '';
         }
         if(erroresEdit.businessname) {
           labelBusinessName.classList.remove('success')
@@ -199,7 +203,7 @@ function qs (elemento) {
         } else {
           labelBusinessName.classList.remove('error')
           labelBusinessName.classList.add('success')
-          //errorBusinessName.innerText = '';
+          errorBusinessName.innerText = '';
         }
         if(erroresEdit.cuit) {
           labelCuit.classList.remove('success')

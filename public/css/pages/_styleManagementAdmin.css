@@ -1,0 +1,57 @@
+@import url('https://use.fontawesome.com/releases/v5.14.0/css/all.css');
+
+/* =====================
+- BODY FROMULARIO
+===================== */
+
+h5 {
+    color: var(--violeta-textos);
+}
+
+div.titulo #management {
+    background-color: var(--rosa-background-header);
+    border-radius: 5px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* =====================
+- PERFIL
+===================== */
+
+div.admin-activ {
+    justify-content: space-between;
+}
+
+div.admin-activ h5 {
+    color: var(--violeta-textos);
+}
+
+/* =====================
+- REGISTRO
+===================== */
+
+div.registro {
+    margin-top: 10px;
+    border-top: solid var(--violeta-textos) 3px;
+}
+
+/* =====================
+- DATOS
+===================== */
+
+div.datos {
+    margin-top: 10px;
+    border-top: solid var(--violeta-textos) 3px;
+}
+
+/* =====================
+- IMAGEN
+===================== */
+
+div.imagen_usuario {
+    margin-top: 10px;
+    border-top: solid var(--violeta-textos) 3px;
+}

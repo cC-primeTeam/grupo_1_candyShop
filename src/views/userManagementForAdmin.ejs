@@ -14,7 +14,7 @@
   
   <div class="container col-6">
     
-    <div class="titulo">
+    <div class="titulo" id="management">
       <h2 class="tituloRegistro">EDICION USUARIO</h2>
     </div>
     
@@ -40,23 +40,31 @@
         
       </div>
       
-      <div class="registro col-12">
+      <div class="registro col-12" id="management">
         
         <h5>REGISTRO</h5>
         
         <div class="form-group">
-          <label for="exampleInputEmail1" class="">Email
-            <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="<%= elUsuario.email %>">
+          <label for="email" class="" id="email">Email
+            <input type="email" name="email" class="form-control" id="email" aria-describedby="emailHelp" value="<%= elUsuario.email %>">
           </label>
           <small class="text-danger" id="email"></small>
         </div>
         
         <div class="form-group">
-          <label for="exampleInputPassword1">Contraseña
-            <input type="password" name="password" class="form-control" id="exampleInputPassword1" value="" placeholder="Queres cambiar la contraseña ?">
+          <label for="password">Contraseña
+            <input type="password" name="password" class="form-control" id="password" value="" placeholder="Queres cambiar la contraseña ?">
+            <span id="eye" class=""></span>
           </label>
           <small class="text-danger" id="password"></small>
         </div>
+
+        <!-- <div class="form-group">
+          <label for="rePassword">Repeti tu Contraseña
+            <input type="password" name="rePassword" class="form-control " id="rePassword" value="" placeholder="Queres cambiar la contraseña ?">
+          </label>
+          <small class="text-danger" id="rePassword"></small>
+        </div> -->
         
       </div>
       
@@ -68,41 +76,73 @@
           <label for="name_fantasy">Nombre Empresa
             <input type="text" name="name_fantasy" class="form-control" id="name_fantasy" aria-describedby="emailHelp" value="<%= elUsuario.name_fantasy %>">     
           </label>
-          <small class="text-danger" id="password"></small>     
+          <small class="text-danger" id="name_fantasy"></small>     
+        </div>
+
+        <div class="form-group">
+          <label for="province" id="province" class="">Provincia
+          <select name="province" id="province" class="form-control ">
+            <option><%= elUsuario.province %></option>
+          </select>
+          </label>
+          <small class="text-danger" id="province"></small>
+        </div>
+        
+        <div class="form-group">
+          <label for="municipality" id="municipality" class="">Municipio
+          <select name="municipality" id="municipality" class="form-control ">
+            <option><%= elUsuario.municipality %></option>
+          </select>
+          </label>
+          <small class="text-danger" id="municipality"></small>
+        </div>
+        
+        <div class="form-group">           
+          <label for="location">Localidad
+          <input type="text" name="location" class="form-control " id="location" aria-describedby="emailHelp" value="<%= elUsuario.location %>" placeholder="Completa tu localidad...">
+          </label>
+          <small class="text-danger" id="location"></small>
+        </div>
+        
+        <div class="form-group">           
+          <label for="postal_code">Codigo Postal
+          <input type="text" name="postal_code" class="form-control " id="postal_code" aria-describedby="emailHelp" value="<%= elUsuario.postal_code %>" disabled placeholder="Completa tu codigo postal...">           
+          </label>
+          <small class="text-danger" id="postal_code"></small>
         </div>
         
         <div class="form-group">           
           <label for="adress">Direccion
             <input type="text" name="adress" class="form-control" id="adress" aria-describedby="emailHelp" value="<%= elUsuario.adress %>">    
           </label>
-          <small class="text-danger" id="password"></small>       
+          <small class="text-danger" id="adress"></small>       
         </div>
         
         <div class="form-group">
           <label for="telephone">Teléfono
             <input type="number" name="telephone" class="form-control" id="telephone" aria-describedby="emailHelp" value="<%= elUsuario.telephone %>">     
           </label>  
-          <small class="text-danger" id="password"></small>   
+          <small class="text-danger" id="telephone"></small>   
         </div>
         
         <div class="form-group">       
           <label for="business_name">Razón social 
             <input type="text" name="business_name" class="form-control" id="business_name" aria-describedby="emailHelp" value="<%= elUsuario.business_name %>">   
           </label>
-          <small class="text-danger" id="password"></small>         
+          <small class="text-danger" id="business_name"></small>         
         </div>
         
         <div class="form-group">
           <label for="cuit">CUIT/CUIL
             <input type="number" name="cuit" class="form-control" id="cuit" aria-describedby="emailHelp" value="<%= elUsuario.cuit %>">
-            <small class="text-danger" id="password"></small>
+            <small class="text-danger" id="cuit"></small>
           </label>
         </div>
         
         <div class="form-group">              
           <label for="fiscal_condition">Condicion fiscal
             <input type="text" name="fiscal_condition" class="form-control" id="fiscal_condition" aria-describedby="emailHelp" value="<%= elUsuario.fiscal_condition %>">        
-            <small class="text-danger" id="password"></small>      
+            <small class="text-danger" id="fiscal_condition"></small>      
           </label>
         </div>
         
@@ -118,7 +158,7 @@
         
       </div>
       
-      <button type="submit" class="btn btn-success btn-lg btn-block botonForm2">Confirmar cambios
+      <button type="submit" class="btn btn-success btn-lg btn-block botonForm2" id="confirma">Confirmar cambios
       </button>
       
     </form>
@@ -128,6 +168,8 @@
   
   <!--Include footer -->
   <%- include('partials/footer') %>
+  <script src="/js/registerEdit.js"></script>
+  <script src="/js/validationManagementAdmin.js"></script>
   
   <!-- Include End Body Scripts -->
   <%- include('partials/_endBodyScripts') %>
