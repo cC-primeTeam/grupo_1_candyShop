@@ -26,13 +26,13 @@
             let finalPrice = (product.price * getDiscountPercentage(product.offer_discount)).toFixed(0); 
             %>
             <article class="elContenedor col-6 col-sm-4 col-lg-2 container">
-              <div class="elProducto row">
+              <div class="elProductoModify row">
                 
                 <div class="imagenProducto col-12">
                   <img src="/images/uploads/productDetail/<%= product.image %>" alt="imagen de producto <%= product.name %>">
                 </div>  <!-- ./imagenProducto -->
                 
-                <div class="infoProducto col-12">
+                <div class="infoProductModify col-12">
                   <h6><%= product.name %></h6>
                 </div>  <!-- ./infoProducto -->
                 
