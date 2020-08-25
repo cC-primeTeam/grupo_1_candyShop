@@ -18,7 +18,7 @@
     <section class="productosFind container">
       <div class="row">
         <div class="col-12">
-          <h1 class="titularFind"> Encontramos estos productos con tu busqueda!</h1>
+          <h1 class="titularFind"><%= (typeof laBusqueda[0] != 'undefined') ? 'Encontramos estos productos con tu busqueda!' : 'No encontramos nada'%></h1>
         </div>
       </div>
     </section>
@@ -29,7 +29,8 @@
         <!-- MUESTRA DE LOS PRODUCTOS -->
         <section class="productosFind container">
           <div class="row">
-            <% for(let i = 0; i < laBusqueda.length; i++) { 
+            <%if (typeof laBusqueda != 'undefined'){%>
+              <% for(let i = 0; i < laBusqueda.length; i++) { 
               let getDiscountPercentage = discount => (100 - discount) / 100;
               let originalPrice = (laBusqueda[i].price).toFixed(0); 
               let finalPrice = (laBusqueda[i].price * getDiscountPercentage(laBusqueda[i].offer_discount)).toFixed(0); 
@@ -59,6 +60,16 @@
               </section>
             </div>
             <% } %>
+            <% } else {%>
+
+
+              <% } %>
+
+
+
+
+
+
           </div>
         </section>
       </div>

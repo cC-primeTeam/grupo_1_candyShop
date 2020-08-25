@@ -23,9 +23,14 @@ window.addEventListener('load', function() {
   let inputNameFantasy = qs("input#name_fantasy");
   let errorNameFantasy = qs('small#name_fantasy');
   
-  let inputProvince = qs("input#province");
+  let labelProvince = qs("label[for='province']");
+  let selectProvince = qs("select#province");
   let errorProvince = qs('small#province');
   
+  let labelMunicipality = qs("label[for='municipality']");
+  let selectMunicipality = qs("select#municipality");
+  let errorMunicipality = qs('small#municipality');
+
   let labelLocation = qs("label[for='location']");
   let inputLocation = qs("input#location");
   let errorLocation = qs("small#location");
@@ -81,6 +86,28 @@ window.addEventListener('load', function() {
         errores.email = "Inserta un email valido";
       }
     }
+
+    // if(inputEmail.value.length < 1) {
+    //   errores.email = "Este campo es obligatorio"
+    // } else {
+
+    //   let emailFetch = async () => {
+    //     let userExist = await fetch('http://localhost:3000/api/checkUser/' + inputEmail.value).then(result => result.json());
+    //     return userExist;
+    //   }
+      
+    //   let checkUser = emailFetch();
+
+    //   if(inputEmail.value.match(regexMail) == null) {
+    //     errores.email = "Inserta un email valido";
+    //   } else {
+    //     if(checkUser) {
+    //       console.log(checkUser)
+    //       errores.email = "Este mail ya existe"
+    //     }
+    //   }
+    // }
+    
     if(inputPassword.value.length < 1) {
       errores.password = "Este campo es obligatorio";
     } else {
