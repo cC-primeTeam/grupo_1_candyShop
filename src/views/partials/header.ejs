@@ -10,11 +10,26 @@
         
         <!--SEARCH BAR-->
         <div class="containSearch col-12 col-sm-6 col-lg-4">
-          <form action="/search" method="GET" class="search-form">
-            <input type="text" name="keywords" placeholder="Busca tus candy's" class="search-form_input">
+          <form action="/search<%= (typeof query != 'undefined') ? '?find=' + query : null %>" method="GET" class="search-form">
+            <input type="text" name="find" placeholder="Busca tus candy's" class="search-form_input">
             <button type="submit" class="search-form_button"><i class="fas fa-search"></i></button>
           </form>
         </div> <!-- /.containSearch -->
+
+
+        <!-- <form action="/product/search<%=// (typeof consulta != 'undefined') ? '?buscar=' + consulta : null %>" class="header-nav__form" method="GET">
+          <input class="search-input" type="text" name="buscar" id="" placeholder="Buscar productos, marcas y más">
+          <button class="search-button" type="submit"><i class="fa fa-search"></i></button>
+      </form> -->
+
+
+
+
+
+
+
+
+
         
         <!--BOTONES DERECHA-->
         <div class="containButtons col-12 col-sm-12 col-lg-4">

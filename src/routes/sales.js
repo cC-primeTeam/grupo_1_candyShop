@@ -6,7 +6,7 @@ const authMiddleware = require('../middlewares/authMiddleware');
 /* -------------------
    CARRITO
 -------------------*/
-router.get('/purchase', salesController.purchase); //Vista carrito
+router.get('/purchase', authMiddleware, salesController.purchase); //Vista carrito
 router.get('/shopping/erase/:id', salesController.itemErase); //borra item
 router.get('/shopping/:id', salesController.itemAdd); //agrega item
 router.get('/shopping/clean', salesController.cartClean); //vacia carrito

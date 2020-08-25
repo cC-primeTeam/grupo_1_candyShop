@@ -8,10 +8,6 @@ module.exports = {
         primaryKey: true,
         autoIncrement: true
       },
-      delivery_check: {
-        type: Sequelize.DataTypes.BOOLEAN(1),
-        allowNull: false
-      },
       user_id: {
         type: Sequelize.DataTypes.INTEGER(10).UNSIGNED,
         allowNull: false,

@@ -223,4 +223,7 @@ Nuevo usuario: jtomaschiesa@gmail.com, se creo correctamente, el 22 de Agosto de
 Nuevo usuario: jtomaschiesa@gmail.com, se creo correctamente, el 22 de Agosto del 2020
 Nuevo usuario: jtomaschiesa@gmail.com, se creo correctamente, el 22 de Agosto del 2020
 Nuevo usuario: el_cuervomarito@hotmail.com, se creo correctamente, el 22 de Agosto del 2020
-Nuevo usuario: ardenana@gmail.com, se creo correctamente, el 24 de Agosto del 2020
+Nuevo usuario: pepe@pepino.com, con error en el mail, el 25 de Agosto del 2020
+Nuevo usuario: jtomaschiesa@gmail.com, se creo correctamente, el 25 de Agosto del 2020
+Nuevo usuario: pepe@pepino.com, con error en el mail, el 25 de Agosto del 2020
+Nuevo usuario: pepe@pepino.com, con error en el mail, el 25 de Agosto del 2020

@@ -123,7 +123,7 @@
           <label for="fiscal_condition_id">Condicion fiscal
           <select name="fiscal_condition_id" id="fiscal_condition_id" class="form-control col-md-4 col-mb-6">
             <%for (let i=0; i<fiscalCond.length; i++) { %>
-              <option value="<%=fiscalCond[i].id%>" <%=fiscalCheck%>>
+              <option value="<%=fiscalCond[i].id%>" <%= (elUsuario.fiscal_condition_id == fiscalCond[i].id) ? 'selected' : '' %>>
                 <%= fiscalCond[i].name%>
               </option>
               <% } %>

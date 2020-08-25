@@ -30,7 +30,7 @@
           </article> -->
           
           <!--ITEMS MENU CARRITO-->  
-          <article class="col-3 row items">              
+          <article class="col-2 row items">              
             <% for (purchase of purchases) { %>
               <div class="container row col-12">
                 <p class="col-12 cantidad">  Cantidad: <%=purchase.quantity.toString()%><%=//milesGenerator(laCantidad) %> </p>      
@@ -38,7 +38,7 @@
               <% } %>
             </article>
             
-            <article class="col-9 row items">
+            <article class="col-8 row items">
               <% for (product of losProductos) { 
                 let getDiscountPercentage = discount => (100 - discount) / 100;
                 let finalPrice = (product.price * getDiscountPercentage(product.offer_discount)).toFixed(0); 
@@ -47,6 +47,7 @@
                 
                 <div class="container row col-10">
                   <h5 class="col-8"><%=product.name %></h5>
+                  <h6><%=product.stock%></h6>
                   <p class="col-3 precio">$ <%=milesGenerator(finalPrice) %></p>
                   <a class="carrito col-1 trash" href="#"><i class="far fa-trash-alt"></i></a>
                 </div>

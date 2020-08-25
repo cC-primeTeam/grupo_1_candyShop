@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <!-- Include Head -->
+  <%- include('partials/_contentHead') %>
+  
+  <title>CandyShop - Home</title>
+</head>
+
+<body>
+  <!--include HEADER-->
+  <%- include('partials/header') %>
+  
+  <!--include CAROUSEL-->
+  <%- include('partials/carousel') %>
+  
+    <section class="productosFind container">
+      <div class="row">
+        <div class="col-12">
+          <h1 class="titularFind"><%= (typeof laBusqueda[0] != 'undefined') ? 'Encontramos estos productos con tu busqueda!' : 'No encontramos nada'%></h1>
+        </div>
+      </div>
+    </section>
+
+    <div class="products-wrapper container">
+      <div class="row">
+        
+        <!-- MUESTRA DE LOS PRODUCTOS -->
+        <section class="productosFind container">
+          <div class="row">
+            <%if (typeof laBusqueda != 'undefined'){%>
+              <% for(let i = 0; i < laBusqueda.length; i++) { 
+              let getDiscountPercentage = discount => (100 - discount) / 100;
+              let originalPrice = (laBusqueda[i].price).toFixed(0); 
+              let finalPrice = (laBusqueda[i].price * getDiscountPercentage(laBusqueda[i].offer_discount)).toFixed(0); 
+              %>
+              <div class="col-12 col-sm-6 col-lg-3">
+                <section class="product-box">
+                <article class="elProducto">
+                  <a href="/products/<%= `${laBusqueda[i].id}` %>">
+                    
+                    <div class="imagenProducto">
+                      <%let displayDiscount = laBusqueda[i].offer_discount <= 0 ? 'd-none' : '';%>
+                      <h6 class="<%=displayDiscount%>"><%= laBusqueda[i].offer_discount %>% OFF</h6>
+                      <img src="/images/uploads/productDetail/<%= laBusqueda[i].image %>                   
+                      " alt="imagen de producto <%= laBusqueda[i].name %>">
+                    </div>
+                    
+                    <div class="infoProducto">
+                      <h5><%= laBusqueda[i].name %></h5>
+                      <p> <%= laBusqueda[i].detail %></p>  
+                      <p class="precioSinDescuento <%=displayDiscount%>"><%= milesGenerator (originalPrice) %> $</p>
+                      <b><%= milesGenerator (finalPrice) %> $</b>
+                      <a class="carrito" href="/sales/purchase"><i class="fas fa-shopping-cart"></i></a>
+                    </div>
+                    
+                  </a>
+                </article>
+              </section>
+            </div>
+            <% } %>
+            <% } else {%>
+
+
+              <% } %>
+
+
+
+
+
+
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <!--Include footer -->
+    <%- include('partials/footer') %>
+    
+    <!-- Include End Body Scripts -->
+    <%- include('partials/_endBodyScripts') %>
+  </body>
+  </html>
+  
+  
+  
+  
+  

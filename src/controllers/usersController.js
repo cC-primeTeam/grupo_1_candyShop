@@ -144,8 +144,7 @@ let usersController = {
         .then(function(elUsuario) {
           db.FiscalC.findAll()
           .then(function(fiscalCond){
-            let fiscalCheck = elUsuario.fiscal_condition_id == fiscalCond.id ? 'selected' : '';
-            res.render('registerEdit', {elUsuario:elUsuario, fiscalCond:fiscalCond, fiscalCheck});
+            res.render('registerEdit', {elUsuario:elUsuario, fiscalCond:fiscalCond});
           })
         })
       },
