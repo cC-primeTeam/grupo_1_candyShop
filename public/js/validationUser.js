@@ -125,6 +125,12 @@ window.addEventListener('load', function() {
     if(inputNameFantasy.value.length < 1) {
       errores.namefantasy = "Este campo es obligatorio";
     }
+    if(selectProvince.value == 'Selecciona una provincia...') {
+      errores.province = "Debes seleccionar una provincia"
+    }
+    if(selectMunicipality.value == 'Selecciona una municipio...') {
+      errores.municipality = "Debes seleccionar un municipio"
+    }
     if(inputLocation.value.length < 1) {
       errores.location = "Este campo es obligatorio";
     }
@@ -185,6 +191,24 @@ window.addEventListener('load', function() {
         labelNameFantasy.classList.add('success')
         errorNameFantasy.innerText = '';
       }
+      if(errores.province) {
+        labelProvince.classList.remove('success')
+        labelProvince.classList.add('error')
+        errorProvince.innerText = errores.province;
+      } else {
+        labelProvince.classList.remove('error')
+        labelProvince.classList.add('success')
+        errorProvince.innerText = '';
+      }
+      if(errores.municipality) {
+        labelMunicipality.classList.remove('success')
+        labelMunicipality.classList.add('error')
+        errorMunicipality.innerText = errores.municipality;
+      } else {
+        labelMunicipality.classList.remove('error')
+        labelMunicipality.classList.add('success')
+        errorMunicipality.innerText = '';
+      }
       if(errores.location) {
         labelLocation.classList.remove('success')
         labelLocation.classList.add('error')
@@ -240,13 +264,40 @@ window.addEventListener('load', function() {
         errorCuit.innerText = '';
       }
     } else {
+      // Swal.fire({
+      //   position: 'center',
+      //   icon: 'success',
+      //   title: 'Gracias. Ya podes loguearte !',
+      //   text: 'El registro fue procesado correctamente.',
+      //   showConfirmButton: false,
+      //   timer: 3000
+      // })
+      let timerInterval
       Swal.fire({
-        position: 'center',
-        icon: 'success',
-        title: 'Gracias. Ya podes loguearte !',
-        text: 'El registro fue procesado correctamente.',
-        showConfirmButton: false,
-        timer: 3000
+        title: 'Estamos procesando tu información',
+        html: 'Por favor aguardá <b></b> milliseconds.',
+        timer: 2000,
+        timerProgressBar: true,
+        onBeforeOpen: () => {
+          Swal.showLoading()
+          timerInterval = setInterval(() => {
+            const content = Swal.getContent()
+            if (content) {
+              const b = content.querySelector('b')
+              if (b) {
+                b.textContent = Swal.getTimerLeft()
+              }
+            }
+          }, 100)
+        },
+        onClose: () => {
+          clearInterval(timerInterval)
+        }
+      }).then((result) => {
+        /* Read more about handling dismissals below */
+        if (result.dismiss === Swal.DismissReason.timer) {
+          console.log('I was closed by the timer')
+        }
       })
       setTimeout( function () { 
         elFormularioReg.submit();

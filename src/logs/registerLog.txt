@@ -227,3 +227,11 @@ Nuevo usuario: pepe@pepino.com, con error en el mail, el 25 de Agosto del 2020
 Nuevo usuario: jtomaschiesa@gmail.com, se creo correctamente, el 25 de Agosto del 2020
 Nuevo usuario: pepe@pepino.com, con error en el mail, el 25 de Agosto del 2020
 Nuevo usuario: pepe@pepino.com, con error en el mail, el 25 de Agosto del 2020
+Nuevo usuario: juanespinel@gmail.com.ar, se creo correctamente, el 25 de Agosto del 2020
+Nuevo usuario: juanespinel@gmail.uy, se creo correctamente, el 25 de Agosto del 2020
+Nuevo usuario: juanespinel@gmail.uy, con error en el mail, el 25 de Agosto del 2020
+Nuevo usuario: juanespinel@gmail.br, se creo correctamente, el 25 de Agosto del 2020
+Nuevo usuario: juanespinel@gmail.py, se creo correctamente, el 25 de Agosto del 2020
+Nuevo usuario: juanespinel@gmail.py, con error en el mail, el 25 de Agosto del 2020
+Nuevo usuario: juanespinel@gmail.br, se creo correctamente, el 25 de Agosto del 2020
+Nuevo usuario: juanespinel@gmail.ko, se creo correctamente, el 25 de Agosto del 2020

@@ -50,9 +50,13 @@ window.addEventListener('load', function() {
         if(inputName.value.length < 1) {
             errores.name = "Este campo es obligatorio"
         }
+        if(selectCategory.value == 'Seleccione una opcion...') {
+            errores.category = "Debes seleccionar una categoria"
+          }
         if(inputDetail.value.length < 1) {
             errores.detail = "Este campo es obligatorio"
         }
+        
         
         if(Object.keys(errores).length >=1) {
             if(errores.name) {
@@ -63,6 +67,15 @@ window.addEventListener('load', function() {
                 labelName.classList.remove('error')
                 labelName.classList.add('success')
                 errorName.innerText = '';
+            }
+            if(errores.category) {
+                labelCategory.classList.remove('success')
+                labelCategory.classList.add('error')
+                errorCategory.innerText = errores.category;
+            } else {
+                labelCategory.classList.remove('error')
+                labelCategory.classList.add('success')
+                errorCategory.innerText = '';
             }
             if(errores.detail) {
                 labelDetail.classList.remove('success')
@@ -82,9 +95,9 @@ window.addEventListener('load', function() {
                 showConfirmButton: false,
                 timer: 3000
               })
-            //   setTimeout( function () { 
-            //     elFormularioReg.submit();
-            //   }, 3000);
+              setTimeout( function () { 
+                formprod.submit();
+              }, 3000);
         }
     })
     
