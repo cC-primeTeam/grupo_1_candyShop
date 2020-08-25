@@ -17,6 +17,10 @@ div.titulo {
     align-items: center;
 }
 
+body div form div.registro {
+    margin-top: 10px;
+}
+
 div.titulo h2.tituloRegistro {
     color: var(--violeta-textos);
 }
@@ -25,15 +29,15 @@ body div form div div div.botonMinYMay {
     margin: auto;
 }
 
-body div form div div div.botonCargarImg{
+body div form div div div.botonCargarImg {
     margin: 20px;
 }
 
-section.registro {
+div.registro #register {
     margin-top: 10px;
 }
 
-section.registro h5 {
+div.registro #register h5 {
     margin-top: 10px;
     font-weight: bold;
 }

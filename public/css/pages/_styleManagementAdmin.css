@@ -33,7 +33,7 @@ div.admin-activ h5 {
 - REGISTRO
 ===================== */
 
-div.registro {
+body form div.registro-manag {
     margin-top: 10px;
     border-top: solid var(--violeta-textos) 3px;
 }

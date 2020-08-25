@@ -115,3 +115,29 @@ section.contenedorImg h5 {
     font-weight: bold;
 }
 
+.form-group {
+    position: relative;
+}
+
+.form-group label {
+    background-color: white;
+    display: block;
+    width: 100%;
+    left: 14px;
+    top: 10px;
+    border-radius: 5px;
+    border: 1px solid var(--violeta-textos);;
+    padding: 8px 14px;
+    font-size: 0.8rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+.form-group label.error {
+    color: var(--rosa-background-header);
+    border: 1px solid var(--rosa-background-header);
+}
+
+.form-group label.success {
+    color: var(--celeste-background);
+    border: 1px solid var(--celeste-background);
+}

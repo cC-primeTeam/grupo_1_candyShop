@@ -1,68 +1,91 @@
-// function qs (elemento) {
-//     return document.querySelector(elemento);
-// }
+function qs (elemento) {
+    return document.querySelector(elemento);
+}
 
-// window.addEventListener('load', function() {
+window.addEventListener('load', function() {
     
-// })
-
-// let inputNombre = qs('#nombre');
-// let errorNombre = qs('#errNombre');
-// let inputApellido = qs('#apellido');
-// let errorApellido = qs('#errApellido');
-// let inputEmail = qs('#email');
-// let errorEmail = qs('#errEmail');
-// let inputPassword = qs('#contrasena1');
-// let errorPassword = qs('#errContrasena1');
-// let inputRepassword = qs('#contrasena2');
-// let errorRepassword = qs('#errContrasena2');
-// let btnEnviar = qs("button[type='submit']");
-// let inputTelefono = qs('#telefono');
-// let errorTelefono = qs('#errTelefono');
-// let inputDni = qs('#dni');
-// let errorDni = qs('#errDni');
-// let errorsBack = document.querySelectorAll('.errorsBack');
-// let regexMail = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
-
-// btnEnviar.addEventListener('click', function(e) {
-
-//     if(errorsBack != undefined) {
-//         errorsBack.forEach(function(elemento) {
-//             elemento.innerText = ''
-//         })
-//     };
+    // console.log('funcionando');
     
-//     let errores = {};
-
-//     if(inputNombre.value.length <= 2) {
-//         errores.nombre = 'Como minimo 2 caracteres';
-//     }
-//     if(inputApellido.value.length <= 2) {
-//         errores.apellido = 'Como minimo 2 caracteres';
-//     }
-//     if(!inputEmail.value.match(regexMail)) {
-//         errores.email = 'Tiene que ser email';
-//     }
-//     if(inputPassword.value.length < 6) {
-//         errores.password = 'Como minimo 6 caracteres';
-//     }
-//     if(inputPassword.value != inputRepassword.value) {
-//         errores.repassword = 'Las contrasenas son diferentes';
-//     }
-//     if(inputDni.value.length < 6 || inputDni.value.length > 9){
-//         errores.dni = 'Dni invalido';
-//     }
-//     if(inputTelefono.value.length < 8 || inputDni.value.length > 12){
-//         errores.telefono = 'Telefono invalido';
-//     }
-//     if(Object.keys(errores).length != 0) {
-//         e.preventDefault();
-//         (errorNombre.innerText) = (errores.nombre) ? errores.nombre : '';
-//         (errorApellido.innerText) = (errores.apellido) ? errores.apellido : '';
-//         (errorEmail.innerText) = (errores.email) ? errores.email : '';
-//         (errorPassword.innerText) = (errores.password) ? errores.password : '';
-//         (errorRepassword.innerText) = (errores.repassword) ? errores.repassword : '';
-//         (errorDni.innerText)= (errores.dni) ? errores.dni : '';
-//         (errorTelefono.innerText)= (errores.telefono) ? errores.telefono : '';
-//     }
-// })
+    let formprod = qs("#formprod");
+    
+    let labelName = qs("label[for='name']");
+    let inputName = qs("input#name");
+    let errorName = qs("small#name");
+    
+    let labelCategory = qs("label[for='category']");
+    let selectCategory = qs("select#category");
+    let errorCategory = qs("small#category");
+    
+    let labelDetail = qs("label[for='detail']");
+    let inputDetail = qs("textarea#detail");
+    let errorDetail = qs("small#detail");
+    
+    let labelStock = qs("label[for='stock']");
+    let inputStock = qs("input#stock");
+    let errorStock = qs("small#stock");
+    
+    let labelPrice = qs("label[for='price']");
+    let inputPrice = qs("input#price");
+    let errorPrice = qs("small#price");
+    
+    let labelTop_check = qs("label[for='top_check']");
+    let inputTop_check = qs("input#top_check");
+    let errorTop_check = qs("small#top_check");
+    
+    let labelOffer_check = qs("label[for='offer_check']");
+    let inputOffer_check = qs("input#offer_check");
+    let errorOffer_check = qs("small#offer_check");
+    
+    let labelOffer_discount = qs("label[for='offer_discount']");
+    let inputOffer_discount = qs("input#offer_discount");
+    let errorOffer_discount = qs("small#offer_discount");
+    
+    btnGuardarProd = qs("button[type='submit']#guardar");
+    
+    btnGuardarProd.addEventListener('click', function(event) {
+        event.preventDefault(formprod);
+        
+        let errores = {};
+        
+        if(inputName.value.length < 1) {
+            errores.name = "Este campo es obligatorio"
+        }
+        if(inputDetail.value.length < 1) {
+            errores.detail = "Este campo es obligatorio"
+        }
+        
+        if(Object.keys(errores).length >=1) {
+            if(errores.name) {
+                labelName.classList.remove('success')
+                labelName.classList.add('error')
+                errorName.innerText = errores.name;
+            } else {
+                labelName.classList.remove('error')
+                labelName.classList.add('success')
+                errorName.innerText = '';
+            }
+            if(errores.detail) {
+                labelDetail.classList.remove('success')
+                labelDetail.classList.add('error')
+                errorDetail.innerText = errores.detail;
+            } else {
+                labelDetail.classList.remove('error')
+                labelDetail.classList.add('success')
+                errorDetail.innerText = '';
+            }
+        } else {
+            Swal.fire({
+                position: 'center',
+                icon: 'success',
+                title: 'Gracias!',
+                text: 'Producto Creado con Exito',
+                showConfirmButton: false,
+                timer: 3000
+              })
+            //   setTimeout( function () { 
+            //     elFormularioReg.submit();
+            //   }, 3000);
+        }
+    })
+    
+})
