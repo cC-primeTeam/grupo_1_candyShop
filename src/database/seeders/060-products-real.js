@@ -892,8 +892,8 @@ module.exports = {
       },
       //Chupetines borrados
       {
-        name: "Chupetin Pop Frutal",
-        detail: "Chupetin Pop Frutal bolsa x100 unid.",
+        name: "Chupetin Pops Frutal",
+        detail: "Chupetin Pops Frutal bolsa x100 unid.",
         top_check: 1,
         offer_check: 0,
         offer_discount: 0,
@@ -906,8 +906,8 @@ module.exports = {
         updated_at: new Date()
       },
       {
-        name: "Chupetin Pop Pinta Lengua",
-        detail: "Chupetin Pop Pinta Lengua bolsa x100 unid.",
+        name: "Chupetin Pops Pinta Lengua",
+        detail: "Chupetin Pops Pinta Lengua bolsa x100 unid.",
         top_check: 0,
         offer_check: 1,
         offer_discount: 10,
@@ -920,8 +920,8 @@ module.exports = {
         updated_at: new Date()
       },
       {
-        name: "Chupetin Pop Evolution",
-        detail: "Chupetin Pop Evolution bolsa x100 unid.",
+        name: "Chupetin Pops Evolution",
+        detail: "Chupetin Pops Evolution bolsa x100 unid.",
         top_check: 0,
         offer_check: 1,
         offer_discount: 15,
@@ -934,8 +934,8 @@ module.exports = {
         updated_at: new Date()
       },
       {
-        name: "Chupetin Pop Trompito",
-        detail: "Chupetin Pop Trompito bolsa x100 unid.",
+        name: "Chupetin Pops Trompito",
+        detail: "Chupetin Pops Trompito bolsa x100 unid.",
         top_check: 0,
         offer_check: 1,
         offer_discount: 15,
