@@ -68,8 +68,8 @@ section.productosDestacados div article div.infoProducto p {
 section.productosDestacados div article div.infoProducto p.precioSinDescuento {
   color: var(--gray);
   position: absolute;
-  top: -30px;
-  left: 18px;
+  top: -35px;
+  left: 25px;
   text-decoration: line-through;
 }
 
@@ -77,7 +77,7 @@ section.productosDestacados div article div.infoProducto b{
   color: var(--green);
   position: absolute;
   top: -10px;
-  width: 70px;
+  width: 100px;
   font-size: 1.5rem;
   height: 25px;
   background-color: #ffffff;
