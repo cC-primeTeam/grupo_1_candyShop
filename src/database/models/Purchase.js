@@ -8,9 +8,6 @@ module.exports = function(sequelize, dataTypes) {
           autoIncrement: true,
           allowNull: false,
       },
-      delivery_check:{
-        type: dataTypes.BOOLEAN(1)
-      },
       user_id: {
           type: dataTypes.INTEGER(10),
           allowNull: false,

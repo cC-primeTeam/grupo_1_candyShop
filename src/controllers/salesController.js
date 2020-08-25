@@ -63,6 +63,7 @@ let salesController = {
     //           }
     //       })
   },
+  cartConfirm: function (req, res) {},
   cartClean: function (req, res) {}
 }
 module.exports = salesController;

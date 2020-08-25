@@ -1,0 +1,183 @@
+section.productosFind div div h1.titularFind{
+  background-color: white;
+  border-radius: 5px;
+  text-align: center;
+  padding: 20px;
+  color: var(--violeta-textos);
+}
+
+section.productosFind div article img{
+  width: 100%;
+}
+div.product-box_image{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+  padding: 0;
+  height: 200px;
+  overflow: hidden;
+  /* background-color: rebeccapurple; */
+}
+img.productImage{
+  height: 100%;
+}
+
+.elProducto {
+  background-color: #ffffff;
+  border-radius: 5px;
+  overflow: hidden;
+  transition: 300ms;
+  margin: 20px 0;
+}
+
+.elProducto a div.imagenProducto {
+  display: block;
+  border-bottom: 1px solid var(--light-gray);
+}
+
+section.productosFind div article div.infoProducto {
+  padding: 15px;
+  position: relative;
+  align-items: center;
+  flex-wrap: wrap;
+  background-color: var(--celeste-claro);
+  padding: 10px;
+  border-radius: 10px;
+}
+
+section.productosFind div article div.infoProducto h5 {
+  margin-top: 15px;
+  justify-content: center;
+  text-align: center;
+  color: var(--violeta-textos);
+  font-weight: 600;
+}
+
+section.productosFind div.imagenProducto h6 {
+  font-weight: 300;
+  color: var(--green);
+  position: absolute;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
+section.productosFind div article div.infoProducto p {
+  color: var(--gray);
+}
+
+section.productosFind div article div.infoProducto p.precioSinDescuento {
+  color: var(--gray);
+  position: absolute;
+  top: -30px;
+  left: 18px;
+  text-decoration: line-through;
+}
+
+section.productosFind div article div.infoProducto b{
+  color: var(--green);
+  position: absolute;
+  top: -10px;
+  width: 70px;
+  font-size: 1.5rem;
+  height: 25px;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+}
+
+section.productosFind div article div.infoProducto i {
+  color: var(--rosa-background-header);
+  font-size: 1.5em;
+  width: 35px;
+  height: 35px;
+  text-align: center;
+  border-radius: 50%;
+  position: absolute;
+  top: -15px;
+  right: 15px;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 600ms;
+}
+
+.elProducto:hover {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.elProducto:hover i{
+  transform: rotate(360deg);
+  box-shadow: 0 0 10px var(--celeste-background);
+}
+
+section.productosFind div article div.infoProducto:hover {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+div.losLinksRow{
+  justify-content: center;
+}
+
+div.losLinks{
+  padding: 0;
+}
+
+a.elLink{
+  padding: 0;
+  text-align: center;
+}
+
+a.elLink button{
+    font-size: 70%;
+}
+
+#fotoMuestraSmallProducto{
+  max-width: 100px;
+}
+
+@media (max-width: 991px){
+  article.elContenedor div.elProducto div.imagenProducto{
+    padding: 0;
+    height: 195px;
+    display: flex;
+    align-items: center;
+  }
+}
+
+@media (max-width: 767px){
+  article.elContenedor div.elProducto div.imagenProducto{
+    padding: 0;
+    height: 140px;
+    display: flex;
+    align-items: center;
+  }
+  article.elContenedor div.elProducto div.losLinks{
+    padding: 0;
+  }
+  article.elContenedor div.elProducto div.losLinks div.losLinksRow{
+    padding: 0;
+  }
+}
+
+@media (max-width: 575px){
+  article.elContenedor div.elProducto div.imagenProducto{
+    padding: 0;
+    height: 160px;
+    display: flex;
+    align-items: center;
+  }
+
+div.products-wrapper div.row{
+  padding: 12px;
+}
+article.elContenedor div.elProducto div.losLinks{
+  padding: 0;
+}
+article.elContenedor div.elProducto div.losLinks div.losLinksRow{
+  padding: 0;
+}
+}
