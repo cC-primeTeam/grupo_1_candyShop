@@ -12,175 +12,205 @@
   <!--include HEADER-->
   <%- include('partials/header') %>
   
-  <div class="container col-8 contenedorProductEditForm">
-    <div class="row">
-      <div class= "col-md-12 mb-12 tituloForm">
-        <h2 class="col-8 tituloProductEditForm">EDITANDO PRODUCTO</h2>
-        <h5 class="col-4  nombreProductEdit">Id: <%= elProducto.id %> Nombre: <%= elProducto.name %></h5>
-      </div>
-      <div class="col-md-12 col-mb-12 contenidoForm">
-        <form action="/products/edit/<%= elProducto.id %>?_method=put" method="post" enctype="multipart/form-data" class="formprod" id="formprod">
+<div class="container col-md-8 col-sm-12 contenedorProductEditForm">
+  <div class="row col-12">
+
+  <div class= "tituloForm col-12">
+    <h2 class="col-7">EDITANDO PRODUCTO</h2>
+    <h5 class="col-5  nombreProductEdit">Id: <%= elProducto.id %> Nombre: <%= elProducto.name %></h5>
+  </div>
+
+  <div class="col-12 contenidoEditForm">
+
+    <form action="/products/edit/<%= elProducto.id %>?_method=put" method="post" enctype="multipart/form-data" class="formprod" id="formprod">
           
-          <div class="row">
-            <section class="detalleProducto col-md-8 mb-12">
+    <div class="row">
 
-              <h5>DETALLE PRODUCTO</h5>
+    <section class="detalleProducto col-lg-8 col-md-12">
 
-              <div class="form-group">
-                <label for="name">Nombre del Producto:
-                  <input type="text" name="name" placeholder="Ej: Alfajor Jorgito" class="form-control" value="<%= elProducto.name %>" id="name">
-                </label>
-                <small class="text-danger" id="name"></small>
-              </div>
+    <h5>DETALLE PRODUCTO</h5>
 
-              <div class="form-group">
-                <label for="category">Categoria del Producto:
-                  <select name="category" class="custom-select" id="category">
-                    <label class="input-group-text" for="inputGroupSelect01">Categoria</label>
-                    <%for (let i=0; i<resultadoCategorias.length; i++) { %>
-                      <option value="<%=resultadoCategorias[i].id%>" <%=categoryCheck%>>
-                        <%= resultadoCategorias[i].name%>
-                      </option>
-                    <% } %>
-                  </select>
-                </label>
-                <small class="text-danger" id="category"></small>
-              </div>
+    <div class="form-group col-12">
+      <label for="name">Nombre del Producto:
+        <input type="text" name="name" placeholder="Ej: Alfajor Jorgito" class="form-control" value="<%= elProducto.name %>" id="name">
+      </label>
+      <small class="text-danger" id="name"></small>
+    </div>
 
-              <div class="form-group">
-                <label for="detail">Detalle del Producto:
-                <textarea class="form-control col-md-12 mb-12" id="detail" name="detail" placeholder="<%= elProducto.detail %>"></textarea>
-                </label>
-                <small class="text-danger" id="detail"></small>
-              </div>
+    <div class="form-group col-12">
+      <label class="category" for="category">Categoria del Producto:
+        <select name="category" class="custom-select" id="category">
+          <label class="input-group-text" for="inputGroupSelect01">Categoria</label>
+          <%for (let i=0; i<resultadoCategorias.length; i++) { %>
+          <option value="<%=resultadoCategorias[i].id%>" <%=categoryCheck%>>
+          <%= resultadoCategorias[i].name%>
+          </option>
+          <% } %>
+        </select>
+      </label>
+      <small class="text-danger" id="category"></small>
+    </div>
 
-              </section>
-              <section class="precios col-md-8 mb-12">
-                <h5 class="">CANTIDAD Y PRECIO</h5>
-                <!-- <label for="Costo">Costo</label>
-                  <input type="text" class="form-control" name="costo" required placeholder="Ej: $ 10.00" value="<%= //elProducto.costo %>"> -->
-                  <!-- <label for="utilidad">Utilidad</label>
-                    <input type="text" class="form-control" name="utilidad" required placeholder="Ej: % 50" value="<%= //elProducto.utilidad %>"> -->
+    <div class="form-group col-12">
+      <label for="detail">Detalle del Producto:
+        <textarea class="form-control col-lg-8 col-md-12" id="detail" name="detail" placeholder="<%= elProducto.detail %>"></textarea>
+      </label>
+      <small class="text-danger" id="detail"></small>
+    </div>
 
-                <div class="form-group col-6" id="stock">
-                  <label for="stock">Cantidad a la venta
-                  <input type="text" class="form-control" name="stock" required placeholder="Ejemplo: 7" value="<%= elProducto.stock %>" id='stock'>
-                  </label>
-                  <small class="text-danger" id="stock"></small>
-                </div>
+    </section>
+    <section class="cant-precio precios col-lg-8 col-md-12">
+      <h5 class="">CANTIDAD Y PRECIO</h5>
+        <!-- <label for="Costo">Costo</label>
+        <input type="text" class="form-control" name="costo" required placeholder="Ej: $ 10.00" value="<%= //elProducto.costo %>"> -->
+        <!-- <label for="utilidad">Utilidad</label>
+        <input type="text" class="form-control" name="utilidad" required placeholder="Ej: % 50" value="<%= //elProducto.utilidad %>"> -->
 
-                <div class="form-group col-6" id="price">
-                  <label for="price">Precio
-                  <input type="text" class="form-control" name="price" required placeholder="Ej: $ 15.00" value="<%= elProducto.price %>" id='price'>
-                  </label>
-                  <small class="text-danger" id="price"></small>
-                </div>
+      <div class="form-group col-12" id="stock">
+        <label for="stock">Cantidad a la venta
+          <input type="text" class="form-control" name="stock" required placeholder="Ejemplo: 7" value="<%= elProducto.stock %>" id='stock'>
+        </label>
+        <small class="text-danger" id="stock"></small>
+      </div>
 
-              </section>
-              <section class="masVendidos col-md-8 mb-12">
-                <h5>MAS VENDIDOS</h5>
-                <div class="input-group mb-4 col-md-6">
-                  <div class="input-group-prepend">
-                    <label class="input-group-text" for="top_check">Mas Vendidos</label>
-                  </div>
-                      
-                  <select name="top_check" class="custom-select" id="top_check">
-                    <option selected>Seleccione una opcion...</option>
-                    <% if(elProducto.top_check == true) { %>
-                    <option value=true selected>SI</option>
-                    <% } else { %>
-                    <option value=true>SI</option>
-                    <% } %>
-                    <% if(elProducto.top_check == false) { %>
-                    <option value=false selected>NO</option>
-                    <% } else { %>
-                    <option value=false>NO</option>
-                    <% } %>
-                  </select>
-                              
-                </div>
-                </section>
-                          <section class="oferta col-md-8 mb-12">
-                            <h5>OFERTA</h5>
-                            <div class="input-group mb-4 col-md-6">
-                              <div class="input-group-prepend">
-                                <label class="input-group-text" for="offer_check">Oferta</label>
-                              </div>
-                              <select name="ofeoffer_checkrta" class="custom-select" id="offer_check">
-                                <option selected>Seleccione una opcion...</option>
-                                <% if(elProducto.offer_check == true) { %>
-                                  <option value=true selected>SI</option>
-                                  <% } else { %>
-                                    <option value=true>SI</option>
-                                    <% } %>
-                                    <% if(elProducto.offer_check == false) { %>
-                                      <option value=false selected>NO</option>
-                                      <% } else { %>
-                                        <option value=false>NO</option>
-                                        <% } %>
-                                      </select>
-                                    </div>
-                                    <div class="col-md-4 mb-12">
-                                      <label for="offer_discount">Descuento</label>
-                                      <input type="text" name="offer_discount" class="form-control" placeholder="Ej: % 10" value="<%= elProducto.offer_discount %>" id='offer_discount'>
-                                    </div>
-                                    <!-- <div class="col-md-4 mb-12">
-                                      <label for="descuento">Precio Oferta</label>
-                                      <input type="text" name="precioOferta" class="form-control" placeholder="Ej: $ 10" value="<%= //elProducto.precioOferta %>">
-                                    </div> -->
-                                  </section>
+      <div class="form-group col-12" id="price">
+        <label for="price">Precio
+          <input type="text" class="form-control" name="price" required placeholder="Ej: $ 15.00" value="<%= elProducto.price %>" id='price'>
+        </label>
+        <small class="text-danger" id="price"></small>
+      </div>
 
-                                  <section class="contenedorImg col-md-8 mb-12">
-                                    <h5>CARGAR IMAGEN</h5>
-                                    <label for="imgProducto" class="col-12">Cargar Imagen</label>
-                                    <input class="btn" type="file" name="imgProducto"  id="imgProducto">
-                                    <img class="fotoMuestraSmallProducto col-12" src="/images/uploads/productDetail/<%= elProducto.image %>" alt="Foto del producto: <%= elProducto.name %>" id='fotoMuestraSmallProducto'>
-                                  </section> <!-- ./contenedorImg -->
+    </section>
 
-                                  <section class="active col-md-8 mb-12">
-                                    <h5>PRODUCTO EN VENTA / VENTA PAUSADA</h5>
-                                    <div class="input-group mb-8 col-md-10">
-                                      <div class="input-group-prepend">
-                                        <label class="input-group-text" for="active"><%= activeStat %></label>
-                                      </div>
-                                      <select name="active" class="custom-select" id="active">
-                                        <% if(elProducto.active == true) { %>
-                                          <option value=true selected>ACTIVAR VENTA</option>
-                                          <% } else { %>
-                                            <option value=true>ACTIVAR VENTA</option>
-                                            <% } %>
-                                            <% if(elProducto.active == false) { %>
-                                              <option value=false selected>PAUSAR VENTA</option>
-                                              <% } else { %>
-                                                <option value=false>PAUSAR VENTA</option>
-                                                <% } %>
-                                              </select>
-                                            </div>
-                                            <!-- <div class="col-md-4 mb-12">
-                                              <label for="descuento">Precio Oferta</label>
-                                              <input type="text" name="precioOferta" class="form-control" placeholder="Ej: $ 10" value="<%= //elProducto.precioOferta %>">
-                                            </div> -->
-                                          </section>
-                                          <!-- <section class="contenedorImg col-md-8 mb-12">
-                                            <h5>CARGAR IMAGEN</h5>
-                                            <input class="btn" type="file" name="imgProducto">
-                                          </section> -->
-                                        </div>
-                                        <button type="submit" class="btn btn-success btn-lg btn-block botonForm2 col-md-12 mb-12" id="guardar">Guardar Producto</button>
-                                      </form>
-                                      <form action="/products/delete/<%= elProducto.id %>?_method=delete" method="POST">
-                                        <button type="submit" class="btn btn-danger btn-lg btn-block botonForm2 col-md-12 mb-12">Eliminar Producto</button>
-                                      </form>
-                                    </div>
-                                  </div> <!-- ./div-row -->
-                                </div> <!-- ./div-container -->
+    <section class="masVendidos col-lg-8 col-md-12">
+
+      <h5>MAS VENDIDOS</h5>
+
+    <div class="form-group col-12">
+      <label class="top_check" for="top_check">Más Vendidos
+        <select name="top_check" class="custom-select" id="top_check">
+          <option selected>Seleccione una opcion...</option>
+          <% if(elProducto.top_check == true) { %>
+          <option value=true selected>SI</option>
+          <% } else { %>
+          <option value=true>SI</option>
+          <% } %>
+          <% if(elProducto.top_check == false) { %>
+          <option value=false selected>NO</option>
+          <% } else { %>
+          <option value=false>NO</option>
+          <% } %>
+        </select>
+      </label>
+      <small class="text-danger" id="top_check"></small>
+    </div>
+
+    </section>
+
+    <section class="oferta col-lg-8 col-md-12">
+
+      <h5>OFERTA</h5>
+
+      <div class="form-group col-12">
+        <label class="offer_check" for="oferta_check">Oferta
+          <select name="offer_check ofeoffer_checkrta" class="custom-select" id="offer_check">
+            <option selected>Seleccione una opcion...</option>
+            <% if(elProducto.offer_check == true) { %>
+            <option value=true selected>SI</option>
+            <% } else { %>
+            <option value=true>SI</option>
+            <% } %>
+            <% if(elProducto.offer_check == false) { %>
+            <option value=false selected>NO</option>
+            <% } else { %>
+            <option value=false>NO</option>
+            <% } %>
+         </select>
+        </label>
+        <small class="text-danger" id="offer_check"></small>
+      </div>
+
+      <div class="form-group col-12">
+        <label for="offer_discount">Descuento
+          <input type="text" name="offer_discount" class="form-control" placeholder="Ej: % 10" value="<%= elProducto.offer_discount %>" id='offer_discount'>
+        </label>
+        <small class="text-danger" id='offer_discount'></small>
+      </div>
+      <!-- <div class="col-md-4 mb-12">
+      <label for="descuento">Precio Oferta</label>
+      <input type="text" name="precioOferta" class="form-control" placeholder="Ej: $ 10" value="<%= //elProducto.precioOferta %>">
+      </div> -->
+    </section>
+
+    <section class=" contenedorImg col-lg-8 col-md-12">
+
+      <h5>CARGAR IMAGEN</h5>
+
+      <label for="imgProducto" class="col-12">Cargar Imagen
+        <input class="btn" type="file" name="imgProducto"  id="imgProducto">
+        <img class="fotoMuestraSmallProducto col-12" src="/images/uploads/productDetail/<%= elProducto.image %>" alt="Foto del producto: <%= elProducto.name %>" id='fotoMuestraSmallProducto'>
+      </label>
+      
+
+    </section> <!-- ./contenedorImg -->
+
+    <section class="active col-md-8 mb-12">
+
+      <h5>PRODUCTO EN VENTA / VENTA PAUSADA</h5>
+
+      <div class=" col-lg-8 col-md-12">
+        <div class="input-group-prepend">
+          <label class="input-group-text" for="active"><%= activeStat %></label>
+        </div>
+        <select name="active" class="custom-select" id="active">
+          <% if(elProducto.active == true) { %>
+          <option value=true selected>ACTIVAR VENTA</option>
+          <% } else { %>
+          <option value=true>ACTIVAR VENTA</option>
+          <% } %>
+          <% if(elProducto.active == false) { %>
+          <option value=false selected>PAUSAR VENTA</option>
+          <% } else { %>
+          <option value=false>PAUSAR VENTA</option>
+          <% } %>
+        </select>
+      </div>
+
+      <!-- <div class="col-md-4 mb-12">
+      <label for="descuento">Precio Oferta</label>
+      <input type="text" name="precioOferta" class="form-control" placeholder="Ej: $ 10" value="<%= //elProducto.precioOferta %>">
+      </div> -->
+
+    </section>
+     <!-- <section class="contenedorImg col-md-8 mb-12">
+     <h5>CARGAR IMAGEN</h5>
+     <input class="btn" type="file" name="imgProducto">
+     </section> -->
+                                        
+    </div>
+
+    <button type="submit" class="btn btn-success btn-lg btn-block botonForm2 col-md-12 mb-12" id="guardar">Guardar Producto</button>
+
+  </form> <!-- ./globalForm -->
+                                      
+    <form action="/products/delete/<%= elProducto.id %>?_method=delete" method="POST">
+                                        
+    <button type="submit" class="btn btn-danger btn-lg btn-block botonForm2 col-md-12 mb-12">Eliminar Producto</button>
+                                      
+    </form>
+                                    
+  </div>
+                                  
+  </div> <!-- ./div-row -->
                                 
-                                <!--Include footer -->
-                                <%- include('partials/footer') %>
+</div> <!-- ./div-container -->
                                 
-                                <!-- Include End Body Scripts -->
-                                <%- include('partials/_endBodyScripts') %>
-                                <script src="/js/validationProductEdit.js"></script>
+<!--Include footer -->
+<%- include('partials/footer') %>
                                 
-                              </body>
-                              </html>
+<!-- Include End Body Scripts -->
+<%- include('partials/_endBodyScripts') %>
+<script src="/js/validationProductEdit.js"></script>
+                                
+</body>
+</html>

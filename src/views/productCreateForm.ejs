@@ -12,26 +12,29 @@
   <!--include HEADER-->
   <%- include('partials/header') %>
   
-  <div class="container col-6">
-    
-    <div class= "tituloForm">
+  <div class="container col-md-8 col-sm-12 contenedorProductEditForm">
+    <div class="row col-12">
+      
+    <div class= "tituloForm col-12">
       <h2 class="col-md-12 col-mb-12">FORMULARIO DE CARGA DE PRODUCTOS</h2>
     </div>
     
+    <div class="col-12 contenidoEditForm">
+
     <form action="" class="formprod" method="post" enctype="multipart/form-data" id="formprod">
         
-      <div class="detalle">
+      <div class="detalleProducto col-lg-8 col-md-12">
           
         <h5>DETALLE PRODUCTO</h5>
         
-        <div class="form-group">
+        <div class="form-group col-12">
           <label for="name">Nombre del Producto:
             <input type="text" name="name" placeholder="Ej: Alfajor Jorgito" class="form-control" id="name">
           </label>
           <small class="text-danger" id="name"></small>
         </div>
         
-        <div class="form-group">
+        <div class="form-group col-12">
           <label class="category" for="category">Categoria
             <select name="category" class="custom-select" id="category">
               <option selected hidden>Seleccione una opcion...</option>
@@ -43,7 +46,7 @@
           <small class="text-danger" id="category"></small>
         </div>
 
-        <div class="form-group">
+        <div class="form-group col-12">
           <label for="detail">Detalle del Producto:
           <textarea class="form-control col-md-12 mb-12" id="detail" name="detail" placeholder="Por favor coloque una descricion del producto aqui.."></textarea>
           </label>
@@ -52,7 +55,7 @@
 
       </div>
           
-      <div class="cant-precio">
+      <div class="cant-precio col-lg-8 col-md-12">
         
         <h5 class="">CANTIDAD Y PRECIO</h5>
 
@@ -61,14 +64,14 @@
         <label for="utilidad">Utilidad</label>
         <input type="text" class="form-control" name="utilidad" required placeholder="Ej: % 50"> -->
 
-        <div class="form-group col-5" id="stock">
+        <div class="form-group col-12" id="stock">
           <label for="stock">Cantidad a la venta
           <input type="text" class="form-control" name="stock" required placeholder="Ejemplo: 7" id='stock'>
           </label>
           <small class="text-danger" id="stock"></small>
         </div>
 
-        <div class="form-group col-5" id="price">
+        <div class="form-group col-12" id="price">
           <label for="price">Precio
           <input type="text" class="form-control" name="price" required placeholder="Ejemplo: 15" id='price'>
           </label>
@@ -77,11 +80,11 @@
 
       </div>
 
-      <div class="masVendidos">
+      <div class="masVendidos col-lg-8 col-md-12">
 
         <h5>MAS VENDIDOS</h5>
 
-        <div class="form-group col-5">
+        <div class="form-group col-12">
           <label class="top_check" for="top_check">Mas Vendidos
             <select name="top_check" class="custom-select" id="top_check">
               <option selected>Seleccione una opcion...</option>
@@ -94,11 +97,11 @@
 
       </div>
 
-      <div class="oferta">
+      <div class="oferta col-lg-8 col-md-12">
 
         <h5>OFERTA</h5>
 
-        <div class="form-group col-5">
+        <div class="form-group col-12">
           <label class="offer_check" for="oferta_check">Oferta
             <select name="offer_check" class="custom-select" id="offer_check">
               <option selected>Seleccione una opcion...</option>
@@ -109,7 +112,7 @@
           <small class="text-danger" id="offer_check"></small>
         </div>
 
-        <div class="form-group col-5">
+        <div class="form-group col-12">
           <label for="offer_discount">Descuento
             <input type="text" name="offer_discount" class="form-control" placeholder="Ej: % 10" id='offer_discount'>
           </label>
@@ -135,6 +138,8 @@
       </button>
           
     </form> <!-- ./globalForm -->
+  </div>
+</div>
 
   </div> <!-- ./div-contenidoForm -->
   
