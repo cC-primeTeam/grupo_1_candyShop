@@ -24,6 +24,8 @@ window.addEventListener('load', function() {
   
   btnSpan.addEventListener('click', function(event) {
     btnSpan.classList.toggle('hide');
+
+    
     if(inputPassword.getAttribute('type') == "password") {
       inputPassword.setAttribute('type', 'text');
     } else {
@@ -70,8 +72,7 @@ window.addEventListener('load', function() {
         labelPassword.classList.add('success')
         errorPassword.innerText = '';
       }
-    }
-    else {
+    } else {
       let timerInterval
       Swal.fire({
         title: 'Estamos procesando tu información',

@@ -92,8 +92,9 @@ let usersController = {
         active: 1
       })
       .then(function(resultado) {
-        let mailRegistrado = resultado.email;
-        res.redirect('login', {mailRegistrado});
+        res.locals.mailRegistrado = resultado.email;
+        // return res.send (typeof mailRegistrado)
+        res.redirect('login');
       });
     } else {
       res.render('register', {fiscalCond:fiscalCond,

@@ -61,26 +61,23 @@
         text: 'Por favor contactate con la administración!',
         footer: '<a href="https://wa.me/5491130197729?text=Solicito%20ayuda%20con%20mi%20cuenta%20suspendida" target="_blank"><i class="fab fa-whatsapp"></i> Envianos un whatsapp</a>'
       })</script>
-      <%} else {%>
-        <%=''%>
         <%}%>
         
-        <% if(typeof mailRegistrado != 'undefined') {%>
-        <%if (typeof(mailRegistrado) == 'string') {%>
-          <script>
-            Swal.fire({
-              position: 'center',
-              icon: 'success',
-              title: 'La cuenta creo correctamente.',
-              text: 'Por favor inicia sesion con los datos registrados.',
-              showConfirmButton: false,
-              timer: 1500
-            })</script>
-            <%} else {%>
-              <%=''%>
-              <%}%>
-              <%} else {%>
-                <%=''%>
-                <%}%>
+
+          <%if (typeof mailRegistrado == 'string') {%>
+            <% console.log (mailRegistrado) %>
+            <script>
+              Swal.fire({
+                position: 'center',
+                icon: 'success',
+                title: 'La cuenta creo correctamente.',
+                text: 'Por favor inicia sesion con los datos registrados.',
+                showConfirmButton: false,
+                timer: 1500
+              })
+            </script>
+<%} else {%>
+no encontre nada
+          <%}%>
             </body>
             </html>
