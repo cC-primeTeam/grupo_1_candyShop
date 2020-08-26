@@ -56,6 +56,12 @@ window.addEventListener('load', function() {
         if(inputDetail.value.length < 1) {
             errores.detail = "Este campo es obligatorio"
         }
+        if(inputStock.value.length < 1) {
+            errores.stock = "Este campo es obligatorio"
+        }
+        if(inputPrice.value.length < 1) {
+            errores.price = "Este campo es obligatorio"
+        }
         
         
         if(Object.keys(errores).length >=1) {
@@ -85,6 +91,24 @@ window.addEventListener('load', function() {
                 labelDetail.classList.remove('error')
                 labelDetail.classList.add('success')
                 errorDetail.innerText = '';
+            }
+            if(errores.stock) {
+                labelStock.classList.remove('success')
+                labelStock.classList.add('error')
+                errorStock.innerText = errores.stock;
+            } else {
+                labelStock.classList.remove('error')
+                labelStock.classList.add('success')
+                errorStock.innerText = '';
+            }
+            if(errores.price) {
+                labelPrice.classList.remove('success')
+                labelPrice.classList.add('error')
+                errorPrice.innerText = errores.price;
+            } else {
+                labelPrice.classList.remove('error')
+                labelPrice.classList.add('success')
+                errorPrice.innerText = '';
             }
         } else {
             Swal.fire({
