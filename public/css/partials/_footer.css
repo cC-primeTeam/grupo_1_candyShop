@@ -5,12 +5,12 @@
   footer{
     overflow: hidden;
     background-color: var(--celeste-background);
-    padding: 20px 0;
+    padding-top: 20px;
     color: var(--violeta-textos);
   }
-  footer div section div div{
-    padding: 3px;
-  align-items: center;
+
+  footer div section div div div.imgLogoFooter{
+    text-align: center;
   }
 
   footer div section div div a img{
@@ -64,13 +64,21 @@
   footer div section div.footer2 form input.form-control {
     width: 100%;
     color: white;
-    margin: 10px;
+    margin: 10px; 
   }
+
   footer div section div.footer2 form button {
     width: 100%;
     color: black;
     margin: 10px;
   }
+
+  footer div section div.footer3{
+    margin-bottom: auto;
+    text-align: center;
+  }
+
+
   
   section#copyright p{
     margin: 0;
@@ -80,11 +88,12 @@
     color: var(--celeste-claro);
   }
 
-  @media (max-width: 991px){
-    footer div section div.footer2 div.redesFooter{
-      justify-content: center;
-      padding: 0px 100px;
+  @media (max-width: 768px){
+    footer div section div.footer2 form {
+      padding-top: 0px;
+      text-align: center;
     }
+
 
   }
  
