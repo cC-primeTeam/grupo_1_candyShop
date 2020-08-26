@@ -3,25 +3,35 @@
 ===================== */
 
 /* body {
-
+ 
 } */
 
 /* body div.container {
 
 } */
+body div.contenedorProductEditForm{
+    width: 80%;
+}
 
 body div.container div.tituloForm {
     background-color: var(--rosa-background-header);
     color: var(--violeta-textos);
-    height: 90px;
-    margin: 20px auto;
-    padding-top: 10px;
+    height: auto;
     border-radius: 5px;
 }
 
 /* body div.container div.tituloForm h1 {
     
 } */
+
+div div.tituloForm h5.nombreProductEdit {
+    margin-top: 10px;
+    font-weight: bold;
+    background-color: white;
+    padding: 8px;
+    border-radius: 5px;
+    display: flex;
+}
 
 body div.container div.tituloForm div.contenidoForm div form div label{
     margin-top: 10px;

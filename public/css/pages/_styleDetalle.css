@@ -93,16 +93,14 @@ small.smalltotalh5{
 }
 
 /* CONTAINERBUTTON */
-div.containerButton{
-    text-align: center;
-}
-div.containerButton a button{
+
+div.containerButtonDetail a button{
     padding: 5px 40px;
     margin-top: 30px;
 }
 
 /* DESCRIPCIONDETALLADA */
-article.descripcionDetallada{
+article.descripcionDetalladaDetail{
     border-radius: 10px;
     padding: 15px 40px;
     margin: 20px 0;
@@ -119,8 +117,13 @@ article.descripcionDetallada{
     section.containerPrimary div.rowPrimary article.descripcionDetallada div.descripcionDetalladaRow p{
         padding-left: 60px;
     }
+
     section.containerPrimary div.rowPrimary article.productoDetalladoContainer{
-max-width: 80%;
+        max-width: 80%;
+    }
+
+    div.containerButtonDetail{
+        text-align: center;
     }
 
 

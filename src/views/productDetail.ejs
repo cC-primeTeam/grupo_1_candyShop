@@ -25,11 +25,11 @@
         </div> <!-- ./tituloRow-->
       </article> <!-- ./tituloContainer-->
       
-      <article class=" contenedorFotoDetalleProducto col-12 col-md-3 ">
+      <article class=" contenedorFotoDetalleProducto col-12 col-md-4 ">
         <img class="fotoDetalleProducto col-12" src="/images/uploads/productDetail/<%= elProducto.image %>" alt="Foto del producto: <%= elProducto.name %>">   
       </article> <!-- ./contenedorFotoDetalleProducto-->
       
-      <article class="productoDetalladoContainer col-12 col-md-7 container ">
+      <article class="productoDetalladoContainer col-12 col-md-8 container ">
         <div class="productoDetalladoRow row">
           
           <div class="precioContainer container col-12">
@@ -65,21 +65,21 @@
               </div> <!-- ./totalRow-->
             </div> <!-- ./totalContainer-->
             
-            <div class="containerButton col-12 container">
+            <div class="containerButtonDetail col-12 container">
               <a href="/sales/purchase"> 
                 <button type="button" class="btn <%= activeStatClass %> botonAñadirCarrito" <%= activeStatDisable %>><%= activeStat %></button>
               </a>
             </div> <!-- ./containerButton-->
             
           </div> <!-- ./productoDetalladoRow-->
-        </article> <!-- ./productoDetalladoContainer-->
+      </article> <!-- ./productoDetalladoContainer-->
         
-        <article class="descripcionDetallada col-12">
+      <article class="descripcionDetalladaDetail col-12">
           <div class="descripcionDetalladaRow row">
-            <b class="col-3">Descripcion detallada: </b>
+            <b class="col-3">Descripción detallada: </b>
             <p class="col-9"><%= elProducto.detail %></p>
           </div>
-        </article> <!-- ./descripcionDetallada -->
+      </article> <!-- ./descripcionDetallada -->
         
     </div> <!-- ./rowPrimary -->
   </section> <!-- ./containerPrimary -->
