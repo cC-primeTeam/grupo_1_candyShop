@@ -12,10 +12,10 @@
   <!--include HEADER-->
   <%- include('partials/header') %>
   
-  <div class="container contenedorProductEditForm">
+  <div class="container col-6 contenedorProductEditForm">
     <div class="row">
       <div class= "col-md-12 mb-12 tituloForm">
-        <h1 class="col-8 tituloProductEditForm">EDITANDO PRODUCTO</h1>
+        <h2 class="col-8 tituloProductEditForm">EDITANDO PRODUCTO</h2>
         <h5 class="col-4  nombreProductEdit">Id: <%= elProducto.id %> Nombre: <%= elProducto.name %></h5>
       </div>
       <div class="col-md-12 col-mb-12 contenidoForm">
@@ -166,7 +166,7 @@
                                             <input class="btn" type="file" name="imgProducto">
                                           </section> -->
                                         </div>
-                                        <button type="submit" class="btn btn-success btn-lg btn-block botonForm2 col-md-12 mb-12">Guardar Producto</button>
+                                        <button type="submit" class="btn btn-success btn-lg btn-block botonForm2 col-md-12 mb-12" id="guardar">Guardar Producto</button>
                                       </form>
                                       <form action="/products/delete/<%= elProducto.id %>?_method=delete" method="POST">
                                         <button type="submit" class="btn btn-danger btn-lg btn-block botonForm2 col-md-12 mb-12">Eliminar Producto</button>
@@ -180,6 +180,7 @@
                                 
                                 <!-- Include End Body Scripts -->
                                 <%- include('partials/_endBodyScripts') %>
+                                <script src="/js/validationProductEdit.js"></script>
                                 
                               </body>
                               </html>
