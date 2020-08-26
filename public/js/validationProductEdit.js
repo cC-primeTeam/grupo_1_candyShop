@@ -53,9 +53,9 @@ window.addEventListener('load', function() {
         if(selectCategory.value == 'Seleccione una opcion...') {
             errores.category = "Debes seleccionar una categoria"
           }
-        if(inputDetail.value.length < 1) {
-            errores.detail = "Este campo es obligatorio"
-        }
+        // if(inputDetail.value.length < 1) {
+        //     errores.detail = "Este campo es obligatorio"
+        // }
         
         
         if(Object.keys(errores).length >=1) {

@@ -12,14 +12,14 @@
   <!--include HEADER-->
   <%- include('partials/header') %>
   
-  <div class="container col-6 contenedorProductEditForm">
+  <div class="container col-8 contenedorProductEditForm">
     <div class="row">
       <div class= "col-md-12 mb-12 tituloForm">
         <h2 class="col-8 tituloProductEditForm">EDITANDO PRODUCTO</h2>
         <h5 class="col-4  nombreProductEdit">Id: <%= elProducto.id %> Nombre: <%= elProducto.name %></h5>
       </div>
       <div class="col-md-12 col-mb-12 contenidoForm">
-        <form action="/products/edit/<%= elProducto.id %>?_method=put" method="post" enctype="multipart/form-data">
+        <form action="/products/edit/<%= elProducto.id %>?_method=put" method="post" enctype="multipart/form-data" class="formprod" id="formprod">
           
           <div class="row">
             <section class="detalleProducto col-md-8 mb-12">
@@ -34,7 +34,7 @@
               </div>
 
               <div class="form-group">
-                <label for="categoria">Categoria del Producto:
+                <label for="category">Categoria del Producto:
                   <select name="category" class="custom-select" id="category">
                     <label class="input-group-text" for="inputGroupSelect01">Categoria</label>
                     <%for (let i=0; i<resultadoCategorias.length; i++) { %>
