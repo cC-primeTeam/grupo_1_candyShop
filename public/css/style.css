@@ -89,9 +89,12 @@ section.productosDestacados {
   padding: 0;
 }/*En el article falta ajustar en cada uno*/
 
-section.productosDestacados div {
+section.productosDestacadostit {
   margin-top: 15px;
-  margin-bottom: 15px;
+}
+
+section.productosDestacados div.productosDestacadostit {
+  margin-top: 15px;
 }
 
 section.productosDestacados div article img{
