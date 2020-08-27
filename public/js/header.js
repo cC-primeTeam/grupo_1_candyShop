@@ -17,12 +17,12 @@ function qs(element) {
             title: 'No encontramos nada!',
             text: 'Por favor completá el campo de búsqueda',
             showConfirmButton: false,
-            timer: 3000
+            timer: 5000
           })
       } else {
         setTimeout( function () { 
             formSearch.submit();
-          }, 5000);
+          }, 5);
       } 
     })
   })

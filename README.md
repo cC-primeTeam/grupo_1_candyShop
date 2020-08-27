@@ -49,10 +49,10 @@ sequelize db:seed:all
 Usuarios Admin
 
 	user: hbaravalle@digitalhouse.com
-	pass: 1234567890
+	pass: Milanesa123
 
 	user: uriel@digitalhouse.com
-	pass: 1234567890
+	pass: Milanesa123
 
 
 // © >_cuarentenialCoders </primeTeam>

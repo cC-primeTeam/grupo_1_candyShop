@@ -276,7 +276,7 @@ window.addEventListener('load', function() {
       Swal.fire({
         title: 'Estamos procesando tu información',
         html: 'Por favor aguardá <b></b> milliseconds.',
-        timer: 2000,
+        timer: 3000,
         timerProgressBar: true,
         onBeforeOpen: () => {
           Swal.showLoading()

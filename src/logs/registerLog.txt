@@ -246,3 +246,5 @@ Nuevo usuario: pepe@pepino.com.ar, con error en el mail, el 25 de Agosto del 202
 Nuevo usuario: jtomaschiesa@gmail.com.br, se creo correctamente, el 25 de Agosto del 2020
 Nuevo usuario: jtomaschiesa@gmail.com.ko, se creo correctamente, el 25 de Agosto del 2020
 Nuevo usuario: loliespinel@gmail.com, se creo correctamente, el 26 de Agosto del 2020
+Nuevo usuario: milanesa@pepino.com, se creo correctamente, el 27 de Agosto del 2020
+Nuevo usuario: pepesads@pepino.com, se creo correctamente, el 27 de Agosto del 2020
