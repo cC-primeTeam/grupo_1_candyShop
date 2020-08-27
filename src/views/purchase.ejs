@@ -43,7 +43,8 @@
                 let getDiscountPercentage = discount => (100 - discount) / 100;
                 let finalPrice = (product.price * getDiscountPercentage(product.offer_discount)).toFixed(0); 
                 %>
-                <img class="fotoItemCarrito col-2" src="/images/uploads/productDetail/<%=product.image%>" alt="Foto del producto: <%=product.name %>">
+                <div class=" col-2">
+                <img class="fotoItemCarrito" src="/images/uploads/productDetail/<%=product.image%>" alt="Foto del producto: <%=product.name %>"></div>
                 
                 <div class="container row col-10">
                   <h5 class="col-8"><%=product.name %></h5>
