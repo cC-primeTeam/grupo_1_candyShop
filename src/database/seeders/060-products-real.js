@@ -173,6 +173,20 @@ module.exports = {
         updated_at: new Date()
       },
       {
+        name: "Milanesa",
+        detail: "Encontraste el huevo de pascua!!!",
+        top_check: 0,
+        offer_check: 0,
+        offer_discount: 0,
+        stock: 999,
+        price: 0,
+        image: "milanesa.jpg",
+        category_id: 1,
+        active: 1,
+        created_at: new Date(),
+        updated_at: new Date()
+      },
+      {
         name: "Chocolate Aguila Semi Amargo",
         detail: "Chocolate aguila semi amargo 150gr x 1 uni",
         top_check: 1,
@@ -390,7 +404,7 @@ module.exports = {
         offer_check: 0,
         offer_discount: 0,
         stock: 20,
-        price: 550,
+        price: 55,
         image: "alfajorjorgito.jpg",
         category_id: 1,
         active: 1,

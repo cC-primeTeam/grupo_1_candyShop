@@ -32,6 +32,7 @@
           let originalPrice = (product.price).toFixed(0);
           let finalPrice = (product.price * getDiscountPercentage(product.offer_discount)).toFixed(0); 
           %>
+          <%if (product.name != 'Milanesa') {%>
           <div class="col-12 col-sm-6 col-lg-3">
             <article class="elProducto">
               <a href="/products/<%= `${product.id}` %>">
@@ -55,6 +56,7 @@
               
             </article>
           </div>
+          <% } %>
           <% } %>
         </div>
       </section>

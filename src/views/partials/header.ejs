@@ -11,7 +11,7 @@
         <!--SEARCH BAR-->
         <div class="containSearch col-12 col-sm-6 col-lg-4">
           <form action="/search<%= (typeof query != 'undefined') ? '?find=' + query : null %>" method="GET" class="search-form">
-            <input type="text" name="find" placeholder="Busca tus candy's" class="search-form_input">
+            <input type="text" name="find" placeholder="Buscá tus candy's" class="search-form_input">
             <button type="submit" class="search-form_button"><i class="fas fa-search"></i></button>
           </form>
         </div> <!-- /.containSearch -->
@@ -130,6 +130,8 @@
   </div> <!-- /.masterContain --> 
   <!--include Nav Bar 2-->
   <%- include('navBar2') %>
+
+  <script src="/js/header.js"></script>
   
 </header>
 <div id="offset"></div>

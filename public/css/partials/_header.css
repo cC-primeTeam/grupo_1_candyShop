@@ -39,7 +39,11 @@ header div.masterContain div.firstDivRow nav.navbar div.containSearch input.sear
   padding: 7px 35px 7px 7px;
   border-radius: 3px;
   height: 40px;
-  font-size: 1.5em;
+  /* font-size: 1.5em; */
+  text-align: center;
+  color: var(--violeta-textos);
+  font-size: 1.2rem;
+  
 }
 header div.masterContain div.firstDivRow nav.navbar div.containSearch button.search-form_button{
   position: absolute;
@@ -56,7 +60,7 @@ header div.masterContain div.firstDivRow nav.navbar div.containSearch button.sea
 - MENU DERECHA
 ===================== */
 header div.masterContain div.firstDivRow nav.navbar div.containButtons ul.headerButtons{
-  justify-content: end;
+  justify-content: start;
 }
 header div.masterContain div.firstDivRow nav.navbar div.containButtons ul.headerButtons li a{
   color: var(--violeta-textos);

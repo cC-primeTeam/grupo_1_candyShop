@@ -16,8 +16,31 @@ nav.navBar2 div.nav-sec ul.ulMenuDrop li a:hover{
 /* =====================
 - ESPECIALES DROP MENU
 ===================== */
+#allProd2NavBar2{
+  display: none;
+}
+
 nav.navBar2 div.nav-sec ul.ulMenuDrop li a.nav-link.active,
 nav.navBar2 div.nav-sec ul.ulMenuDrop .show > .nav-link{
   background-color: var(--violeta-textos);
   color: var(--blanco);
+}
+
+/* =====================
+- @media
+===================== */
+@media (max-width: 768px) {
+    
+  #offerNavBar2{
+    display: none;  
+  }
+  #cheekyNavBar2{
+    display: none;
+  }
+  #allProdNavBar2 {
+    display: none;
+  }
+  #allProd2NavBar2{
+    display: block;
+  }
 }
