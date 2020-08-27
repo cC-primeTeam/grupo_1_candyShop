@@ -53,6 +53,10 @@ window.addEventListener('load', function() {
   let labelCuit = qs("label[for='cuit']");
   let inputCuit = qs("input#cuit");
   let errorCuit = qs("small#cuit");
+
+  let labelFC = qs("label[for='fiscal_condition_id']");
+  let selectFC = qs("select#fiscal_condition_id");
+  let errorFC = qs('small#fiscal_condition_id');
   
   let btnCrearUsuario = qs("button[type='submit']#crear");
   
@@ -151,6 +155,9 @@ window.addEventListener('load', function() {
       if(inputCuit.value.match(regexCuit) == null) {
         errores.cuit = "Debes introducir un CUIT valido"
       }
+    }
+    if(selectFC.value == 'Selecciona una Condicion Fiscal...') {
+      errores.fc = "Debes seleccionar Condicion Fiscal"
     }
     
     if(Object.keys(errores).length >= 1) {
@@ -261,6 +268,15 @@ window.addEventListener('load', function() {
         labelCuit.classList.remove('error')
         labelCuit.classList.add('success')
         errorCuit.innerText = '';
+      }
+      if(errores.fc) {
+        labelFC.classList.remove('success')
+        labelFC.classList.add('error')
+        errorFC.innerText = errores.fc;
+      } else {
+        labelFC.classList.remove('error')
+        labelFC.classList.add('success')
+        errorFC.innerText = '';
       }
     } else {
       // Swal.fire({

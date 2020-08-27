@@ -248,3 +248,10 @@ Nuevo usuario: jtomaschiesa@gmail.com.ko, se creo correctamente, el 25 de Agosto
 Nuevo usuario: loliespinel@gmail.com, se creo correctamente, el 26 de Agosto del 2020
 Nuevo usuario: milanesa@pepino.com, se creo correctamente, el 27 de Agosto del 2020
 Nuevo usuario: pepesads@pepino.com, se creo correctamente, el 27 de Agosto del 2020
+Nuevo usuario: juanespinel@gmail.com, con error en el mail, el 27 de Agosto del 2020
+Nuevo usuario: No completo Mail, no completo password, el 27 de Agosto del 2020
+Nuevo usuario: No completo Mail, no completo password, el 27 de Agosto del 2020
+Nuevo usuario: No completo Mail, no completo password, el 27 de Agosto del 2020
+Nuevo usuario: No completo Mail, no completo password, el 27 de Agosto del 2020
+Nuevo usuario: No completo Mail, no completo password, el 27 de Agosto del 2020
+Nuevo usuario: No completo Mail, no completo password, el 27 de Agosto del 2020

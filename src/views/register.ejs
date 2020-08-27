@@ -124,6 +124,7 @@
         <div class="form-group">              
           <label for="fiscal_condition_id" class="">Condicion fiscal
           <select name="fiscal_condition_id" id="fiscal_condition_id" class="form-control">
+            <!-- <option hidden>Selecciona una Condicion Fiscal...</option> -->
             <%for (let i=0; i<fiscalCond.length; i++) { %>
               <option value="<%=fiscalCond[i].id%>">
                 <%= fiscalCond[i].name%>

@@ -38,7 +38,13 @@ module.exports = {
         name: "Monotributista Social",
         created_at: new Date(),
         updated_at: new Date()
-      }
+      },
+      {
+        id: 7,
+        name: "Selecciona una Condicion Fiscal...",
+        created_at: new Date(),
+        updated_at: new Date()
+      },
     ])
   },
 
