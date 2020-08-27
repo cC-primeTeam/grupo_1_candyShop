@@ -88,6 +88,10 @@
     color: var(--celeste-claro);
   }
 
+  #whatsapp {
+    background-color: var(--celeste-background);
+  }
+
   @media (max-width: 768px){
     footer div section div.footer2 form {
       padding-top: 0px;
