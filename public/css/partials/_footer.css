@@ -63,7 +63,7 @@
   
   footer div section div.footer2 form input.form-control {
     width: 100%;
-    color: white;
+    color: var(--violeta-textos);
     margin: 10px; 
   }
 

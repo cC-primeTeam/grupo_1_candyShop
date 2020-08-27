@@ -1,4 +1,3 @@
-
 function qs (elemento) {
   return document.querySelector(elemento);
 }
